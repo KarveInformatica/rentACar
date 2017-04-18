@@ -1,0 +1,13 @@
+C:\Users\karve\Documents\Rentacar\rentACar\Sources\RentACarNG\RentACarNG\bin\Debug\RentACarNG.exe
+C:\Users\karve\Documents\Rentacar\rentACar\Sources\RentACarNG\RentACarNG\bin\Debug\RentACarNG.pdb
+C:\Users\karve\Documents\Rentacar\rentACar\Sources\RentACarNG\RentACarNG\obj\Debug\RentACarNG.csprojResolveAssemblyReference.cache
+C:\Users\karve\Documents\Rentacar\rentACar\Sources\RentACarNG\RentACarNG\obj\Debug\MainWindow.g.cs
+C:\Users\karve\Documents\Rentacar\rentACar\Sources\RentACarNG\RentACarNG\obj\Debug\App.g.cs
+C:\Users\karve\Documents\Rentacar\rentACar\Sources\RentACarNG\RentACarNG\obj\Debug\RentACarNG_MarkupCompile.cache
+C:\Users\karve\Documents\Rentacar\rentACar\Sources\RentACarNG\RentACarNG\obj\Debug\RentACarNG_MarkupCompile.lref
+C:\Users\karve\Documents\Rentacar\rentACar\Sources\RentACarNG\RentACarNG\obj\Debug\MainWindow.baml
+C:\Users\karve\Documents\Rentacar\rentACar\Sources\RentACarNG\RentACarNG\obj\Debug\RentACarNG.g.resources
+C:\Users\karve\Documents\Rentacar\rentACar\Sources\RentACarNG\RentACarNG\obj\Debug\RentACarNG.Properties.Resources.resources
+C:\Users\karve\Documents\Rentacar\rentACar\Sources\RentACarNG\RentACarNG\obj\Debug\RentACarNG.csproj.GenerateResource.Cache
+C:\Users\karve\Documents\Rentacar\rentACar\Sources\RentACarNG\RentACarNG\obj\Debug\RentACarNG.exe
+C:\Users\karve\Documents\Rentacar\rentACar\Sources\RentACarNG\RentACarNG\obj\Debug\RentACarNG.pdb
