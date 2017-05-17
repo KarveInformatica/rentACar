@@ -1,0 +1,161 @@
+﻿<Window x:Class="TextBoxSpellCheck.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <!--<Grid>
+        <StackPanel Orientation="Horizontal">
+            <GroupBox Header="Left" Margin="10,10,10,180">
+                <StackPanel>
+                    <RadioButton Content="Small" GroupName="myButtons" />
+                    <RadioButton Content="Medium" GroupName="myButtons"/>
+                    <RadioButton Content="Large" IsChecked="True" GroupName="myButtons"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Right" Margin="10,10,10,180">
+                <StackPanel>
+                    <RadioButton Content="This" GroupName="myButtons"/>
+                    <RadioButton Content="That" GroupName="myButtons" />
+                    <RadioButton Content="The other" GroupName="myButtons" />
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>-->
+    <!--<Grid>
+        <Button>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Click " VerticalAlignment="Center" />
+                <Ellipse Fill="Red" Width="15" Height="15" />
+                <TextBlock FontStyle="Italic" Text=" me!" VerticalAlignment="Center" />
+                <TextBlock Text=" (" VerticalAlignment="Center" />
+                <Image Source="C:\Users\karve\Documents\Rentacar\rentACar\Training\icons\person.png" Height="30" />
+                <TextBlock Text=") " VerticalAlignment="Center" />
+
+                <Button VerticalAlignment="Center" >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="One is not enough" />
+                        <Menu>
+                            <MenuItem Header="_File" />
+                            <MenuItem Header="_Edit">
+                                <MenuItem Header="_Copy" />
+                                <MenuItem Header="_Paste" />
+                                <TextBox />
+                                <Button Content="Will it never end?" />
+                            </MenuItem>
+                            <MenuItem Header="_View" />
+                        </Menu>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Button>
+    </Grid>-->
+    <!--<Grid >
+        <GroupBox>
+            <StackPanel Margin="7,7,7,167">
+                <TextBlock Text="My First Group" />
+                <Button Content="And" />
+                <TextBlock Text="Nonesense" />
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Margin="15,100,10,100">
+            <GroupBox.Header>
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text="My " />
+                    <Ellipse Fill="Black" Width="10" Height="10" />
+                    <TextBlock Text=" Group" />
+                </StackPanel>
+            </GroupBox.Header>
+        </GroupBox>
+        <GroupBox Margin="15,175,10,20" Header="My Last Group" />
+    </Grid>-->
+    <!--<Grid>
+        <TextBox Width="300" SpellCheck.IsEnabled="True" />
+    </Grid>-->
+    <!--<Grid>
+        <TextBox Height="23" Margin="21,52,21,0" Name="myTextBox" VerticalAlignment="Top" />
+    </Grid>-->
+    <!--<Grid >
+        <ListBox>
+            <TextBlock Text="First item" />
+            <TextBlock Text="Second item" />
+            <Button Content="Foo" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Name: " />
+                <TextBox Width="150" />
+            </StackPanel>
+        </ListBox>
+    </Grid>-->
+    <Grid >
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Command="Save" />
+                    <MenuItem Command="SaveAs" />
+                </MenuItem>
+                <MenuItem Header="_Edit">
+                    <MenuItem Command="Undo" />
+                    <MenuItem Command="Redo" />
+                    <Separator />
+                    <MenuItem Command="Cut" />
+                    <MenuItem Command="Copy" />
+                    <MenuItem Command="Paste" />
+                    <MenuItem Command="Delete" />
+                    <Separator />
+                    <MenuItem Command="SelectAll" />
+                </MenuItem>
+                <MenuItem Header="_View" />
+            </Menu>
+            <TextBox />
+        </DockPanel>
+    </Grid>
+    <!--<Grid>
+        <TreeView>
+            <TreeViewItem>
+                <TreeViewItem.Header>
+                    <TextBlock>First node</TextBlock>
+                </TreeViewItem.Header>
+                <TreeViewItem Header="Child one from first node" />
+                <TreeViewItem Header="Child two from first node" />
+            </TreeViewItem>
+            <TreeViewItem Header="Second node">
+                <TreeViewItem Header="Child one from second node" />
+                <TreeViewItem Header="Child two from second node" />
+            </TreeViewItem>
+            <TextBlock Text="Third node" />
+        </TreeView>
+    </Grid>-->
+    <!--<Grid >
+        <GroupBox Width="150">
+            <GroupBox.Header>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="My " />
+                    <Ellipse Fill="Red" Width="15" Height="15" />
+                    <TextBlock Text=" Group" />
+                </StackPanel>
+            </GroupBox.Header>
+            <StackPanel Margin="7">
+                <TextBlock Text="Stuff" />
+                <Button Content="And" />
+                <TextBlock Text="Nonesense" />
+            </StackPanel>
+        </GroupBox>
+    </Grid>-->
+    <!--<Grid >
+        <StackPanel Orientation="Horizontal">
+            <GroupBox Header="Left" Margin="10">
+                <StackPanel>
+                    <RadioButton Content="Small" />
+                    <RadioButton Content="Medium" />
+                    <RadioButton Content="Large" IsChecked="True" />
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Right" Margin="10">
+                <StackPanel>
+                    <RadioButton Content="This" />
+                    <RadioButton Content="That" IsChecked="True" />
+                    <RadioButton Content="The other"  />
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>-->
+</Window>

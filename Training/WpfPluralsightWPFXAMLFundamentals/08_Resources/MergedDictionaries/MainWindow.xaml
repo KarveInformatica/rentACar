@@ -1,0 +1,27 @@
+﻿<Window x:Class="MergedDictionaries.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MergedDictionaries"        
+        Title="MainWindow" Height="640" Width="480">
+    <!--<Grid x:Name="layoutroot">
+        <Button Margin="47,37,0,0" Width="155" Height="95"
+                HorizontalAlignment="left" VerticalAlignment="top"
+                Content="button" Template="{DynamicResource ButtonControlTemplate1}"/>
+    </Grid>-->
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary Source="pack://application:,,,/PresentationFramework.Classic, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35;component/themes/Classic.xaml" />
+        </Grid.Resources>
+
+        <StackPanel HorizontalAlignment="Center">
+            <Button Width="75" Margin="10" Content="OK" />
+
+            <CheckBox Margin="10" Content="Check me!"  />
+
+            <RadioButton Content="Half empty"  />
+            <RadioButton Content="Half full" IsChecked="True"  />
+        </StackPanel>
+    </Grid>
+</Window>
