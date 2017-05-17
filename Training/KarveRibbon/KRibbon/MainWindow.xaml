@@ -1,0 +1,1107 @@
+﻿<Window x:Class="KRibbon.MainWindow"    
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KRibbon"
+        mc:Ignorable="d"
+        Title="MainWindow" >
+    <DockPanel>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
+            <r:Ribbon x:Name="rbInicio" DockPanel.Dock="Top">
+                <r:Ribbon.Resources>
+                    <Style TargetType="r:RibbonGroup">
+                        <Setter Property="AllowDrop" Value="True"/>
+                        <EventSetter Event="PreviewMouseMove" Handler="RibbonGroup_PreviewMouseMove"/>
+                        <EventSetter Event="Drop" Handler="RibbonGroup_Drop"/>
+                    </Style>
+                </r:Ribbon.Resources>
+
+                <!--QuickAccessToolBar-->
+                <r:Ribbon.QuickAccessToolBar>
+                    <r:RibbonQuickAccessToolBar>
+                        <r:RibbonButton x:Name="bttCortar" 
+                                        Label="Cortar" 
+                                        SmallImageSource="Images\copy.png" 
+                                        Command="Cut" />
+                        <r:RibbonButton x:Name="bttCopiar" 
+                                        Label="Copiar" 
+                                        SmallImageSource="Images\copy.png" 
+                                        Command="Copy" />
+                        <r:RibbonButton x:Name="bttPegar" 
+                                        Label="Pegar" 
+                                        SmallImageSource="Images\paste.png" 
+                                        Command="Paste" />
+                        <r:RibbonButton x:Name="bttEliminar" 
+                                        Label="Eliminar" 
+                                        SmallImageSource="Images\delete.png" 
+                                        Command="Delete" />
+                        <r:RibbonSplitButton x:Name="bttRehacer" 
+                                             Label="Rehacer" 
+                                             SmallImageSource="Images\redo.png" 
+                                             Command="Redo" >
+                            <r:RibbonSplitMenuItem Header="Redo 1" />
+                            <r:RibbonSplitMenuItem Header="Redo 2" />
+                        </r:RibbonSplitButton>
+                        <r:RibbonSplitButton x:Name="bttDeshacer" 
+                                             Label="Deshacer" 
+                                             SmallImageSource="Images\undo.png" 
+                                             Command="Undo" >
+                            <r:RibbonSplitMenuItem Header="Undo 1" />
+                            <r:RibbonSplitMenuItem Header="Undo 2" />
+                            <r:RibbonSplitMenuItem Header="Undo 3" />
+                        </r:RibbonSplitButton>
+                        <r:RibbonButton x:Name="bttOpciones" 
+                                        Label="Opciones" 
+                                        SmallImageSource="Images\tools.png" />
+                    </r:RibbonQuickAccessToolBar>
+                </r:Ribbon.QuickAccessToolBar>
+
+                <!--AplicationMenu-->
+                <r:Ribbon.ApplicationMenu>
+                    <r:RibbonApplicationMenu SmallImageSource="Images\home.png" Label="Inicio" KeyTip="I">
+                        <r:RibbonApplicationMenuItem x:Name="bttAbrir" 
+                                                     Header="Abrir archivo" 
+                                                     ImageSource="Images\open.png" 
+                                                     Command="Open" />
+                        <r:RibbonApplicationMenuItem x:Name="bttGuardar" 
+                                                     Header="Guardar" 
+                                                     ImageSource="Images\save.png" 
+                                                     Command="Save" />
+                        <r:RibbonSeparator />
+                        <r:RibbonApplicationMenuItem x:Name="bttRelogin" 
+                                                     Header="Relogin" 
+                                                     ImageSource="Images\login.png" />
+                        <r:RibbonApplicationMenuItem x:Name="bttReconectar" 
+                                                     Header="Reconectar" 
+                                                     ImageSource="Images\conect.png" />
+                        <r:RibbonSeparator />
+                        <r:RibbonApplicationMenuItem x:Name="bttIrAlquiler" 
+                                                     Header="Ir a Alquiler" 
+                                                     ImageSource="Images\redirect.png" />
+                        <r:RibbonApplicationMenuItem x:Name="bttIrContabilidad" 
+                                                     Header="Ir a Contabilidad" 
+                                                     ImageSource="Images\redirect.png" />
+                        <r:RibbonApplicationMenuItem x:Name="bttIrTaller" 
+                                                     Header="Ir a Taller" 
+                                                     ImageSource="Images\redirect.png" />
+                        <r:RibbonSeparator />
+                        <r:RibbonApplicationMenuItem x:Name="bttSalir" Click="bttSalir_Click"
+                                                     Header="Salir" 
+                                                     ImageSource="Images\exit.png" />
+                    </r:RibbonApplicationMenu>
+                </r:Ribbon.ApplicationMenu>
+
+                <!--HelpPaneContent-->
+                <r:Ribbon.HelpPaneContent>
+                    <!--<ToggleButton x:Name="tgbttExpandCollase" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" Width="25" Height="25" ToolTip="Contrae la cinta">
+                        <Image Source="Images\collapse.png" />
+                    </ToggleButton>-->
+                    <r:RibbonButton x:Name="bttHelp" SmallImageSource="Images\help.png" Click="bttHelp_Click" />
+                </r:Ribbon.HelpPaneContent>
+
+                <!--Tab Maestros-->
+                <r:RibbonTab x:Name="tbMaestros" 
+                             Header="Maestros" 
+                             KeyTip="M">
+                    <r:RibbonGroup x:Name="tbgrClientes" Header="Clientes">
+                        <r:RibbonButton x:Name="btttbitClientes" 
+                                            Label="Clientes" 
+                                            SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitCambioCodigoCliente" 
+                                            Label="Cambio Código de Cliente" 
+                                            SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitEntradaRapida" 
+                                            Label="Entrada Rápida" 
+                                            SmallImageSource="Images\new.png" />
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrVehiculos" Header="Vehículos" >
+                        <r:RibbonMenuButton x:Name="btttbmnVehiculos" Label="Vehículos" LargeImageSource="Images\open.png" KeyTip="V">
+                            <r:RibbonButton x:Name="btttbitVehiculos" 
+                                            Label="Vehículos" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitCambioCodigoVehiculo" 
+                                            Label="Cambio Código de Vehículo" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitModificacionMasiva" 
+                                            Label="Modificación Masiva" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitRecalculoMantenimiento" 
+                                            Label="Recálculo Mantenimiento" 
+                                            SmallImageSource="Images\new.png" />
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrComisionistas" Header="Comisionistas">
+                        <r:RibbonButton x:Name="btttbitComisionistas" 
+                                        Label="Comisionistas" 
+                                        LargeImageSource="Images\new.png" />
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrProveedores" Header="Proveedores" >
+                        <r:RibbonButton x:Name="btttbitProveedores" 
+                                        Label="Proveedores" 
+                                        LargeImageSource="Images\new.png" />
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrCentrosAlquiler" Header="Centros Alquiler" >
+                        <r:RibbonButton x:Name="btttbmnEmpresas" 
+                                        Label="Empresas" 
+                                        SmallImageSource="Images\new.png" />
+                        <r:RibbonButton x:Name="btttbitOficinas" 
+                                        Label="Oficinas" 
+                                        SmallImageSource="Images\new.png" />
+                        <r:RibbonButton x:Name="btttbitZonasOficina" 
+                                        Label="Zonas Oficina" 
+                                        SmallImageSource="Images\new.png" />
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrTarifas" Header="Tarifas" >
+                        <r:RibbonMenuButton x:Name="btttbmnTarifas" Label="Tarifas" LargeImageSource="Images\open.png" KeyTip="T" >
+                            <r:RibbonButton x:Name="btttbitTarifas" 
+                                            Label="Tarifas" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbmnCambioCodigoTarifas" 
+                                            Label="Cambio Código de Tarifas" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbmnCrearTarifaDesdeOtraTarifa" 
+                                            Label="Crear Tarifa a Partir Otra" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbmnIncrementoPrecios" 
+                                            Label="Incremento Precios" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbmnTarifaCliente" 
+                                            Label="Tarifa por Cliente" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitTarifasComisionista" 
+                                            Label="Tarifas por Comisionista" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbmnVerTarifa" 
+                                            Label="Ver Tarifa" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbmnVincularClienteTarifa" 
+                                            Label="Vincular Cliente a Tarifas" 
+                                            SmallImageSource="Images\new.png" />
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrAuxiliares" Header="Auxiliares" >
+                        <r:RibbonMenuButton x:Name="btttbmnAuxiliaresClientes" Label="Clientes" LargeImageSource="Images\new.png" KeyTip="C" >
+                            <r:RibbonButton x:Name="btttbitBancos" 
+                                            Label="Bancos" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitBloqueFacturacion" 
+                                            Label="Bloque de Facturación" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitCanales" 
+                                            Label="Canales" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitCargosPersonal" 
+                                            Label="Cargos del Personal" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitClavesPresupuesto" 
+                                            Label="Claves de Presupuesto" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitFormasCobroClientes" 
+                                            Label="Formas de Cobro a Clientes" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitMercados" 
+                                            Label="Mercados" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitNegocios" 
+                                            Label="Negocios" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitOrigenClientes" 
+                                            Label="Origen de Clientes" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitPaises" 
+                                            Label="Paises" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitPoblaciones" 
+                                            Label="Poblaciones" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitProvincias" 
+                                            Label="Provincias" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitSectoresActividad" 
+                                            Label="Sectores de Actividad" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitTarjetasCredito" 
+                                            Label="Tarjetas de Credito" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitTarjetasEmpresa" 
+                                            Label="Tarjetas de Empresa" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitTiposCliente" 
+                                            Label="Tipos de Cliente" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitTiposContacto" 
+                                            Label="Tipos de Contacto" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitTiposVisita" 
+                                            Label="Tipos de Visita" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitUsoAlquiler" 
+                                            Label="Uso Alquiler" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitVendedores" 
+                                            Label="Vendedores" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitZonas" 
+                                            Label="Zonas" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                        </r:RibbonMenuButton>
+                        <r:RibbonMenuButton x:Name="btttbmnAuxiliaresComisionistas" Label="Comisionistas" LargeImageSource="Images\new.png" KeyTip="M" >
+                            <r:RibbonButton x:Name="btttbitEmpleadosAgencia" 
+                                            Label="Empleados de Agencia" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitTipoComisionista" 
+                                            Label="Tipo Comisionista" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                        </r:RibbonMenuButton>
+                        <r:RibbonMenuButton x:Name="btttbmnAuxiliaresProveedores" Label="Proveedores" LargeImageSource="Images\new.png" KeyTip="P" >
+                            <r:RibbonButton x:Name="btttbitProveedoresBancos" 
+                                            Label="Bancos" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitDivisas" 
+                                            Label="Divisas" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitFormasPago" 
+                                            Label="Formas de Pago" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitTiposProveedores" 
+                                            Label="Tipos" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                        </r:RibbonMenuButton>
+                        <r:RibbonMenuButton x:Name="btttbmnAuxiliaresTarifas" Label="Tarifas" LargeImageSource="Images\new.png" KeyTip="F" >
+                            <r:RibbonButton x:Name="btttbitConceptosFacturacion" 
+                                            Label="Conceptos Facturación" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitGruposTarifa" 
+                                            Label="Grupos de Tarifas" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                        </r:RibbonMenuButton>
+                        <r:RibbonMenuButton x:Name="btttbmnAuxiliaresVehiculos" Label="Vehiculos" LargeImageSource="Images\new.png" KeyTip="H" >
+                            <r:RibbonButton x:Name="btttbitAccesoriosVehiculos" 
+                                            Label="Accesorios de Vehículos" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitActividadesVehiculos" 
+                                            Label="Actividades de Vehículos" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitCodigosMantenimiento" 
+                                            Label="Códigos de Mantenimiento" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitColores" 
+                                            Label="Colores" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitExtras" 
+                                            Label="Extras" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitGruposVehiculos" 
+                                            Label="Grupos de Vehículos" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitMarcas" 
+                                            Label="Marcas" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitModelos" 
+                                            Label="Modelos" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitMotivosRepostaje" 
+                                            Label="Motivos de Repostaje" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitPropietarios" 
+                                            Label="Propietarios" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitTiposVehiculos" 
+                                            Label="Tipos" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                        </r:RibbonMenuButton>
+                        <r:RibbonButton x:Name="btttbmnAuxiliaresTextosEstandars" 
+                                        Label="Textos Estandars" 
+                                        SmallImageSource="Images\new.png" />
+                        <r:RibbonButton x:Name="btttbmnAuxiliaresTiposDocumentos" 
+                                        Label="Tipos de Documentos" 
+                                        SmallImageSource="Images\new.png" />
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrIncidencias" Header="Incidencias" >
+                        <r:RibbonMenuButton x:Name="btttbmnIncidenciasClientes" Label="Incidencias de Clientes" LargeImageSource="Images\new.png" KeyTip="I" >
+                            <r:RibbonButton x:Name="btttbitIncidenciasClientes" 
+                                            Label="Incidencias de Clientes" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitCodigosIncidencias" 
+                                            Label="Códigos Incidencias" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                        <r:RibbonMenuButton x:Name="btttbmnIncidenciasProveedores" Label="Incidencias de Proveedores" LargeImageSource="Images\new.png" KeyTip="R" >
+                            <r:RibbonButton x:Name="btttbitIncidenciasProveedores" 
+                                            Label="Incidencias de Proveedores" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitTiposIncidenciasProveedores" 
+                                            Label="Tipos de Incidencias" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrListados" Header="Listados" >
+                        <r:RibbonMenuButton x:Name="btttbmnListados" Label="Listados" LargeImageSource="Images\open.png" KeyTip="L" >
+                            <r:RibbonButton x:Name="btttbitauxListadosClientes" 
+                                            Label="Listados de Clientes" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitauxListadosComisionistas" 
+                                            Label="Listados de Comisionistas" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitauxListadosContratos" 
+                                            Label="Listados de Contratos" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitauxListadosFicherosAuxiliares" 
+                                            Label="Listados de Ficheros Auxiliares" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitauxListadosFacturas"
+                                            Label="Listados de Facturas" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitauxListadosPeticiones" 
+                                            Label="Listados de Peticiones" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitauxListadosPotenciales"
+                                            Label="Listados de Potenciales" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitauxListadosProveedores" 
+                                            Label="Listados de Proveedores" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitauxListadosReservas" 
+                                            Label="Listados de Reservas" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitauxListadosVehiculos" 
+                                            Label="Listados de Vehículos" 
+                                            SmallImageSource="Images\new.png" />
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrEstadisticas" Header="Estadísticas" >
+                        <r:RibbonMenuButton x:Name="btttbmnEstadisticas" Label="Estadísticas" LargeImageSource="Images\open.png" KeyTip="E" >
+                            <r:RibbonButton x:Name="btttbitauxEstadisticasAnaliticas" 
+                                            Label="Estadísticas de Analíticas" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitauxEstadisticasClientes" 
+                                            Label="Estadísticas de Clientes" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitauxEstadisticasContratos" 
+                                            Label="Estadísticas de Contratos" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitauxEstadisticasFacturas"
+                                            Label="Estadísticas de Facturas" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitauxEstadisticasPeticiones" 
+                                            Label="Estadísticas de Peticiones" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitauxEstadisticasProveedores" 
+                                            Label="Estadísticas de Proveedores" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitauxEstadisticasReservas" 
+                                            Label="Estadísticas de Reservas" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitauxEstadisticasUtilitarios"
+                                            Label="Estadísticas de Utilitarios" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitauxEstadisticasVehiculos" 
+                                            Label="Estadísticas de Vehículos" 
+                                            SmallImageSource="Images\new.png" />
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                </r:RibbonTab>
+
+                <!--Tab Reservas-->
+                <r:RibbonTab x:Name="tbReservas" 
+                             Header="Reservas" 
+                             KeyTip="R">
+                    <r:RibbonGroup x:Name="tbgrReservas" Header="Reservas" >
+                        <r:RibbonMenuButton x:Name="btttbmnReservas" Label="Reservas" LargeImageSource="Images\open.png" KeyTip="R" >
+                            <r:RibbonButton x:Name="btttbitReservas" 
+                                            Label="Reservas" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitAnularReserva"
+                                            Label="Anular Reserva" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitConvertirReservaContrato" 
+                                            Label="Convertir Reserva a Contrato" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitCotizacionComparada" 
+                                            Label="Cotización Comparada" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitEliminarReservasNoShow" 
+                                            Label="Eliminar Reservas No Show" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitListadosReservas" 
+                                            Label="Listados" 
+                                            SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrFicherosAuxiliares" Header="Ficheros Auxiliares" KeyTip="F" >
+                        <r:RibbonButton x:Name="btttbitClavesFee" 
+                                        Label="Claves de Fee" 
+                                        SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitMediosRecepcion" 
+                                        Label="Medios de Recepción" 
+                                        SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitMotivosAnulacion" 
+                                        Label="Motivos de Anulación" 
+                                        SmallImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrIncidenciasReservas" Header="Incidencias" KeyTip="I" >
+                        <r:RibbonButton x:Name="btttbitIncidenciasReservas" 
+                                        Label="Incidencias" 
+                                        SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitCodigosIncidenciasReservas" 
+                                        Label="Códigos Incidencias" 
+                                        SmallImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrPeticiones" Header="Peticiones" KeyTip="P" >
+                        <r:RibbonButton x:Name="btttbitPeticiones" 
+                                        Label="Peticiones" 
+                                        SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitMotivosNoServicio" 
+                                        Label="Motivos de No Servicio" 
+                                        SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitListadosPeticiones" 
+                                        Label="Listados" 
+                                        SmallImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                </r:RibbonTab>
+
+                <!--Tab Contratos-->
+                <r:RibbonTab x:Name="tbContratos" 
+                             Header="Contratos" 
+                             KeyTip="C" >
+                    <r:RibbonGroup x:Name="tbgrContratos" Header="Contratos" >
+                        <r:RibbonMenuButton x:Name="btttbmnContratos" Label="Contratos" LargeImageSource="Images\open.png" KeyTip="C" >
+                            <r:RibbonButton x:Name="btttAbrirContrato" 
+                                            Label="Abrir Contrato" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttAnularContrato" 
+                                            Label="Anular Contrato" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttCerrarContrato" 
+                                            Label="Cerrar Contrato" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttConcultarContrato" 
+                                            Label="Concultar Contrato" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttReAbrirContrato" 
+                                            Label="Reabrir Contrato" 
+                                            SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrVariosContratos" Header="Varios Contratos" >
+                        <r:RibbonMenuButton x:Name="btttbmnVariosContratos" Label="Varios Contratos" LargeImageSource="Images\open.png" KeyTip="V" >
+                            <r:RibbonButton x:Name="btttAccesorios" 
+                                            Label="Accesorios" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttImpresionBloqueContratos" 
+                                            Label="Impresión en Bloque de Contratos" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttPlantilla" 
+                                            Label="Plantilla" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttProcesoCierreContratos" 
+                                            Label="Proceso Cierre Contratos" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttProlongacionAutomaticaContratos" 
+                                            Label="Prolongación Automática de Contratos" 
+                                            SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                        <r:RibbonMenuButton x:Name="btttbmnAuxiliarescontratos" Label="Auxiliares" SmallImageSource="Images\open.png" KeyTip="A" >
+                            <r:RibbonButton x:Name="btttCodigosIncidencias" 
+                                            Label="Códigos Incidencias" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttLugaresEntrega" 
+                                            Label="Lugares de Entrega" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttMotivosAnulacion" 
+                                            Label="Motivos Anulación" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttMotivosCancelacion" 
+                                            Label="Motivos de Cancelación" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttMotivosImproductivo" 
+                                            Label="Motivos Improductivo" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttTipoImpresoContrato" 
+                                            Label="Tipo Impreso de Contrato" 
+                                            SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                        <r:RibbonMenuButton x:Name="btttbmnManualesContratos" Label="Manuales" SmallImageSource="Images\open.png" KeyTip="M" >
+                            <r:RibbonButton x:Name="btttEntregaContratosOficina" 
+                                                Label="Entrega de Contratos a Oficina" 
+                                                SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrCambiosContratos" Header="Cambios" >
+                        <r:RibbonMenuButton x:Name="btttbmnCambioConductor" Label="Cambio de Conductor" SmallImageSource="Images\open.png" KeyTip="B" >
+                            <r:RibbonButton x:Name="btttCambioConductor" 
+                                            Label="Cambio de Conductor" 
+                                            SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                        <r:RibbonButton x:Name="btttbitCambioNumeroContrato" 
+                                        Label="Cambio Número Contrato" 
+                                        SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitCambioOficinaContrato" 
+                                        Label="Cambio Oficina Contrato" 
+                                        SmallImageSource="Images\new.png"/>
+                        <r:RibbonMenuButton x:Name="btttbmnCambioVehiculo" Label="Cambio de Vehículo" SmallImageSource="Images\open.png" KeyTip="H" >
+                            <r:RibbonButton x:Name="btttbitCambioVehiculo" 
+                                            Label="Cambio Vehículo" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitMotivosCambio" 
+                                            Label="Motivos de  Cambio" 
+                                            SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrIncidenciasContratos" Header="Incidencias" >
+                        <r:RibbonButton x:Name="btttbitListadosContratos" 
+                                        Label="Listados" 
+                                        SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitIncidenciasContratos" 
+                                        Label="Incidencias" 
+                                        SmallImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                </r:RibbonTab>
+
+                <!--Tab Facturación-->
+                <r:RibbonTab x:Name="tbFacturacion" 
+                             Header="Facturación" 
+                             KeyTip="F" >
+                    <r:RibbonGroup x:Name="tbgrFacturacion" Header="Facturación" >
+                        <r:RibbonMenuButton x:Name="btttbmnFacturas" Label="Facturas" LargeImageSource="Images\open.png" KeyTip="C" >
+                            <r:RibbonButton x:Name="btttAbonarFactura" 
+                                            Label="Abonar Factura" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttBorrarFacturasPeriodo" 
+                                            Label="Borrar Facturas en un Periodo" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttCambioNumeroFactura" 
+                                            Label="Cambio Número Factura" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttCambioVendedorFacturas" 
+                                            Label="Cambio Vendedor en Facturas" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttbitCartaPendientes" 
+                                            Label="Carta Pendientes" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttConsultaModificacion" 
+                                            Label="Consulta / Modificación" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttModificarEmpresaOficinaFactura" 
+                                            Label="Modificar Empresa / Oficina Factura" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttModificarFacturaContrato" 
+                                            Label="Modificar Factura en Contrato" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttProcesoFacturacion" 
+                                            Label="Proceso Facturación" 
+                                            HorizontalAlignment="Left" 
+                                            SmallImageSource="Images\new.png" />
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrRecibosCartera" Header="Recibos / Cartera" >
+                        <r:RibbonMenuButton x:Name="btttbmnRecibosCartera" Label="Recibos Cartera" LargeImageSource="Images\open.png" KeyTip="R" >
+                            <r:RibbonButton x:Name="btttbitRecibos" 
+                                            Label="Recibos" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitCobrosIndividuales" 
+                                            Label="Cobros Individuales" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitGestionImpagados" 
+                                            Label="Gestión de Impagados" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitRefundirRecibosNoCobrados" 
+                                            Label="Refundir Recibos No Cobrados" 
+                                            SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrRemesas" Header="Remesas" >
+                        <r:RibbonMenuButton x:Name="btttbmnRemesas" Label="Remesas" LargeImageSource="Images\open.png" KeyTip="M" >
+                            <r:RibbonButton x:Name="btttRemesas" 
+                                                Label="Remesas" 
+                                                HorizontalAlignment="Left" 
+                                                SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttAnulacionPaseRemesaContabilidad" 
+                                                Label="Anulación Pase Remesa a Contabilidad" 
+                                                HorizontalAlignment="Left" 
+                                                SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttBancosRemesas" 
+                                                Label="Bancos de Remesas" 
+                                                HorizontalAlignment="Left" 
+                                                SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttPaseSoporteMagnetico" 
+                                                Label="Pase a Soporte Magnético" 
+                                                HorizontalAlignment="Left" 
+                                                SmallImageSource="Images\new.png" />
+                            <r:RibbonButton x:Name="btttPaseRemesaContabilidad" 
+                                                Label="Pase Remesa a Contabilidad" 
+                                                HorizontalAlignment="Left" 
+                                                SmallImageSource="Images\new.png" />
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrEnlacesContables" Header="Enlaces Contables" >
+                        <r:RibbonMenuButton x:Name="btttbmnEnlacesContables" Label="Enlaces Contables" LargeImageSource="Images\open.png" KeyTip="E" >
+                            <r:RibbonButton x:Name="btttbitAnulacionPase" 
+                                            Label="Anulación de Pase" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitPaseCobrosRecibos"
+                                            Label="Pase de Cobros (Recibos)" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitPaseFacturas" 
+                                            Label="Pase de Facturas" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitPaseFacturasAtipicas" 
+                                            Label="Pase de Facturas Atípicas" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitPaseTesoreriaCaja" 
+                                            Label="Pase de Tesorería (Caja)" 
+                                            SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrExportacion" Header="Exportación" >
+                        <r:RibbonButton x:Name="btttbitExportacionFichero340" 
+                                        Label="Exportación Fichero 340" 
+                                        SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitExportacionFichero347" 
+                                        Label="Exportación Fichero 347" 
+                                        SmallImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrImpresion" Header="Impresión" >
+                        <r:RibbonButton x:Name="btttbitTipoImpresoFactura" 
+                                        Label="Tipo Impreso Factura" 
+                                        SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitImpresionBloqueFacturas" 
+                                        Label="Impresión en Bloque de Facturas" 
+                                        SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitImpresionBloqueRecibos" 
+                                        Label="Impresión en Bloque de Recibos" 
+                                        SmallImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrListadosFacturas" Header="Listados" >
+                        <r:RibbonButton x:Name="btttbitListadosFacturas" 
+                                        Label="Listados" 
+                                        SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitEstadisticas" 
+                                        Label="Estadísticas" 
+                                        SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitGeneradorEstadisticas" 
+                                        Label="Generador de Estadísticas" 
+                                        SmallImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                </r:RibbonTab>
+
+                <!--Tab Comercial-->
+                <r:RibbonTab x:Name="tbComercial" 
+                             Header="Comercial" 
+                             KeyTip="O" >
+                    <r:RibbonGroup x:Name="tbgrComercial" Header="Comercial" KeyTip="P" >
+                        <r:RibbonButton x:Name="btttbitCustomerService" 
+                                        Label="Customer Service" 
+                                        LargeImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitEntregaBonos" 
+                                        Label="Entrega Bonos" 
+                                        LargeImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitEMailingClientes" 
+                                        Label="e-Mailing Clientes" 
+                                        LargeImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbiteEMailingPotenciales" 
+                                        Label="e-Mailing Potenciales" 
+                                        LargeImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitPotenciales" 
+                                        Label="Potenciales" 
+                                        LargeImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitTipoContacto" 
+                                        Label="Tipo Contacto" 
+                                        LargeImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                </r:RibbonTab>
+
+                <!--Tab Flota-->
+                <r:RibbonTab x:Name="tbFlota" 
+                             Header="Flota" 
+                             KeyTip="T" >
+                    <r:RibbonGroup x:Name="tbgrInmovilizaciones" Header="Inmovilizaciones" >
+                        <r:RibbonMenuButton x:Name="btttbmnInmovilizaciones" Label="Inmovilizaciones" LargeImageSource="Images\open.png" KeyTip="I" >
+                            <r:RibbonButton x:Name="btttInmovilizaciones" 
+                                            Label="Inmovilizaciones" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttCodigosInmovilizacion" 
+                                            Label="Códigos Inmovilización" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttEntradaGastosVehiculo" 
+                                            Label="Entrada de Gastos por Vehículo" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttGeneradorEstadisticas" 
+                                            Label="Generador de Estadísticas" 
+                                            SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrTraslados" Header="Traslados" >
+                        <r:RibbonButton x:Name="btttTraslados" 
+                                        Label="Traslados" 
+                                        SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttFormasTraslado" 
+                                        Label="Formas de Traslado" 
+                                        SmallImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrUtilidades" Header="Utilidades" >
+                        <r:RibbonMenuButton x:Name="btttbmnUtilidades" Label="Utilidades" LargeImageSource="Images\open.png" KeyTip="U" >
+                            <r:RibbonButton x:Name="btttActualizarVtoITV" 
+                                            Label="Actualizar Vto ITV" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttBastidorRadioLlave" 
+                                            Label="Bastidor, Radio, Llave" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttCambioFechaBajaVehiculo" 
+                                            Label="Cambio de Fecha Baja de Vehículo" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttCambioUbicacionKMSituacion" 
+                                            Label="Cambio de Ubicación, KM y Situación" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttDatosSeguros" 
+                                            Label="Datos de Seguros" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttFlotaVtoRecibosSeguros" 
+                                            Label="Flota Vto Recibos Seguros" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttModificacionMasiva" 
+                                            Label="Modificación Masiva" 
+                                            SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrVariosFlota" Header="Varios Flota" >
+                        <r:RibbonMenuButton x:Name="btttbmnVariosFlota" Label="Varios Flota" LargeImageSource="Images\open.png" KeyTip="V" >
+                            <r:RibbonButton x:Name="btttCambioEmpresa" 
+                                            Label="Cambio de Empresa" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttCambioUbicacion" 
+                                            Label="Cambio de Ubicación" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttHistoricoSeguros" 
+                                            Label="Histórico Seguros" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttImpresionLlaveros" 
+                                            Label="Impresión de Llaveros" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttPrevisionEntradas" 
+                                            Label="Previsión Entradas" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttRecalculoSituación" 
+                                            Label="Recálculo de Situación" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttRepostaje" 
+                                            Label="Repostaje" 
+                                            SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttSiniestros" 
+                                            Label="Siniestros" 
+                                            SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrIncidenciasInmovilizaciones" Header="Incidencias" >
+                        <r:RibbonButton x:Name="btttbitListadosInmovilizaciones" 
+                                        Label="Listados" 
+                                        SmallImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitIncidenciasInmovilizaciones" 
+                                        Label="Incidencias" 
+                                        SmallImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                </r:RibbonTab>
+
+                <!--Tab Multas-->
+                <r:RibbonTab x:Name="tbMultas" 
+                             Header="Multas" 
+                             KeyTip="U" >
+                    <r:RibbonGroup x:Name="tbgrMultas" Header="Multas" >
+                        <r:RibbonButton x:Name="btttbitDescargarMultas" 
+                                        Label="Descargar Multas" 
+                                        LargeImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                </r:RibbonTab>
+
+                <!--Tab Atípicos-->
+                <r:RibbonTab x:Name="tbAtipicos" 
+                             Header="Atípicos" 
+                             KeyTip="A" >
+                    <r:RibbonGroup x:Name="tbgrAtipicos" Header="Atípicos" >
+                        <r:RibbonButton x:Name="btttbitAlquilerBicicletas" 
+                                        Label="Alquiler Bicicletas" 
+                                        LargeImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitFacturasAtipicas" 
+                                        Label="Facturas Atípicas" 
+                                        LargeImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitImpresionBloque" 
+                                        Label="Impresión en Bloque" 
+                                        LargeImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitSeriesAtipicos" 
+                                        Label="Series de Atípicos" 
+                                        LargeImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                </r:RibbonTab>
+
+                <!--Tab Compras-->
+                <r:RibbonTab x:Name="tbCompras" 
+                             Header="Compras" 
+                             KeyTip="P" >
+                    <r:RibbonGroup x:Name="tbgrCompras" Header="Compras" >
+                        <r:RibbonButton x:Name="btttbitConceptosSalidaCaja" 
+                                        Label="Conceptos Salida Caja" 
+                                        LargeImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitSalidaCaja" 
+                                        Label="Salida Caja" 
+                                        LargeImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                </r:RibbonTab>
+
+                <!--Tab Configuración-->
+                <r:RibbonTab x:Name="tbConfiguracion" 
+                             Header="Configuración" 
+                             KeyTip="G" >
+                    <r:RibbonGroup x:Name="tbgrConfiguracion" Header="Configuración" >
+                        <r:RibbonMenuButton x:Name="btttbmnConfiguracion" Label="Configuración" LargeImageSource="Images\open.png" KeyTip="C" >
+                            <r:RibbonButton x:Name="btttbitCodigosIniciales" 
+                                        Label="Códigos Iniciales" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitEmpresa" 
+                                        Label="Empresa" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitEnlaceContabilidad" 
+                                        Label="Enlace Contabilidad" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitEquipo" 
+                                        Label="Equipo" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitFacturacion" 
+                                        Label="Facturación" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbiImpresion" 
+                                        Label="Impresión" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitKarve" 
+                                        Label="Karve" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitMaestros" 
+                                        Label="Maestros" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitOficina" 
+                                        Label="Oficina" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitOperaciones" 
+                                        Label="Operaciones" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitOtros" 
+                                        Label="Otros" 
+                                        SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                        <r:RibbonMenuButton x:Name="btttbmnPermisos" Label="Permisos" LargeImageSource="Images\open.png" KeyTip="P" >
+                            <r:RibbonButton x:Name="btttbitInformes" 
+                                        Label="Informes" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitPrograma" 
+                                        Label="Programa" 
+                                        SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrIdiomas" Header="Idiomas" >
+                        <r:RibbonButton x:Name="btttbitIdiomas" 
+                                        Label="Idiomas" 
+                                        LargeImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrPersonal" Header="Personal" >
+                        <r:RibbonButton x:Name="btttbitCategorias" 
+                                        Label="Categorías" 
+                                        LargeImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitMailingPersonal" 
+                                        Label="Mailing a Personal" 
+                                        LargeImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitPersonal" 
+                                        Label="Personal" 
+                                        LargeImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrUtilitarios" Header="Utilitarios" >
+                        <r:RibbonMenuButton x:Name="btttbmnUtilitarios" Label="Utilitarios" LargeImageSource="Images\open.png" KeyTip="U" >
+                            <r:RibbonButton x:Name="btttbitBorrarFacturasPeriodo" 
+                                        Label="Borrar Facturas en un Periodo" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitBorrarFicherosEnvioEmail" 
+                                        Label="Borrar Ficheros Envío Email" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitCambiarIVA" 
+                                        Label="Cambiar IVA" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitComunicacionPolicia" 
+                                        Label="Comunicación Policía" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitConsultaSQL" 
+                                        Label="Consulta SQL" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitDesbloquearContratosFacturando" 
+                                        Label="Desbloquear Contratos Facturando" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitDeteccionHuecos" 
+                                        Label="Detección de Huecos" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitDeteccionInconsistencias" 
+                                        Label="Detección de Inconsistencias" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitDesvincularContratosReservas" 
+                                        Label="Desvincular Contratos de Reservas" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitLimpiarInformacionAntigua" 
+                                        Label="Limpiar Información Antigua" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitLimpiarReservaCodigos" 
+                                        Label="Limpiar Reserva de Códigos" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitRecalcularMantenimientos" 
+                                        Label="Recalcular Mantenimientos" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitRecalcularPendientes" 
+                                        Label="Recalcular Pendientes" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitRehacerÍndices" 
+                                        Label="Rehacer Índices" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitRelojesActivos" 
+                                        Label="Relojes Activos" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitVincularContratosReservas" 
+                                        Label="Vincular Contratos a Reservas" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitVincularContratosReservasNoVinculadas" 
+                                        Label="Vincular Contratos a Reservas No Vinculadas" 
+                                        SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrVariosconfiguracion" Header="Varios" >
+                        <r:RibbonButton x:Name="btttbitCambiarContrasenyas" 
+                                        Label="Cambiar Contraseñas" 
+                                        LargeImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitPreciosCombustible" 
+                                        Label="Precios Combustible" 
+                                        LargeImageSource="Images\new.png"/>
+                        <r:RibbonButton x:Name="btttbitUsuarios" 
+                                        Label="Usuarios" 
+                                        LargeImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="tbgrKarve" Header="Karve" >
+                        <r:RibbonMenuButton x:Name="btttbmnKarve" Label="Karve" LargeImageSource="Images\open.png" KeyTip="K" >
+                            <r:RibbonButton x:Name="btttbitAcercaDe" 
+                                        Label="Acerca de..." 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitContrasenyasKarve" 
+                                        Label="Contraseñas Karve" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitDescargarActualizacion" 
+                                        Label="Descargar Actualización" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitMensajeEntrada" 
+                                        Label="Mensaje de Entrada" 
+                                        SmallImageSource="Images\new.png"/>
+                            <r:RibbonButton x:Name="btttbitNovedades" 
+                                        Label="Novedades" 
+                                        SmallImageSource="Images\new.png"/>
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                </r:RibbonTab>
+
+                <!--Tab1 Ejemplo-->
+                <!--<r:RibbonTab x:Name="tab1" Header="MyRibbonTab">
+                    <r:RibbonGroup Header="File">
+                        <r:RibbonButton x:Name="bttNewtab1" Command="New" Label="New" LargeImageSource="Images\copy.png" />
+                        <r:RibbonButton x:Name="bttOpentab1" Command="Open" Label="Open" LargeImageSource="Images\copy.png" />
+                        <r:RibbonButton x:Name="bttSavetab1" Command="Save" Label="Save" LargeImageSource="Images\copy.png" />
+                    </r:RibbonGroup>
+                    <r:RibbonGroup Header="Delete">
+                        <r:RibbonButton x:Name="bttDeletetab1" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="Images\delete.png" />
+                    </r:RibbonGroup>
+                    <r:RibbonGroup Header="Group Edit">
+                        <r:RibbonMenuButton Label="Menu Edit" LargeImageSource="Images\edit.png" >
+                            <r:RibbonButton x:Name="bttCuttab1" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="Images\copy.png" />
+                            <r:RibbonButton x:Name="bttCopytab1" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="Images\copy.png" />
+                            <r:RibbonButton x:Name="bttPastetab1" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="Images\paste.png" />
+                        </r:RibbonMenuButton>
+                        <r:RibbonButton x:Name="bttCutOtherstab1" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="Images\copy.png" />
+                        <r:RibbonButton x:Name="bttCopyOtherstab1" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="Images\copy.png" />
+                        <r:RibbonButton x:Name="bttPasteOtherstab1" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="Images\paste.png" />
+                        <r:RibbonMenuButton Label="Others" SmallImageSource="Images\delete.png" >
+                            <r:RibbonButton x:Name="bttDeleteOtherstab1" Label="Delete" SmallImageSource="Images\delete.png"/>
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                </r:RibbonTab>-->
+
+                <!--Tab2 Ejemplo-->
+                <!--<r:RibbonTab x:Name="tab2" Header="MyRibbonTab">
+                    <r:RibbonGroup Header="Group Edit">
+                        <r:RibbonMenuButton Label="Menu Edit" LargeImageSource="Images\edit.png" >
+                            <r:RibbonButton x:Name="bttCuttab2" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="Images\copy.png" />
+                            <r:RibbonButton x:Name="bttCopytab2" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="Images\copy.png" />
+                            <r:RibbonButton x:Name="bttPastetab2" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="Images\paste.png" />
+                        </r:RibbonMenuButton>
+                        <r:RibbonButton x:Name="bttCutOtherstab2" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="Images\copy.png" />
+                        <r:RibbonButton x:Name="bttCopyOtherstab2" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="Images\copy.png" />
+                        <r:RibbonButton x:Name="bttPasteOtherstab2" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="Images\paste.png" />
+                        <r:RibbonMenuButton Label="Others" SmallImageSource="Images\delete.png" >
+                            <r:RibbonButton x:Name="bttDeleteOtherstab2" Label="Delete" SmallImageSource="Images\delete.png"/>
+                        </r:RibbonMenuButton>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup Header="File">
+                        <r:RibbonButton x:Name="bttNewtab2" Command="New" Label="New" LargeImageSource="Images\copy.png" />
+                        <r:RibbonButton x:Name="bttOpentab2" Command="Open" Label="Open" LargeImageSource="Images\copy.png" />
+                        <r:RibbonButton x:Name="bttSavetab2" Command="Save" Label="Save" LargeImageSource="Images\copy.png" />
+                    </r:RibbonGroup>
+                    <r:RibbonGroup Header="Delete">
+                        <r:RibbonButton x:Name="bttDeletetab2" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="Images\delete.png" />
+                    </r:RibbonGroup>
+                </r:RibbonTab>-->
+            </r:Ribbon>
+        </ScrollViewer>
+    </DockPanel>
+</Window>
