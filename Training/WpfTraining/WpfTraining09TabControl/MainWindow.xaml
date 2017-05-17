@@ -1,0 +1,152 @@
+﻿<Window x:Class="WpfTraining09TabControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTraining09TabControl"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <!--<Grid>
+        <Grid>
+            <TabControl>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="https://cdn3.iconfinder.com/data/icons/fatcow/32/bullet_blue.png" Width="16" Height="16"/>
+                            <TextBlock Text="Blue" Foreground="Blue" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Label Content="Content in blue tab goes here..." />
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="https://cdn3.iconfinder.com/data/icons/fatcow/32/bullet_red.png" Width="16" Height="16"/>
+                            <TextBlock Text="Red" Foreground="Red" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Label Content="Content in red tab goes here..." />
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="https://cdn3.iconfinder.com/data/icons/fatcow/32/bullet_green.png" Width="16" Height="16"/>
+                            <TextBlock Text="Green" Foreground="Green" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Label Content="Content in green tab goes here..." />
+                </TabItem>
+            </TabControl>
+        </Grid>        
+    </Grid>-->
+    <!--<DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Margin="2,5">
+            <Button Name="btnPreviousTab" Click="btnPreviousTab_Click">Previous</Button>
+            <Button Name="btnNextTab" Click="btnNextTab_Click">Next</Button>
+            <Button Name="btnSelectedTab" Click="btnSelectedTab_Click">Selected</Button>
+        </StackPanel>
+        <TabControl Name="tcSample" TabStripPlacement="left">
+            <TabItem Header="General">
+                <Label Content="Content in General tab goes here..." />
+            </TabItem>
+            <TabItem Header="Security" >
+                <Label Content="Content in Security tab goes here..." />
+            </TabItem>
+            <TabItem Header="Details" >
+                <Label Content="Content in Details tab goes here..." />
+            </TabItem>
+        </TabControl>
+    </DockPanel>-->
+    <!--<DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Margin="2,5">
+            <Button Name="btnPreviousTab" Click="btnPreviousTab_Click">Previous</Button>
+            <Button Name="btnNextTab" Click="btnNextTab_Click">Next</Button>
+            <Button Name="btnSelectedTab" Click="btnSelectedTab_Click">Selected</Button>
+        </StackPanel>
+        <TabControl Name="tcSample" TabStripPlacement="Left">
+            <TabControl.Resources>
+                <Style TargetType="{x:Type TabItem}">
+                    <Setter Property="HeaderTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <ContentPresenter Content="{TemplateBinding Content}">
+                                    <ContentPresenter.LayoutTransform>
+                                        <RotateTransform Angle="270" />
+                                    </ContentPresenter.LayoutTransform>
+                                </ContentPresenter>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Padding" Value="3" />
+                </Style>
+            </TabControl.Resources>
+            <TabItem Header="General">
+                <Label Content="Content in General tab goes here..." />
+            </TabItem>
+            <TabItem Header="Security" >
+                <Label Content="Content in Security tab goes here..." />
+            </TabItem>
+            <TabItem Header="Details" >
+                <Label Content="Content in Details tab goes here..." />
+            </TabItem>
+        </TabControl>
+    </DockPanel>-->
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Margin="2,5">
+            <Button Name="btnPreviousTab" Click="btnPreviousTab_Click">Previous</Button>
+            <Button Name="btnSelectedTab" Click="btnSelectedTab_Click">Selected</Button>
+            <Button Name="btnNextTab" Click="btnNextTab_Click">Next</Button>
+        </StackPanel>
+        <TabControl Name="tcSample" Margin="10" BorderThickness="0" Background="LightGray">
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <!--<Grid Name="Panel">
+                                    <ContentPresenter x:Name="ContentSite"
+                                                        VerticalAlignment="Center"
+                                                        HorizontalAlignment="Center"
+                                                        ContentSource="Header"
+                                                        Margin="10,2"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Panel" Property="Background" Value="LightGray" />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter TargetName="Panel" Property="Background" Value="White" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>-->
+                                <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="GhostWhite" CornerRadius="4,4,0,0">
+                                    <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="LightGray" />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter TargetName="Border" Property="Background" Value="GhostWhite" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TabControl.Resources>
+            <TabItem Header="General">
+                <Label Content="Content in General tab goes here..." />
+            </TabItem>
+            <TabItem Header="Security" >
+                <Label Content="Content in Security tab goes here..." />
+            </TabItem>
+            <TabItem Header="Details" >
+                <Label Content="Content in Details tab goes here..." />
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>

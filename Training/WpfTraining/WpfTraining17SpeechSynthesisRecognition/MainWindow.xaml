@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfTraining17SpeechSynthesisRecognition.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTraining17SpeechSynthesisRecognition"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <DockPanel Margin="10">
+        <WrapPanel DockPanel.Dock="Top">
+        <Button Name="btnSayIt" Click="btnSayHello_Click" VerticalAlignment="Center" HorizontalAlignment="Center">Say hello!</Button>
+            <Button Name="btnNew" Click="btnNew_Click">New</Button>
+            <Button Name="btnOpen" Click="btnOpen_Click">Open</Button>
+            <Button Name="btnSave" Click="btnSave_Click">Save</Button>
+            <ToggleButton Name="btnToggleListening" Click="btnToggleListening_Click">Listen</ToggleButton>
+        </WrapPanel>
+        <Label Name="lblDemo" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18">Hello, world!</Label>
+        <TextBox Margin="0,10" Name="txtSpeech" AcceptsReturn="True" TextWrapping="Wrap" />
+    </DockPanel>
+</Window>

@@ -1,0 +1,179 @@
+﻿<Window x:Class="WpfTraining10ListControls.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTraining10ListControls"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <!--<Grid>
+        <ItemsControl>
+            <system:String>ItemsControl ItemControl #1</system:String>
+            <system:String>ItemsControl ItemControl #2</system:String>
+            <system:String>ItemsControl ItemControl #3</system:String>
+            <system:String>ItemsControl ItemControl #4</system:String>
+            <system:String>ItemsControl ItemControl #5</system:String>
+        </ItemsControl>
+    </Grid>-->
+    <!--<Grid Margin="10">
+        <ItemsControl Name="icTodoList">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,0,0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Title}" />
+                        <ProgressBar Grid.Column="1" Value="{Binding Completion}" Minimum="0" Maximum="100" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>-->
+    <!--<Grid Margin="10">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <ItemsControl>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Content="{Binding}" Margin="0,0,5,5" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <system:String>ItemControl #1</system:String>
+                <system:String>ItemControl #2</system:String>
+                <system:String>ItemControl #3</system:String>
+                <system:String>ItemControl #4</system:String>
+                <system:String>ItemControl #5</system:String>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>-->
+    <!--<Grid Margin="10">
+        <ListBox>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="https://cdn3.iconfinder.com/data/icons/fatcow/32/bullet_blue.png" Width="16" Height="16" />
+                    <TextBlock>ListBox Item #1</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="https://cdn3.iconfinder.com/data/icons/fatcow/32/bullet_red.png" Width="16" Height="16"/>
+                    <TextBlock>ListBox Item #2</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="https://cdn3.iconfinder.com/data/icons/fatcow/32/bullet_green.png" Width="16" Height="16"/>
+                    <TextBlock>ListBox Item #3</TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
+    </Grid>-->
+    <!--<Grid Margin="10">
+        <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Title}" />
+                        <ProgressBar Grid.Column="1" Value="{Binding Completion}" Minimum="0" Maximum="100" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>-->
+    <!--<DockPanel Margin="10">
+        <StackPanel DockPanel.Dock="Right" Margin="10,0">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="0,0,0,5" />
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock FontWeight="Bold" Margin="0,0,0,10">ListBox selection</TextBlock>
+            <Button Name="btnShowSelectedItem" Click="btnShowSelectedItem_Click">Show selected</Button>
+            <Button Name="btnSelectFirst" Click="btnSelectFirst_Click">Select first</Button>
+            <Button Name="btnSelectLast" Click="btnSelectLast_Click">Select last</Button>
+            <Button Name="btnSelectNext" Click="btnSelectNext_Click">Select next</Button>
+            <Button Name="btnSelectCSharp" Click="btnSelectCSharp_Click">Select C#</Button>
+            <Button Name="btnSelectAll" Click="btnSelectAll_Click">Select all</Button>
+        </StackPanel>
+        <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" SelectionChanged="lbTodoList_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Title}" />
+                        <ProgressBar Grid.Column="1" Value="{Binding Completion}" Minimum="0" Maximum="100" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>-->
+    <!--<StackPanel Margin="10">
+        <ComboBox>
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="https://cdn3.iconfinder.com/data/icons/fatcow/32/bullet_red.png" Width="16" Height="16"/>
+                    <TextBlock Foreground="Red">Red</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem IsSelected="true">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="https://cdn3.iconfinder.com/data/icons/fatcow/32/bullet_green.png" Width="16" Height="16"/>
+                    <TextBlock Foreground="Green">Green</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="https://cdn3.iconfinder.com/data/icons/fatcow/32/bullet_blue.png" Width="16" Height="16" />
+                    <TextBlock Foreground="Blue">Blue</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+        </ComboBox>
+    </StackPanel>-->
+    <!--<StackPanel Margin="10">
+        <ComboBox Name="cmbColors">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+    </StackPanel>-->
+    <!--<StackPanel Margin="10">
+        <ComboBox IsEditable="True">
+            <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
+            <ComboBoxItem>ComboBox Item #2</ComboBoxItem>
+            <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
+        </ComboBox>
+    </StackPanel>-->
+    <StackPanel Margin="10">
+        <ComboBox Name="cmbColors" SelectionChanged="cmbColors_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <WrapPanel Margin="15" HorizontalAlignment="Center">
+            <Button Name="btnPrevious" Click="btnPrevious_Click" Width="55">Previous</Button>
+            <Button Name="btnNext" Click="btnNext_Click" Margin="5,0" Width="55">Next</Button>
+            <Button Name="btnBlue" Click="btnBlue_Click" Width="55">Blue</Button>
+        </WrapPanel>
+        <TextBox Text="My text" FontSize="16" Name="txtMyText" FontWeight="Bold"/>
+    </StackPanel>    
+</Window>
