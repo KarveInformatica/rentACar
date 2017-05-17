@@ -1,0 +1,14 @@
+﻿<Window x:Class="CustomControlsIntro.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:CustomControlsIntro"
+        Title="MainWindow" Height="500" Width="525">
+    <Grid>
+        <controls:MyUserControl Margin="10,0,0,400"/>
+        <controls:MyUserControl Margin="10,100,0,300"/>
+        <controls:MyUserControl Margin="10,200,0,200"/>
+        <controls:UserControl1 Margin="10,300,0,100"/>
+        <controls:MyCustomControl Margin="10,400,0,0"/>
+        <controls:MyCustomControl Margin="10,420,0,0"/>
+    </Grid>
+</Window>
