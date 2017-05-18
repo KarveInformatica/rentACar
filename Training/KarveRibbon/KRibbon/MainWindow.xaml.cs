@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Threading;
 
 namespace KRibbon
 {
@@ -21,6 +22,10 @@ namespace KRibbon
             InitializeComponent();
             //addTab();
             addTabAcciones();
+            DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
+            {
+                this.stInicio.Text = "Aquí ponemos algún texto, p.e.: " + DateTime.Now.ToString("dd/MMMM/yyyy HH:mm:ss");
+            }, this.Dispatcher);
         }
 
         private void addTabAcciones()
@@ -120,6 +125,8 @@ namespace KRibbon
         {
             MessageBox.Show("Mi bttButton");
         }
+
+
 
         #region ToggleButton Expand/Collapse Ribbon
         /*private void ToggleButton_Checked(object sender, RoutedEventArgs e)
