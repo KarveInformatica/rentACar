@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
+// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
+
 using System.Windows;
 
-namespace RentACarNG
+namespace Karve
 {
     /// <summary>
-    /// Lógica de interacción para App.xaml
+    /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            Prism.Bootstrapper bootstrapper = new KarveBootStrapper();
+            Bootstrapper bootstrapper = new Bootstrapper();
             bootstrapper.Run();
         }
     }

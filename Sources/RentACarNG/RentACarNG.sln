@@ -1,15 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACarNG", "RentACarNG\RentACarNG.csproj", "{CEF22E0A-8ABF-41BD-B0AB-F43797678A62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar", "RentACarNG\RentACar.csproj", "{CEF22E0A-8ABF-41BD-B0AB-F43797678A62}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Views", "Views", "{F172C381-2EBF-4435-9CB9-FD237CEAC337}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViewModel", "ViewModel", "{6717AA40-E886-4535-9D17-16FF07787D77}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{0A93A421-7329-436B-8401-2E4E8AF180EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALModule", "DAL\DALModule.csproj", "{BDF91F7F-BA54-4276-B225-290B9D160767}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplashScreenModule", "SplashScreenModule\SplashScreenModule.csproj", "{02D765D2-49E6-4AF2-AF45-B881D252A237}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{CEF22E0A-8ABF-41BD-B0AB-F43797678A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEF22E0A-8ABF-41BD-B0AB-F43797678A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEF22E0A-8ABF-41BD-B0AB-F43797678A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDF91F7F-BA54-4276-B225-290B9D160767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDF91F7F-BA54-4276-B225-290B9D160767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDF91F7F-BA54-4276-B225-290B9D160767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDF91F7F-BA54-4276-B225-290B9D160767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02D765D2-49E6-4AF2-AF45-B881D252A237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02D765D2-49E6-4AF2-AF45-B881D252A237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02D765D2-49E6-4AF2-AF45-B881D252A237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02D765D2-49E6-4AF2-AF45-B881D252A237}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
