@@ -75,6 +75,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\Generic\RelayCommand.cs" />
+    <Compile Include="Commands\Specific\LanguagesCommand.cs" />
+    <Compile Include="Commands\Specific\AuxiliaresCommand.cs" />
+    <Compile Include="Model\Classes\FormaPagoProveedor.cs" />
+    <Compile Include="Model\Generic\ETipoAuxiliar.cs" />
+    <Compile Include="Model\Classes\TipoComisionista.cs" />
+    <Compile Include="Model\Classes\GrupoTarifa.cs" />
+    <Compile Include="Model\Classes\FormaPagoProveedorRepository.cs" />
+    <Compile Include="Model\Classes\TipoComisionistaRepository.cs" />
+    <Compile Include="Model\Classes\GrupoTarifaRepository.cs" />
+    <Compile Include="Model\Generic\IAuxiliares.cs" />
+    <Compile Include="Properties\Resources.ca-ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ca-ES.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.en-GB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.en-GB.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.es-ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.es-ES.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\AddTab.cs" />
+    <Compile Include="Utility\ChangeLanguage.cs" />
+    <Compile Include="ViewModel\SetLanguagesViewModel.cs" />
+    <Compile Include="ViewModel\MostrarAuxiliaresViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,6 +120,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Generic\MyRibbonButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -102,8 +134,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.ca-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ca-ES.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.en-GB.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.en-GB.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.es-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.es-ES.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -171,6 +215,56 @@
   <ItemGroup>
     <Resource Include="Images\collapse.png" />
     <Resource Include="Images\expand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\app.png" />
+    <Resource Include="Images\applications.png" />
+    <Resource Include="Images\ball_blue.png" />
+    <Resource Include="Images\ball_green.png" />
+    <Resource Include="Images\ball_red.png" />
+    <Resource Include="Images\box.png" />
+    <Resource Include="Images\bt_add.png" />
+    <Resource Include="Images\bt_apply.png" />
+    <Resource Include="Images\bt_backward.png" />
+    <Resource Include="Images\bt_delete.png" />
+    <Resource Include="Images\bt_eject.png" />
+    <Resource Include="Images\bt_forward.png" />
+    <Resource Include="Images\bt_pause.png" />
+    <Resource Include="Images\bt_play.png" />
+    <Resource Include="Images\bt_skip_backward.png" />
+    <Resource Include="Images\bt_skip_forward.png" />
+    <Resource Include="Images\bt_stop.png" />
+    <Resource Include="Images\calculator.png" />
+    <Resource Include="Images\calendar.png" />
+    <Resource Include="Images\chart.png" />
+    <Resource Include="Images\computer.png" />
+    <Resource Include="Images\computer_group.png" />
+    <Resource Include="Images\contact.png" />
+    <Resource Include="Images\data.png" />
+    <Resource Include="Images\diagnostic.png" />
+    <Resource Include="Images\favorits.png" />
+    <Resource Include="Images\files.png" />
+    <Resource Include="Images\find.png" />
+    <Resource Include="Images\folder.png" />
+    <Resource Include="Images\image.png" />
+    <Resource Include="Images\mail.png" />
+    <Resource Include="Images\notes.png" />
+    <Resource Include="Images\picture.png" />
+    <Resource Include="Images\settings.png" />
+    <Resource Include="Images\time.png" />
+    <Resource Include="Images\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Converter\" />
+    <Folder Include="Messages\" />
+    <Folder Include="Services\" />
+    <Folder Include="Test\" />
+    <Folder Include="View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ca-es.png" />
+    <Resource Include="Images\en-gb.png" />
+    <Resource Include="Images\es-es.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

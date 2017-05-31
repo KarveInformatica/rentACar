@@ -1,28 +1,97 @@
-﻿<Window x:Class="KRibbon.MainWindow"    
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:KRibbon"
-        mc:Ignorable="d"
-        Title="MainWindow" >
-    <DockPanel>
-        <StatusBar DockPanel.Dock="Bottom">
+﻿<r:RibbonWindow x:Class="KRibbon.MainWindow"    
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"                
+                xmlns:local="clr-namespace:KRibbon"
+                xmlns:vm="clr-namespace:KRibbon.ViewModel"
+                mc:Ignorable="d"
+                Title="MainWindow">
+    <r:RibbonWindow.DataContext>
+        <vm:SetLanguagesViewModel/>
+    </r:RibbonWindow.DataContext>
+    <r:RibbonWindow.Resources>
+        <vm:MostrarAuxiliaresViewModel x:Key="mostrarAuxiliares"/>
+        <vm:SetLanguagesViewModel x:Key="setLanguages"/>
+    </r:RibbonWindow.Resources>
+    <DockPanel x:Name="RibbonWindow">
+        <!--StatusBar-->
+        <StatusBar DockPanel.Dock="Bottom" x:Name="stbrInicio">
             <StatusBarItem>
                 <TextBlock Name="stInicio" />
             </StatusBarItem>
         </StatusBar>
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
-            <r:Ribbon x:Name="rbInicio" DockPanel.Dock="Top" Title="Aquí ponemos algún texto, p.e.: KarveWin [Versión: 18/05/2017 08:30]         C1[PRUEBA, S.A]. USUARIO: JORDI">
-                <r:Ribbon.Resources>
+        <!--Permite hacer scroll entre las diferentes tabs de la ribbon-->
+        <!--<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">-->
+        <r:Ribbon x:Name="rbInicio" DockPanel.Dock="Top" Title="Aquí ponemos algún texto, p.e.: KarveWin [Versión: 01/01/2000 00:00]         C1[PRUEBA, S.A]. USUARIO: JORDI">
+            <r:Ribbon.Resources>
+                    <!--Resource que permite hacer drag&drop entre los ribbongroups-->
                     <Style TargetType="r:RibbonGroup">
                         <Setter Property="AllowDrop" Value="True"/>
                         <EventSetter Event="PreviewMouseMove" Handler="RibbonGroup_PreviewMouseMove"/>
                         <EventSetter Event="Drop" Handler="RibbonGroup_Drop"/>
                     </Style>
+
+                    
+                <!--Resource que añade un ContextMenu personalizado a los items que deseemos-->
+                    <!--<r:RibbonContextMenu x:Key="AnadirAFavoritos" x:Name="rctmnAnadir">
+                        <r:RibbonMenuItem Header="Añadir a Favoritos" x:Name="rctmnitSalir" Click="bttAnadirAFavoritos_Click" >
+                            <r:RibbonMenuItem.Icon>
+                                <Image Source="Images\new.png" />
+                            </r:RibbonMenuItem.Icon>
+                        </r:RibbonMenuItem>
+                        <Separator/>
+                        <r:RibbonMenuItem Header="Item1" >
+                            <r:RibbonMenuItem.Icon>
+                                <Image Source="Images\cut.png" />
+                            </r:RibbonMenuItem.Icon>
+                        </r:RibbonMenuItem>
+                        <r:RibbonMenuItem Header="Item2" Command="Copy">
+                            <r:RibbonMenuItem.Icon>
+                                <Image Source="Images\copy.png" />
+                            </r:RibbonMenuItem.Icon>
+                        </r:RibbonMenuItem>
+                        <r:RibbonMenuItem Header="Item3" Command="Paste">
+                            <r:RibbonMenuItem.Icon>
+                                <Image Source="Images\paste.png" />
+                            </r:RibbonMenuItem.Icon>
+                        </r:RibbonMenuItem>
+                    </r:RibbonContextMenu>-->
+                    <!--Resource que da formato a los RibbonGroup cuando se minimiza/collapse la pantalla-->
+                    <r:RibbonGroupSizeDefinitionBaseCollection x:Key="RibbonGroupLayoutLarge">
+                        <r:RibbonGroupSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True"></r:RibbonControlSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True"></r:RibbonControlSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True"></r:RibbonControlSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True"></r:RibbonControlSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True"></r:RibbonControlSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True"></r:RibbonControlSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True"></r:RibbonControlSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True"></r:RibbonControlSizeDefinition>
+                        </r:RibbonGroupSizeDefinition>
+                        <r:RibbonGroupSizeDefinition IsCollapsed="True"></r:RibbonGroupSizeDefinition>
+                    </r:RibbonGroupSizeDefinitionBaseCollection>
+                    <r:RibbonGroupSizeDefinitionBaseCollection x:Key="RibbonGroupLayoutSmall">
+                        <r:RibbonGroupSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"></r:RibbonControlSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"></r:RibbonControlSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"></r:RibbonControlSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"></r:RibbonControlSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"></r:RibbonControlSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"></r:RibbonControlSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"></r:RibbonControlSizeDefinition>
+                        </r:RibbonGroupSizeDefinition>
+                        <r:RibbonGroupSizeDefinition IsCollapsed="True"></r:RibbonGroupSizeDefinition>
+                    </r:RibbonGroupSizeDefinitionBaseCollection>
                 </r:Ribbon.Resources>
 
+                <!--ContextualTabGroups-->
+                <r:Ribbon.ContextualTabGroups>
+                    <r:RibbonContextualTabGroup Header="Karve" Visibility="Visible" Background="Coral" />
+                    <r:RibbonContextualTabGroup Header="Acciones" Visibility="Visible" Background="Azure" />
+                </r:Ribbon.ContextualTabGroups>
+                
                 <!--QuickAccessToolBar-->
                 <r:Ribbon.QuickAccessToolBar>
                     <r:RibbonQuickAccessToolBar Visibility="Visible" >
@@ -100,28 +169,33 @@
 
                 <!--HelpPaneContent-->
                 <r:Ribbon.HelpPaneContent>
-                    <!--<ToggleButton x:Name="tgbttExpandCollase" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" Width="25" Height="25" ToolTip="Contrae la cinta">
-                        <Image Source="Images\collapse.png" />
-                    </ToggleButton>-->
-                    <r:RibbonButton x:Name="rbttHelp" SmallImageSource="Images\help.png" Click="bttHelp_Click" />
+                    <r:RibbonButton x:Name="rbttHelp" 
+                                    SmallImageSource="Images\help.png" 
+                                    Click="bttHelp_Click" 
+                                    ToolTipTitle="Ayuda"
+                                    ToolTipDescription="Aquí ponemos algún texto..."
+                                    ToolTipFooterTitle="Más información" 
+                                    ToolTipFooterDescription="Pulse F1 para más ayuda..." 
+                                    ToolTipService.ShowDuration="10000"/>
                 </r:Ribbon.HelpPaneContent>
-
-                <!--Tab Maestros-->
-                <r:RibbonTab x:Name="tbMaestros" 
-                             Header="Maestros" 
-                             KeyTip="M">
-                    <r:RibbonGroup x:Name="rgrCentrosAlquiler" Header="Centros Alquiler" >
-                        <r:RibbonButton x:Name="rbttEmpresas" 
-                                        Label="Empresas" 
-                                        SmallImageSource="Images\new.png" />
-                        <r:RibbonButton x:Name="rbttOficinas" 
-                                        Label="Oficinas" 
-                                        SmallImageSource="Images\new.png" />
-                        <r:RibbonButton x:Name="rbttZonasOficina" 
-                                        Label="Zonas Oficina" 
-                                        SmallImageSource="Images\new.png" />
-                    </r:RibbonGroup>                    
-                    <r:RibbonGroup x:Name="rgrClientes" Header="Clientes">
+            
+            <!--Tab Maestros-->
+            <r:RibbonTab x:Name="tbMaestros"
+                             Header="Maestros"
+                             KeyTip="M"
+                             GroupSizeReductionOrder="rgrAuxiliares, rgrCentrosAlquiler, rgrClientes">
+                <r:RibbonGroup x:Name="rgrCentrosAlquiler" Header="{Binding lrrCentrosAlquiler, Source={StaticResource ResourceLanguage}}" LargeImageSource="Images\open.png">
+                    <r:RibbonButton x:Name="rbttEmpresas" 
+                                    Label="{Binding lrbttEmpresas, Source={StaticResource ResourceLanguage}}"
+                                    SmallImageSource="Images\new.png" />
+                    <r:RibbonButton x:Name="rbttOficinas" Command="Save"
+                                    Label="Oficinas" ToolTip="Maestros\Centros Alquiler\Oficinas"
+                                    SmallImageSource="Images\user.png" />
+                    <r:RibbonButton x:Name="rbttZonasOficina" Command="SaveAs"
+                                    Label="Zonas Oficina" ToolTip="Maestros\Centros Alquiler\Zonas Oficina"
+                                    SmallImageSource="Images\group.png" />
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="rgrClientes" Header="Clientes" LargeImageSource="Images\open.png">
                         <r:RibbonButton x:Name="rbttClientes" 
                                         Label="Clientes" 
                                         SmallImageSource="Images\new.png"/>
@@ -132,17 +206,19 @@
                                         Label="Entrada Rápida" 
                                         SmallImageSource="Images\new.png" />
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrComisionistas" Header="Comisionistas">
-                        <r:RibbonButton x:Name="rbttComisionistas" 
-                                        Label="Comisionistas" 
+                    <r:RibbonGroup x:Name="rgrComisionistas" Header="Comisionistas" LargeImageSource="Images\open.png">
+                        <r:RibbonButton x:Name="rbttComisionistas" Command="Open"
+                                        Label="Comisionistas" ToolTip="Maestros\Comisionistas"
+                                        SmallImageSource="Images\new.png"
                                         LargeImageSource="Images\new.png" />
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrProveedores" Header="Proveedores" >
-                        <r:RibbonButton x:Name="rbttProveedores" 
-                                        Label="Proveedores" 
+                    <r:RibbonGroup   x:Name="rgrProveedores" Header="Proveedores" LargeImageSource="Images\open.png">
+                        <r:RibbonButton x:Name="rbttProveedores" Command="Print"
+                                        Label="Proveedores" ToolTip="Maestros\Proveedores"
+                                        SmallImageSource="Images\new.png"
                                         LargeImageSource="Images\new.png" />
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrTarifas" Header="Tarifas" >
+                    <r:RibbonGroup x:Name="rgrTarifas" Header="Tarifas" LargeImageSource="Images\open.png">
                         <r:RibbonMenuButton x:Name="rmnbttTarifas" Label="Tarifas" LargeImageSource="Images\open.png" KeyTip="T" >
                             <r:RibbonButton x:Name="rbttTarifas" 
                                             Label="Tarifas" 
@@ -169,8 +245,8 @@
                                             Label="Vincular Cliente a Tarifas" 
                                             SmallImageSource="Images\new.png" />
                         </r:RibbonMenuButton>
-                    </r:RibbonGroup>                    
-                    <r:RibbonGroup x:Name="rgrVehiculos" Header="Vehículos" >
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="rgrVehiculos" Header="Vehículos" LargeImageSource="Images\open.png">
                         <r:RibbonMenuButton x:Name="rmnbttVehiculos" Label="Vehículos" LargeImageSource="Images\open.png" KeyTip="V">
                             <r:RibbonButton x:Name="rbttVehiculos" 
                                             Label="Vehículos" 
@@ -185,8 +261,8 @@
                                             Label="Recálculo Mantenimiento" 
                                             SmallImageSource="Images\new.png" />
                         </r:RibbonMenuButton>
-                    </r:RibbonGroup>                    
-                    <r:RibbonGroup x:Name="rgrAuxiliares" Header="Auxiliares" >
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="rgrAuxiliares" Header="Auxiliares" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                         <r:RibbonMenuButton x:Name="rmnbttAuxiliaresClientes" Label="Clientes" LargeImageSource="Images\open.png" KeyTip="C" >
                             <r:RibbonButton x:Name="rbttBancos" 
                                             Label="Bancos" 
@@ -274,14 +350,24 @@
                                             SmallImageSource="Images\new.png" />
                         </r:RibbonMenuButton>
                         <r:RibbonMenuButton x:Name="rmnbttAuxiliaresComisionistas" Label="Comisionistas" LargeImageSource="Images\open.png" KeyTip="M" >
-                            <r:RibbonButton x:Name="rbttEmpleadosAgencia" 
+                            <r:RibbonButton x:Name="rbttEmpleadosAgencia"
                                             Label="Empleados de Agencia" 
                                             HorizontalAlignment="Left" 
                                             SmallImageSource="Images\new.png" />
-                            <r:RibbonButton x:Name="rbttTipoComisionista" 
+                            <r:RibbonButton x:Name="rbttTipoComisionista"
+                                            DataContext="{StaticResource mostrarAuxiliares}"
                                             Label="Tipo Comisionista" 
                                             HorizontalAlignment="Left" 
-                                            SmallImageSource="Images\new.png" />
+                                            SmallImageSource="Images\new.png" >
+                                <r:RibbonButton.InputBindings>
+                                    <KeyBinding Key="Return"                                                
+                                                Command="{Binding MostrarAuxCommand}" 
+                                                CommandParameter="TiposComisionista" />
+                                    <MouseBinding MouseAction="LeftClick"
+                                                  Command="{Binding MostrarAuxCommand}" 
+                                                  CommandParameter="TiposComisionista" />
+                                </r:RibbonButton.InputBindings>
+                            </r:RibbonButton>
                         </r:RibbonMenuButton>
                         <r:RibbonMenuButton x:Name="rmnbttAuxiliaresContratos" Label="Contratos" LargeImageSource="Images\open.png" KeyTip="N" >
                             <r:RibbonButton x:Name="rbttAccesorios" 
@@ -295,7 +381,7 @@
                                             SmallImageSource="Images\new.png"/>
                             <r:RibbonButton x:Name="rbttMotivosCambioVehiculo" 
                                             Label="Motivos Cambio de Vehículo" 
-                                            SmallImageSource="Images\new.png"/>                            
+                                            SmallImageSource="Images\new.png"/>
                             <r:RibbonButton x:Name="rbttMotivosCancelacion" 
                                             Label="Motivos Cancelación" 
                                             SmallImageSource="Images\new.png"/>
@@ -315,10 +401,17 @@
                                             Label="Divisas" 
                                             HorizontalAlignment="Left" 
                                             SmallImageSource="Images\new.png" />
-                            <r:RibbonButton x:Name="rbttFormasPago" 
+                            <r:RibbonButton x:Name="rbttFormasPagoProveedor"
+                                            DataContext="{StaticResource mostrarAuxiliares}"
                                             Label="Formas de Pago" 
                                             HorizontalAlignment="Left" 
-                                            SmallImageSource="Images\new.png" />
+                                            SmallImageSource="Images\new.png" >
+                                <r:RibbonButton.InputBindings>
+                                    <MouseBinding MouseAction="LeftClick"
+                                                  Command="{Binding MostrarAuxCommand}" 
+                                                  CommandParameter="FormasPagoProveedor" />
+                                </r:RibbonButton.InputBindings>
+                            </r:RibbonButton>
                             <r:RibbonButton x:Name="rbttTiposProveedores" 
                                             Label="Tipos" 
                                             HorizontalAlignment="Left" 
@@ -343,10 +436,17 @@
                                             Label="Conceptos Facturación" 
                                             HorizontalAlignment="Left" 
                                             SmallImageSource="Images\new.png" />
-                            <r:RibbonButton x:Name="rbttGruposTarifa" 
+                            <r:RibbonButton x:Name="rbttGruposTarifa"
+                                            DataContext="{StaticResource mostrarAuxiliares}"
                                             Label="Grupos de Tarifas" 
                                             HorizontalAlignment="Left" 
-                                            SmallImageSource="Images\new.png" />
+                                            SmallImageSource="Images\new.png" >
+                                <r:RibbonButton.InputBindings>
+                                    <MouseBinding MouseAction="LeftClick"
+                                                  Command="{Binding MostrarAuxCommand}" 
+                                                  CommandParameter="GruposTarifa" />
+                                </r:RibbonButton.InputBindings>
+                            </r:RibbonButton>
                         </r:RibbonMenuButton>
                         <r:RibbonMenuButton x:Name="rmnbttAuxiliaresVehiculos" Label="Vehículos" LargeImageSource="Images\open.png" KeyTip="H" >
                             <r:RibbonButton x:Name="rbttAccesoriosVehiculos" 
@@ -412,7 +512,7 @@
                                             SmallImageSource="Images\new.png" />
                             <r:RibbonButton x:Name="rbttbitTipoContacto" 
                                             Label="Tipo Contacto Comercial" 
-                                            SmallImageSource="Images\new.png"/>                        
+                                            SmallImageSource="Images\new.png"/>
                             <r:RibbonButton x:Name="rbttTiposDocumentos" 
                                             Label="Tipos de Documentos" 
                                             SmallImageSource="Images\new.png" />
@@ -421,44 +521,54 @@
                                             SmallImageSource="Images\new.png"/>
                         </r:RibbonMenuButton>
                     </r:RibbonGroup>
-                </r:RibbonTab>
+                </r:RibbonTab>                
 
                 <!--Tab Contratos-->
                 <r:RibbonTab x:Name="tbContratos" 
                              Header="Contratos" 
-                             KeyTip="C" >
-                    <r:RibbonGroup x:Name="rgrContratos" Header="Contratos" >
+                             KeyTip="C" 
+                             GroupSizeReductionOrder="rgrContratos, rgrCambiosContratos, rgrVariosContratos" >
+                    <r:RibbonGroup x:Name="rgrContratos" Header="Contratos" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                         <r:RibbonButton x:Name="rbttAbrirContrato" 
                                         Label="Abrir Contrato" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttAnularContrato" 
                                         Label="Anular Contrato" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttCerrarContrato" 
                                         Label="Cerrar Contrato" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttConcultarContrato" 
                                         Label="Concultar Contrato" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttReAbrirContrato" 
                                         Label="Reabrir Contrato" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrCambiosContratos" Header="Cambios" >
+                    <r:RibbonGroup x:Name="rgrCambiosContratos" Header="Cambios" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                         <r:RibbonButton x:Name="rbttCambioConductor" 
                                         Label="Cambio Conductor" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttCambioNumeroContrato" 
                                         Label="Cambio Número Contrato" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttCambioOficinaContrato" 
                                         Label="Cambio Oficina Contrato" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttCambioVehiculo" 
                                         Label="Cambio Vehículo" 
-                                        LargeImageSource="Images\new.png"/>
-                    </r:RibbonGroup>                    
-                    <r:RibbonGroup x:Name="rgrVariosContratos" Header="Varios Contratos" >
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
+                    </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="rgrVariosContratos" Header="Varios Contratos" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutSmall}">
                         <r:RibbonButton x:Name="rbttEntregaContratosOficina" 
                                         Label="Entrega de Contratos a Oficina" 
                                         SmallImageSource="Images\new.png"/>
@@ -481,25 +591,31 @@
                 <r:RibbonTab x:Name="tbReservas" 
                              Header="Reservas" 
                              KeyTip="R">
-                    <r:RibbonGroup x:Name="rgrReservas" Header="Reservas" >
+                <r:RibbonGroup x:Name="rgrReservas" Header="Reservas" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                         <r:RibbonButton x:Name="rbttReservas" 
                                         Label="Reservas" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttAnularReserva"
                                         Label="Anular Reserva" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttConvertirReservaContrato" 
                                         Label="Convertir Reserva a Contrato" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttCotizacionComparada" 
                                         Label="Cotización Comparada" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttEliminarReservasNoShow" 
                                         Label="Eliminar Reservas No Show" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttPeticiones" 
                                         Label="Peticiones" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                     </r:RibbonGroup>
                 </r:RibbonTab>
 
@@ -507,22 +623,27 @@
                 <r:RibbonTab x:Name="tbAtipicos" 
                              Header="Atípicos" 
                              KeyTip="A" >
-                    <r:RibbonGroup x:Name="rgrAtipicos" Header="Atípicos" >
+                    <r:RibbonGroup x:Name="rgrAtipicos" Header="Atípicos" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                         <r:RibbonButton x:Name="rbttAlquilerBicicletas" 
                                         Label="Alquiler Bicicletas" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttFacturasAtipicas" 
                                         Label="Facturas Atípicas" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttImpresionBloque" 
                                         Label="Impresión en Bloque" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttSalidaCaja" 
                                         Label="Salida Caja" 
-                                        LargeImageSource="Images\new.png"/>                        
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttSeriesAtipicos" 
                                         Label="Series de Atípicos" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                     </r:RibbonGroup>
                 </r:RibbonTab>
                 
@@ -530,22 +651,27 @@
                 <r:RibbonTab x:Name="tbComercial" 
                              Header="Comercial" 
                              KeyTip="O" >
-                    <r:RibbonGroup x:Name="rgrComercial" Header="Comercial" KeyTip="P" >
+                    <r:RibbonGroup x:Name="rgrComercial" Header="Comercial" KeyTip="P" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                         <r:RibbonButton x:Name="rbttCustomerService" 
                                         Label="Customer Service" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttEntregaBonos" 
                                         Label="Entrega Bonos" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttEMailingClientes" 
                                         Label="e-Mailing Clientes" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbtteEMailingPotenciales" 
                                         Label="e-Mailing Potenciales" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttPotenciales" 
                                         Label="Potenciales" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                     </r:RibbonGroup>
                 </r:RibbonTab>
                 
@@ -560,7 +686,8 @@
                 <!--Tab Facturación-->
                 <r:RibbonTab x:Name="tbFacturacion" 
                              Header="Facturación" 
-                             KeyTip="F" >
+                             KeyTip="F" 
+                             GroupSizeReductionOrder="rgrExportacion, rgrImpresion" >
                     <r:RibbonGroup x:Name="rgrFacturacion" Header="Facturación" >
                         <r:RibbonMenuButton x:Name="rmnbttFacturas" Label="Facturas" LargeImageSource="Images\open.png" KeyTip="C" >
                             <r:RibbonButton x:Name="rbttAbonarFactura" 
@@ -600,7 +727,7 @@
                                             SmallImageSource="Images\new.png" />
                         </r:RibbonMenuButton>
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrRecibosCartera" Header="Recibos / Cartera" >
+                    <r:RibbonGroup x:Name="rgrRecibosCartera" Header="Recibos / Cartera" LargeImageSource="Images\open.png">
                         <r:RibbonMenuButton x:Name="rmnbttRecibosCartera" Label="Recibos Cartera" LargeImageSource="Images\open.png" KeyTip="R" >
                             <r:RibbonButton x:Name="rbttRecibos" 
                                             Label="Recibos" 
@@ -616,7 +743,7 @@
                                             SmallImageSource="Images\new.png"/>
                         </r:RibbonMenuButton>
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrRemesas" Header="Remesas" >
+                    <r:RibbonGroup x:Name="rgrRemesas" Header="Remesas" LargeImageSource="Images\open.png">
                         <r:RibbonMenuButton x:Name="rmnbttRemesas" Label="Remesas" LargeImageSource="Images\open.png" KeyTip="M" >
                             <r:RibbonButton x:Name="rbttRemesas" 
                                             Label="Remesas" 
@@ -640,7 +767,7 @@
                                             SmallImageSource="Images\new.png" />
                         </r:RibbonMenuButton>
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrEnlacesContables" Header="Enlaces Contables" >
+                    <r:RibbonGroup x:Name="rgrEnlacesContables" Header="Enlaces Contables" LargeImageSource="Images\open.png">
                         <r:RibbonMenuButton x:Name="rmnbttEnlacesContables" Label="Enlaces Contables" LargeImageSource="Images\open.png" KeyTip="E" >
                             <r:RibbonButton x:Name="rbttAnulacionPase" 
                                             Label="Anulación de Pase" 
@@ -659,7 +786,7 @@
                                             SmallImageSource="Images\new.png"/>
                         </r:RibbonMenuButton>
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrExportacion" Header="Exportación" >
+                    <r:RibbonGroup x:Name="rgrExportacion" Header="Exportación" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutSmall}">
                         <r:RibbonButton x:Name="rbttExportacionFichero340" 
                                         Label="Exportación Fichero 340" 
                                         SmallImageSource="Images\new.png"/>
@@ -667,7 +794,7 @@
                                         Label="Exportación Fichero 347" 
                                         SmallImageSource="Images\new.png"/>
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrImpresion" Header="Impresión" >
+                    <r:RibbonGroup x:Name="rgrImpresion" Header="Impresión" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutSmall}">
                         <r:RibbonButton x:Name="rbttImpresionBloqueFacturas" 
                                         Label="Impresión en Bloque Facturas" 
                                         SmallImageSource="Images\new.png"/>
@@ -675,18 +802,20 @@
                                         Label="Impresión en Bloque Recibos" 
                                         SmallImageSource="Images\new.png"/>
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrEstadisticasFacturas" Header="Estadísticas" >
+                    <r:RibbonGroup x:Name="rgrEstadisticasFacturas" Header="Estadísticas" LargeImageSource="Images\open.png">
                         <r:RibbonButton x:Name="rbttGeneradorEstadisticasFacturas" 
                                         Label="Generador Estadísticas" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                     </r:RibbonGroup>
                 </r:RibbonTab>
                 
                 <!--Tab Flota-->
                 <r:RibbonTab x:Name="tbFlota" 
                              Header="Flota" 
-                             KeyTip="T" >
-                    <r:RibbonGroup x:Name="rgrInmovilizaciones" Header="Inmovilizaciones" >
+                             KeyTip="T" 
+                             GroupSizeReductionOrder="rgrInmovilizaciones, rgrUtilidades, rgrVarios">
+                    <r:RibbonGroup x:Name="rgrInmovilizaciones" Header="Inmovilizaciones" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutSmall}">
                         <r:RibbonButton x:Name="rbttInmovilizaciones" 
                                         Label="Inmovilizaciones" 
                                         SmallImageSource="Images\new.png"/>
@@ -697,7 +826,7 @@
                                         Label="Generador Estadísticas" 
                                         SmallImageSource="Images\new.png"/>
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrUtilidades" Header="Utilidades" >
+                    <r:RibbonGroup x:Name="rgrUtilidades" Header="Utilidades" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutSmall}">
                         <r:RibbonButton x:Name="rbttActualizarVtoITV" 
                                         Label="Actualizar Vto ITV" 
                                         SmallImageSource="Images\new.png"/>
@@ -723,7 +852,7 @@
                                         Label="Traslados" 
                                         SmallImageSource="Images\new.png"/>
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrVariosFlota" Header="Varios" >
+                    <r:RibbonGroup x:Name="rgrVariosFlota" Header="Varios" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutSmall}">
                         <r:RibbonButton x:Name="rbttCambioEmpresa" 
                                         Label="Cambio de Empresa" 
                                         SmallImageSource="Images\new.png"/>
@@ -765,37 +894,47 @@
                 <!--Tab Incidencias-->
                 <r:RibbonTab x:Name="tbIncidencias" 
                              Header="Incidencias" 
-                             KeyTip="I">
-                    <r:RibbonGroup x:Name="rgrIncidencias" Header="Incidencias" >
+                             KeyTip="I"
+                             GroupSizeReductionOrder="rgrIncidencias, rgrtiposIncidencias">
+                    <r:RibbonGroup x:Name="rgrIncidencias" Header="Incidencias" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                         <r:RibbonButton x:Name="rbttIncidenciasClientes" 
                                         Label="Clientes" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttIncidenciasContratos" 
                                         Label="Contratos" 
-                                        LargeImageSource="Images\new.png"/>                        
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttIncidenciasProveedores" 
                                         Label="Proveedores" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttIncidenciasReservas" 
                                         Label="Reservas" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttIncidenciasVehiculos" 
                                         Label="Vehículos" 
-                                        LargeImageSource="Images\new.png"/>                        
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrTiposIncidencias" Header="Tipos de Incidencias" >
+                    <r:RibbonGroup x:Name="rgrTiposIncidencias" Header="Tipos de Incidencias" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                         <r:RibbonButton x:Name="rbttTiposIncidenciasClientes" 
                                         Label="Clientes" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttTiposIncidenciasContratos" 
                                         Label="Contratos" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttTiposIncidenciasProveedores" 
                                         Label="Proveedores" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttTiposIncidenciasReservas" 
                                         Label="Reservas" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                     </r:RibbonGroup>
                 </r:RibbonTab>
 
@@ -803,34 +942,43 @@
                 <r:RibbonTab x:Name="tbEstadisticas" 
                              Header="Estadísticas" 
                              KeyTip="E">
-                    <r:RibbonGroup x:Name="rgrEstadisticas" Header="Estadísticas" >
+                    <r:RibbonGroup x:Name="rgrEstadisticas" Header="Estadísticas" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                         <r:RibbonButton x:Name="rbttEstadisticasAnaliticas" 
                                         Label="Analíticas" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttEstadisticasClientes" 
                                         Label="Clientes" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttEstadisticasContratos" 
                                         Label="Contratos" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttEstadisticasFacturas"
                                         Label="Facturas" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttEstadisticasPeticiones" 
                                         Label="Peticiones" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttEstadisticasProveedores" 
                                         Label="Proveedores" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttEstadisticasReservas" 
                                         Label="Reservas" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttEstadisticasUtilitarios"
                                         Label="Utilitarios" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttEstadisticasVehiculos" 
                                         Label="Vehículos" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                     </r:RibbonGroup>
                 </r:RibbonTab>
 
@@ -838,45 +986,56 @@
                 <r:RibbonTab x:Name="tbListados" 
                              Header="Listados" 
                              KeyTip="L">
-                    <r:RibbonGroup x:Name="rgrListados" Header="Listados" >
+                    <r:RibbonGroup x:Name="rgrListados" Header="Listados" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                         <r:RibbonButton x:Name="rbttListadosClientes" 
                                         Label="Clientes" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttListadosComisionistas" 
                                         Label="Comisionistas" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttListadosContratos" 
                                         Label="Contratos" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttListadosFicherosAuxiliares" 
                                         Label="Ficheros Auxiliares" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttListadosFacturas"
                                         Label="Facturas" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttListadosPeticiones" 
                                         Label="Peticiones" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttListadosPotenciales"
                                         Label="Potenciales" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttListadosProveedores" 
                                         Label="Proveedores" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttListadosReservas" 
                                         Label="Reservas" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttListadosVehiculos" 
                                         Label="Vehículos" 
-                                        LargeImageSource="Images\new.png" />
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                     </r:RibbonGroup>
                 </r:RibbonTab>
 
                 <!--Tab Configuración-->
-                <r:RibbonTab x:Name="tbConfiguracion" 
+                <r:RibbonTab x:Name="tbConfiguracion"
                              Header="Configuración" 
-                             KeyTip="G" >
-                    <r:RibbonGroup x:Name="rgrConfiguracion" Header="Configuración" >
+                             KeyTip="G" 
+                             GroupSizeReductionOrder="rgrConfiguracion, rgrPersonal, rgrVariosconfiguracion">
+                    <r:RibbonGroup x:Name="rgrConfiguracion" Header="Configuración" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                         <r:RibbonMenuButton x:Name="rmnbttConfiguracion" Label="Configuración" LargeImageSource="Images\open.png" KeyTip="C" >
                             <r:RibbonButton x:Name="rbttCodigosIniciales" 
                                             Label="Códigos Iniciales" 
@@ -921,18 +1080,49 @@
                                             SmallImageSource="Images\new.png"/>
                         </r:RibbonMenuButton>
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrIdiomas" Header="Idiomas" >
-                        <r:RibbonButton x:Name="rbttIdiomas" 
-                                        Label="Idiomas" 
-                                        LargeImageSource="Images\new.png"/>
-                    </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrPersonal" Header="Personal" >
+                    <r:RibbonGroup x:Name="rgrIdiomas" Header="Idiomas" LargeImageSource="Images\open.png">
+                        <r:RibbonMenuButton x:Name="rmnbttIdiomas" Label="Idiomas" LargeImageSource="Images\open.png" KeyTip="I" >
+                        <r:RibbonButton x:Name="rbttIdiomaESES"
+                                        Label="{Binding rbttIdiomaESES, Source={StaticResource ResourceLanguage}}"                                             
+                                        HorizontalAlignment="Left" 
+                                        SmallImageSource="Images\es-es.png" >
+                            <r:RibbonButton.InputBindings>
+                                <MouseBinding MouseAction="LeftClick"
+                                              Command="{Binding SetLanguagesCommand}" 
+                                              CommandParameter="es-ES" />
+                            </r:RibbonButton.InputBindings>
+                        </r:RibbonButton>
+                        <r:RibbonButton x:Name="rbttIdiomaCAES"
+                                        Label="{Binding rbttIdiomaCAES, Source={StaticResource ResourceLanguage}}" 
+                                        HorizontalAlignment="Left" 
+                                        SmallImageSource="Images\ca-es.png" >
+                            <r:RibbonButton.InputBindings>
+                                <MouseBinding MouseAction="LeftClick"
+                                              Command="{Binding SetLanguagesCommand}" 
+                                              CommandParameter="ca-ES" />
+                            </r:RibbonButton.InputBindings>
+                        </r:RibbonButton>
+                        <r:RibbonButton x:Name="rbttIdiomaENGB"
+                                        Label="{Binding rbttIdiomaENGB, Source={StaticResource ResourceLanguage}}"  
+                                        HorizontalAlignment="Left" 
+                                        SmallImageSource="Images\en-gb.png" >
+                            <r:RibbonButton.InputBindings>
+                                <MouseBinding MouseAction="LeftClick"
+                                              Command="{Binding SetLanguagesCommand}" 
+                                              CommandParameter="en-GB" />
+                            </r:RibbonButton.InputBindings>
+                        </r:RibbonButton>
+                    </r:RibbonMenuButton>
+                </r:RibbonGroup>
+                    <r:RibbonGroup x:Name="rgrPersonal" Header="Personal" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                         <r:RibbonButton x:Name="rbttMailingPersonal" 
                                         Label="Mailing a Personal" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttPersonal" 
                                         Label="Personal" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                     </r:RibbonGroup>
                     <r:RibbonGroup x:Name="rgrUtilitarios" Header="Utilitarios" >
                         <r:RibbonMenuButton x:Name="rmnbttUtilitarios" Label="Utilitarios" LargeImageSource="Images\open.png" KeyTip="U" >
@@ -986,18 +1176,21 @@
                                         SmallImageSource="Images\new.png"/>
                         </r:RibbonMenuButton>
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rgrVariosconfiguracion" Header="Varios" >
+                    <r:RibbonGroup x:Name="rgrVariosconfiguracion" Header="Varios" LargeImageSource="Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                         <r:RibbonButton x:Name="rbttCambiarContrasenyas" 
                                         Label="Cambiar Contraseñas" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttPreciosCombustible" 
                                         Label="Precios Combustible" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                         <r:RibbonButton x:Name="rbttUsuarios" 
                                         Label="Usuarios" 
-                                        LargeImageSource="Images\new.png"/>
+                                        LargeImageSource="Images\new.png"
+                                        SmallImageSource="Images\new.png"/>
                     </r:RibbonGroup>
-                    <r:RibbonGroup x:Name="rrgrKarve" Header="Karve" >
+                    <r:RibbonGroup x:Name="rrgrKarve" Header="Karve" LargeImageSource="Images\open.png" >
                         <r:RibbonMenuButton x:Name="rmnbttKarve" Label="Karve" LargeImageSource="Images\open.png" KeyTip="K" >
                             <r:RibbonButton x:Name="rbttAcercaDe" 
                                         Label="Acerca de..." 
@@ -1018,7 +1211,7 @@
                     </r:RibbonGroup>
                 </r:RibbonTab>
 
-                <r:RibbonButton x:Name="rbttReservasWeb" 
+                <r:RibbonButton x:Name="rbttReservasWeb"
                                 Label="Reservas Web: 123" 
                                 SmallImageSource="Images\tools.png"/>
                 <r:RibbonButton x:Name="rbttvalidar" 
@@ -1074,6 +1267,40 @@
                     </r:RibbonGroup>
                 </r:RibbonTab>-->
             </r:Ribbon>
-        </ScrollViewer>
+        <!--</ScrollViewer>-->
+        <TabControl Name="tbControl">
+        <!--<TabItem x:Name="TabItem1">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Primera Tab  " />
+                        <Button Click="bttCloseTab_Click">
+                            <StackPanel>
+                                <Image Source="Images\cancel.png" Height="16" Width="16" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </TabItem.Header>
+                <StackPanel>
+                    <Label Content="my label 1"></Label>
+                    <Label Content="my label 2"></Label>
+                </StackPanel>
+            </TabItem>
+            <TabItem x:Name="TabItem2">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Segunda Tab  " />
+                        <Button Click="bttCloseTab_Click">
+                            <StackPanel>
+                                <Image Source="Images\cancel.png" Height="16" Width="16" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </TabItem.Header>
+                <StackPanel>
+                    <Label Content="my label 3"></Label>
+                    <Label Content="my label 4"></Label>
+                </StackPanel>
+            </TabItem>-->
+        </TabControl>
     </DockPanel>
-</Window>
+</r:RibbonWindow>
