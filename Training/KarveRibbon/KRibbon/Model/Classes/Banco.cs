@@ -9,28 +9,33 @@ using System.Text;
 
 namespace KRibbon.Model
 {
-    public class BloqueFacturacion //: IAuxiliares
+    public class Banco //: IAuxiliares
     {
         #region List<DBCriterios>
         public static List<DBCriterios> dbcriterioslist = new List<DBCriterios>()
         {
             new DBCriterios(){ nombrepropiedadobj = "Codigo",
-                               nombrecolumnadb    = "CODIGO",
+                               nombrecolumnadb    = "CODBAN",
                                tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
                                datagridheader     = Resources.dttcCodigo },
             new DBCriterios(){ nombrepropiedadobj = "Nombre",
                                nombrecolumnadb    = "NOMBRE",
                                tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
-                               datagridheader     = Resources.dttcDefinicion }
+                               datagridheader     = Resources.dttcDefinicion },
+            new DBCriterios(){ nombrepropiedadobj = "Swift",
+                               nombrecolumnadb    = "SWIFT",
+                               tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                               datagridheader     = Resources.dttcBicSwift }
         };
         #endregion
 
         #region Constructores
-        public BloqueFacturacion() { }
-        public BloqueFacturacion(string codigo, string nombre)
+        public Banco() { }
+        public Banco(string codigo, string nombre, string swift)
         {
             this.codigo = codigo;
             this.nombre = nombre;
+            this.swift = swift;
         }
         #endregion
 
@@ -60,6 +65,21 @@ namespace KRibbon.Model
             {
                 nombre = value;
                 OnPropertyChanged("Nombre");
+            }
+        }
+
+
+        private string swift;
+        public string Swift
+        {
+            get
+            {
+                return swift;
+            }
+            set
+            {
+                swift = value;
+                OnPropertyChanged("Swift");
             }
         }
         #endregion

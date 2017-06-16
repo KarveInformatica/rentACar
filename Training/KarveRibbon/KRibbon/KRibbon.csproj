@@ -52,10 +52,13 @@
     <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="iAnywhere.Data.SQLAnywhere.v4.5, Version=16.0.0.18234, Culture=neutral, PublicKeyToken=f222fc4333e0d400, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -76,16 +79,30 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\Generic\RelayCommand.cs" />
+    <Compile Include="Commands\Specific\CloseItemCommand.cs" />
     <Compile Include="Commands\Specific\LanguagesCommand.cs" />
     <Compile Include="Commands\Specific\AuxiliaresCommand.cs" />
+    <Compile Include="Logic\Generic\CloseWindow.cs" />
+    <Compile Include="Logic\Maestros\LogicAuxiliares.cs" />
+    <Compile Include="Model\Classes\Banco.cs" />
+    <Compile Include="Model\Classes\CargoPersonal.cs" />
+    <Compile Include="Model\Classes\CanalCliente.cs" />
+    <Compile Include="Model\Classes\BloqueFacturacion.cs" />
     <Compile Include="Model\Classes\FormaPagoProveedor.cs" />
-    <Compile Include="Model\Generic\ETipoAuxiliar.cs" />
     <Compile Include="Model\Classes\TipoComisionista.cs" />
     <Compile Include="Model\Classes\GrupoTarifa.cs" />
-    <Compile Include="Model\Classes\FormaPagoProveedorRepository.cs" />
-    <Compile Include="Model\Classes\TipoComisionistaRepository.cs" />
-    <Compile Include="Model\Classes\GrupoTarifaRepository.cs" />
+    <Compile Include="Model\Generic\DBCriterios.cs" />
     <Compile Include="Model\Generic\IAuxiliares.cs" />
+    <Compile Include="Model\SQL\ScriptsSQLViews.cs" />
+    <Compile Include="Model\SQL\ScriptsSQLUpdate.cs" />
+    <Compile Include="Model\SQL\ScriptsSQLProcedures.cs" />
+    <Compile Include="Model\SQL\ScriptsSQLInsert.cs" />
+    <Compile Include="Model\SQL\ScriptsSQLFunctions.cs" />
+    <Compile Include="Model\SQL\ScriptsSQLOthers.cs" />
+    <Compile Include="Model\SQL\ScriptsSQLDelete.cs" />
+    <Compile Include="Model\SQL\ScriptsSQLSelect.cs" />
+    <Compile Include="Model\Sybase\AuxiliaresModel.cs" />
+    <Compile Include="Model\Sybase\DBConnect.cs" />
     <Compile Include="Properties\Resources.ca-ES.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -101,12 +118,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.es-ES.resx</DependentUpon>
     </Compile>
-    <Compile Include="Utility\AddTab.cs" />
-    <Compile Include="Utility\ChangeLanguage.cs" />
+    <Compile Include="Logic\Generic\AddTab.cs" />
+    <Compile Include="Logic\Generic\ChangeLanguage.cs" />
+    <Compile Include="Utility\TablaAuxiliares.cs" />
+    <Compile Include="Utility\ValidateData.cs" />
+    <Compile Include="Utility\VariablesGlobales.cs" />
+    <Compile Include="ViewModel\CloseItemViewModel.cs" />
     <Compile Include="ViewModel\SetLanguagesViewModel.cs" />
     <Compile Include="ViewModel\MostrarAuxiliaresViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -114,7 +135,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -137,19 +158,24 @@
     <EmbeddedResource Include="Properties\Resources.ca-ES.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.ca-ES.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.en-GB.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.en-GB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.es-ES.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.es-ES.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -259,12 +285,17 @@
     <Folder Include="Messages\" />
     <Folder Include="Services\" />
     <Folder Include="Test\" />
-    <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\ca-es.png" />
     <Resource Include="Images\en-gb.png" />
     <Resource Include="Images\es-es.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

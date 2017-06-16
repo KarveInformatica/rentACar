@@ -1,11 +1,14 @@
 ﻿using Microsoft.Windows.Controls.Ribbon;
+using KRibbon.Properties;
+using KRibbon.Utility;
+using KRibbon.Logic.Generic;
 using System;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
-using KRibbon.Utility;
 using System.Threading;
 using System.Globalization;
+using KRibbon.Model.Sybase;
 
 namespace KRibbon
 {
@@ -19,7 +22,7 @@ namespace KRibbon
         {
             this.WindowState = WindowState.Maximized;
             InitializeComponent();
-            AddTab.addRibbonTabAcciones(rbInicio);
+            //AddTab.addRibbonTabAcciones(rbInicio);
             //AddTab.addRibbonTabFavoritos(rbInicio, this);
 
             DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
@@ -33,21 +36,6 @@ namespace KRibbon
         public void bttHelp_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Aquí va nuestro mensaje de ayuda", "Ayuda", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
-        private void bttSalir_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void bttCloseTab_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void bttAnadirAFavoritos_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Mi Context Menu");
         }
 
         #region RibbonGroup Drag and Drop
@@ -91,5 +79,6 @@ namespace KRibbon
             catch (Exception) { }
         }
         #endregion
+
     }
 }

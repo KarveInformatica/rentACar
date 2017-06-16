@@ -1,41 +1,34 @@
 ﻿using KRibbon;
 using KRibbon.Model;
+using KRibbon.Model.Sybase;
 using KRibbon.Utility;
+using static KRibbon.Utility.VariablesGlobales;
 using Microsoft.Windows.Controls.Ribbon;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace KRibbon.Utility
 {
     public partial class AddTab : MainWindow
     {
-        private static Dictionary<ETipoAuxiliar, TabItem> tabnamelist = new Dictionary<ETipoAuxiliar, TabItem>();
-
-        public static Dictionary<ETipoAuxiliar, string> tiposauxiliares = new Dictionary<ETipoAuxiliar, string>()
-        {
-            { ETipoAuxiliar.FormasPagoProveedor, "Formas Pago Proveedor" },
-            { ETipoAuxiliar.GruposTarifa, "Grupos Tarifa" },
-            { ETipoAuxiliar.TiposComisionista, "Tipos Comisionista"}
-        };
-
-        private static ObservableCollection<IAuxiliares> tabitemslist;
-
         public static void addRibbonTabAcciones(Ribbon rbInicio)
         {
             var list = new ObservableCollection<MyRibbonButton>();
-            list.Add(new MyRibbonButton { Label = "Nuevo", KeyTip = "N", Img = "new", Name = "btttbitNuevo" });
-            list.Add(new MyRibbonButton { Label = "Guardar", KeyTip = "G", Img = "save", Name = "btttbitGuardar" });
-            list.Add(new MyRibbonButton { Label = "Cancelar", KeyTip = "B", Img = "cancel", Name = "btttbitCancelar" });
-            list.Add(new MyRibbonButton { Label = "Imprimir", KeyTip = "I", Img = "print", Name = "btttbitImprimir" });
-            list.Add(new MyRibbonButton { Label = "Eliminar", KeyTip = "D", Img = "delete", Name = "btttbitEliminar" });
-            list.Add(new MyRibbonButton { Label = "Siguiente", KeyTip = "S", Img = "next", Name = "btttbitSiguiente" });
-            list.Add(new MyRibbonButton { Label = "Anterior", KeyTip = "A", Img = "previous", Name = "btttbitAnterior" });
-            list.Add(new MyRibbonButton { Label = "Salir", KeyTip = "Q", Img = "exit", Name = "btttbitSalir" });
+            list.Add(new MyRibbonButton { Label = "Nuevo",      KeyTip = "N", Img = "new",      Name = "btttbitNuevo" });
+            list.Add(new MyRibbonButton { Label = "Guardar",    KeyTip = "G", Img = "save",     Name = "btttbitGuardar" });
+            list.Add(new MyRibbonButton { Label = "Cancelar",   KeyTip = "B", Img = "cancel",   Name = "btttbitCancelar" });
+            list.Add(new MyRibbonButton { Label = "Imprimir",   KeyTip = "I", Img = "print",    Name = "btttbitImprimir" });
+            list.Add(new MyRibbonButton { Label = "Eliminar",   KeyTip = "D", Img = "delete",   Name = "btttbitEliminar" });
+            list.Add(new MyRibbonButton { Label = "Siguiente",  KeyTip = "S", Img = "next",     Name = "btttbitSiguiente" });
+            list.Add(new MyRibbonButton { Label = "Anterior",   KeyTip = "A", Img = "previous", Name = "btttbitAnterior" });
+            list.Add(new MyRibbonButton { Label = "Salir",      KeyTip = "Q", Img = "exit",     Name = "btttbitSalir" });
 
             RibbonTab tbAcciones = new RibbonTab();
             tbAcciones.SetValue(FrameworkElement.NameProperty, "tbAcciones");
@@ -109,73 +102,68 @@ namespace KRibbon.Utility
             rbInicio.Items.Add(mytab);
         }
 
-        public static void addTabItem(object parameter)
-        {
-            foreach (var item in tiposauxiliares)
-            {
-                if (parameter.Equals(item.Key.ToString()))
-                {
-                    addTabItem(item.Key);
-                    break;
-                }
-            }
-        }
-
         public static void addTabItem(ETipoAuxiliar tipoauxiliar)
         {
             //Se comprueba que la tab ya no esté mostrada
-            if (!tabnamelist.ContainsKey(tipoauxiliar))
+            if (!tabitemdictionary.ContainsKey(tipoauxiliar))
             {
                 TabItem tbitem = new TabItem();
-                tbitem.Header = tiposauxiliares[tipoauxiliar];
-                tabnamelist.Add(tipoauxiliar, tbitem);
+                tbitem.Header = tiposauxiliaresdictionary.Where(z => z.Key == tipoauxiliar).FirstOrDefault().Value.propertiesresources;
+                tabitemdictionary.Add(tipoauxiliar, tbitem);
                 ((MainWindow)Application.Current.MainWindow).tbControl.Items.Add(tbitem);
                 tbitem.Focus();
 
-                tabitemslist = new ObservableCollection<IAuxiliares>();
+                VariablesGlobales.datagriditemsobscollection = new ObservableCollection<Object>();
 
                 switch (tipoauxiliar)
                 {
-                    case ETipoAuxiliar.FormasPagoProveedor:
-                        FormaPagoProveedorRepository fpp = new FormaPagoProveedorRepository();
-                        tabitemslist = fpp.GetFormaPagoProveedor();
+                    case ETipoAuxiliar.rbttFormasPagoProveedor:
+                        //FormaPagoProveedorCollection fpp = new FormaPagoProveedorCollection();
+                        //VariablesGlobales.datagriditemsobscollection = fpp.GetFormaPagoProveedor();
                         break;
-                    case ETipoAuxiliar.GruposTarifa:
-                        GrupoTarifaRepository gtr = new GrupoTarifaRepository();
-                        tabitemslist = gtr.GetGruposTarifa();
+                    case ETipoAuxiliar.rbttGruposTarifa:
+                        //GrupoTarifaCollection gtr = new GrupoTarifaCollection();
+                        //VariablesGlobales.datagriditemsobscollection = gtr.GetGruposTarifa();
                         break;
-                    case ETipoAuxiliar.TiposComisionista:
-                        TipoComisionistaRepository tc = new TipoComisionistaRepository();
-                        tabitemslist = tc.GetTiposComisionista();
+                    case ETipoAuxiliar.rbttTipoComisionista:
+                        //TipoComisionistaCollection tc = new TipoComisionistaCollection();
+                        //VariablesGlobales.datagriditemsobscollection = tc.GetTiposComisionista();
                         break;
                     default:
                         break;
                 }
-                loadDataItem(tbitem, tabitemslist, tipoauxiliar);
+                loadDataItem(tbitem, datagriditemsobscollection, tipoauxiliar);
             }
             else
-            {
-                foreach (var item in tabnamelist.Keys)
+            {   //Si el TabItem del tipo de auxiliar ya se está mostrado, no se carga
+                //de nuevo, simplemente se establece el foco en ese TabItem
+                foreach (var item in tabitemdictionary.Keys)
                 {
                     if (item.Equals(tipoauxiliar))
                     {
-                        TabItem tabitem = tabnamelist[item];
+                        TabItem tabitem = tabitemdictionary[item];
                         tabitem.Focus();
                     }
                 }
             }
         }
         
-        private static void loadDataItem(TabItem tbitem, ObservableCollection<IAuxiliares> tabitemslist, ETipoAuxiliar aux)
+        private static void loadDataItem(TabItem tbitem, ObservableCollection<Object> tabitemslist, ETipoAuxiliar aux)
         {
-            DataGrid datagrid = new DataGrid();           
+            DataGrid datagrid = new DataGrid();
+            datagrid.Width = 400;
+            datagrid.HorizontalAlignment = HorizontalAlignment.Left;
+            datagrid.CanUserResizeColumns = true;
+            datagrid.AlternatingRowBackground = Brushes.LightGray;
             DataGridTextColumn col = new DataGridTextColumn();
             col.Header = Properties.Resources.lrbttEmpresas.Trim();
-            col.Binding = new Binding("CodigoAux");
+            col.Binding = new Binding("Codigo");
+            col.Width = new DataGridLength(1, DataGridLengthUnitType.Star);
             datagrid.Columns.Add(col);
             col = new DataGridTextColumn();
             col.Header = Properties.Resources.lrrCentrosAlquiler.Trim();
-            col.Binding = new Binding("NombreAux");
+            col.Binding = new Binding("Nombre");
+            col.Width = new DataGridLength(3, DataGridLengthUnitType.Star);
             datagrid.Columns.Add(col);
             foreach (var item in tabitemslist)
             {

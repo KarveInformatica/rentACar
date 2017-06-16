@@ -31,6 +31,10 @@ namespace KRibbon.ViewModel
             }
         }
 
+        /// <summary>
+        /// Cambia el idioma según el param recibido del xaml
+        /// </summary>
+        /// <param name="parameter"></param>
         public void SetLanguages(object parameter)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(parameter.ToString());

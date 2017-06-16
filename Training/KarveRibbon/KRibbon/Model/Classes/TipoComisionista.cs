@@ -1,4 +1,7 @@
-﻿using System;
+﻿using KRibbon.Properties;
+using KRibbon.Model.Generic;
+using static KRibbon.Utility.VariablesGlobales;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -6,34 +9,57 @@ using System.Text;
 
 namespace KRibbon.Model
 {
-    public class TipoComisionista : IAuxiliares
+    public class TipoComisionista //: IAuxiliares
     {
+        #region List<DBCriterios>
+        public static List<DBCriterios> dbcriterioslist = new List<DBCriterios>()
+        {
+            new DBCriterios(){ nombrepropiedadobj = "Codigo",
+                               nombrecolumnadb    = "NUM_TICOMI",
+                               tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                               datagridheader     = Resources.dttcCodigo },
+            new DBCriterios(){ nombrepropiedadobj = "Nombre",
+                               nombrecolumnadb    = "NOMBRE",
+                               tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                               datagridheader     = Resources.dttcDefinicion }
+        };
+        #endregion
+
+        #region Constructores
+        public TipoComisionista() { }
+        public TipoComisionista(string codigo, string nombre)
+        {
+            this.codigo = codigo;
+            this.nombre = nombre;
+        }
+        #endregion
+
         #region Propiedades
-        private string codigoAux;
-        public string CodigoAux
+        private string codigo;
+        public string Codigo
         {
             get
             {
-                return codigoAux;
+                return codigo;
             }
             set
             {
-                codigoAux = value;
-                OnPropertyChanged("CodigoAux");
+                codigo = value;
+                OnPropertyChanged("Codigo");
             }
         }
 
-        private string nombreAux;
-        public string NombreAux
+        private string nombre;
+        public string Nombre
         {
             get
             {
-                return nombreAux;
+                return nombre;
             }
             set
             {
-                nombreAux = value;
-                OnPropertyChanged("NombreAux");
+                nombre = value;
+                OnPropertyChanged("Nombre");
             }
         }
         #endregion

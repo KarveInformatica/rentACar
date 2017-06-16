@@ -9,25 +9,25 @@ using System.Text;
 
 namespace KRibbon.Model
 {
-    public class BloqueFacturacion //: IAuxiliares
+    public class CargoPersonal //: IAuxiliares
     {
         #region List<DBCriterios>
         public static List<DBCriterios> dbcriterioslist = new List<DBCriterios>()
         {
             new DBCriterios(){ nombrepropiedadobj = "Codigo",
-                               nombrecolumnadb    = "CODIGO",
+                               nombrecolumnadb    = "COD_CAT",
                                tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
                                datagridheader     = Resources.dttcCodigo },
             new DBCriterios(){ nombrepropiedadobj = "Nombre",
-                               nombrecolumnadb    = "NOMBRE",
+                               nombrecolumnadb    = "NOM_CAT",
                                tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
                                datagridheader     = Resources.dttcDefinicion }
         };
         #endregion
 
         #region Constructores
-        public BloqueFacturacion() { }
-        public BloqueFacturacion(string codigo, string nombre)
+        public CargoPersonal() { }
+        public CargoPersonal(string codigo, string nombre)
         {
             this.codigo = codigo;
             this.nombre = nombre;

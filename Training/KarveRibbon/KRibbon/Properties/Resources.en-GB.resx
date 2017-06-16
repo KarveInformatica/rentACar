@@ -117,19 +117,958 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lrapmnInicio" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="lrapmnitAbrir" xml:space="preserve">
+    <value>Open File</value>
+  </data>
+  <data name="lrapmnitGuardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="lrapmnitRelogin" xml:space="preserve">
+    <value>Relogin</value>
+  </data>
+  <data name="lrapmnitReconectar" xml:space="preserve">
+    <value>Reconnect</value>
+  </data>
+  <data name="lrapmnitIrAlquiler" xml:space="preserve">
+    <value>Go to Renting</value>
+  </data>
+  <data name="lrapmnitIrContabilidad" xml:space="preserve">
+    <value>Go to Accounting</value>
+  </data>
+  <data name="lrapmnitIrTaller" xml:space="preserve">
+    <value>Go to Workshop</value>
+  </data>
+  <data name="lrapmnitSalir" xml:space="preserve">
+    <value>Quit</value>
+  </data>
+  <data name="lrbttHelpTitle" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="lrbttHelpDescr" xml:space="preserve">
+    <value>Here we can write some text…</value>
+  </data>
+  <data name="lrbttHelpFooterTitle" xml:space="preserve">
+    <value>More information</value>
+  </data>
+  <data name="lrbttHelpFooterDescr" xml:space="preserve">
+    <value>Press F1 for more help…</value>
+  </data>
+  <data name="ltbbttNuevo" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="ltbbttEditar" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="ltbbttGuardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ltbbttCancelar" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ltbbttImprimir" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="ltbbttEliminar" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ltbbttAnterior" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="ltbbttSiguiente" xml:space="preserve">
+    <value>Forward</value>
+  </data>
+  <data name="ltbbttSalir" xml:space="preserve">
+    <value>Quit</value>
+  </data>
+  <data name="ltbbttBuscar" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="ltbMaestros" xml:space="preserve">
+    <value>Master Data</value>
+  </data>
   <data name="lrrCentrosAlquiler" xml:space="preserve">
     <value>Renting Centers</value>
   </data>
   <data name="lrbttEmpresas" xml:space="preserve">
     <value>Companies</value>
   </data>
-  <data name="rbttIdiomaESES" xml:space="preserve">
+  <data name="lrbttOficinas" xml:space="preserve">
+    <value>Offices</value>
+  </data>
+  <data name="lrbttZonasOficina" xml:space="preserve">
+    <value>Office Areas</value>
+  </data>
+  <data name="lrgrClientes" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="lrbttClientes" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="lrbttCambioCodigoCliente" xml:space="preserve">
+    <value>Change Customer Code</value>
+  </data>
+  <data name="lrbttEntradaRapida" xml:space="preserve">
+    <value>Quick Entrance</value>
+  </data>
+  <data name="lrgrComisionistas" xml:space="preserve">
+    <value>Brokers</value>
+  </data>
+  <data name="lrbttComisionistas" xml:space="preserve">
+    <value>Brokers</value>
+  </data>
+  <data name="lrgrProveedores" xml:space="preserve">
+    <value>Suppliers</value>
+  </data>
+  <data name="lrbttProveedores" xml:space="preserve">
+    <value>Suppliers</value>
+  </data>
+  <data name="lrgrTarifas" xml:space="preserve">
+    <value>Rates</value>
+  </data>
+  <data name="lrmnbttTarifas" xml:space="preserve">
+    <value>Rates</value>
+  </data>
+  <data name="lrbttTarifas" xml:space="preserve">
+    <value>Rates</value>
+  </data>
+  <data name="lrbttCambioCodigoTarifas" xml:space="preserve">
+    <value>Change Rate Code</value>
+  </data>
+  <data name="lrbttCrearTarifaDesdeOtraTarifa" xml:space="preserve">
+    <value>Create Rate From Another</value>
+  </data>
+  <data name="lrbttIncrementoPrecios" xml:space="preserve">
+    <value>Increase Prices</value>
+  </data>
+  <data name="lrbttTarifaCliente" xml:space="preserve">
+    <value>Rate per Customer</value>
+  </data>
+  <data name="lrbttTarifasComisionista" xml:space="preserve">
+    <value>Rates per Borker</value>
+  </data>
+  <data name="lrbttVerTarifa" xml:space="preserve">
+    <value>See Rate</value>
+  </data>
+  <data name="lrbttVincularClienteTarifa" xml:space="preserve">
+    <value>Link Customer to Rates</value>
+  </data>
+  <data name="lrgrVehiculos" xml:space="preserve">
+    <value>Vehicles</value>
+  </data>
+  <data name="lrmnbttVehiculos" xml:space="preserve">
+    <value>Vehicles</value>
+  </data>
+  <data name="lrbttVehiculos" xml:space="preserve">
+    <value>Vehicles</value>
+  </data>
+  <data name="lrbttCambioCodigoVehiculo" xml:space="preserve">
+    <value>Change Vehicle Code</value>
+  </data>
+  <data name="lrbttModificacionMasivaAux" xml:space="preserve">
+    <value>Massive Modification</value>
+  </data>
+  <data name="lrbttRecalculoMantenimiento" xml:space="preserve">
+    <value>Maintenance Recalculation</value>
+  </data>
+  <data name="lrgrAuxiliares" xml:space="preserve">
+    <value>Auxiliaries</value>
+  </data>
+  <data name="lrmnbttAuxiliaresClientes" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="lrbttBancosClientes" xml:space="preserve">
+    <value>Banks</value>
+  </data>
+  <data name="lrbttBloqueFacturacion" xml:space="preserve">
+    <value>Billing Block</value>
+  </data>
+  <data name="lrbttCanales" xml:space="preserve">
+    <value>Chanels</value>
+  </data>
+  <data name="lrbttCargosPersonal" xml:space="preserve">
+    <value>Staff Charges</value>
+  </data>
+  <data name="lrbttClavesPresupuesto" xml:space="preserve">
+    <value>Budget Keys</value>
+  </data>
+  <data name="lrbttFormasCobroClientes" xml:space="preserve">
+    <value>Forms of Customer Collection</value>
+  </data>
+  <data name="lrbttMercados" xml:space="preserve">
+    <value>Markets</value>
+  </data>
+  <data name="lrbttNegocios" xml:space="preserve">
+    <value>Business</value>
+  </data>
+  <data name="lrbttOrigenClientes" xml:space="preserve">
+    <value>Origin of Customers</value>
+  </data>
+  <data name="lrbttPaises" xml:space="preserve">
+    <value>Countries</value>
+  </data>
+  <data name="lrbttPoblaciones" xml:space="preserve">
+    <value>Towns</value>
+  </data>
+  <data name="lrbttProvincias" xml:space="preserve">
+    <value>Provinces</value>
+  </data>
+  <data name="lrbttSectoresActividad" xml:space="preserve">
+    <value>Activity Sectors</value>
+  </data>
+  <data name="lrbttTarjetasCredito" xml:space="preserve">
+    <value>Credit cards</value>
+  </data>
+  <data name="lrbttTarjetasEmpresa" xml:space="preserve">
+    <value>Business Cards</value>
+  </data>
+  <data name="lrbttTiposCliente" xml:space="preserve">
+    <value>Customer Types</value>
+  </data>
+  <data name="lrbttTiposContacto" xml:space="preserve">
+    <value>Contact Types</value>
+  </data>
+  <data name="lrbttTiposVisita" xml:space="preserve">
+    <value>Visit Types</value>
+  </data>
+  <data name="lrbttUsoAlquiler" xml:space="preserve">
+    <value>Renting Use</value>
+  </data>
+  <data name="lrbttVendedores" xml:space="preserve">
+    <value>Sellers</value>
+  </data>
+  <data name="lrbttZonas" xml:space="preserve">
+    <value>Areas</value>
+  </data>
+  <data name="lrmnbttAuxiliaresComisionistas" xml:space="preserve">
+    <value>Brokers</value>
+  </data>
+  <data name="lrbttEmpleadosAgencia" xml:space="preserve">
+    <value>Agency Employees</value>
+  </data>
+  <data name="lrbttTipoComisionista" xml:space="preserve">
+    <value>Broker Types</value>
+  </data>
+  <data name="lrmnbttAuxiliaresContratos" xml:space="preserve">
+    <value>Contracts</value>
+  </data>
+  <data name="lrbttAccesorios" xml:space="preserve">
+    <value>Accessories</value>
+  </data>
+  <data name="lrbttLugaresEntrega" xml:space="preserve">
+    <value>Delivery Locations</value>
+  </data>
+  <data name="lrbttMotivosAnulacionContratos" xml:space="preserve">
+    <value>Annulment Reasons</value>
+  </data>
+  <data name="lrbttMotivosCambioVehiculo" xml:space="preserve">
+    <value>Vehicle Change Reasons</value>
+  </data>
+  <data name="lrbttMotivosCancelacion" xml:space="preserve">
+    <value>Cancelling Reasons</value>
+  </data>
+  <data name="lrbttMotivosImproductivo" xml:space="preserve">
+    <value>Unproductive Reasons</value>
+  </data>
+  <data name="lrbttTipoImpresoContrato" xml:space="preserve">
+    <value>Contract Forms Type</value>
+  </data>
+  <data name="lrmnbttAuxiliaresIncidencias" xml:space="preserve">
+    <value>Incidents</value>
+  </data>
+  <data name="lrbttTiposIncidenciasClientes" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="lrbttTiposIncidenciasContratos" xml:space="preserve">
+    <value>Contracts</value>
+  </data>
+  <data name="lrbttTiposIncidenciasProveedores" xml:space="preserve">
+    <value>Suppliers</value>
+  </data>
+  <data name="lrbttTiposIncidenciasReservas" xml:space="preserve">
+    <value>Bookings</value>
+  </data>
+  <data name="lrmnbttAuxiliaresProveedores" xml:space="preserve">
+    <value>Suppliers</value>
+  </data>
+  <data name="lrbttDivisas" xml:space="preserve">
+    <value>Foreign Currency</value>
+  </data>
+  <data name="lrbttFormasPagoProveedor" xml:space="preserve">
+    <value>Payment Methods</value>
+  </data>
+  <data name="lrbttTiposProveedores" xml:space="preserve">
+    <value>Supplier Types</value>
+  </data>
+  <data name="lrmnbttAuxiliaresReservas" xml:space="preserve">
+    <value>Bookings</value>
+  </data>
+  <data name="lrbttClavesFee" xml:space="preserve">
+    <value>Fee Keys</value>
+  </data>
+  <data name="lrbttMediosRecepcion" xml:space="preserve">
+    <value>Reception Type</value>
+  </data>
+  <data name="lrbttMotivosAnulacionReservas" xml:space="preserve">
+    <value>Annulment Reasons</value>
+  </data>
+  <data name="lrbttMotivosNoServicio" xml:space="preserve">
+    <value>No Service Reasons</value>
+  </data>
+  <data name="lrmnbttAuxiliaresTarifas" xml:space="preserve">
+    <value>Rates</value>
+  </data>
+  <data name="lrbttConceptosFacturacion" xml:space="preserve">
+    <value>Billing Concepts</value>
+  </data>
+  <data name="lrbttGruposTarifa" xml:space="preserve">
+    <value>Rates Groups</value>
+  </data>
+  <data name="lrmnbttAuxiliaresVehiculos" xml:space="preserve">
+    <value>Vehicles</value>
+  </data>
+  <data name="lrbttAccesoriosVehiculos" xml:space="preserve">
+    <value>Vehicle Accessories</value>
+  </data>
+  <data name="lrbttActividadesVehiculos" xml:space="preserve">
+    <value>Vehicle Activities</value>
+  </data>
+  <data name="lrbttCodigosInmovilizacion" xml:space="preserve">
+    <value>Immobilization Codes</value>
+  </data>
+  <data name="lrbttCodigosMantenimiento" xml:space="preserve">
+    <value>Maintenance Codes</value>
+  </data>
+  <data name="lrbttColores" xml:space="preserve">
+    <value>Colors</value>
+  </data>
+  <data name="lrbttExtras" xml:space="preserve">
+    <value>Additional Features</value>
+  </data>
+  <data name="lrbttFormasTraslado" xml:space="preserve">
+    <value>Transfer Forms</value>
+  </data>
+  <data name="lrbttGruposVehiculos" xml:space="preserve">
+    <value>Vehicle Groups</value>
+  </data>
+  <data name="lrbttMarcas" xml:space="preserve">
+    <value>Brands</value>
+  </data>
+  <data name="lrbttModelos" xml:space="preserve">
+    <value>Models</value>
+  </data>
+  <data name="lrbttMotivosRepostaje" xml:space="preserve">
+    <value>Refuel Reasons</value>
+  </data>
+  <data name="lrbttPropietarios" xml:space="preserve">
+    <value>Owners</value>
+  </data>
+  <data name="lrbttTiposVehiculos" xml:space="preserve">
+    <value>Vehicle Types</value>
+  </data>
+  <data name="lrmnbttAuxiliaresVarios" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="lrbttCategoriasPersonal" xml:space="preserve">
+    <value>Hand Over Contracts to Office</value>
+  </data>
+  <data name="lrbttConceptosSalidaCaja" xml:space="preserve">
+    <value>Output Box Concepts</value>
+  </data>
+  <data name="lrbttTextosEstandars" xml:space="preserve">
+    <value>Standard Texts</value>
+  </data>
+  <data name="lrbttbitTipoContacto" xml:space="preserve">
+    <value>Commercial Contact Type</value>
+  </data>
+  <data name="lrbttTiposDocumentos" xml:space="preserve">
+    <value>Documents Types</value>
+  </data>
+  <data name="lrbttTipoImpresoFactura" xml:space="preserve">
+    <value>Form Invoice Types</value>
+  </data>
+  <data name="ltbContratos" xml:space="preserve">
+    <value>Contracts</value>
+  </data>
+  <data name="lrgrContratos" xml:space="preserve">
+    <value>Contracts</value>
+  </data>
+  <data name="lrbttAbrirContrato" xml:space="preserve">
+    <value>Open Contract</value>
+  </data>
+  <data name="lrbttAnularContrato" xml:space="preserve">
+    <value>Cancel Contract</value>
+  </data>
+  <data name="lrbttCerrarContrato" xml:space="preserve">
+    <value>Close Contract</value>
+  </data>
+  <data name="lrbttConcultarContrato" xml:space="preserve">
+    <value>Consult Contract</value>
+  </data>
+  <data name="lrbttReAbrirContrato" xml:space="preserve">
+    <value>Reopen Contract</value>
+  </data>
+  <data name="lrgrCambiosContratos" xml:space="preserve">
+    <value>Changes</value>
+  </data>
+  <data name="lrbttCambioConductor" xml:space="preserve">
+    <value>Change of Driver</value>
+  </data>
+  <data name="lrbttCambioNumeroContrato" xml:space="preserve">
+    <value>Change Contract Number</value>
+  </data>
+  <data name="lrbttCambioOficinaContrato" xml:space="preserve">
+    <value>Change Office Contract</value>
+  </data>
+  <data name="lrbttCambioVehiculo" xml:space="preserve">
+    <value>Exchange Vehicle</value>
+  </data>
+  <data name="lrgrVariosContratos" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="lrbttImpresionBloqueContratos" xml:space="preserve">
+    <value>Printing in Block of Contracts</value>
+  </data>
+  <data name="lrbttPlantilla" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="lrbttProcesoCierreContratos" xml:space="preserve">
+    <value>Process Closing Contracts</value>
+  </data>
+  <data name="lrbttProlongacionAutomaticaContratos" xml:space="preserve">
+    <value>Automatic Contract Prolonging</value>
+  </data>
+  <data name="ltbReservas" xml:space="preserve">
+    <value>Bookings</value>
+  </data>
+  <data name="lrgrReservas" xml:space="preserve">
+    <value>Bookings</value>
+  </data>
+  <data name="lrbttReservas" xml:space="preserve">
+    <value>Bookings</value>
+  </data>
+  <data name="lrbttAnularReserva" xml:space="preserve">
+    <value>Cancel Booking</value>
+  </data>
+  <data name="lrbttConvertirReservaContrato" xml:space="preserve">
+    <value>Convert Booking to Contract</value>
+  </data>
+  <data name="lrbttCotizacionComparada" xml:space="preserve">
+    <value>Comparative Quote</value>
+  </data>
+  <data name="lrbttEliminarReservasNoShow" xml:space="preserve">
+    <value>Delete Quotings No Show</value>
+  </data>
+  <data name="lrbttPeticiones" xml:space="preserve">
+    <value>Requests</value>
+  </data>
+  <data name="ltbAtipicos" xml:space="preserve">
+    <value>Atypical</value>
+  </data>
+  <data name="lrgrAtipicos" xml:space="preserve">
+    <value>Atypical</value>
+  </data>
+  <data name="lrbttAlquilerBicicletas" xml:space="preserve">
+    <value>Bicycles Rental</value>
+  </data>
+  <data name="lrbttFacturasAtipicas" xml:space="preserve">
+    <value>Atypical Invoices</value>
+  </data>
+  <data name="lrbttImpresionBloque" xml:space="preserve">
+    <value>Printing in Block</value>
+  </data>
+  <data name="lrbttSalidaCaja" xml:space="preserve">
+    <value>Checkout</value>
+  </data>
+  <data name="lrbttSeriesAtipicos" xml:space="preserve">
+    <value>Atypical Series</value>
+  </data>
+  <data name="ltbComercial" xml:space="preserve">
+    <value>Commercial</value>
+  </data>
+  <data name="lrgrComercial" xml:space="preserve">
+    <value>Commercial</value>
+  </data>
+  <data name="lrbttCustomerService" xml:space="preserve">
+    <value>Customer Service</value>
+  </data>
+  <data name="lrbttEntregaBonos" xml:space="preserve">
+    <value>Bonus Delivery</value>
+  </data>
+  <data name="lrbttEMailingClientes" xml:space="preserve">
+    <value>E-Mailing Clients</value>
+  </data>
+  <data name="lrbtteEMailingPotenciales" xml:space="preserve">
+    <value>E-Mailing Potentials</value>
+  </data>
+  <data name="lrbttPotenciales" xml:space="preserve">
+    <value>Potentials</value>
+  </data>
+  <data name="ltbFacturacion" xml:space="preserve">
+    <value>Billing</value>
+  </data>
+  <data name="lrgrFacturacion" xml:space="preserve">
+    <value>Billing</value>
+  </data>
+  <data name="rmnbttFacturas" xml:space="preserve">
+    <value>Bills</value>
+  </data>
+  <data name="lrbttAbonarFactura" xml:space="preserve">
+    <value>Pay Invoice</value>
+  </data>
+  <data name="lrbttBorrarFacturasPeriodo" xml:space="preserve">
+    <value>Delete Invoices in a Period</value>
+  </data>
+  <data name="lrbttCambioNumeroFactura" xml:space="preserve">
+    <value>Change Invoice Number</value>
+  </data>
+  <data name="lrbttCambioVendedorFacturas" xml:space="preserve">
+    <value>Sales Change in Invoices</value>
+  </data>
+  <data name="lrbttCartaPendientes" xml:space="preserve">
+    <value>Pending Letters</value>
+  </data>
+  <data name="lrbttConsultaModificacion" xml:space="preserve">
+    <value>Consult / Modification</value>
+  </data>
+  <data name="lrbttModificarEmpresaOficinaFactura" xml:space="preserve">
+    <value>Modify Company / Invoice Office</value>
+  </data>
+  <data name="lrbttModificarFacturaContrato" xml:space="preserve">
+    <value>Modify Bill in Contract</value>
+  </data>
+  <data name="lrbttProcesoFacturacion" xml:space="preserve">
+    <value>Billing Process</value>
+  </data>
+  <data name="lrgrRecibosCartera" xml:space="preserve">
+    <value>Receipts / Portfolio</value>
+  </data>
+  <data name="lrmnbttRecibosCartera" xml:space="preserve">
+    <value>Receipts Portfolio</value>
+  </data>
+  <data name="lrbttRecibos" xml:space="preserve">
+    <value>Receipts</value>
+  </data>
+  <data name="lrbttCobrosIndividuales" xml:space="preserve">
+    <value>Individual Charges</value>
+  </data>
+  <data name="lrbttGestionImpagados" xml:space="preserve">
+    <value>Unpaid Management</value>
+  </data>
+  <data name="lrbttRefundirRecibosNoCobrados" xml:space="preserve">
+    <value>Refund Receipts Not Charged</value>
+  </data>
+  <data name="lrgrRemesas" xml:space="preserve">
+    <value>Remittances</value>
+  </data>
+  <data name="lrmnbttRemesas" xml:space="preserve">
+    <value>Remittances</value>
+  </data>
+  <data name="lrbttRemesas" xml:space="preserve">
+    <value>Remittances</value>
+  </data>
+  <data name="lrbttAnulacionPaseRemesaContabilidad" xml:space="preserve">
+    <value>Cancel Pass Remittance to Accounting</value>
+  </data>
+  <data name="lrbttBancosRemesas" xml:space="preserve">
+    <value>Remittance Banks</value>
+  </data>
+  <data name="lrbttPaseSoporteMagnetico" xml:space="preserve">
+    <value>Pass to Magnetic Support</value>
+  </data>
+  <data name="rbttPaseRemesaContabilidad" xml:space="preserve">
+    <value>Pass Remittance to Accounting</value>
+  </data>
+  <data name="lrgrEnlacesContables" xml:space="preserve">
+    <value>Accounting</value>
+  </data>
+  <data name="lrmnbttEnlacesContables" xml:space="preserve">
+    <value>Accounting</value>
+  </data>
+  <data name="lrbttAnulacionPase" xml:space="preserve">
+    <value>Cancel Pass</value>
+  </data>
+  <data name="lrbttPaseCobrosRecibos" xml:space="preserve">
+    <value>Payments Pass (Receipts)</value>
+  </data>
+  <data name="lrbttPaseFacturas" xml:space="preserve">
+    <value>Bills Pass</value>
+  </data>
+  <data name="lrbttPaseFacturasAtipicas" xml:space="preserve">
+    <value>Atypical Bills Pass</value>
+  </data>
+  <data name="lrbttPaseTesoreriaCaja" xml:space="preserve">
+    <value>Treasury Pass (Cashier)</value>
+  </data>
+  <data name="lrgrExportacion" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="lrbttExportacionFichero340" xml:space="preserve">
+    <value>Export File 340</value>
+  </data>
+  <data name="lrbttExportacionFichero347" xml:space="preserve">
+    <value>Export File 347</value>
+  </data>
+  <data name="lrgrImpresion" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="lrbttImpresionBloqueFacturas" xml:space="preserve">
+    <value>Printing in Block Invoices</value>
+  </data>
+  <data name="lrbttImpresionBloqueRecibos" xml:space="preserve">
+    <value>Printing in Block Receipts</value>
+  </data>
+  <data name="lrgrEstadisticasFacturas" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="lrbttGeneradorEstadisticasFacturas" xml:space="preserve">
+    <value>Statistics Generator</value>
+  </data>
+  <data name="ltbFlota" xml:space="preserve">
+    <value>Fleet</value>
+  </data>
+  <data name="lrgrInmovilizaciones" xml:space="preserve">
+    <value>Immobilization</value>
+  </data>
+  <data name="lrbttInmovilizaciones" xml:space="preserve">
+    <value>Immobilization</value>
+  </data>
+  <data name="lrbttEntradaGastosVehiculo" xml:space="preserve">
+    <value>Entry Expenses per Vehicle</value>
+  </data>
+  <data name="lrbttGeneradorEstadisticasInmovilizaciones" xml:space="preserve">
+    <value>Statistics Generator</value>
+  </data>
+  <data name="lrgrUtilidades" xml:space="preserve">
+    <value>Utilities</value>
+  </data>
+  <data name="lrbttActualizarVtoITV" xml:space="preserve">
+    <value>Update Expiration ITV</value>
+  </data>
+  <data name="lrbttBastidorRadioLlave" xml:space="preserve">
+    <value>Chassis, Radio, Key</value>
+  </data>
+  <data name="lrbttCambioFechaBajaVehiculo" xml:space="preserve">
+    <value>Change Fall Date Vehicle</value>
+  </data>
+  <data name="lrbttCambioUbicacionKMSituacion" xml:space="preserve">
+    <value>Change Situation, KM, Location</value>
+  </data>
+  <data name="lrbttDatosSeguros" xml:space="preserve">
+    <value>Insurance Data</value>
+  </data>
+  <data name="lrbttFlotaVtoRecibosSeguros" xml:space="preserve">
+    <value>Fleet Expiration Insurance Receipts</value>
+  </data>
+  <data name="lrbttModificacionMasivaFlota" xml:space="preserve">
+    <value>Mass Modification</value>
+  </data>
+  <data name="lrbttTraslados" xml:space="preserve">
+    <value>Transfers</value>
+  </data>
+  <data name="lrgrVariosFlota" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="lrbttCambioEmpresa" xml:space="preserve">
+    <value>Change of Company</value>
+  </data>
+  <data name="lrbttCambioUbicacion" xml:space="preserve">
+    <value>Change of Location</value>
+  </data>
+  <data name="lrbttDescargarMultas" xml:space="preserve">
+    <value>Download Fines</value>
+  </data>
+  <data name="lrbttHistoricoSeguros" xml:space="preserve">
+    <value>Insurance History</value>
+  </data>
+  <data name="lrbttImpresionLlaveros" xml:space="preserve">
+    <value>Print of Keychains</value>
+  </data>
+  <data name="lrbttPrevisionEntradas" xml:space="preserve">
+    <value>Entrance Forecast</value>
+  </data>
+  <data name="lrbttRecalculoSituación" xml:space="preserve">
+    <value>Recalculation of Situation</value>
+  </data>
+  <data name="lrbttRepostaje" xml:space="preserve">
+    <value>Refueling</value>
+  </data>
+  <data name="lrbttSiniestros" xml:space="preserve">
+    <value>Accidents</value>
+  </data>
+  <data name="ltbIncidencias" xml:space="preserve">
+    <value>Incidents</value>
+  </data>
+  <data name="lrgrIncidencias" xml:space="preserve">
+    <value>Incidents</value>
+  </data>
+  <data name="lrbttIncidenciasClientes" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="lrbttIncidenciasContratos" xml:space="preserve">
+    <value>Contracts</value>
+  </data>
+  <data name="lrbttIncidenciasProveedores" xml:space="preserve">
+    <value>Suppliers</value>
+  </data>
+  <data name="lrbttIncidenciasReservas" xml:space="preserve">
+    <value>Bookings</value>
+  </data>
+  <data name="lrbttIncidenciasVehiculos" xml:space="preserve">
+    <value>Vehicles</value>
+  </data>
+  <data name="ltbEstadisticas" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="lrgrEstadisticas" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="lrbttEstadisticasAnaliticas" xml:space="preserve">
+    <value>Analytical</value>
+  </data>
+  <data name="lrbttEstadisticasClientes" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="lrbttEstadisticasContratos" xml:space="preserve">
+    <value>Contracts</value>
+  </data>
+  <data name="lrbttEstadisticasFacturas" xml:space="preserve">
+    <value>Bills</value>
+  </data>
+  <data name="lrbttEstadisticasPeticiones" xml:space="preserve">
+    <value>Requests</value>
+  </data>
+  <data name="lrbttEstadisticasProveedores" xml:space="preserve">
+    <value>Suppliers</value>
+  </data>
+  <data name="lrbttEstadisticasReservas" xml:space="preserve">
+    <value>Bookings</value>
+  </data>
+  <data name="lrbttEstadisticasUtilitarios" xml:space="preserve">
+    <value>Utilities</value>
+  </data>
+  <data name="lrbttEstadisticasVehiculos" xml:space="preserve">
+    <value>Vehicles</value>
+  </data>
+  <data name="ltbListados" xml:space="preserve">
+    <value>Listings</value>
+  </data>
+  <data name="lrgrListados" xml:space="preserve">
+    <value>Listings</value>
+  </data>
+  <data name="lrbttListadosClientes" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="lrbttListadosComisionistas" xml:space="preserve">
+    <value>Brokers</value>
+  </data>
+  <data name="lrbttListadosContratos" xml:space="preserve">
+    <value>Contracts</value>
+  </data>
+  <data name="lrbttListadosFicherosAuxiliares" xml:space="preserve">
+    <value>Auxiliary Files</value>
+  </data>
+  <data name="lrbttListadosFacturas" xml:space="preserve">
+    <value>Bills</value>
+  </data>
+  <data name="lrbttListadosPeticiones" xml:space="preserve">
+    <value>Requests</value>
+  </data>
+  <data name="lrbttListadosPotenciales" xml:space="preserve">
+    <value>Potentials</value>
+  </data>
+  <data name="lrbttListadosProveedores" xml:space="preserve">
+    <value>Suppliers</value>
+  </data>
+  <data name="lrbttListadosReservas" xml:space="preserve">
+    <value>Bookings</value>
+  </data>
+  <data name="lrbttListadosVehiculos" xml:space="preserve">
+    <value>Vehicles</value>
+  </data>
+  <data name="ltbConfiguracion" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="lrgrConfiguracion" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="lrmnbttConfiguracion" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="lrbttCodigosIniciales" xml:space="preserve">
+    <value>Initial Codes</value>
+  </data>
+  <data name="lrbttEmpresa" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="lrbttEnlaceContabilidad" xml:space="preserve">
+    <value>Accounting</value>
+  </data>
+  <data name="lrbttEquipo" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="lrbttFacturacion" xml:space="preserve">
+    <value>Billing</value>
+  </data>
+  <data name="lrbttbiImpresion" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="lrbttKarve" xml:space="preserve">
+    <value>Karve</value>
+  </data>
+  <data name="lrbttMaestros" xml:space="preserve">
+    <value>Masters</value>
+  </data>
+  <data name="lrbttOficina" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="lrbttOperaciones" xml:space="preserve">
+    <value>Operations</value>
+  </data>
+  <data name="lrbttOtros" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="lrmnbttPermisos" xml:space="preserve">
+    <value>Permission</value>
+  </data>
+  <data name="lrbttInformes" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="lrbttPrograma" xml:space="preserve">
+    <value>Program</value>
+  </data>
+  <data name="lrgrIdiomas" xml:space="preserve">
+    <value>Languages</value>
+  </data>
+  <data name="lrmnbttIdiomas" xml:space="preserve">
+    <value>Languages</value>
+  </data>
+  <data name="lrbttIdiomaESES" xml:space="preserve">
     <value>Spanish</value>
   </data>
-  <data name="rbttIdiomaCAES" xml:space="preserve">
+  <data name="lrbttIdiomaCAES" xml:space="preserve">
     <value>Catalan</value>
   </data>
-  <data name="rbttIdiomaENGB" xml:space="preserve">
+  <data name="lrbttIdiomaENGB" xml:space="preserve">
     <value>English</value>
+  </data>
+  <data name="lrgrPersonal" xml:space="preserve">
+    <value>Staff</value>
+  </data>
+  <data name="lrbttMailingPersonal" xml:space="preserve">
+    <value>Mailing to Staff</value>
+  </data>
+  <data name="lrbttPersonal" xml:space="preserve">
+    <value>Staff</value>
+  </data>
+  <data name="lrgrUtilitarios" xml:space="preserve">
+    <value>Utilities</value>
+  </data>
+  <data name="lrmnbttUtilitarios" xml:space="preserve">
+    <value>Utilities</value>
+  </data>
+  <data name="lrbttBorrarFicherosEnvioEmail" xml:space="preserve">
+    <value>Delete Files Email Sending</value>
+  </data>
+  <data name="lrbttCambiarIVA" xml:space="preserve">
+    <value>Change VAT</value>
+  </data>
+  <data name="lrbttComunicacionPolicia" xml:space="preserve">
+    <value>Police Communication</value>
+  </data>
+  <data name="lrbttConsultaSQL" xml:space="preserve">
+    <value>SQL Query</value>
+  </data>
+  <data name="lrbttDesbloquearContratosFacturando" xml:space="preserve">
+    <value>Unlook Billing Contracts</value>
+  </data>
+  <data name="lrbttDeteccionHuecos" xml:space="preserve">
+    <value>Holes Detection</value>
+  </data>
+  <data name="lrbttDeteccionInconsistencias" xml:space="preserve">
+    <value>Detection of Inconsistencies</value>
+  </data>
+  <data name="lrbttDesvincularContratosReservas" xml:space="preserve">
+    <value>Unlink Booking Contracts</value>
+  </data>
+  <data name="lrbttLimpiarInformacionAntigua" xml:space="preserve">
+    <value>Clean Old Information</value>
+  </data>
+  <data name="lrbttLimpiarCodigosReserva" xml:space="preserve">
+    <value>Clear Booking Codes</value>
+  </data>
+  <data name="lrbttRecalcularMantenimientos" xml:space="preserve">
+    <value>Recalculate Maintenance</value>
+  </data>
+  <data name="lrbttRecalcularPendientes" xml:space="preserve">
+    <value>Recalculate Pendings</value>
+  </data>
+  <data name="lrbttRehacerÍndices" xml:space="preserve">
+    <value>Redo Indexes</value>
+  </data>
+  <data name="lrbttRelojesActivos" xml:space="preserve">
+    <value>Active Watches</value>
+  </data>
+  <data name="lrbttVincularContratosReservas" xml:space="preserve">
+    <value>Linking Contracts to Reserves</value>
+  </data>
+  <data name="lrbttVincularContratosReservasNoVinculadas" xml:space="preserve">
+    <value>Linking Contracts to Unrelated Reserves</value>
+  </data>
+  <data name="lrgrVariosconfiguracion" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="lrbttCambiarContrasenyas" xml:space="preserve">
+    <value>Change Passwords</value>
+  </data>
+  <data name="lrbttPreciosCombustible" xml:space="preserve">
+    <value>Fuel prices</value>
+  </data>
+  <data name="lrbttUsuarios" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="lrrgrKarve" xml:space="preserve">
+    <value>Karve</value>
+  </data>
+  <data name="lrmnbttKarve" xml:space="preserve">
+    <value>Karve</value>
+  </data>
+  <data name="lrbttAcercaDe" xml:space="preserve">
+    <value>About...</value>
+  </data>
+  <data name="lrbttContrasenyasKarve" xml:space="preserve">
+    <value>Karve Passwords</value>
+  </data>
+  <data name="lrbttDescargarActualizacion" xml:space="preserve">
+    <value>Download Update</value>
+  </data>
+  <data name="lrbttMensajeEntrada" xml:space="preserve">
+    <value>Input Message</value>
+  </data>
+  <data name="lrbttNovedades" xml:space="preserve">
+    <value>What's New</value>
+  </data>
+  <data name="lrbttReservasWeb" xml:space="preserve">
+    <value>Web Bookings: 123</value>
+  </data>
+  <data name="lrbttValidar" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="dttcBicSwift" xml:space="preserve">
+    <value>BIC/Swift</value>
+  </data>
+  <data name="dttcCodigo" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="dttcDefinicion" xml:space="preserve">
+    <value>Definition</value>
+  </data>
+  <data name="dttcUltModi" xml:space="preserve">
+    <value>Last Modification Date</value>
+  </data>
+  <data name="msgSalir" xml:space="preserve">
+    <value>Do you want to quit the application?</value>
   </data>
 </root>

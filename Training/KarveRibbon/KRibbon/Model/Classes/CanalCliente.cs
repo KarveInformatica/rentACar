@@ -9,7 +9,7 @@ using System.Text;
 
 namespace KRibbon.Model
 {
-    public class BloqueFacturacion //: IAuxiliares
+    public class CanalCliente //: IAuxiliares
     {
         #region List<DBCriterios>
         public static List<DBCriterios> dbcriterioslist = new List<DBCriterios>()
@@ -26,8 +26,8 @@ namespace KRibbon.Model
         #endregion
 
         #region Constructores
-        public BloqueFacturacion() { }
-        public BloqueFacturacion(string codigo, string nombre)
+        public CanalCliente() { }
+        public CanalCliente(string codigo, string nombre)
         {
             this.codigo = codigo;
             this.nombre = nombre;

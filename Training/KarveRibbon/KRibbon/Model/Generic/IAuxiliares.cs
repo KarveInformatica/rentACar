@@ -9,7 +9,7 @@ namespace KRibbon.Model
     public interface IAuxiliares : INotifyPropertyChanged
     {
         string CodigoAux { get; set; }
-        string NombreAux { get; set; }
+        string DefinicionAux { get; set; }       
 
         event PropertyChangedEventHandler PropertyChanged;
     }
