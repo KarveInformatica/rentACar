@@ -21,7 +21,10 @@ namespace WpfTraining06Ribbon
         {
             this.WindowState = WindowState.Maximized;
             InitializeComponent();
-        }
+
+
+        }      
+
         #region ToggleButton collapse/Expand
         /*private void ToggleButton_Checked(object sender, RoutedEventArgs e)
         {
@@ -70,7 +73,7 @@ namespace WpfTraining06Ribbon
             return null;
         }*/
         #endregion
-             
+
         #region Ribbon Drag and Drop
         private void Ribbon_PreviewMouseMove(object sender, MouseEventArgs e)
         {

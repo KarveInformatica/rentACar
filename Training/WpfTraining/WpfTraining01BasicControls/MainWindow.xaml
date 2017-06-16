@@ -57,7 +57,7 @@
 
         <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="10">
             <Button Name="btnClickMe" Click="btnClickMe_Click">Click me!</Button>
-            <Button HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click">Throw an Exception!</Button>
+            <Button HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click">Th  an Exception!</Button>
         </WrapPanel>
 
         <ListBox Name="lbResult" />
