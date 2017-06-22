@@ -8,9 +8,10 @@
     <Application.Resources>
         <ObjectDataProvider x:Key="ResourceLanguage" 
                             ObjectType="{x:Type lang:ChangeLanguage}" 
-                            MethodName="GetResourceInstance">
+                            MethodName="GetResource">
         </ObjectDataProvider>
-        <vm:CloseItemViewModel x:Key="closeItem"/>
+        <vm:CloseTabItemViewModel x:Key="closeTabItem"/>
+        <vm:CloseWindowViewModel  x:Key="closeWindow"/>
         <vm:MostrarAuxiliaresViewModel x:Key="mostrarAuxiliares"/>
         <vm:SetLanguagesViewModel x:Key="setLanguages"/>
     </Application.Resources>

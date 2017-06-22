@@ -2,6 +2,7 @@
                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
                 xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"                
                 xmlns:local="clr-namespace:KRibbon"
@@ -159,13 +160,13 @@
                     <r:RibbonApplicationMenuItem x:Name="rapmnitSalir"
                                                  Header="{Binding lrapmnitSalir, Source={StaticResource ResourceLanguage}}"
                                                  ImageSource="..\Images\exit.png"                                     
-                                                 DataContext="{StaticResource closeItem}" >
+                                                 DataContext="{StaticResource closeWindow}" >
                         <r:RibbonApplicationMenuItem.InputBindings>
                             <KeyBinding Key="Return"                                                
-                                        Command="{Binding CloseItemCommand}" 
+                                        Command="{Binding CloseWindowCommand}" 
                                         CommandParameter="Window" />
                             <MouseBinding MouseAction="LeftClick"
-                                          Command="{Binding CloseItemCommand}" 
+                                          Command="{Binding CloseWindowCommand}" 
                                           CommandParameter="Window" />
                         </r:RibbonApplicationMenuItem.InputBindings>
                     </r:RibbonApplicationMenuItem>
@@ -505,7 +506,7 @@
                             <r:RibbonButton.InputBindings>
                                 <KeyBinding Key="Return"                                                
                                             Command="{Binding MostrarAuxCommand}" 
-                                            CommandParameter="CanalCliente" />
+                                            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                                 <MouseBinding MouseAction="LeftClick"
                                               Command="{Binding MostrarAuxCommand}" 
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
@@ -2084,8 +2085,8 @@
                                     Command="{Binding NosequeCommand}" 
                                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                         <MouseBinding MouseAction="LeftClick"
-                                        Command="{Binding NosequeCommand}" 
-                                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
+                                      Command="{Binding NosequeCommand}" 
+                                      CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                         
                     </Button.InputBindings>
                 </Button>
@@ -2138,6 +2139,32 @@
                                     Command="{Binding NosequeCommand}" 
                                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                         <MouseBinding MouseAction="LeftClick"
+                                      Command="{Binding NosequeCommand}" 
+                                      CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
+                    </Button.InputBindings>
+                </Button>
+                <Button x:Name="tbbttGuardar" 
+                        HorizontalAlignment="Left"                             
+                        DataContext="{StaticResource mostrarAuxiliares}" >
+                    <StackPanel>
+                        <Image Source="..\Images\save.png" Stretch="Fill" Height="35" />
+                        <TextBlock Text="{Binding ltbbttGuardar, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <Button.ToolTip>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding ltbbttGuardar, Source={StaticResource ResourceLanguage}}" />
+                            <TextBlock Text=" (Ctrl+G)" />
+                        </StackPanel>
+                    </Button.ToolTip>
+                    <Button.InputBindings>
+                        <KeyBinding Key="G" 
+                                    Modifiers="Ctrl" 
+                                    Command="{Binding NosequeCommand}" 
+                                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
+                        <KeyBinding Key="Return"                                                
+                                    Command="{Binding NosequeCommand}" 
+                                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
+                        <MouseBinding MouseAction="LeftClick"
                                         Command="{Binding NosequeCommand}" 
                                         CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                     </Button.InputBindings>
@@ -2157,32 +2184,6 @@
                     </Button.ToolTip>
                     <Button.InputBindings>
                         <KeyBinding Key="C" 
-                                    Modifiers="Ctrl" 
-                                    Command="{Binding NosequeCommand}" 
-                                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
-                        <KeyBinding Key="Return"                                                
-                                    Command="{Binding NosequeCommand}" 
-                                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
-                        <MouseBinding MouseAction="LeftClick"
-                                        Command="{Binding NosequeCommand}" 
-                                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
-                    </Button.InputBindings>
-                </Button>
-                <Button x:Name="tbbttGuardar" 
-                        HorizontalAlignment="Left"                             
-                        DataContext="{StaticResource mostrarAuxiliares}" >
-                    <StackPanel>
-                        <Image Source="..\Images\save.png" Stretch="Fill" Height="35" />
-                        <TextBlock Text="{Binding ltbbttGuardar, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
-                    </StackPanel>
-                    <Button.ToolTip>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding ltbbttGuardar, Source={StaticResource ResourceLanguage}}" />
-                            <TextBlock Text=" (Ctrl+G)" />
-                        </StackPanel>
-                    </Button.ToolTip>
-                    <Button.InputBindings>
-                        <KeyBinding Key="G" 
                                     Modifiers="Ctrl" 
                                     Command="{Binding NosequeCommand}" 
                                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
@@ -2309,7 +2310,7 @@
                             DataContext="{StaticResource mostrarAuxiliares}" >
                             <Button.ToolTip>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding ltbbttBuscar, Source={StaticResource ResourceLanguage}}" />
+                                    <!--<TextBlock Text="{Binding ltbbttBuscar, Source={StaticResource ResourceLanguage}}" />-->
                                     <TextBlock Text=" (Ctrl+S)" />
                                 </StackPanel>
                             </Button.ToolTip>
@@ -2333,15 +2334,31 @@
                 </TextBlock>
             </ToolBar>
         </ToolBarTray>
-
+        <!--<Label Content="{Binding ElementName=tbControl, Path=SelectedItem.Header}"/>
+        <Label Content="{Binding ElementName=tbControl, Path=SelectedItem.Name}"/>
+        <Label Content="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=SelectedItem.Object.ToString()}"/>
+        <Label Content="{Binding ElementName=tbControl, Path=SelectedItem.GivenName}"/>
+        <Label Content="{Binding ElementName=tbControl, Path=SelectedItem.CanUserDeleteRows}"/>-->
         <TabControl x:Name="tbControl" >
             <TabControl.Resources>
                 <DataTemplate x:Key="TabHeader" DataType="TabItem">
                     <DockPanel>
-                        <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=TabItem }, Path=Header}" />
+                        <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=TabItem}, Path=Header}" />
                         <TextBlock Text="  " />
-                        <Button DataContext="{StaticResource closeItem}"
-                                Command="{Binding CloseItemCommand}"                                
+                        <Button DataContext="{StaticResource closeTabItem}"
+                                Command="{Binding CloseTabItemCommand}"                                
+                                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}" 
+                                Background="Transparent" BorderBrush="Transparent">
+                            <Image Source="..\Images\cancel.png" Height="11" Width="11"></Image>
+                        </Button>
+                    </DockPanel>
+                </DataTemplate>
+                <DataTemplate x:Key="TabSelectedItem" DataType="TabItem.SelectedItem">
+                    <DockPanel>
+                        <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=TabItem}, Path=Header}" />
+                        <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=TabItem}, Path=Index}" />
+                        <Button DataContext="{StaticResource closeTabItem}"
+                                Command="{Binding CloseTabItemCommand}"                                
                                 CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Name}" 
                                 Background="Transparent" BorderBrush="Transparent">
                             <Image Source="..\Images\cancel.png" Height="11" Width="11"></Image>

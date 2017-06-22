@@ -2896,6 +2896,51 @@ namespace KRibbon.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No se encuentra el Servidor de la Base de Datos.
+        /// </summary>
+        public static string msgError100 {
+            get {
+                return ResourceManager.GetString("msgError100", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Incorrecto Id de usuario y/o contraseña.
+        /// </summary>
+        public static string msgError103 {
+            get {
+                return ResourceManager.GetString("msgError103", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error de sintaxi en sentencia SQL.
+        /// </summary>
+        public static string msgError131 {
+            get {
+                return ResourceManager.GetString("msgError131", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No se encuentra la Tabla.
+        /// </summary>
+        public static string msgError141 {
+            get {
+                return ResourceManager.GetString("msgError141", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No se encuentra la Base de Datos.
+        /// </summary>
+        public static string msgError83 {
+            get {
+                return ResourceManager.GetString("msgError83", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ¿Está seguro que desea salir de la aplicación?.
         /// </summary>
         public static string msgSalir {

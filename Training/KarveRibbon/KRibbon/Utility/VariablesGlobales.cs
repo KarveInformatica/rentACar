@@ -89,7 +89,7 @@ namespace KRibbon.Utility
             #endregion
         };        
 
-        public static ObservableCollection<Object> datagriditemsobscollection;      
+        public static ObservableCollection<object> dgitemsobscollection;
 
         public enum ETiposDatoColumnaDB
         {

@@ -75,7 +75,7 @@ namespace KRibbon.Model
             {
                 return ultmodi;
             }
-            set
+            private set
             {
                 ultmodi = value;
                 OnPropertyChanged("UltModi");

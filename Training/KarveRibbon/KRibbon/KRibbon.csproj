@@ -78,11 +78,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\Specific\BanksUpdateCommand.cs" />
     <Compile Include="Commands\Generic\RelayCommand.cs" />
-    <Compile Include="Commands\Specific\CloseItemCommand.cs" />
-    <Compile Include="Commands\Specific\LanguagesCommand.cs" />
-    <Compile Include="Commands\Specific\AuxiliaresCommand.cs" />
+    <Compile Include="Commands\Specific\CloseTabItemCommand.cs" />
+    <Compile Include="Commands\Specific\CloseWindowCommand.cs" />
+    <Compile Include="Commands\Specific\SetLanguagesCommand.cs" />
+    <Compile Include="Commands\Specific\MostrarAuxiliaresCommand.cs" />
     <Compile Include="Logic\Generic\CloseWindow.cs" />
+    <Compile Include="Logic\Maestros\KarveDataGridTextColumn.cs" />
     <Compile Include="Logic\Maestros\LogicAuxiliares.cs" />
     <Compile Include="Model\Classes\Banco.cs" />
     <Compile Include="Model\Classes\CargoPersonal.cs" />
@@ -103,6 +106,7 @@
     <Compile Include="Model\SQL\ScriptsSQLSelect.cs" />
     <Compile Include="Model\Sybase\AuxiliaresModel.cs" />
     <Compile Include="Model\Sybase\DBConnect.cs" />
+    <Compile Include="Model\Sybase\DBErrors.cs" />
     <Compile Include="Properties\Resources.ca-ES.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -118,12 +122,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.es-ES.resx</DependentUpon>
     </Compile>
-    <Compile Include="Logic\Generic\AddTab.cs" />
+    <Compile Include="Logic\Generic\AddRibbonTabByCode.cs" />
     <Compile Include="Logic\Generic\ChangeLanguage.cs" />
+    <Compile Include="Utility\CreateGenericObject.cs" />
     <Compile Include="Utility\TablaAuxiliares.cs" />
     <Compile Include="Utility\ValidateData.cs" />
     <Compile Include="Utility\VariablesGlobales.cs" />
-    <Compile Include="ViewModel\CloseItemViewModel.cs" />
+    <Compile Include="ViewModel\BanksViewModel.cs" />
+    <Compile Include="ViewModel\CloseTabItemViewModel.cs" />
+    <Compile Include="ViewModel\CloseWindowViewModel.cs" />
     <Compile Include="ViewModel\SetLanguagesViewModel.cs" />
     <Compile Include="ViewModel\MostrarAuxiliaresViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />

@@ -9,6 +9,8 @@ using System.Windows.Threading;
 using System.Threading;
 using System.Globalization;
 using KRibbon.Model.Sybase;
+using System.Collections.Generic;
+using System.Windows.Controls;
 
 namespace KRibbon
 {
@@ -28,8 +30,9 @@ namespace KRibbon
             DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
                 this.stInicio.Text = "Aquí ponemos algún texto, p.e.: " + DateTime.Now.ToString("dd/MMMM/yyyy HH:mm:ss");
-                this.Title = "Aquí ponemos algún texto, p.e.: KarveWin[Versión: " + DateTime.Now.ToString("dd/MMMM/yyyy HH:mm:ss" + "]         C1[PRUEBA, S.A].USUARIO: JORDI");
-            }, this.Dispatcher);            
+                this.Title = "Aquí ponemos algún texto, p.e.: KarveWin[Versión: " 
+                            + DateTime.Now.ToString("dd/MMMM/yyyy HH:mm:ss" + "]         C1[PRUEBA, S.A].USUARIO: JORDI");
+            }, this.Dispatcher);
         }
 
 
@@ -79,6 +82,5 @@ namespace KRibbon
             catch (Exception) { }
         }
         #endregion
-
     }
 }

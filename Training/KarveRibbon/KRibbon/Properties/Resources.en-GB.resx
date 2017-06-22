@@ -1071,4 +1071,19 @@
   <data name="msgSalir" xml:space="preserve">
     <value>Do you want to quit the application?</value>
   </data>
+  <data name="msgError83" xml:space="preserve">
+    <value>Specified DataBase not found</value>
+  </data>
+  <data name="msgError100" xml:space="preserve">
+    <value>DataBase Server not found</value>
+  </data>
+  <data name="msgError103" xml:space="preserve">
+    <value>Invalid User Id or Password</value>
+  </data>
+  <data name="msgError131" xml:space="preserve">
+    <value>Syntax Error in SQL sentence</value>
+  </data>
+  <data name="msgError141" xml:space="preserve">
+    <value>Table not found</value>
+  </data>
 </root>

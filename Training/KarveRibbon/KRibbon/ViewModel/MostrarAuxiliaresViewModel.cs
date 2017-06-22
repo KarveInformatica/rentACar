@@ -14,30 +14,31 @@ namespace KRibbon.ViewModel
 {
     public class MostrarAuxiliaresViewModel : ViewModelBase
     {
-        private AuxiliaresCommand auxiliaresCommand;
+        private MostrarAuxiliaresCommand mostrarauxiliarescommand;
 
         public MostrarAuxiliaresViewModel()
         {
-            this.auxiliaresCommand = new AuxiliaresCommand(this);
+            this.mostrarauxiliarescommand = new MostrarAuxiliaresCommand(this);
         }
 
         public ICommand MostrarAuxCommand
         {
             get
             {
-                return auxiliaresCommand;
+                return mostrarauxiliarescommand;
             }
         }
+ 
         /// <summary>
         /// Añade/pone foco en la Tab correspondiente según el param recibido desde el xaml, del cual se recupera su ETipoAuxiliar
         /// </summary>
         /// <param name="parameter"></param>
-        public void MostrarAux(object parameter)
+        public void MostrarAuxiliares(object parameter)
         {
             ETipoAuxiliar tipoaux = tiposauxiliaresdictionary.Where(z => z.Key.ToString() == parameter.ToString()).FirstOrDefault().Key;
 
-            //Si el param no se encuentra en la Enum ETipoAuxiliar, no hace nada, sino mostraría la Tab correspondiente al 
-            //primer valor de la Enum ETipoAuxiliar
+            //Si el param no se encuentra en la Enum ETipoAuxiliar, no hace nada, sino mostraría 
+            //la Tab correspondiente al primer valor de la Enum ETipoAuxiliar
             if (tipoaux.ToString() == parameter.ToString())
             {
                 LogicAuxiliares.addTabItem(tipoaux);

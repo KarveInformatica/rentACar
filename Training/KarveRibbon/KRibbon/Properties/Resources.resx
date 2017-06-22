@@ -1386,4 +1386,24 @@
     <value>¿Está seguro que desea salir de la aplicación?</value>
     <comment>msgSalir</comment>
   </data>
+  <data name="msgError83" xml:space="preserve">
+    <value>No se encuentra la Base de Datos</value>
+    <comment>Specified DataBase not found</comment>
+  </data>
+  <data name="msgError100" xml:space="preserve">
+    <value>No se encuentra el Servidor de la Base de Datos</value>
+    <comment>DataBase Server not found</comment>
+  </data>
+  <data name="msgError103" xml:space="preserve">
+    <value>Incorrecto Id de usuario y/o contraseña</value>
+    <comment>Invalid User Id or Password</comment>
+  </data>
+  <data name="msgError131" xml:space="preserve">
+    <value>Error de sintaxi en sentencia SQL</value>
+    <comment>Syntax Error in SQL sentence</comment>
+  </data>
+  <data name="msgError141" xml:space="preserve">
+    <value>No se encuentra la Tabla</value>
+    <comment>Table not found</comment>
+  </data>
 </root>

@@ -15,7 +15,7 @@ namespace KRibbon.Utility
         public ChangeLanguage() { }
 
         //Devuelve una instancia nueva de nuestros recursos
-        public Resources GetResourceInstance()
+        public Resources GetResource()
         {
             return new Resources();
         }
@@ -26,7 +26,9 @@ namespace KRibbon.Utility
             get
             {
                 if (odp == null)
+                {
                     odp = (ObjectDataProvider)App.Current.FindResource("ResourceLanguage");
+                }
                 return odp;
             }
         }
@@ -34,7 +36,7 @@ namespace KRibbon.Utility
         //Este método cambia la cultura aplicada a los recursos y refresca la propiedad ResourceProvider
         public static void ChangeCulture(CultureInfo culture)
         {
-            Properties.Resources.Culture = culture;
+            Properties.Resources.Culture = culture;            
             ResourceProvider.Refresh();
         }
     }

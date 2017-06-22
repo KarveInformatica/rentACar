@@ -1071,4 +1071,19 @@
   <data name="msgSalir" xml:space="preserve">
     <value>¿Está seguro que desea salir de la aplicación?</value>
   </data>
+  <data name="msgError83" xml:space="preserve">
+    <value>No se encuentra la Base de Datos</value>
+  </data>
+  <data name="msgError100" xml:space="preserve">
+    <value>No se encuentra el Servidor de la Base de Datos</value>
+  </data>
+  <data name="msgError103" xml:space="preserve">
+    <value>Incorrecto Id de usuario y/o contraseña</value>
+  </data>
+  <data name="msgError131" xml:space="preserve">
+    <value>Error de sintaxi en sentencia SQL</value>
+  </data>
+  <data name="msgError141" xml:space="preserve">
+    <value>No se encuentra la Tabla</value>
+  </data>
 </root>

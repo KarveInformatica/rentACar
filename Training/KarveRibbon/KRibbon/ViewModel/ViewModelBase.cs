@@ -6,13 +6,17 @@ using System.Text;
 
 namespace KRibbon.ViewModel
 {
-    public class ViewModelBase : INotifyPropertyChanged
+    /// <summary>
+    ///  Class abstracta para el View Model
+    /// </summary>
+    public abstract class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged(string propertyName)
+        protected void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
+            var handler = PropertyChanged;
+            if (handler != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }

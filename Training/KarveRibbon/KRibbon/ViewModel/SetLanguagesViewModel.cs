@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using System.Windows;
+using System.Windows.Controls;
+
 using System.Globalization;
 using System.Threading;
+
 using KRibbon;
 using KRibbon.Commands.Specific;
 using KRibbon.Model;
@@ -16,18 +19,18 @@ namespace KRibbon.ViewModel
 {
     public class SetLanguagesViewModel : ViewModelBase
     {
-        private LanguagesCommand setlanguagesCommand;
+        private SetLanguagesCommand setlanguagescommand;
 
         public SetLanguagesViewModel()
         {
-            this.setlanguagesCommand = new LanguagesCommand(this);
+            this.setlanguagescommand = new SetLanguagesCommand(this);
         }
 
         public ICommand SetLanguagesCommand
         {
             get
             {
-                return setlanguagesCommand;
+                return setlanguagescommand;
             }
         }
 

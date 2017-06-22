@@ -1389,4 +1389,24 @@
     <value>Està segur que desitja sortir de l'aplicació?</value>
     <comment>320</comment>
   </data>
+  <data name="msgError83" xml:space="preserve">
+    <value>No es troba la Base de Dades</value>
+    <comment>321</comment>
+  </data>
+  <data name="msgError100" xml:space="preserve">
+    <value>No es troba el Servidor de la Base de Dades</value>
+    <comment>322</comment>
+  </data>
+  <data name="msgError103" xml:space="preserve">
+    <value>Incorrecte Id d'usuari i/o contrasenya</value>
+    <comment>323</comment>
+  </data>
+  <data name="msgError131" xml:space="preserve">
+    <value>Error de sintaxi en sentència SQL</value>
+    <comment>324</comment>
+  </data>
+  <data name="msgError141" xml:space="preserve">
+    <value>No es troba la Taula</value>
+    <comment>325</comment>
+  </data>
 </root>

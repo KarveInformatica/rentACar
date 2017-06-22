@@ -73,7 +73,7 @@ namespace KRibbon.Model.Sybase
                  "; Links=tcpip(host=" + this.Host + ")";
         }
 
-        internal SAConnection GetConnection(DBConnect dbconn)
+        public SAConnection GetConnection(DBConnect dbconn)
         {
             return new SAConnection(string.Format(ScriptsSQL.CONNECTION_STRING, dbconn.enginename, dbconn.databasename, dbconn.uid, dbconn.pwd, dbconn.host));
         }

@@ -113,26 +113,26 @@ namespace KRibbon.Utility
                 ((MainWindow)Application.Current.MainWindow).tbControl.Items.Add(tbitem);
                 tbitem.Focus();
 
-                VariablesGlobales.datagriditemsobscollection = new ObservableCollection<Object>();
+                dgitemsobscollection = new ObservableCollection<object>();
 
                 switch (tipoauxiliar)
                 {
                     case ETipoAuxiliar.rbttFormasPagoProveedor:
                         //FormaPagoProveedorCollection fpp = new FormaPagoProveedorCollection();
-                        //VariablesGlobales.datagriditemsobscollection = fpp.GetFormaPagoProveedor();
+                        //VariablesGlobales.dgitemsobscollection = fpp.GetFormaPagoProveedor();
                         break;
                     case ETipoAuxiliar.rbttGruposTarifa:
                         //GrupoTarifaCollection gtr = new GrupoTarifaCollection();
-                        //VariablesGlobales.datagriditemsobscollection = gtr.GetGruposTarifa();
+                        //VariablesGlobales.dgitemsobscollection = gtr.GetGruposTarifa();
                         break;
                     case ETipoAuxiliar.rbttTipoComisionista:
                         //TipoComisionistaCollection tc = new TipoComisionistaCollection();
-                        //VariablesGlobales.datagriditemsobscollection = tc.GetTiposComisionista();
+                        //VariablesGlobales.dgitemsobscollection = tc.GetTiposComisionista();
                         break;
                     default:
                         break;
                 }
-                loadDataItem(tbitem, datagriditemsobscollection, tipoauxiliar);
+                loadDataItem(tbitem, dgitemsobscollection, tipoauxiliar);
             }
             else
             {   //Si el TabItem del tipo de auxiliar ya se está mostrado, no se carga
@@ -148,7 +148,7 @@ namespace KRibbon.Utility
             }
         }
         
-        private static void loadDataItem(TabItem tbitem, ObservableCollection<Object> tabitemslist, ETipoAuxiliar aux)
+        private static void loadDataItem(TabItem tbitem, ObservableCollection<object> tabitemslist, ETipoAuxiliar aux)
         {
             DataGrid datagrid = new DataGrid();
             datagrid.Width = 400;

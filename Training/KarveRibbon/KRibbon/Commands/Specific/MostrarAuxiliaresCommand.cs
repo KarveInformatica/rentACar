@@ -1,4 +1,5 @@
-﻿using KRibbon.ViewModel;
+﻿using KRibbon.Commands.Generic;
+using KRibbon.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +9,11 @@ using System.Windows.Input;
 
 namespace KRibbon.Commands.Specific
 {
-    public class AuxiliaresCommand : ICommand
+    public class MostrarAuxiliaresCommand : ICommand
     {
         private MostrarAuxiliaresViewModel mostrarauxiliaresvm;
 
-        public AuxiliaresCommand(MostrarAuxiliaresViewModel vm)
+        public MostrarAuxiliaresCommand(MostrarAuxiliaresViewModel vm)
         {
             this.mostrarauxiliaresvm = vm;
         }
@@ -26,7 +27,7 @@ namespace KRibbon.Commands.Specific
 
         public void Execute(object parameter)
         {
-            mostrarauxiliaresvm.MostrarAux(parameter);        
+            mostrarauxiliaresvm.MostrarAuxiliares(parameter);        
         }
     }
 }

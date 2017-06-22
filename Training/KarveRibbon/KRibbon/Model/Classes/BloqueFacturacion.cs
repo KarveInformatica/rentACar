@@ -9,14 +9,14 @@ using System.Text;
 
 namespace KRibbon.Model
 {
-    public class FormaPagoProveedor //: IAuxiliares
+    public class BloqueFacturacion //: IAuxiliares
     {
         #region List<DBCriterios>
         public static List<DBCriterios> dbcriterioslist = new List<DBCriterios>()
         {
             new DBCriterios(){ nombrepropiedadobj = "Codigo",
                                nombrecolumnadb    = "CODIGO",
-                               tipodatocolumnadb  = ETiposDatoColumnaDB.DBbyte,
+                               tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
                                datagridheader     = Resources.dttcCodigo },
             new DBCriterios(){ nombrepropiedadobj = "Nombre",
                                nombrecolumnadb    = "NOMBRE",
@@ -26,8 +26,8 @@ namespace KRibbon.Model
         #endregion
 
         #region Constructores
-        public FormaPagoProveedor() { }
-        public FormaPagoProveedor(byte codigo, string nombre)
+        public BloqueFacturacion() { }
+        public BloqueFacturacion(string codigo, string nombre)
         {
             this.codigo = codigo;
             this.nombre = nombre;
@@ -35,8 +35,8 @@ namespace KRibbon.Model
         #endregion
 
         #region Propiedades
-        private byte codigo;
-        public byte Codigo
+        private string codigo;
+        public string Codigo
         {
             get
             {
