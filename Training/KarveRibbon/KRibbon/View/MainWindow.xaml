@@ -6,7 +6,9 @@
                 xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"                
                 xmlns:local="clr-namespace:KRibbon"
-                xmlns:vm="clr-namespace:KRibbon.ViewModel"
+                xmlns:uc="clr-namespace:KRibbon.View"
+                xmlns:vm="clr-namespace:KRibbon.Model.Generic"
+                xmlns:sys="clr-namespace:System;assembly=mscorlib"
                 mc:Ignorable="d"
                 Title="MainWindow" >
     <r:RibbonWindow.DataContext>
@@ -91,30 +93,30 @@
             <!--QuickAccessToolBar-->
             <r:Ribbon.QuickAccessToolBar>
                 <r:RibbonQuickAccessToolBar Visibility="Visible" >
-                    <r:RibbonButton x:Name="rbtttCortar" 
+                    <r:RibbonButton x:Name="rbtntCortar" 
                                     Label="Cortar" 
                                     SmallImageSource="..\Images\copy.png" 
                                     Command="Cut" />
-                    <r:RibbonButton x:Name="rbtttCopiar" 
+                    <r:RibbonButton x:Name="rbtntCopiar" 
                                     Label="Copiar" 
                                     SmallImageSource="..\Images\copy.png" 
                                     Command="Copy" />
-                    <r:RibbonButton x:Name="rbtttPegar" 
+                    <r:RibbonButton x:Name="rbtntPegar" 
                                     Label="Pegar" 
                                     SmallImageSource="..\Images\paste.png" 
                                     Command="Paste" />
-                    <r:RibbonButton x:Name="rbttEliminar" 
+                    <r:RibbonButton x:Name="rbtnEliminar" 
                                     Label="Eliminar" 
                                     SmallImageSource="..\Images\delete.png" 
                                     Command="Delete" />
-                    <r:RibbonSplitButton x:Name="rbttRehacer" 
+                    <r:RibbonSplitButton x:Name="rbtnRehacer" 
                                          Label="Rehacer" 
                                          SmallImageSource="..\Images\redo.png" 
                                          Command="Redo" >
                         <r:RibbonSplitMenuItem Header="Redo 1" />
                         <r:RibbonSplitMenuItem Header="Redo 2" />
                     </r:RibbonSplitButton>
-                    <r:RibbonSplitButton x:Name="rbtttDeshacer" 
+                    <r:RibbonSplitButton x:Name="rbtntDeshacer" 
                                          Label="Deshacer" 
                                          SmallImageSource="..\Images\undo.png" 
                                          Command="Undo" >
@@ -122,7 +124,7 @@
                         <r:RibbonSplitMenuItem Header="Undo 2" />
                         <r:RibbonSplitMenuItem Header="Undo 3" />
                     </r:RibbonSplitButton>
-                    <r:RibbonButton x:Name="rbtttOpciones" 
+                    <r:RibbonButton x:Name="rbtntOpciones" 
                                     Label="Opciones" 
                                     SmallImageSource="..\Images\tools.png" />
                 </r:RibbonQuickAccessToolBar>
@@ -175,13 +177,13 @@
 
             <!--HelpPaneContent-->
             <r:Ribbon.HelpPaneContent>
-                <r:RibbonButton x:Name="rbttHelp" 
+                <r:RibbonButton x:Name="rbtnHelp" 
                                 SmallImageSource="..\Images\help.png" 
-                                Click="bttHelp_Click" 
-                                ToolTipTitle="{Binding lrbttHelpTitle, Source={StaticResource ResourceLanguage}}"
-                                ToolTipDescription="{Binding lrbttHelpDescr, Source={StaticResource ResourceLanguage}}"
-                                ToolTipFooterTitle="{Binding lrbttHelpFooterTitle, Source={StaticResource ResourceLanguage}}" 
-                                ToolTipFooterDescription="{Binding lrbttHelpFooterDescr, Source={StaticResource ResourceLanguage}}" 
+                                Click="btnHelp_Click" 
+                                ToolTipTitle="{Binding lrbtnHelpTitle, Source={StaticResource ResourceLanguage}}"
+                                ToolTipDescription="{Binding lrbtnHelpDescr, Source={StaticResource ResourceLanguage}}"
+                                ToolTipFooterTitle="{Binding lrbtnHelpFooterTitle, Source={StaticResource ResourceLanguage}}" 
+                                ToolTipFooterDescription="{Binding lrbtnHelpFooterDescr, Source={StaticResource ResourceLanguage}}" 
                                 ToolTipService.ShowDuration="10000"/>
             </r:Ribbon.HelpPaneContent>
 
@@ -191,8 +193,8 @@
                          KeyTip="M"
                          GroupSizeReductionOrder="rgrAuxiliares, rgrCentrosAlquiler, rgrClientes">
                 <r:RibbonGroup x:Name="rgrCentrosAlquiler" Header="{Binding lrrCentrosAlquiler, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png">
-                    <r:RibbonButton x:Name="rbttEmpresas" 
-                                    Label="{Binding lrbttEmpresas, Source={StaticResource ResourceLanguage}}"
+                    <r:RibbonButton x:Name="rbtnEmpresas" 
+                                    Label="{Binding lrbtnEmpresas, Source={StaticResource ResourceLanguage}}"
                                     SmallImageSource="..\Images\new.png" 
                                     DataContext="{StaticResource mostrarAuxiliares}" >
                         <r:RibbonButton.InputBindings>
@@ -204,8 +206,8 @@
                                           CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                         </r:RibbonButton.InputBindings>
                     </r:RibbonButton>
-                    <r:RibbonButton x:Name="rbttOficinas"
-                                    Label="{Binding lrbttOficinas, Source={StaticResource ResourceLanguage}}"
+                    <r:RibbonButton x:Name="rbtnOficinas"
+                                    Label="{Binding lrbtnOficinas, Source={StaticResource ResourceLanguage}}"
                                     SmallImageSource="..\Images\user.png" 
                                     DataContext="{StaticResource mostrarAuxiliares}" >
                         <r:RibbonButton.InputBindings>
@@ -217,8 +219,8 @@
                                           CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                         </r:RibbonButton.InputBindings>
                     </r:RibbonButton>
-                    <r:RibbonButton x:Name="rbttZonasOficina"
-                                    Label="{Binding lrbttZonasOficina, Source={StaticResource ResourceLanguage}}"
+                    <r:RibbonButton x:Name="rbtnZonasOficina"
+                                    Label="{Binding lrbtnZonasOficina, Source={StaticResource ResourceLanguage}}"
                                     SmallImageSource="..\Images\group.png" 
                                     DataContext="{StaticResource mostrarAuxiliares}" >
                         <r:RibbonButton.InputBindings>
@@ -232,8 +234,8 @@
                     </r:RibbonButton>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrClientes" Header="{Binding lrgrClientes, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png">
-                    <r:RibbonButton x:Name="rbttClientes" 
-                                    Label="{Binding lrbttClientes, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnClientes" 
+                                    Label="{Binding lrbtnClientes, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"
                                     DataContext="{StaticResource mostrarAuxiliares}" >
                         <r:RibbonButton.InputBindings>
@@ -245,8 +247,8 @@
                                           CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                         </r:RibbonButton.InputBindings>
                     </r:RibbonButton>
-                    <r:RibbonButton x:Name="rbttCambioCodigoCliente" 
-                                    Label="{Binding lrbttCambioCodigoCliente, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnCambioCodigoCliente" 
+                                    Label="{Binding lrbtnCambioCodigoCliente, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"
                                     DataContext="{StaticResource mostrarAuxiliares}" >
                         <r:RibbonButton.InputBindings>
@@ -258,8 +260,8 @@
                                           CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                         </r:RibbonButton.InputBindings>
                     </r:RibbonButton>
-                    <r:RibbonButton x:Name="rbttEntradaRapida" 
-                                    Label="{Binding lrbttEntradaRapida, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnEntradaRapida" 
+                                    Label="{Binding lrbtnEntradaRapida, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png" 
                                     DataContext="{StaticResource mostrarAuxiliares}" >
                         <r:RibbonButton.InputBindings>
@@ -273,8 +275,8 @@
                     </r:RibbonButton>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrComisionistas" Header="{Binding lrgrComisionistas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png">
-                    <r:RibbonButton x:Name="rbttComisionistas"
-                                    Label="{Binding lrbttComisionistas, Source={StaticResource ResourceLanguage}}"
+                    <r:RibbonButton x:Name="rbtnComisionistas"
+                                    Label="{Binding lrbtnComisionistas, Source={StaticResource ResourceLanguage}}"
                                     SmallImageSource="..\Images\new.png"
                                     LargeImageSource="..\Images\new.png" 
                                     DataContext="{StaticResource mostrarAuxiliares}" >
@@ -289,8 +291,8 @@
                     </r:RibbonButton>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrProveedores" Header="{Binding lrgrProveedores, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png">
-                    <r:RibbonButton x:Name="rbttProveedores"
-                                    Label="{Binding lrbttProveedores, Source={StaticResource ResourceLanguage}}"
+                    <r:RibbonButton x:Name="rbtnProveedores"
+                                    Label="{Binding lrbtnProveedores, Source={StaticResource ResourceLanguage}}"
                                     SmallImageSource="..\Images\new.png"
                                     LargeImageSource="..\Images\new.png" 
                                     DataContext="{StaticResource mostrarAuxiliares}" >
@@ -305,9 +307,9 @@
                     </r:RibbonButton>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrTarifas" Header="{Binding lrgrTarifas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png">
-                    <r:RibbonMenuButton x:Name="rmnbttTarifas" Label="{Binding lrmnbttTarifas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="T" >
-                        <r:RibbonButton x:Name="rbttTarifas" 
-                                        Label="{Binding lrbttTarifas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnTarifas" Label="{Binding lrmnbtnTarifas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="T" >
+                        <r:RibbonButton x:Name="rbtnTarifas" 
+                                        Label="{Binding lrbtnTarifas, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}" >
                             <r:RibbonButton.InputBindings>
@@ -319,8 +321,8 @@
                                           CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttCambioCodigoTarifas" 
-                                        Label="{Binding lrbttCambioCodigoTarifas, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnCambioCodigoTarifas" 
+                                        Label="{Binding lrbtnCambioCodigoTarifas, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}" >
                             <r:RibbonButton.InputBindings>
@@ -332,8 +334,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttCrearTarifaDesdeOtraTarifa" 
-                                        Label="{Binding lrbttCrearTarifaDesdeOtraTarifa, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnCrearTarifaDesdeOtraTarifa" 
+                                        Label="{Binding lrbtnCrearTarifaDesdeOtraTarifa, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}" >
                             <r:RibbonButton.InputBindings>
@@ -345,8 +347,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttIncrementoPrecios" 
-                                        Label="{Binding lrbttIncrementoPrecios, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnIncrementoPrecios" 
+                                        Label="{Binding lrbtnIncrementoPrecios, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}" >
                             <r:RibbonButton.InputBindings>
@@ -358,8 +360,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTarifaCliente" 
-                                        Label="{Binding lrbttTarifaCliente, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTarifaCliente" 
+                                        Label="{Binding lrbtnTarifaCliente, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}" >
                             <r:RibbonButton.InputBindings>
@@ -371,8 +373,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTarifasComisionista" 
-                                            Label="{Binding lrbttTarifasComisionista, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTarifasComisionista" 
+                                            Label="{Binding lrbtnTarifasComisionista, Source={StaticResource ResourceLanguage}}" 
                                             SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}" >
                             <r:RibbonButton.InputBindings>
@@ -384,8 +386,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttVerTarifa" 
-                                        Label="{Binding lrbttVerTarifa, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnVerTarifa" 
+                                        Label="{Binding lrbtnVerTarifa, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}" >
                             <r:RibbonButton.InputBindings>
@@ -397,8 +399,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttVincularClienteTarifa" 
-                                        Label="{Binding lrbttVincularClienteTarifa, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnVincularClienteTarifa" 
+                                        Label="{Binding lrbtnVincularClienteTarifa, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}" >
                             <r:RibbonButton.InputBindings>
@@ -413,9 +415,9 @@
                     </r:RibbonMenuButton>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrVehiculos" Header="{Binding lrgrVehiculos, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png">
-                    <r:RibbonMenuButton x:Name="rmnbttVehiculos" Label="{Binding lrmnbttVehiculos, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="V">
-                        <r:RibbonButton x:Name="rbttVehiculos" 
-                                        Label="{Binding lrbttVehiculos, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnVehiculos" Label="{Binding lrmnbtnVehiculos, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="V">
+                        <r:RibbonButton x:Name="rbtnVehiculos" 
+                                        Label="{Binding lrbtnVehiculos, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}" >
                             <r:RibbonButton.InputBindings>
@@ -427,8 +429,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttCambioCodigoVehiculo" 
-                                        Label="{Binding lrbttCambioCodigoVehiculo, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnCambioCodigoVehiculo" 
+                                        Label="{Binding lrbtnCambioCodigoVehiculo, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}" >
                             <r:RibbonButton.InputBindings>
@@ -440,8 +442,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttModificacionMasivaAux" 
-                                        Label="{Binding lrbttModificacionMasivaAux, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnModificacionMasivaAux" 
+                                        Label="{Binding lrbtnModificacionMasivaAux, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}" >
                             <r:RibbonButton.InputBindings>
@@ -453,8 +455,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttRecalculoMantenimiento" 
-                                        Label="{Binding lrbttRecalculoMantenimiento, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnRecalculoMantenimiento" 
+                                        Label="{Binding lrbtnRecalculoMantenimiento, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}" >
                             <r:RibbonButton.InputBindings>
@@ -469,9 +471,9 @@
                     </r:RibbonMenuButton>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrAuxiliares" Header="{Binding lrgrAuxiliares, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
-                    <r:RibbonMenuButton x:Name="rmnbttAuxiliaresClientes" Label="{Binding lrmnbttAuxiliaresClientes, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="C" >
-                        <r:RibbonButton x:Name="rbttBancosClientes" 
-                                        Label="{Binding lrbttBancosClientes, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnAuxiliaresClientes" Label="{Binding lrmnbtnAuxiliaresClientes, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="C" >
+                        <r:RibbonButton x:Name="rbtnBancosClientes" 
+                                        Label="{Binding lrbtnBancosClientes, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -484,8 +486,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttBloqueFacturacion" 
-                                        Label="{Binding lrbttBloqueFacturacion, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnBloqueFacturacion" 
+                                        Label="{Binding lrbtnBloqueFacturacion, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -498,8 +500,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttCanales" 
-                                        Label="{Binding lrbttCanales, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnCanales" 
+                                        Label="{Binding lrbtnCanales, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -512,8 +514,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttCargosPersonal" 
-                                        Label="{Binding lrbttCargosPersonal, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnCargosPersonal" 
+                                        Label="{Binding lrbtnCargosPersonal, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -526,8 +528,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttClavesPresupuesto" 
-                                        Label="{Binding lrbttClavesPresupuesto, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnClavesPresupuesto" 
+                                        Label="{Binding lrbtnClavesPresupuesto, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -540,8 +542,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttFormasCobroClientes" 
-                                        Label="{Binding lrbttFormasCobroClientes, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnFormasCobroClientes" 
+                                        Label="{Binding lrbtnFormasCobroClientes, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -554,8 +556,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttMercados" 
-                                        Label="{Binding lrbttMercados, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnMercados" 
+                                        Label="{Binding lrbtnMercados, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -568,8 +570,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttNegocios" 
-                                        Label="{Binding lrbttNegocios, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnNegocios" 
+                                        Label="{Binding lrbtnNegocios, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -582,8 +584,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttOrigenClientes" 
-                                        Label="{Binding lrbttOrigenClientes, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnOrigenClientes" 
+                                        Label="{Binding lrbtnOrigenClientes, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -596,8 +598,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttPaises" 
-                                        Label="{Binding lrbttPaises, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnPaises" 
+                                        Label="{Binding lrbtnPaises, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -610,8 +612,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttPoblaciones" 
-                                        Label="{Binding lrbttPoblaciones, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnPoblaciones" 
+                                        Label="{Binding lrbtnPoblaciones, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -624,8 +626,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttProvincias" 
-                                        Label="{Binding lrbttProvincias, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnProvincias" 
+                                        Label="{Binding lrbtnProvincias, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -638,8 +640,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttSectoresActividad" 
-                                        Label="{Binding lrbttSectoresActividad, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnSectoresActividad" 
+                                        Label="{Binding lrbtnSectoresActividad, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -652,8 +654,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTarjetasCredito" 
-                                        Label="{Binding lrbttTarjetasCredito, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTarjetasCredito" 
+                                        Label="{Binding lrbtnTarjetasCredito, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -666,8 +668,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTarjetasEmpresa" 
-                                        Label="{Binding lrbttTarjetasEmpresa, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTarjetasEmpresa" 
+                                        Label="{Binding lrbtnTarjetasEmpresa, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -680,8 +682,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTiposCliente" 
-                                        Label="{Binding lrbttTiposCliente, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTiposCliente" 
+                                        Label="{Binding lrbtnTiposCliente, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -694,8 +696,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTiposContacto" 
-                                        Label="{Binding lrbttTiposContacto, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTiposContacto" 
+                                        Label="{Binding lrbtnTiposContacto, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -708,8 +710,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTiposVisita" 
-                                        Label="{Binding lrbttTiposVisita, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTiposVisita" 
+                                        Label="{Binding lrbtnTiposVisita, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -722,8 +724,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttUsoAlquiler" 
-                                        Label="{Binding lrbttUsoAlquiler, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnUsoAlquiler" 
+                                        Label="{Binding lrbtnUsoAlquiler, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -736,8 +738,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttVendedores" 
-                                        Label="{Binding lrbttVendedores, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnVendedores" 
+                                        Label="{Binding lrbtnVendedores, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -750,8 +752,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttZonas" 
-                                        Label="{Binding lrbttZonas, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnZonas" 
+                                        Label="{Binding lrbtnZonas, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"  
                                         DataContext="{StaticResource mostrarAuxiliares}" >
@@ -765,13 +767,13 @@
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
                     </r:RibbonMenuButton>
-                    <r:RibbonMenuButton x:Name="rmnbttAuxiliaresComisionistas" Label="{Binding lrmnbttAuxiliaresComisionistas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="M" >
-                        <r:RibbonButton x:Name="rbttEmpleadosAgencia"
-                                            Label="{Binding lrbttEmpleadosAgencia, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnAuxiliaresComisionistas" Label="{Binding lrmnbtnAuxiliaresComisionistas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="M" >
+                        <r:RibbonButton x:Name="rbtnEmpleadosAgencia"
+                                            Label="{Binding lrbtnEmpleadosAgencia, Source={StaticResource ResourceLanguage}}" 
                                             HorizontalAlignment="Left" 
                                             SmallImageSource="..\Images\new.png" />
-                        <r:RibbonButton x:Name="rbttTipoComisionista"                                            
-                                        Label="{Binding lrbttTipoComisionista, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTipoComisionista"                                            
+                                        Label="{Binding lrbtnTipoComisionista, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -785,9 +787,9 @@
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
                     </r:RibbonMenuButton>
-                    <r:RibbonMenuButton x:Name="rmnbttAuxiliaresContratos" Label="{Binding lrmnbttAuxiliaresContratos, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="N" >
-                        <r:RibbonButton x:Name="rbttAccesorios" 
-                                            Label="{Binding lrbttAccesorios, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnAuxiliaresContratos" Label="{Binding lrmnbtnAuxiliaresContratos, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="N" >
+                        <r:RibbonButton x:Name="rbtnAccesorios" 
+                                            Label="{Binding lrbtnAccesorios, Source={StaticResource ResourceLanguage}}" 
                                             SmallImageSource="..\Images\new.png" 
                                             DataContext="{StaticResource mostrarAuxiliares}">
                             <r:RibbonButton.InputBindings>
@@ -799,8 +801,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttLugaresEntrega" 
-                                            Label="{Binding lrbttLugaresEntrega, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnLugaresEntrega" 
+                                            Label="{Binding lrbtnLugaresEntrega, Source={StaticResource ResourceLanguage}}" 
                                             SmallImageSource="..\Images\new.png" 
                                             DataContext="{StaticResource mostrarAuxiliares}">
                             <r:RibbonButton.InputBindings>
@@ -812,8 +814,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttMotivosAnulacionContratos" 
-                                        Label="{Binding lrbttMotivosAnulacionContratos, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnMotivosAnulacionContratos" 
+                                        Label="{Binding lrbtnMotivosAnulacionContratos, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
                             <r:RibbonButton.InputBindings>
@@ -825,8 +827,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttMotivosCambioVehiculo" 
-                                        Label="{Binding lrbttMotivosCambioVehiculo, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnMotivosCambioVehiculo" 
+                                        Label="{Binding lrbtnMotivosCambioVehiculo, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
                             <r:RibbonButton.InputBindings>
@@ -838,8 +840,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttMotivosCancelacion" 
-                                        Label="{Binding lrbttMotivosCancelacion, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnMotivosCancelacion" 
+                                        Label="{Binding lrbtnMotivosCancelacion, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
                             <r:RibbonButton.InputBindings>
@@ -851,8 +853,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttMotivosImproductivo" 
-                                        Label="{Binding lrbttMotivosImproductivo, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnMotivosImproductivo" 
+                                        Label="{Binding lrbtnMotivosImproductivo, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
                             <r:RibbonButton.InputBindings>
@@ -864,8 +866,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTipoImpresoContrato" 
-                                        Label="{Binding lrbttTipoImpresoContrato, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTipoImpresoContrato" 
+                                        Label="{Binding lrbtnTipoImpresoContrato, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
                             <r:RibbonButton.InputBindings>
@@ -878,9 +880,9 @@
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
                     </r:RibbonMenuButton>
-                    <r:RibbonMenuButton x:Name="rmnbttAuxiliaresIncidencias" Label="{Binding lrmnbttAuxiliaresIncidencias, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="I" >
-                        <r:RibbonButton x:Name="rbttTiposIncidenciasClientes" 
-                                        Label="{Binding lrbttTiposIncidenciasClientes, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnAuxiliaresIncidencias" Label="{Binding lrmnbtnAuxiliaresIncidencias, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="I" >
+                        <r:RibbonButton x:Name="rbtnTiposIncidenciasClientes" 
+                                        Label="{Binding lrbtnTiposIncidenciasClientes, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}">
                             <r:RibbonButton.InputBindings>
@@ -892,8 +894,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTiposIncidenciasContratos" 
-                                        Label="{Binding lrbttTiposIncidenciasContratos, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTiposIncidenciasContratos" 
+                                        Label="{Binding lrbtnTiposIncidenciasContratos, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}">
                             <r:RibbonButton.InputBindings>
@@ -905,8 +907,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTiposIncidenciasProveedores" 
-                                        Label="{Binding lrbttTiposIncidenciasProveedores, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTiposIncidenciasProveedores" 
+                                        Label="{Binding lrbtnTiposIncidenciasProveedores, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}">
                             <r:RibbonButton.InputBindings>
@@ -918,8 +920,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTiposIncidenciasReservas" 
-                                        Label="{Binding lrbttTiposIncidenciasReservas, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTiposIncidenciasReservas" 
+                                        Label="{Binding lrbtnTiposIncidenciasReservas, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}">
                             <r:RibbonButton.InputBindings>
@@ -932,9 +934,9 @@
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
                     </r:RibbonMenuButton>
-                    <r:RibbonMenuButton x:Name="rmnbttAuxiliaresProveedores" Label="{Binding lrmnbttAuxiliaresProveedores, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="P" >
-                        <r:RibbonButton x:Name="rbttDivisas" 
-                                            Label="{Binding lrbttDivisas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnAuxiliaresProveedores" Label="{Binding lrmnbtnAuxiliaresProveedores, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="P" >
+                        <r:RibbonButton x:Name="rbtnDivisas" 
+                                            Label="{Binding lrbtnDivisas, Source={StaticResource ResourceLanguage}}" 
                                             HorizontalAlignment="Left" 
                                             SmallImageSource="..\Images\new.png" 
                                             DataContext="{StaticResource mostrarAuxiliares}">
@@ -947,9 +949,9 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttFormasPagoProveedor"
+                        <r:RibbonButton x:Name="rbtnFormaPagoProveedor"
                                             DataContext="{StaticResource mostrarAuxiliares}"
-                                            Label="{Binding lrbttFormasPagoProveedor, Source={StaticResource ResourceLanguage}}" 
+                                            Label="{Binding lrbtnFormaPagoProveedor, Source={StaticResource ResourceLanguage}}" 
                                             HorizontalAlignment="Left" 
                                             SmallImageSource="..\Images\new.png" >
                             <r:RibbonButton.InputBindings>
@@ -961,8 +963,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTiposProveedores" 
-                                            Label="{Binding lrbttTiposProveedores, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTiposProveedores" 
+                                            Label="{Binding lrbtnTiposProveedores, Source={StaticResource ResourceLanguage}}" 
                                             HorizontalAlignment="Left" 
                                             SmallImageSource="..\Images\new.png" 
                                             DataContext="{StaticResource mostrarAuxiliares}">
@@ -976,9 +978,9 @@
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
                     </r:RibbonMenuButton>
-                    <r:RibbonMenuButton x:Name="rmnbttAuxiliaresReservas" Label="{Binding lrmnbttAuxiliaresReservas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="R" >
-                        <r:RibbonButton x:Name="rbttClavesFee" 
-                                        Label="{Binding lrbttClavesFee, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnAuxiliaresReservas" Label="{Binding lrmnbtnAuxiliaresReservas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="R" >
+                        <r:RibbonButton x:Name="rbtnClavesFee" 
+                                        Label="{Binding lrbtnClavesFee, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}">
                             <r:RibbonButton.InputBindings>
@@ -990,8 +992,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttMediosRecepcion" 
-                                        Label="{Binding lrbttMediosRecepcion, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnMediosRecepcion" 
+                                        Label="{Binding lrbtnMediosRecepcion, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}">
                             <r:RibbonButton.InputBindings>
@@ -1003,8 +1005,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttMotivosAnulacionReservas" 
-                                        Label="{Binding lrbttMotivosAnulacionReservas, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnMotivosAnulacionReservas" 
+                                        Label="{Binding lrbtnMotivosAnulacionReservas, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}">
                             <r:RibbonButton.InputBindings>
@@ -1016,8 +1018,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttMotivosNoServicio" 
-                                        Label="{Binding lrbttMotivosNoServicio, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnMotivosNoServicio" 
+                                        Label="{Binding lrbtnMotivosNoServicio, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}">
                             <r:RibbonButton.InputBindings>
@@ -1030,9 +1032,9 @@
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
                     </r:RibbonMenuButton>
-                    <r:RibbonMenuButton x:Name="rmnbttAuxiliaresTarifas" Label="{Binding lrmnbttAuxiliaresTarifas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="F" >
-                        <r:RibbonButton x:Name="rbttConceptosFacturacion" 
-                                        Label="{Binding lrbttConceptosFacturacion, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnAuxiliaresTarifas" Label="{Binding lrmnbtnAuxiliaresTarifas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="F" >
+                        <r:RibbonButton x:Name="rbtnConceptosFacturacion" 
+                                        Label="{Binding lrbtnConceptosFacturacion, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1045,9 +1047,9 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttGruposTarifa"
+                        <r:RibbonButton x:Name="rbtnGruposTarifa"
                                         DataContext="{StaticResource mostrarAuxiliares}"
-                                        Label="{Binding lrbttGruposTarifa, Source={StaticResource ResourceLanguage}}" 
+                                        Label="{Binding lrbtnGruposTarifa, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" >
                             <r:RibbonButton.InputBindings>
@@ -1060,9 +1062,9 @@
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
                     </r:RibbonMenuButton>
-                    <r:RibbonMenuButton x:Name="rmnbttAuxiliaresVehiculos" Label="{Binding lrmnbttAuxiliaresVehiculos, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="H" >
-                        <r:RibbonButton x:Name="rbttAccesoriosVehiculos" 
-                                        Label="{Binding lrbttAccesoriosVehiculos, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnAuxiliaresVehiculos" Label="{Binding lrmnbtnAuxiliaresVehiculos, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="H" >
+                        <r:RibbonButton x:Name="rbtnAccesoriosVehiculos" 
+                                        Label="{Binding lrbtnAccesoriosVehiculos, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1075,8 +1077,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttActividadesVehiculos" 
-                                        Label="{Binding lrbttActividadesVehiculos, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnActividadesVehiculos" 
+                                        Label="{Binding lrbtnActividadesVehiculos, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1089,8 +1091,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttCodigosInmovilizacion" 
-                                        Label="{Binding lrbttCodigosInmovilizacion, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnCodigosInmovilizacion" 
+                                        Label="{Binding lrbtnCodigosInmovilizacion, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left"                                         
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1103,8 +1105,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttCodigosMantenimiento" 
-                                        Label="{Binding lrbttCodigosMantenimiento, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnCodigosMantenimiento" 
+                                        Label="{Binding lrbtnCodigosMantenimiento, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1117,8 +1119,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttColores" 
-                                        Label="{Binding lrbttColores, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnColores" 
+                                        Label="{Binding lrbtnColores, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1131,8 +1133,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttExtras" 
-                                        Label="{Binding lrbttExtras, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnExtras" 
+                                        Label="{Binding lrbtnExtras, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1145,8 +1147,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttFormasTraslado" 
-                                        Label="{Binding lrbttFormasTraslado, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnFormasTraslado" 
+                                        Label="{Binding lrbtnFormasTraslado, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left"                                         
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1159,8 +1161,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttGruposVehiculos" 
-                                        Label="{Binding lrbttGruposVehiculos, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnGruposVehiculos" 
+                                        Label="{Binding lrbtnGruposVehiculos, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1173,8 +1175,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttMarcas" 
-                                        Label="{Binding lrbttMarcas, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnMarcas" 
+                                        Label="{Binding lrbtnMarcas, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1187,8 +1189,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttModelos" 
-                                        Label="{Binding lrbttModelos, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnModelos" 
+                                        Label="{Binding lrbtnModelos, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1201,8 +1203,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttMotivosRepostaje" 
-                                        Label="{Binding lrbttMotivosRepostaje, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnMotivosRepostaje" 
+                                        Label="{Binding lrbtnMotivosRepostaje, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1215,8 +1217,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttPropietarios" 
-                                        Label="{Binding lrbttPropietarios, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnPropietarios" 
+                                        Label="{Binding lrbtnPropietarios, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1229,8 +1231,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTiposVehiculos" 
-                                        Label="{Binding lrbttTiposVehiculos, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTiposVehiculos" 
+                                        Label="{Binding lrbtnTiposVehiculos, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1244,9 +1246,9 @@
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
                     </r:RibbonMenuButton>
-                    <r:RibbonMenuButton x:Name="rmnbttAuxiliaresVarios" Label="{Binding lrmnbttAuxiliaresVarios, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="A" >
-                        <r:RibbonButton x:Name="rbttCategoriasPersonal" 
-                                        Label="{Binding lrbttCategoriasPersonal, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnAuxiliaresVarios" Label="{Binding lrmnbtnAuxiliaresVarios, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="A" >
+                        <r:RibbonButton x:Name="rbtnCategoriasPersonal" 
+                                        Label="{Binding lrbtnCategoriasPersonal, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left"                                         
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1259,8 +1261,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttConceptosSalidaCaja" 
-                                        Label="{Binding lrbttConceptosSalidaCaja, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnConceptosSalidaCaja" 
+                                        Label="{Binding lrbtnConceptosSalidaCaja, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left"                                         
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1273,8 +1275,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTextosEstandars" 
-                                        Label="{Binding lrbttTextosEstandars, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTextosEstandars" 
+                                        Label="{Binding lrbtnTextosEstandars, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left"                                         
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1287,8 +1289,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttbitTipoContacto" 
-                                        Label="{Binding lrbttbitTipoContacto, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnbitTipoContacto" 
+                                        Label="{Binding lrbtnbitTipoContacto, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left"                                         
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1301,8 +1303,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTiposDocumentos" 
-                                        Label="{Binding lrbttTiposDocumentos, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTiposDocumentos" 
+                                        Label="{Binding lrbtnTiposDocumentos, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left"                                         
                                         SmallImageSource="..\Images\new.png" 
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1315,8 +1317,8 @@
                                               CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttTipoImpresoFactura" 
-                                        Label="{Binding lrbttTipoImpresoFactura, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnTipoImpresoFactura" 
+                                        Label="{Binding lrbtnTipoImpresoFactura, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left"                                         
                                         SmallImageSource="..\Images\new.png"
                                         DataContext="{StaticResource mostrarAuxiliares}">
@@ -1339,60 +1341,60 @@
                          KeyTip="C" 
                          GroupSizeReductionOrder="rgrContratos, rgrCambiosContratos, rgrVariosContratos" >
                 <r:RibbonGroup x:Name="rgrContratos" Header="{Binding lrgrContratos, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
-                    <r:RibbonButton x:Name="rbttAbrirContrato" 
-                                    Label="{Binding lrbttAbrirContrato, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnAbrirContrato" 
+                                    Label="{Binding lrbtnAbrirContrato, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttAnularContrato" 
-                                    Label="{Binding lrbttAnularContrato, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnAnularContrato" 
+                                    Label="{Binding lrbtnAnularContrato, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttCerrarContrato" 
-                                    Label="{Binding lrbttCerrarContrato, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnCerrarContrato" 
+                                    Label="{Binding lrbtnCerrarContrato, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttConcultarContrato" 
-                                    Label="{Binding lrbttConcultarContrato, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnConcultarContrato" 
+                                    Label="{Binding lrbtnConcultarContrato, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttReAbrirContrato" 
-                                    Label="{Binding lrbttReAbrirContrato, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnReAbrirContrato" 
+                                    Label="{Binding lrbtnReAbrirContrato, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrCambiosContratos" Header="{Binding lrgrCambiosContratos, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
-                    <r:RibbonButton x:Name="rbttCambioConductor" 
-                                    Label="{Binding lrbttCambioConductor, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnCambioConductor" 
+                                    Label="{Binding lrbtnCambioConductor, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttCambioNumeroContrato" 
-                                    Label="{Binding lrbttCambioNumeroContrato, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnCambioNumeroContrato" 
+                                    Label="{Binding lrbtnCambioNumeroContrato, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttCambioOficinaContrato" 
-                                    Label="{Binding lrbttCambioOficinaContrato, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnCambioOficinaContrato" 
+                                    Label="{Binding lrbtnCambioOficinaContrato, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttCambioVehiculo" 
-                                    Label="{Binding lrbttCambioVehiculo, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnCambioVehiculo" 
+                                    Label="{Binding lrbtnCambioVehiculo, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrVariosContratos" Header="{Binding lrgrVariosContratos, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutSmall}">
-                    <r:RibbonButton x:Name="rbttEntregaContratosOficina" 
-                                    Label="{Binding lrbttCategoriasPersonal, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnEntregaContratosOficina" 
+                                    Label="{Binding lrbtnCategoriasPersonal, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttImpresionBloqueContratos" 
-                                    Label="{Binding lrbttImpresionBloqueContratos, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnImpresionBloqueContratos" 
+                                    Label="{Binding lrbtnImpresionBloqueContratos, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttPlantilla" 
-                                    Label="{Binding lrbttPlantilla, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnPlantilla" 
+                                    Label="{Binding lrbtnPlantilla, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttProcesoCierreContratos" 
-                                    Label="{Binding lrbttProcesoCierreContratos, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnProcesoCierreContratos" 
+                                    Label="{Binding lrbtnProcesoCierreContratos, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttProlongacionAutomaticaContratos" 
-                                    Label="{Binding lrbttProlongacionAutomaticaContratos, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnProlongacionAutomaticaContratos" 
+                                    Label="{Binding lrbtnProlongacionAutomaticaContratos, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
             </r:RibbonTab>
@@ -1402,28 +1404,28 @@
                          Header="{Binding ltbReservas, Source={StaticResource ResourceLanguage}}" 
                          KeyTip="R">
                 <r:RibbonGroup x:Name="rgrReservas" Header="{Binding lrgrReservas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
-                    <r:RibbonButton x:Name="rbttReservas" 
-                                    Label="{Binding lrbttReservas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnReservas" 
+                                    Label="{Binding lrbtnReservas, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttAnularReserva"
-                                    Label="{Binding lrbttAnularReserva, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnAnularReserva"
+                                    Label="{Binding lrbtnAnularReserva, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttConvertirReservaContrato" 
-                                    Label="{Binding lrbttConvertirReservaContrato, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnConvertirReservaContrato" 
+                                    Label="{Binding lrbtnConvertirReservaContrato, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttCotizacionComparada" 
-                                    Label="{Binding lrbttCotizacionComparada, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnCotizacionComparada" 
+                                    Label="{Binding lrbtnCotizacionComparada, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttEliminarReservasNoShow" 
-                                    Label="{Binding lrbttEliminarReservasNoShow, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnEliminarReservasNoShow" 
+                                    Label="{Binding lrbtnEliminarReservasNoShow, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttPeticiones" 
-                                    Label="{Binding lrbttPeticiones, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnPeticiones" 
+                                    Label="{Binding lrbtnPeticiones, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
@@ -1434,24 +1436,24 @@
                          Header="{Binding ltbAtipicos, Source={StaticResource ResourceLanguage}}" 
                          KeyTip="A" >
                 <r:RibbonGroup x:Name="rgrAtipicos" Header="{Binding lrgrAtipicos, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
-                    <r:RibbonButton x:Name="rbttAlquilerBicicletas" 
-                                    Label="{Binding lrbttAlquilerBicicletas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnAlquilerBicicletas" 
+                                    Label="{Binding lrbtnAlquilerBicicletas, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttFacturasAtipicas" 
-                                    Label="{Binding lrbttFacturasAtipicas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnFacturasAtipicas" 
+                                    Label="{Binding lrbtnFacturasAtipicas, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttImpresionBloque" 
-                                    Label="{Binding lrbttImpresionBloque, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnImpresionBloque" 
+                                    Label="{Binding lrbtnImpresionBloque, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttSalidaCaja" 
-                                    Label="{Binding lrbttSalidaCaja, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnSalidaCaja" 
+                                    Label="{Binding lrbtnSalidaCaja, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttSeriesAtipicos" 
-                                    Label="{Binding lrbttSeriesAtipicos, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnSeriesAtipicos" 
+                                    Label="{Binding lrbtnSeriesAtipicos, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
@@ -1462,24 +1464,24 @@
                          Header="{Binding ltbComercial, Source={StaticResource ResourceLanguage}}" 
                          KeyTip="O" >
                 <r:RibbonGroup x:Name="rgrComercial" Header="{Binding lrgrComercial, Source={StaticResource ResourceLanguage}}" KeyTip="P" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
-                    <r:RibbonButton x:Name="rbttCustomerService" 
-                                    Label="{Binding lrbttCustomerService, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnCustomerService" 
+                                    Label="{Binding lrbtnCustomerService, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttEntregaBonos" 
-                                    Label="{Binding lrbttEntregaBonos, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnEntregaBonos" 
+                                    Label="{Binding lrbtnEntregaBonos, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttEMailingClientes" 
-                                    Label="{Binding lrbttEMailingClientes, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnEMailingClientes" 
+                                    Label="{Binding lrbtnEMailingClientes, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbtteEMailingPotenciales" 
-                                    Label="{Binding lrbtteEMailingPotenciales, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtneEMailingPotenciales" 
+                                    Label="{Binding lrbtneEMailingPotenciales, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttPotenciales" 
-                                    Label="{Binding lrbttPotenciales, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnPotenciales" 
+                                    Label="{Binding lrbtnPotenciales, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
@@ -1499,123 +1501,123 @@
                          KeyTip="F" 
                          GroupSizeReductionOrder="rgrExportacion, rgrImpresion" >
                 <r:RibbonGroup x:Name="rgrFacturacion" Header="{Binding lrgrFacturacion, Source={StaticResource ResourceLanguage}}" >
-                    <r:RibbonMenuButton x:Name="rmnbttFacturas" Label="{Binding rmnbttFacturas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="C" >
-                        <r:RibbonButton x:Name="rbttAbonarFactura" 
-                                        Label="{Binding lrbttAbonarFactura, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnFacturas" Label="{Binding rmnbtnFacturas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="C" >
+                        <r:RibbonButton x:Name="rbtnAbonarFactura" 
+                                        Label="{Binding lrbtnAbonarFactura, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" />
-                        <r:RibbonButton x:Name="rbttBorrarFacturasPeriodo" 
-                                        Label="{Binding lrbttBorrarFacturasPeriodo, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnBorrarFacturasPeriodo" 
+                                        Label="{Binding lrbtnBorrarFacturasPeriodo, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" />
-                        <r:RibbonButton x:Name="rbttCambioNumeroFactura" 
-                                        Label="{Binding lrbttCambioNumeroFactura, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnCambioNumeroFactura" 
+                                        Label="{Binding lrbtnCambioNumeroFactura, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" />
-                        <r:RibbonButton x:Name="rbttCambioVendedorFacturas" 
-                                        Label="{Binding lrbttCambioVendedorFacturas, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnCambioVendedorFacturas" 
+                                        Label="{Binding lrbtnCambioVendedorFacturas, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" />
-                        <r:RibbonButton x:Name="rbttCartaPendientes" 
-                                        Label="{Binding lrbttCartaPendientes, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnCartaPendientes" 
+                                        Label="{Binding lrbtnCartaPendientes, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left"                                         
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttConsultaModificacion" 
-                                        Label="{Binding lrbttConsultaModificacion, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnConsultaModificacion" 
+                                        Label="{Binding lrbtnConsultaModificacion, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" />
-                        <r:RibbonButton x:Name="rbttModificarEmpresaOficinaFactura" 
-                                        Label="{Binding lrbttModificarEmpresaOficinaFactura, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnModificarEmpresaOficinaFactura" 
+                                        Label="{Binding lrbtnModificarEmpresaOficinaFactura, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" />
-                        <r:RibbonButton x:Name="rbttModificarFacturaContrato" 
-                                        Label="{Binding lrbttModificarFacturaContrato, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnModificarFacturaContrato" 
+                                        Label="{Binding lrbtnModificarFacturaContrato, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" />
-                        <r:RibbonButton x:Name="rbttProcesoFacturacion" 
-                                        Label="{Binding lrbttProcesoFacturacion, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnProcesoFacturacion" 
+                                        Label="{Binding lrbtnProcesoFacturacion, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" />
                     </r:RibbonMenuButton>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrRecibosCartera" Header="{Binding lrgrRecibosCartera, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png">
-                    <r:RibbonMenuButton x:Name="rmnbttRecibosCartera" Label="{Binding lrmnbttRecibosCartera, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="R" >
-                        <r:RibbonButton x:Name="rbttRecibos" 
-                                        Label="{Binding lrbttRecibos, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnRecibosCartera" Label="{Binding lrmnbtnRecibosCartera, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="R" >
+                        <r:RibbonButton x:Name="rbtnRecibos" 
+                                        Label="{Binding lrbtnRecibos, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttCobrosIndividuales" 
-                                        Label="{Binding lrbttCobrosIndividuales, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnCobrosIndividuales" 
+                                        Label="{Binding lrbtnCobrosIndividuales, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttGestionImpagados" 
-                                        Label="{Binding lrbttGestionImpagados, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnGestionImpagados" 
+                                        Label="{Binding lrbtnGestionImpagados, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttRefundirRecibosNoCobrados" 
-                                        Label="{Binding lrbttRefundirRecibosNoCobrados, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnRefundirRecibosNoCobrados" 
+                                        Label="{Binding lrbtnRefundirRecibosNoCobrados, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
                     </r:RibbonMenuButton>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrRemesas" Header="{Binding lrgrRemesas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png">
-                    <r:RibbonMenuButton x:Name="rmnbttRemesas" Label="{Binding lrmnbttRemesas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="M" >
-                        <r:RibbonButton x:Name="rbttRemesas" 
-                                        Label="{Binding lrbttRemesas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnRemesas" Label="{Binding lrmnbtnRemesas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="M" >
+                        <r:RibbonButton x:Name="rbtnRemesas" 
+                                        Label="{Binding lrbtnRemesas, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" />
-                        <r:RibbonButton x:Name="rbttAnulacionPaseRemesaContabilidad" 
-                                        Label="{Binding lrbttAnulacionPaseRemesaContabilidad, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnAnulacionPaseRemesaContabilidad" 
+                                        Label="{Binding lrbtnAnulacionPaseRemesaContabilidad, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" />
-                        <r:RibbonButton x:Name="rbttBancosRemesas" 
-                                        Label="{Binding lrbttBancosRemesas, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnBancosRemesas" 
+                                        Label="{Binding lrbtnBancosRemesas, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" />
-                        <r:RibbonButton x:Name="rbttPaseSoporteMagnetico" 
-                                        Label="{Binding lrbttPaseSoporteMagnetico, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnPaseSoporteMagnetico" 
+                                        Label="{Binding lrbtnPaseSoporteMagnetico, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" />
-                        <r:RibbonButton x:Name="rbttPaseRemesaContabilidad" 
-                                        Label="{Binding rbttPaseRemesaContabilidad, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnPaseRemesaContabilidad" 
+                                        Label="{Binding rbtnPaseRemesaContabilidad, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\new.png" />
                     </r:RibbonMenuButton>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrEnlacesContables" Header="{Binding lrgrEnlacesContables, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png">
-                    <r:RibbonMenuButton x:Name="rmnbttEnlacesContables" Label="{Binding lrmnbttEnlacesContables, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="E" >
-                        <r:RibbonButton x:Name="rbttAnulacionPase" 
-                                        Label="{Binding lrbttAnulacionPase, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnEnlacesContables" Label="{Binding lrmnbtnEnlacesContables, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="E" >
+                        <r:RibbonButton x:Name="rbtnAnulacionPase" 
+                                        Label="{Binding lrbtnAnulacionPase, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttPaseCobrosRecibos"
-                                        Label="{Binding lrbttPaseCobrosRecibos, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnPaseCobrosRecibos"
+                                        Label="{Binding lrbtnPaseCobrosRecibos, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttPaseFacturas" 
-                                        Label="{Binding lrbttPaseFacturas, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnPaseFacturas" 
+                                        Label="{Binding lrbtnPaseFacturas, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttPaseFacturasAtipicas" 
-                                        Label="{Binding lrbttPaseFacturasAtipicas, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnPaseFacturasAtipicas" 
+                                        Label="{Binding lrbtnPaseFacturasAtipicas, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttPaseTesoreriaCaja" 
-                                        Label="{Binding lrbttPaseTesoreriaCaja, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnPaseTesoreriaCaja" 
+                                        Label="{Binding lrbtnPaseTesoreriaCaja, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
                     </r:RibbonMenuButton>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrExportacion" Header="{Binding lrgrExportacion, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutSmall}">
-                    <r:RibbonButton x:Name="rbttExportacionFichero340" 
-                                    Label="{Binding lrbttExportacionFichero340, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnExportacionFichero340" 
+                                    Label="{Binding lrbtnExportacionFichero340, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttExportacionFichero347" 
-                                    Label="{Binding lrbttExportacionFichero347, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnExportacionFichero347" 
+                                    Label="{Binding lrbtnExportacionFichero347, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrImpresion" Header="{Binding lrgrImpresion, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutSmall}">
-                    <r:RibbonButton x:Name="rbttImpresionBloqueFacturas" 
-                                    Label="{Binding lrbttImpresionBloqueFacturas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnImpresionBloqueFacturas" 
+                                    Label="{Binding lrbtnImpresionBloqueFacturas, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttImpresionBloqueRecibos" 
-                                    Label="{Binding lrbttImpresionBloqueRecibos, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnImpresionBloqueRecibos" 
+                                    Label="{Binding lrbtnImpresionBloqueRecibos, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrEstadisticasFacturas" Header="{Binding lrgrEstadisticasFacturas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png">
-                    <r:RibbonButton x:Name="rbttGeneradorEstadisticasFacturas" 
-                                    Label="{Binding lrbttGeneradorEstadisticasFacturas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnGeneradorEstadisticasFacturas" 
+                                    Label="{Binding lrbtnGeneradorEstadisticasFacturas, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
@@ -1627,69 +1629,69 @@
                          KeyTip="T" 
                          GroupSizeReductionOrder="rgrInmovilizaciones, rgrUtilidades, rgrVarios">
                 <r:RibbonGroup x:Name="rgrInmovilizaciones" Header="{Binding lrgrInmovilizaciones, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutSmall}">
-                    <r:RibbonButton x:Name="rbttInmovilizaciones" 
-                                    Label="{Binding lrbttInmovilizaciones, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnInmovilizaciones" 
+                                    Label="{Binding lrbtnInmovilizaciones, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttEntradaGastosVehiculo" 
-                                    Label="{Binding lrbttEntradaGastosVehiculo, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnEntradaGastosVehiculo" 
+                                    Label="{Binding lrbtnEntradaGastosVehiculo, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttGeneradorEstadisticasInmovilizaciones" 
-                                    Label="{Binding lrbttGeneradorEstadisticasInmovilizaciones, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnGeneradorEstadisticasInmovilizaciones" 
+                                    Label="{Binding lrbtnGeneradorEstadisticasInmovilizaciones, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrUtilidades" Header="{Binding lrgrUtilidades, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutSmall}">
-                    <r:RibbonButton x:Name="rbttActualizarVtoITV" 
-                                    Label="{Binding lrbttActualizarVtoITV, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnActualizarVtoITV" 
+                                    Label="{Binding lrbtnActualizarVtoITV, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttBastidorRadioLlave" 
-                                    Label="{Binding lrbttBastidorRadioLlave, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnBastidorRadioLlave" 
+                                    Label="{Binding lrbtnBastidorRadioLlave, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttCambioFechaBajaVehiculo" 
-                                    Label="{Binding lrbttCambioFechaBajaVehiculo, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnCambioFechaBajaVehiculo" 
+                                    Label="{Binding lrbtnCambioFechaBajaVehiculo, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttCambioUbicacionKMSituacion" 
-                                    Label="{Binding lrbttCambioUbicacionKMSituacion, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnCambioUbicacionKMSituacion" 
+                                    Label="{Binding lrbtnCambioUbicacionKMSituacion, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttDatosSeguros" 
-                                    Label="{Binding lrbttDatosSeguros, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnDatosSeguros" 
+                                    Label="{Binding lrbtnDatosSeguros, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttFlotaVtoRecibosSeguros" 
-                                    Label="{Binding lrbttFlotaVtoRecibosSeguros, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnFlotaVtoRecibosSeguros" 
+                                    Label="{Binding lrbtnFlotaVtoRecibosSeguros, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttModificacionMasivaFlota" 
-                                    Label="{Binding lrbttModificacionMasivaFlota, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnModificacionMasivaFlota" 
+                                    Label="{Binding lrbtnModificacionMasivaFlota, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttTraslados" 
-                                    Label="{Binding lrbttTraslados, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnTraslados" 
+                                    Label="{Binding lrbtnTraslados, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrVariosFlota" Header="{Binding lrgrVariosFlota, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutSmall}">
-                    <r:RibbonButton x:Name="rbttCambioEmpresa" 
-                                    Label="{Binding lrbttCambioEmpresa, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnCambioEmpresa" 
+                                    Label="{Binding lrbtnCambioEmpresa, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttCambioUbicacion" 
-                                    Label="{Binding lrbttCambioUbicacion, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnCambioUbicacion" 
+                                    Label="{Binding lrbtnCambioUbicacion, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttDescargarMultas" 
-                                    Label="{Binding lrbttDescargarMultas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnDescargarMultas" 
+                                    Label="{Binding lrbtnDescargarMultas, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttHistoricoSeguros" 
-                                    Label="{Binding lrbttHistoricoSeguros, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnHistoricoSeguros" 
+                                    Label="{Binding lrbtnHistoricoSeguros, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttImpresionLlaveros" 
-                                    Label="{Binding lrbttImpresionLlaveros, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnImpresionLlaveros" 
+                                    Label="{Binding lrbtnImpresionLlaveros, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttPrevisionEntradas" 
-                                    Label="{Binding lrbttPrevisionEntradas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnPrevisionEntradas" 
+                                    Label="{Binding lrbtnPrevisionEntradas, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttRecalculoSituación" 
-                                    Label="{Binding lrbttRecalculoSituación, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnRecalculoSituación" 
+                                    Label="{Binding lrbtnRecalculoSituación, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttRepostaje" 
-                                    Label="{Binding lrbttRepostaje, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnRepostaje" 
+                                    Label="{Binding lrbtnRepostaje, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttSiniestros" 
-                                    Label="{Binding lrbttSiniestros, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnSiniestros" 
+                                    Label="{Binding lrbtnSiniestros, Source={StaticResource ResourceLanguage}}" 
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
             </r:RibbonTab>
@@ -1708,24 +1710,24 @@
                          KeyTip="I"
                          GroupSizeReductionOrder="rgrIncidencias, rgrtiposIncidencias">
                 <r:RibbonGroup x:Name="rgrIncidencias" Header="{Binding lrgrIncidencias, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
-                    <r:RibbonButton x:Name="rbttIncidenciasClientes" 
-                                    Label="{Binding lrbttIncidenciasClientes, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnIncidenciasClientes" 
+                                    Label="{Binding lrbtnIncidenciasClientes, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttIncidenciasContratos" 
-                                    Label="{Binding lrbttIncidenciasContratos, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnIncidenciasContratos" 
+                                    Label="{Binding lrbtnIncidenciasContratos, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttIncidenciasProveedores" 
-                                    Label="{Binding lrbttIncidenciasProveedores, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnIncidenciasProveedores" 
+                                    Label="{Binding lrbtnIncidenciasProveedores, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttIncidenciasReservas" 
-                                    Label="{Binding lrbttIncidenciasReservas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnIncidenciasReservas" 
+                                    Label="{Binding lrbtnIncidenciasReservas, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttIncidenciasVehiculos" 
-                                    Label="{Binding lrbttIncidenciasVehiculos, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnIncidenciasVehiculos" 
+                                    Label="{Binding lrbtnIncidenciasVehiculos, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
@@ -1736,40 +1738,40 @@
                          Header="{Binding ltbEstadisticas, Source={StaticResource ResourceLanguage}}" 
                          KeyTip="E">
                 <r:RibbonGroup x:Name="rgrEstadisticas" Header="{Binding lrgrEstadisticas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
-                    <r:RibbonButton x:Name="rbttEstadisticasAnaliticas" 
-                                    Label="{Binding lrbttEstadisticasAnaliticas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnEstadisticasAnaliticas" 
+                                    Label="{Binding lrbtnEstadisticasAnaliticas, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttEstadisticasClientes" 
-                                    Label="{Binding lrbttEstadisticasClientes, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnEstadisticasClientes" 
+                                    Label="{Binding lrbtnEstadisticasClientes, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttEstadisticasContratos" 
-                                    Label="{Binding lrbttEstadisticasContratos, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnEstadisticasContratos" 
+                                    Label="{Binding lrbtnEstadisticasContratos, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttEstadisticasFacturas"
-                                    Label="{Binding lrbttEstadisticasFacturas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnEstadisticasFacturas"
+                                    Label="{Binding lrbtnEstadisticasFacturas, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttEstadisticasPeticiones" 
-                                    Label="{Binding lrbttEstadisticasPeticiones, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnEstadisticasPeticiones" 
+                                    Label="{Binding lrbtnEstadisticasPeticiones, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttEstadisticasProveedores" 
-                                    Label="{Binding lrbttEstadisticasProveedores, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnEstadisticasProveedores" 
+                                    Label="{Binding lrbtnEstadisticasProveedores, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttEstadisticasReservas" 
-                                    Label="{Binding lrbttEstadisticasReservas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnEstadisticasReservas" 
+                                    Label="{Binding lrbtnEstadisticasReservas, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttEstadisticasUtilitarios"
-                                    Label="{Binding lrbttEstadisticasUtilitarios, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnEstadisticasUtilitarios"
+                                    Label="{Binding lrbtnEstadisticasUtilitarios, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttEstadisticasVehiculos" 
-                                    Label="{Binding lrbttEstadisticasVehiculos, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnEstadisticasVehiculos" 
+                                    Label="{Binding lrbtnEstadisticasVehiculos, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
@@ -1780,44 +1782,44 @@
                          Header="{Binding ltbListados, Source={StaticResource ResourceLanguage}}" 
                          KeyTip="L">
                 <r:RibbonGroup x:Name="rgrListados" Header="{Binding lrgrListados, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
-                    <r:RibbonButton x:Name="rbttListadosClientes" 
-                                    Label="{Binding lrbttListadosClientes, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnListadosClientes" 
+                                    Label="{Binding lrbtnListadosClientes, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttListadosComisionistas" 
-                                    Label="{Binding lrbttListadosComisionistas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnListadosComisionistas" 
+                                    Label="{Binding lrbtnListadosComisionistas, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttListadosContratos" 
-                                    Label="{Binding lrbttListadosContratos, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnListadosContratos" 
+                                    Label="{Binding lrbtnListadosContratos, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttListadosFicherosAuxiliares" 
-                                    Label="{Binding lrbttListadosFicherosAuxiliares, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnListadosFicherosAuxiliares" 
+                                    Label="{Binding lrbtnListadosFicherosAuxiliares, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttListadosFacturas"
-                                    Label="{Binding lrbttListadosFacturas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnListadosFacturas"
+                                    Label="{Binding lrbtnListadosFacturas, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttListadosPeticiones" 
-                                    Label="{Binding lrbttListadosPeticiones, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnListadosPeticiones" 
+                                    Label="{Binding lrbtnListadosPeticiones, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttListadosPotenciales"
-                                    Label="{Binding lrbttListadosPotenciales, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnListadosPotenciales"
+                                    Label="{Binding lrbtnListadosPotenciales, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttListadosProveedores" 
-                                    Label="{Binding lrbttListadosProveedores, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnListadosProveedores" 
+                                    Label="{Binding lrbtnListadosProveedores, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttListadosReservas" 
-                                    Label="{Binding lrbttListadosReservas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnListadosReservas" 
+                                    Label="{Binding lrbtnListadosReservas, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttListadosVehiculos" 
-                                    Label="{Binding lrbttListadosVehiculos, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnListadosVehiculos" 
+                                    Label="{Binding lrbtnListadosVehiculos, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
@@ -1829,54 +1831,54 @@
                              KeyTip="G" 
                              GroupSizeReductionOrder="rgrConfiguracion, rgrPersonal, rgrVariosconfiguracion">
                 <r:RibbonGroup x:Name="rgrConfiguracion" Header="{Binding lrgrConfiguracion, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
-                    <r:RibbonMenuButton x:Name="rmnbttConfiguracion" Label="{Binding lrmnbttConfiguracion, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="C" >
-                        <r:RibbonButton x:Name="rbttCodigosIniciales" 
-                                        Label="{Binding lrbttCodigosIniciales, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnConfiguracion" Label="{Binding lrmnbtnConfiguracion, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="C" >
+                        <r:RibbonButton x:Name="rbtnCodigosIniciales" 
+                                        Label="{Binding lrbtnCodigosIniciales, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttEmpresa" 
-                                        Label="{Binding lrbttEmpresa, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnEmpresa" 
+                                        Label="{Binding lrbtnEmpresa, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttEnlaceContabilidad" 
-                                        Label="{Binding lrbttEnlaceContabilidad, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnEnlaceContabilidad" 
+                                        Label="{Binding lrbtnEnlaceContabilidad, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttEquipo" 
-                                        Label="{Binding lrbttEquipo, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnEquipo" 
+                                        Label="{Binding lrbtnEquipo, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttFacturacion" 
-                                        Label="{Binding lrbttFacturacion, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnFacturacion" 
+                                        Label="{Binding lrbtnFacturacion, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttbiImpresion" 
-                                        Label="{Binding lrbttbiImpresion, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnbiImpresion" 
+                                        Label="{Binding lrbtnbiImpresion, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttKarve" 
-                                        Label="{Binding lrbttKarve, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnKarve" 
+                                        Label="{Binding lrbtnKarve, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttMaestros" 
-                                        Label="{Binding lrbttMaestros, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnMaestros" 
+                                        Label="{Binding lrbtnMaestros, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttOficina" 
-                                        Label="{Binding lrbttOficina, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnOficina" 
+                                        Label="{Binding lrbtnOficina, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttOperaciones" 
-                                        Label="{Binding lrbttOperaciones, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnOperaciones" 
+                                        Label="{Binding lrbtnOperaciones, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttOtros" 
-                                        Label="{Binding lrbttOtros, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnOtros" 
+                                        Label="{Binding lrbtnOtros, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
                     </r:RibbonMenuButton>
-                    <r:RibbonMenuButton x:Name="rmnbttPermisos" Label="{Binding lrmnbttPermisos, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="P" >
-                        <r:RibbonButton x:Name="rbttInformes" 
-                                        Label="{Binding lrbttInformes, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnPermisos" Label="{Binding lrmnbtnPermisos, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="P" >
+                        <r:RibbonButton x:Name="rbtnInformes" 
+                                        Label="{Binding lrbtnInformes, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttPrograma" 
-                                        Label="{Binding lrbttPrograma, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnPrograma" 
+                                        Label="{Binding lrbtnPrograma, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
                     </r:RibbonMenuButton>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrIdiomas" Header="{Binding lrgrIdiomas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png">
-                    <r:RibbonMenuButton x:Name="rmnbttIdiomas" Label="{Binding lrmnbttIdiomas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="I" >
-                        <r:RibbonButton x:Name="rbttIdiomaESES"
-                                        Label="{Binding lrbttIdiomaESES, Source={StaticResource ResourceLanguage}}"                                             
+                    <r:RibbonMenuButton x:Name="rmnbtnIdiomas" Label="{Binding lrmnbtnIdiomas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="I" >
+                        <r:RibbonButton x:Name="rbtnIdiomaESES"
+                                        Label="{Binding lrbtnIdiomaESES, Source={StaticResource ResourceLanguage}}"                                             
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\es-es.png" >
                             <r:RibbonButton.InputBindings>
@@ -1885,8 +1887,8 @@
                                               CommandParameter="es-ES" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttIdiomaCAES"
-                                        Label="{Binding lrbttIdiomaCAES, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnIdiomaCAES"
+                                        Label="{Binding lrbtnIdiomaCAES, Source={StaticResource ResourceLanguage}}" 
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\ca-es.png" >
                             <r:RibbonButton.InputBindings>
@@ -1895,8 +1897,8 @@
                                               CommandParameter="ca-ES" />
                             </r:RibbonButton.InputBindings>
                         </r:RibbonButton>
-                        <r:RibbonButton x:Name="rbttIdiomaENGB"
-                                        Label="{Binding lrbttIdiomaENGB, Source={StaticResource ResourceLanguage}}"  
+                        <r:RibbonButton x:Name="rbtnIdiomaENGB"
+                                        Label="{Binding lrbtnIdiomaENGB, Source={StaticResource ResourceLanguage}}"  
                                         HorizontalAlignment="Left" 
                                         SmallImageSource="..\Images\en-gb.png" >
                             <r:RibbonButton.InputBindings>
@@ -1908,129 +1910,129 @@
                     </r:RibbonMenuButton>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrPersonal" Header="{Binding lrgrPersonal, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
-                    <r:RibbonButton x:Name="rbttMailingPersonal" 
-                                    Label="{Binding lrbttMailingPersonal, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnMailingPersonal" 
+                                    Label="{Binding lrbtnMailingPersonal, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttPersonal" 
-                                    Label="{Binding lrbttPersonal, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnPersonal" 
+                                    Label="{Binding lrbtnPersonal, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrUtilitarios" Header="{Binding lrgrUtilitarios, Source={StaticResource ResourceLanguage}}" >
-                    <r:RibbonMenuButton x:Name="rmnbttUtilitarios" Label="{Binding lrmnbttUtilitarios, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="U" >
-                        <r:RibbonButton x:Name="rbttBorrarFicherosEnvioEmail" 
-                                        Label="{Binding lrbttBorrarFicherosEnvioEmail, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnUtilitarios" Label="{Binding lrmnbtnUtilitarios, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="U" >
+                        <r:RibbonButton x:Name="rbtnBorrarFicherosEnvioEmail" 
+                                        Label="{Binding lrbtnBorrarFicherosEnvioEmail, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttCambiarIVA" 
-                                        Label="{Binding lrbttCambiarIVA, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnCambiarIVA" 
+                                        Label="{Binding lrbtnCambiarIVA, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttComunicacionPolicia" 
-                                        Label="{Binding lrbttComunicacionPolicia, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnComunicacionPolicia" 
+                                        Label="{Binding lrbtnComunicacionPolicia, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttConsultaSQL" 
-                                        Label="{Binding lrbttConsultaSQL, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnConsultaSQL" 
+                                        Label="{Binding lrbtnConsultaSQL, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttDesbloquearContratosFacturando" 
-                                        Label="{Binding lrbttDesbloquearContratosFacturando, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnDesbloquearContratosFacturando" 
+                                        Label="{Binding lrbtnDesbloquearContratosFacturando, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttDeteccionHuecos" 
-                                        Label="{Binding lrbttDeteccionHuecos, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnDeteccionHuecos" 
+                                        Label="{Binding lrbtnDeteccionHuecos, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttDeteccionInconsistencias" 
-                                        Label="{Binding lrbttDeteccionInconsistencias, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnDeteccionInconsistencias" 
+                                        Label="{Binding lrbtnDeteccionInconsistencias, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttDesvincularContratosReservas" 
-                                        Label="{Binding lrbttDesvincularContratosReservas, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnDesvincularContratosReservas" 
+                                        Label="{Binding lrbtnDesvincularContratosReservas, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttLimpiarInformacionAntigua" 
-                                        Label="{Binding lrbttLimpiarInformacionAntigua, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnLimpiarInformacionAntigua" 
+                                        Label="{Binding lrbtnLimpiarInformacionAntigua, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttLimpiarCodigosReserva" 
-                                        Label="{Binding lrbttLimpiarCodigosReserva, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnLimpiarCodigosReserva" 
+                                        Label="{Binding lrbtnLimpiarCodigosReserva, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttRecalcularMantenimientos" 
-                                        Label="{Binding lrbttRecalcularMantenimientos, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnRecalcularMantenimientos" 
+                                        Label="{Binding lrbtnRecalcularMantenimientos, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttRecalcularPendientes" 
-                                        Label="{Binding lrbttRecalcularPendientes, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnRecalcularPendientes" 
+                                        Label="{Binding lrbtnRecalcularPendientes, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttRehacerÍndices" 
-                                        Label="{Binding lrbttRehacerÍndices, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnRehacerÍndices" 
+                                        Label="{Binding lrbtnRehacerÍndices, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttRelojesActivos" 
-                                        Label="{Binding lrbttRelojesActivos, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnRelojesActivos" 
+                                        Label="{Binding lrbtnRelojesActivos, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttVincularContratosReservas" 
-                                        Label="{Binding lrbttVincularContratosReservas, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnVincularContratosReservas" 
+                                        Label="{Binding lrbtnVincularContratosReservas, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttVincularContratosReservasNoVinculadas" 
-                                        Label="{Binding lrbttVincularContratosReservasNoVinculadas, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnVincularContratosReservasNoVinculadas" 
+                                        Label="{Binding lrbtnVincularContratosReservasNoVinculadas, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
                     </r:RibbonMenuButton>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rgrVariosconfiguracion" Header="{Binding lrgrVariosconfiguracion, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
-                    <r:RibbonButton x:Name="rbttCambiarContrasenyas" 
-                                    Label="{Binding lrbttCambiarContrasenyas, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnCambiarContrasenyas" 
+                                    Label="{Binding lrbtnCambiarContrasenyas, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttPreciosCombustible" 
-                                    Label="{Binding lrbttPreciosCombustible, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnPreciosCombustible" 
+                                    Label="{Binding lrbtnPreciosCombustible, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
-                    <r:RibbonButton x:Name="rbttUsuarios" 
-                                    Label="{Binding lrbttUsuarios, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonButton x:Name="rbtnUsuarios" 
+                                    Label="{Binding lrbtnUsuarios, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
                 <r:RibbonGroup x:Name="rrgrKarve" Header="{Binding lrrgrKarve, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" >
-                    <r:RibbonMenuButton x:Name="rmnbttKarve" Label="{Binding lrmnbttKarve, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="K" >
-                        <r:RibbonButton x:Name="rbttAcercaDe" 
-                                        Label="{Binding lrbttAcercaDe, Source={StaticResource ResourceLanguage}}" 
+                    <r:RibbonMenuButton x:Name="rmnbtnKarve" Label="{Binding lrmnbtnKarve, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="K" >
+                        <r:RibbonButton x:Name="rbtnAcercaDe" 
+                                        Label="{Binding lrbtnAcercaDe, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttContrasenyasKarve" 
-                                        Label="{Binding lrbttContrasenyasKarve, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnContrasenyasKarve" 
+                                        Label="{Binding lrbtnContrasenyasKarve, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttDescargarActualizacion" 
-                                        Label="{Binding lrbttDescargarActualizacion, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnDescargarActualizacion" 
+                                        Label="{Binding lrbtnDescargarActualizacion, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttMensajeEntrada" 
-                                        Label="{Binding lrbttMensajeEntrada, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnMensajeEntrada" 
+                                        Label="{Binding lrbtnMensajeEntrada, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
-                        <r:RibbonButton x:Name="rbttNovedades" 
-                                        Label="{Binding lrbttNovedades, Source={StaticResource ResourceLanguage}}" 
+                        <r:RibbonButton x:Name="rbtnNovedades" 
+                                        Label="{Binding lrbtnNovedades, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
                     </r:RibbonMenuButton>
                 </r:RibbonGroup>
             </r:RibbonTab>
 
-            <r:RibbonButton x:Name="rbttReservasWeb"
-                            Label="{Binding lrbttReservasWeb, Source={StaticResource ResourceLanguage}}" 
+            <r:RibbonButton x:Name="rbtnReservasWeb"
+                            Label="{Binding lrbtnReservasWeb, Source={StaticResource ResourceLanguage}}" 
                             SmallImageSource="..\Images\tools.png"/>
-            <r:RibbonButton x:Name="rbttValidar" 
-                            Label="{Binding lrbttValidar, Source={StaticResource ResourceLanguage}}"/>
+            <r:RibbonButton x:Name="rbtnValidar" 
+                            Label="{Binding lrbtnValidar, Source={StaticResource ResourceLanguage}}"/>
 
             <!--Tab1 Ejemplo-->
             <!--<r:RibbonTab x:Name="tab1" Header="MyRibbonTab">
                     <r:RibbonGroup Header="File">
-                        <r:RibbonButton x:Name="bttNewtab1" Command="New" Label="New" LargeImageSource="..\Images\copy.png" />
-                        <r:RibbonButton x:Name="bttOpentab1" Command="Open" Label="Open" LargeImageSource="..\Images\copy.png" />
-                        <r:RibbonButton x:Name="bttSavetab1" Command="Save" Label="Save" LargeImageSource="..\Images\copy.png" />
+                        <r:RibbonButton x:Name="btnNewtab1" Command="New" Label="New" LargeImageSource="..\Images\copy.png" />
+                        <r:RibbonButton x:Name="btnOpentab1" Command="Open" Label="Open" LargeImageSource="..\Images\copy.png" />
+                        <r:RibbonButton x:Name="btnSavetab1" Command="Save" Label="Save" LargeImageSource="..\Images\copy.png" />
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="Delete">
-                        <r:RibbonButton x:Name="bttDeletetab1" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="..\Images\delete.png" />
+                        <r:RibbonButton x:Name="btnDeletetab1" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="..\Images\delete.png" />
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="Group Edit">
                         <r:RibbonMenuButton Label="Menu Edit" LargeImageSource="..\Images\edit.png" >
-                            <r:RibbonButton x:Name="bttCuttab1" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
-                            <r:RibbonButton x:Name="bttCopytab1" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
-                            <r:RibbonButton x:Name="bttPastetab1" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images\paste.png" />
+                            <r:RibbonButton x:Name="btnCuttab1" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
+                            <r:RibbonButton x:Name="btnCopytab1" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
+                            <r:RibbonButton x:Name="btnPastetab1" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images\paste.png" />
                         </r:RibbonMenuButton>
-                        <r:RibbonButton x:Name="bttCutOtherstab1" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
-                        <r:RibbonButton x:Name="bttCopyOtherstab1" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
-                        <r:RibbonButton x:Name="bttPasteOtherstab1" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images\paste.png" />
+                        <r:RibbonButton x:Name="btnCutOtherstab1" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
+                        <r:RibbonButton x:Name="btnCopyOtherstab1" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
+                        <r:RibbonButton x:Name="btnPasteOtherstab1" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images\paste.png" />
                         <r:RibbonMenuButton Label="Others" SmallImageSource="..\Images\delete.png" >
-                            <r:RibbonButton x:Name="bttDeleteOtherstab1" Label="Delete" SmallImageSource="..\Images\delete.png"/>
+                            <r:RibbonButton x:Name="btnDeleteOtherstab1" Label="Delete" SmallImageSource="..\Images\delete.png"/>
                         </r:RibbonMenuButton>
                     </r:RibbonGroup>
                 </r:RibbonTab>-->
@@ -2038,24 +2040,24 @@
             <!--<r:RibbonTab x:Name="tab2" Header="MyRibbonTab">
                     <r:RibbonGroup Header="Group Edit">
                         <r:RibbonMenuButton Label="Menu Edit" LargeImageSource="..\Images\edit.png" >
-                            <r:RibbonButton x:Name="bttCuttab2" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
-                            <r:RibbonButton x:Name="bttCopytab2" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
-                            <r:RibbonButton x:Name="bttPastetab2" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images\paste.png" />
+                            <r:RibbonButton x:Name="btnCuttab2" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
+                            <r:RibbonButton x:Name="btnCopytab2" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
+                            <r:RibbonButton x:Name="btnPastetab2" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images\paste.png" />
                         </r:RibbonMenuButton>
-                        <r:RibbonButton x:Name="bttCutOtherstab2" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
-                        <r:RibbonButton x:Name="bttCopyOtherstab2" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
-                        <r:RibbonButton x:Name="bttPasteOtherstab2" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images\paste.png" />
+                        <r:RibbonButton x:Name="btnCutOtherstab2" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
+                        <r:RibbonButton x:Name="btnCopyOtherstab2" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images\copy.png" />
+                        <r:RibbonButton x:Name="btnPasteOtherstab2" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images\paste.png" />
                         <r:RibbonMenuButton Label="Others" SmallImageSource="..\Images\delete.png" >
-                            <r:RibbonButton x:Name="bttDeleteOtherstab2" Label="Delete" SmallImageSource="..\Images\delete.png"/>
+                            <r:RibbonButton x:Name="btnDeleteOtherstab2" Label="Delete" SmallImageSource="..\Images\delete.png"/>
                         </r:RibbonMenuButton>
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="File">
-                        <r:RibbonButton x:Name="bttNewtab2" Command="New" Label="New" LargeImageSource="..\Images\copy.png" />
-                        <r:RibbonButton x:Name="bttOpentab2" Command="Open" Label="Open" LargeImageSource="..\Images\copy.png" />
-                        <r:RibbonButton x:Name="bttSavetab2" Command="Save" Label="Save" LargeImageSource="..\Images\copy.png" />
+                        <r:RibbonButton x:Name="btnNewtab2" Command="New" Label="New" LargeImageSource="..\Images\copy.png" />
+                        <r:RibbonButton x:Name="btnOpentab2" Command="Open" Label="Open" LargeImageSource="..\Images\copy.png" />
+                        <r:RibbonButton x:Name="btnSavetab2" Command="Save" Label="Save" LargeImageSource="..\Images\copy.png" />
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="Delete">
-                        <r:RibbonButton x:Name="bttDeletetab2" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="..\Images\delete.png" />
+                        <r:RibbonButton x:Name="btnDeletetab2" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="..\Images\delete.png" />
                     </r:RibbonGroup>
                 </r:RibbonTab>-->
         </r:Ribbon>
@@ -2063,16 +2065,16 @@
         <!--Toolbar Acciones-->
         <ToolBarTray x:Name="tbtAcciones" DockPanel.Dock="Top" >
             <ToolBar x:Name="tbAcciones" HorizontalAlignment="Left" ToolBar.OverflowMode="Never" >
-                <Button x:Name="tbbttNuevo" 
+                <Button x:Name="tbbtnNuevo" 
                         HorizontalAlignment="Left"                             
                         DataContext="{StaticResource mostrarAuxiliares}" >
                     <StackPanel>
                         <Image Source="..\Images\new.png" Stretch="Fill" Height="35" />
-                        <TextBlock Text="{Binding ltbbttNuevo, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding ltbbtnNuevo, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
                     </StackPanel>
                     <Button.ToolTip>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding ltbbttNuevo, Source={StaticResource ResourceLanguage}}" />
+                            <TextBlock Text="{Binding ltbbtnNuevo, Source={StaticResource ResourceLanguage}}" />
                             <TextBlock Text=" (Ctrl+N)" />
                         </StackPanel>
                     </Button.ToolTip>
@@ -2090,16 +2092,16 @@
                         
                     </Button.InputBindings>
                 </Button>
-                <Button x:Name="tbbttEditar" 
+                <Button x:Name="tbbtnEditar" 
                         HorizontalAlignment="Left"                             
                         DataContext="{StaticResource mostrarAuxiliares}" >
                     <StackPanel>
                         <Image Source="..\Images\edit.png" Stretch="Fill" Height="35" />
-                        <TextBlock Text="{Binding ltbbttEditar, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding ltbbtnEditar, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
                     </StackPanel>
                     <Button.ToolTip>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding ltbbttEditar, Source={StaticResource ResourceLanguage}}" />
+                            <TextBlock Text="{Binding ltbbtnEditar, Source={StaticResource ResourceLanguage}}" />
                             <TextBlock Text=" (Ctrl+E)" />
                         </StackPanel>
                     </Button.ToolTip>
@@ -2117,16 +2119,16 @@
 
                     </Button.InputBindings>
                 </Button>
-                <Button x:Name="tbbttEliminar" 
+                <Button x:Name="tbbtnEliminar" 
                         HorizontalAlignment="Left"                             
                         DataContext="{StaticResource mostrarAuxiliares}" >
                     <StackPanel>
                         <Image Source="..\Images\delete.png" Stretch="Fill" Height="35" />
-                        <TextBlock Text="{Binding ltbbttEliminar, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding ltbbtnEliminar, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
                     </StackPanel>
                     <Button.ToolTip>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding ltbbttEliminar, Source={StaticResource ResourceLanguage}}" />
+                            <TextBlock Text="{Binding ltbbtnEliminar, Source={StaticResource ResourceLanguage}}" />
                             <TextBlock Text=" (Ctrl+Supr)" />
                         </StackPanel>
                     </Button.ToolTip>
@@ -2143,16 +2145,16 @@
                                       CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                     </Button.InputBindings>
                 </Button>
-                <Button x:Name="tbbttGuardar" 
+                <Button x:Name="tbbtnGuardar" 
                         HorizontalAlignment="Left"                             
                         DataContext="{StaticResource mostrarAuxiliares}" >
                     <StackPanel>
                         <Image Source="..\Images\save.png" Stretch="Fill" Height="35" />
-                        <TextBlock Text="{Binding ltbbttGuardar, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding ltbbtnGuardar, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
                     </StackPanel>
                     <Button.ToolTip>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding ltbbttGuardar, Source={StaticResource ResourceLanguage}}" />
+                            <TextBlock Text="{Binding ltbbtnGuardar, Source={StaticResource ResourceLanguage}}" />
                             <TextBlock Text=" (Ctrl+G)" />
                         </StackPanel>
                     </Button.ToolTip>
@@ -2169,16 +2171,16 @@
                                         CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                     </Button.InputBindings>
                 </Button>
-                <Button x:Name="tbbttCancelar" 
+                <Button x:Name="tbbtnCancelar" 
                         HorizontalAlignment="Left"                             
                         DataContext="{StaticResource mostrarAuxiliares}" >
                     <StackPanel>
                         <Image Source="..\Images\cancel.png" Stretch="Fill" Height="35" />
-                        <TextBlock Text="{Binding ltbbttCancelar, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding ltbbtnCancelar, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
                     </StackPanel>
                     <Button.ToolTip>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding ltbbttCancelar, Source={StaticResource ResourceLanguage}}" />
+                            <TextBlock Text="{Binding ltbbtnCancelar, Source={StaticResource ResourceLanguage}}" />
                             <TextBlock Text=" (Ctrl+C)" />
                         </StackPanel>
                     </Button.ToolTip>
@@ -2195,16 +2197,16 @@
                                         CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                     </Button.InputBindings>
                 </Button>
-                <Button x:Name="tbbttImprimir" 
+                <Button x:Name="tbbtnImprimir" 
                         HorizontalAlignment="Left"                             
                         DataContext="{StaticResource mostrarAuxiliares}" >
                     <StackPanel>
                         <Image Source="..\Images\print.png" Stretch="Fill" Height="35" />
-                        <TextBlock Text="{Binding ltbbttImprimir, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding ltbbtnImprimir, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
                     </StackPanel>
                     <Button.ToolTip>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding ltbbttImprimir, Source={StaticResource ResourceLanguage}}" />
+                            <TextBlock Text="{Binding ltbbtnImprimir, Source={StaticResource ResourceLanguage}}" />
                             <TextBlock Text=" (Ctrl+I)" />
                         </StackPanel>
                     </Button.ToolTip>
@@ -2221,16 +2223,16 @@
                                         CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                     </Button.InputBindings>
                 </Button>
-                <Button x:Name="tbbttAnterior" 
+                <Button x:Name="tbbtnAnterior" 
                         HorizontalAlignment="Left"                             
                         DataContext="{StaticResource mostrarAuxiliares}" >
                     <StackPanel>
                         <Image Source="..\Images\previous.png" Stretch="Fill" Height="35" />
-                        <TextBlock Text="{Binding ltbbttAnterior, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding ltbbtnAnterior, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
                     </StackPanel>
                     <Button.ToolTip>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding ltbbttAnterior, Source={StaticResource ResourceLanguage}}" />
+                            <TextBlock Text="{Binding ltbbtnAnterior, Source={StaticResource ResourceLanguage}}" />
                             <TextBlock Text=" (Ctrl+←)" />
                         </StackPanel>
                     </Button.ToolTip>
@@ -2247,16 +2249,16 @@
                                         CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                     </Button.InputBindings>
                 </Button>
-                <Button x:Name="tbbttSiguiente" 
+                <Button x:Name="tbbtnSiguiente" 
                         HorizontalAlignment="Left"                             
                         DataContext="{StaticResource mostrarAuxiliares}" >
                     <StackPanel>
                         <Image Source="..\Images\next.png" Stretch="Fill" Height="35" />
-                        <TextBlock Text="{Binding ltbbttSiguiente, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding ltbbtnSiguiente, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
                     </StackPanel>
                     <Button.ToolTip>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding ltbbttSiguiente, Source={StaticResource ResourceLanguage}}" />
+                            <TextBlock Text="{Binding ltbbtnSiguiente, Source={StaticResource ResourceLanguage}}" />
                             <TextBlock Text=" (Ctrl+→)" />
                         </StackPanel>
                     </Button.ToolTip>
@@ -2273,16 +2275,16 @@
                                         CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
                     </Button.InputBindings>
                 </Button>
-                <Button x:Name="tbbttSalir" 
+                <Button x:Name="tbbtnSalir" 
                         HorizontalAlignment="Left"                             
                         DataContext="{StaticResource mostrarAuxiliares}" >
                     <StackPanel>
                         <Image Source="..\Images\exit.png" Stretch="Fill" Height="35" />
-                        <TextBlock Text="{Binding ltbbttSalir, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding ltbbtnSalir, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
                     </StackPanel>
                     <Button.ToolTip>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding ltbbttSalir, Source={StaticResource ResourceLanguage}}" />
+                            <TextBlock Text="{Binding ltbbtnSalir, Source={StaticResource ResourceLanguage}}" />
                             <TextBlock Text=" (Ctrl+Q)" />
                         </StackPanel>
                     </Button.ToolTip>
@@ -2304,13 +2306,13 @@
                 <TextBlock Foreground="Transparent">
                     <TextBox x:Name="txtSearch" Height="40" FontFamily="Calibri" FontSize="16" Width="600"
                              HorizontalAlignment="Stretch" VerticalContentAlignment="Center"/>     
-                    <Button x:Name="tbbttBuscar" 
+                    <Button x:Name="tbbtnBuscar" 
                             BorderBrush="Transparent" Background="Transparent"
                             HorizontalAlignment="Left"                            
                             DataContext="{StaticResource mostrarAuxiliares}" >
                             <Button.ToolTip>
                                 <StackPanel Orientation="Horizontal">
-                                    <!--<TextBlock Text="{Binding ltbbttBuscar, Source={StaticResource ResourceLanguage}}" />-->
+                                    <!--<TextBlock Text="{Binding ltbbtnBuscar, Source={StaticResource ResourceLanguage}}" />-->
                                     <TextBlock Text=" (Ctrl+S)" />
                                 </StackPanel>
                             </Button.ToolTip>
@@ -2328,7 +2330,7 @@
                         </Button.InputBindings>
                         <StackPanel>
                             <Image Source="..\Images\search.png" Stretch="Fill" Height="35" />
-                            <TextBlock Text="{Binding ltbbttBuscar, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding ltbbtnBuscar, Source={StaticResource ResourceLanguage}}" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </Button>
                 </TextBlock>
@@ -2347,7 +2349,7 @@
                         <TextBlock Text="  " />
                         <Button DataContext="{StaticResource closeTabItem}"
                                 Command="{Binding CloseTabItemCommand}"                                
-                                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}" 
+                                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Name}" 
                                 Background="Transparent" BorderBrush="Transparent">
                             <Image Source="..\Images\cancel.png" Height="11" Width="11"></Image>
                         </Button>
@@ -2366,6 +2368,9 @@
                     </DockPanel>
                 </DataTemplate>
             </TabControl.Resources>
+            <!--<TabItem Header="TabItem con UserControlWPF">
+                <uc:UserControlWPF/>
+            </TabItem>-->
         </TabControl>
     </DockPanel>
 </r:RibbonWindow>

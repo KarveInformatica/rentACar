@@ -11,6 +11,7 @@ using System.Globalization;
 using KRibbon.Model.Sybase;
 using System.Collections.Generic;
 using System.Windows.Controls;
+using KRibbon.View;
 
 namespace KRibbon
 {
@@ -36,12 +37,12 @@ namespace KRibbon
         }
 
 
-        public void bttHelp_Click(object sender, RoutedEventArgs e)
+        public void btnHelp_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Aquí va nuestro mensaje de ayuda", "Ayuda", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
-        #region RibbonGroup Drag and Drop
+        #region RibbonGroup Drag&Drop
         private void RibbonGroup_PreviewMouseMove(object sender, MouseEventArgs e)
         {
             try

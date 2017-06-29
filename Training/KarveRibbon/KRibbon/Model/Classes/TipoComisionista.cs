@@ -9,7 +9,7 @@ using System.Text;
 
 namespace KRibbon.Model
 {
-    public class TipoComisionista //: IAuxiliares
+    public class TipoComisionista : PropertyChangedBase//, IAuxiliares
     {
         #region List<DBCriterios>
         public static List<DBCriterios> dbcriterioslist = new List<DBCriterios>()
@@ -38,10 +38,7 @@ namespace KRibbon.Model
         private string codigo;
         public string Codigo
         {
-            get
-            {
-                return codigo;
-            }
+            get { return codigo; }
             set
             {
                 codigo = value;
@@ -52,25 +49,12 @@ namespace KRibbon.Model
         private string nombre;
         public string Nombre
         {
-            get
-            {
-                return nombre;
-            }
+            get { return nombre; }
             set
             {
                 nombre = value;
                 OnPropertyChanged("Nombre");
             }
-        }
-        #endregion
-
-        #region INotifyPropertyChanged
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
     }

@@ -4,10 +4,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using KRibbon.Model;
-namespace KRibbon.ViewModel
+namespace KRibbon.Model.Generic
 {
 
-    class BanksViewModel: ViewModelBase
+    class BanksViewModel: PropertyChangedBase
     {
         private ObservableCollection<Banco> auxBanksList = new ObservableCollection<Banco>();
         public BanksViewModel()

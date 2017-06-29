@@ -180,2070 +180,2070 @@ namespace KRibbon.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Abonar Factura.
         /// </summary>
-        public static string lrbttAbonarFactura {
+        public static string lrbtnAbonarFactura {
             get {
-                return ResourceManager.GetString("lrbttAbonarFactura", resourceCulture);
+                return ResourceManager.GetString("lrbtnAbonarFactura", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Abrir Contrato.
         /// </summary>
-        public static string lrbttAbrirContrato {
+        public static string lrbtnAbrirContrato {
             get {
-                return ResourceManager.GetString("lrbttAbrirContrato", resourceCulture);
+                return ResourceManager.GetString("lrbtnAbrirContrato", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Accesorios.
         /// </summary>
-        public static string lrbttAccesorios {
+        public static string lrbtnAccesorios {
             get {
-                return ResourceManager.GetString("lrbttAccesorios", resourceCulture);
+                return ResourceManager.GetString("lrbtnAccesorios", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Accesorios Vehículos.
         /// </summary>
-        public static string lrbttAccesoriosVehiculos {
+        public static string lrbtnAccesoriosVehiculos {
             get {
-                return ResourceManager.GetString("lrbttAccesoriosVehiculos", resourceCulture);
+                return ResourceManager.GetString("lrbtnAccesoriosVehiculos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Acerca de....
         /// </summary>
-        public static string lrbttAcercaDe {
+        public static string lrbtnAcercaDe {
             get {
-                return ResourceManager.GetString("lrbttAcercaDe", resourceCulture);
+                return ResourceManager.GetString("lrbtnAcercaDe", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Actividades Vehículos.
         /// </summary>
-        public static string lrbttActividadesVehiculos {
+        public static string lrbtnActividadesVehiculos {
             get {
-                return ResourceManager.GetString("lrbttActividadesVehiculos", resourceCulture);
+                return ResourceManager.GetString("lrbtnActividadesVehiculos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Actualizar Vto ITV.
         /// </summary>
-        public static string lrbttActualizarVtoITV {
+        public static string lrbtnActualizarVtoITV {
             get {
-                return ResourceManager.GetString("lrbttActualizarVtoITV", resourceCulture);
+                return ResourceManager.GetString("lrbtnActualizarVtoITV", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Alquiler Bicicletas.
         /// </summary>
-        public static string lrbttAlquilerBicicletas {
+        public static string lrbtnAlquilerBicicletas {
             get {
-                return ResourceManager.GetString("lrbttAlquilerBicicletas", resourceCulture);
+                return ResourceManager.GetString("lrbtnAlquilerBicicletas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Anulación de Pase.
         /// </summary>
-        public static string lrbttAnulacionPase {
+        public static string lrbtnAnulacionPase {
             get {
-                return ResourceManager.GetString("lrbttAnulacionPase", resourceCulture);
+                return ResourceManager.GetString("lrbtnAnulacionPase", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Anulación Pase Remesa a Contabilidad.
         /// </summary>
-        public static string lrbttAnulacionPaseRemesaContabilidad {
+        public static string lrbtnAnulacionPaseRemesaContabilidad {
             get {
-                return ResourceManager.GetString("lrbttAnulacionPaseRemesaContabilidad", resourceCulture);
+                return ResourceManager.GetString("lrbtnAnulacionPaseRemesaContabilidad", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Anular Contrato.
         /// </summary>
-        public static string lrbttAnularContrato {
+        public static string lrbtnAnularContrato {
             get {
-                return ResourceManager.GetString("lrbttAnularContrato", resourceCulture);
+                return ResourceManager.GetString("lrbtnAnularContrato", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Anular Reserva.
         /// </summary>
-        public static string lrbttAnularReserva {
+        public static string lrbtnAnularReserva {
             get {
-                return ResourceManager.GetString("lrbttAnularReserva", resourceCulture);
+                return ResourceManager.GetString("lrbtnAnularReserva", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Bancos.
         /// </summary>
-        public static string lrbttBancosClientes {
+        public static string lrbtnBancosClientes {
             get {
-                return ResourceManager.GetString("lrbttBancosClientes", resourceCulture);
+                return ResourceManager.GetString("lrbtnBancosClientes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Bancos de Remesas.
         /// </summary>
-        public static string lrbttBancosRemesas {
+        public static string lrbtnBancosRemesas {
             get {
-                return ResourceManager.GetString("lrbttBancosRemesas", resourceCulture);
+                return ResourceManager.GetString("lrbtnBancosRemesas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Bastidor, Radio, Llave.
         /// </summary>
-        public static string lrbttBastidorRadioLlave {
+        public static string lrbtnBastidorRadioLlave {
             get {
-                return ResourceManager.GetString("lrbttBastidorRadioLlave", resourceCulture);
+                return ResourceManager.GetString("lrbtnBastidorRadioLlave", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Impresión.
         /// </summary>
-        public static string lrbttbiImpresion {
+        public static string lrbtnbiImpresion {
             get {
-                return ResourceManager.GetString("lrbttbiImpresion", resourceCulture);
+                return ResourceManager.GetString("lrbtnbiImpresion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tipo Contacto Comercial.
         /// </summary>
-        public static string lrbttbitTipoContacto {
+        public static string lrbtnbitTipoContacto {
             get {
-                return ResourceManager.GetString("lrbttbitTipoContacto", resourceCulture);
+                return ResourceManager.GetString("lrbtnbitTipoContacto", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Bloque de Facturación.
         /// </summary>
-        public static string lrbttBloqueFacturacion {
+        public static string lrbtnBloqueFacturacion {
             get {
-                return ResourceManager.GetString("lrbttBloqueFacturacion", resourceCulture);
+                return ResourceManager.GetString("lrbtnBloqueFacturacion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Borrar Facturas en un Periodo.
         /// </summary>
-        public static string lrbttBorrarFacturasPeriodo {
+        public static string lrbtnBorrarFacturasPeriodo {
             get {
-                return ResourceManager.GetString("lrbttBorrarFacturasPeriodo", resourceCulture);
+                return ResourceManager.GetString("lrbtnBorrarFacturasPeriodo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Borrar Ficheros Envío Email.
         /// </summary>
-        public static string lrbttBorrarFicherosEnvioEmail {
+        public static string lrbtnBorrarFicherosEnvioEmail {
             get {
-                return ResourceManager.GetString("lrbttBorrarFicherosEnvioEmail", resourceCulture);
+                return ResourceManager.GetString("lrbtnBorrarFicherosEnvioEmail", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cambiar Contraseñas.
         /// </summary>
-        public static string lrbttCambiarContrasenyas {
+        public static string lrbtnCambiarContrasenyas {
             get {
-                return ResourceManager.GetString("lrbttCambiarContrasenyas", resourceCulture);
+                return ResourceManager.GetString("lrbtnCambiarContrasenyas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cambiar IVA.
         /// </summary>
-        public static string lrbttCambiarIVA {
+        public static string lrbtnCambiarIVA {
             get {
-                return ResourceManager.GetString("lrbttCambiarIVA", resourceCulture);
+                return ResourceManager.GetString("lrbtnCambiarIVA", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cambio Código de Cliente.
         /// </summary>
-        public static string lrbttCambioCodigoCliente {
+        public static string lrbtnCambioCodigoCliente {
             get {
-                return ResourceManager.GetString("lrbttCambioCodigoCliente", resourceCulture);
+                return ResourceManager.GetString("lrbtnCambioCodigoCliente", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cambio Código de Tarifas.
         /// </summary>
-        public static string lrbttCambioCodigoTarifas {
+        public static string lrbtnCambioCodigoTarifas {
             get {
-                return ResourceManager.GetString("lrbttCambioCodigoTarifas", resourceCulture);
+                return ResourceManager.GetString("lrbtnCambioCodigoTarifas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cambio Código de Vehículo.
         /// </summary>
-        public static string lrbttCambioCodigoVehiculo {
+        public static string lrbtnCambioCodigoVehiculo {
             get {
-                return ResourceManager.GetString("lrbttCambioCodigoVehiculo", resourceCulture);
+                return ResourceManager.GetString("lrbtnCambioCodigoVehiculo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cambio Conductor.
         /// </summary>
-        public static string lrbttCambioConductor {
+        public static string lrbtnCambioConductor {
             get {
-                return ResourceManager.GetString("lrbttCambioConductor", resourceCulture);
+                return ResourceManager.GetString("lrbtnCambioConductor", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cambio de Empresa.
         /// </summary>
-        public static string lrbttCambioEmpresa {
+        public static string lrbtnCambioEmpresa {
             get {
-                return ResourceManager.GetString("lrbttCambioEmpresa", resourceCulture);
+                return ResourceManager.GetString("lrbtnCambioEmpresa", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cambio Fecha Baja Vehículo.
         /// </summary>
-        public static string lrbttCambioFechaBajaVehiculo {
+        public static string lrbtnCambioFechaBajaVehiculo {
             get {
-                return ResourceManager.GetString("lrbttCambioFechaBajaVehiculo", resourceCulture);
+                return ResourceManager.GetString("lrbtnCambioFechaBajaVehiculo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cambio Número Contrato.
         /// </summary>
-        public static string lrbttCambioNumeroContrato {
+        public static string lrbtnCambioNumeroContrato {
             get {
-                return ResourceManager.GetString("lrbttCambioNumeroContrato", resourceCulture);
+                return ResourceManager.GetString("lrbtnCambioNumeroContrato", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cambio Número Factura.
         /// </summary>
-        public static string lrbttCambioNumeroFactura {
+        public static string lrbtnCambioNumeroFactura {
             get {
-                return ResourceManager.GetString("lrbttCambioNumeroFactura", resourceCulture);
+                return ResourceManager.GetString("lrbtnCambioNumeroFactura", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cambio Oficina Contrato.
         /// </summary>
-        public static string lrbttCambioOficinaContrato {
+        public static string lrbtnCambioOficinaContrato {
             get {
-                return ResourceManager.GetString("lrbttCambioOficinaContrato", resourceCulture);
+                return ResourceManager.GetString("lrbtnCambioOficinaContrato", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cambio de Ubicación.
         /// </summary>
-        public static string lrbttCambioUbicacion {
+        public static string lrbtnCambioUbicacion {
             get {
-                return ResourceManager.GetString("lrbttCambioUbicacion", resourceCulture);
+                return ResourceManager.GetString("lrbtnCambioUbicacion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cambio Ubicación, KM, Situación.
         /// </summary>
-        public static string lrbttCambioUbicacionKMSituacion {
+        public static string lrbtnCambioUbicacionKMSituacion {
             get {
-                return ResourceManager.GetString("lrbttCambioUbicacionKMSituacion", resourceCulture);
+                return ResourceManager.GetString("lrbtnCambioUbicacionKMSituacion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cambio Vehículo.
         /// </summary>
-        public static string lrbttCambioVehiculo {
+        public static string lrbtnCambioVehiculo {
             get {
-                return ResourceManager.GetString("lrbttCambioVehiculo", resourceCulture);
+                return ResourceManager.GetString("lrbtnCambioVehiculo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cambio Vendedor en Facturas.
         /// </summary>
-        public static string lrbttCambioVendedorFacturas {
+        public static string lrbtnCambioVendedorFacturas {
             get {
-                return ResourceManager.GetString("lrbttCambioVendedorFacturas", resourceCulture);
+                return ResourceManager.GetString("lrbtnCambioVendedorFacturas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Canales.
         /// </summary>
-        public static string lrbttCanales {
+        public static string lrbtnCanales {
             get {
-                return ResourceManager.GetString("lrbttCanales", resourceCulture);
+                return ResourceManager.GetString("lrbtnCanales", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cargos del Personal.
         /// </summary>
-        public static string lrbttCargosPersonal {
+        public static string lrbtnCargosPersonal {
             get {
-                return ResourceManager.GetString("lrbttCargosPersonal", resourceCulture);
+                return ResourceManager.GetString("lrbtnCargosPersonal", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cartas Pendientes.
         /// </summary>
-        public static string lrbttCartaPendientes {
+        public static string lrbtnCartaPendientes {
             get {
-                return ResourceManager.GetString("lrbttCartaPendientes", resourceCulture);
+                return ResourceManager.GetString("lrbtnCartaPendientes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Entrega de Contratos a Oficina.
         /// </summary>
-        public static string lrbttCategoriasPersonal {
+        public static string lrbtnCategoriasPersonal {
             get {
-                return ResourceManager.GetString("lrbttCategoriasPersonal", resourceCulture);
+                return ResourceManager.GetString("lrbtnCategoriasPersonal", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cerrar Contrato.
         /// </summary>
-        public static string lrbttCerrarContrato {
+        public static string lrbtnCerrarContrato {
             get {
-                return ResourceManager.GetString("lrbttCerrarContrato", resourceCulture);
+                return ResourceManager.GetString("lrbtnCerrarContrato", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Claves de Fee.
         /// </summary>
-        public static string lrbttClavesFee {
+        public static string lrbtnClavesFee {
             get {
-                return ResourceManager.GetString("lrbttClavesFee", resourceCulture);
+                return ResourceManager.GetString("lrbtnClavesFee", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Claves de Presupuesto.
         /// </summary>
-        public static string lrbttClavesPresupuesto {
+        public static string lrbtnClavesPresupuesto {
             get {
-                return ResourceManager.GetString("lrbttClavesPresupuesto", resourceCulture);
+                return ResourceManager.GetString("lrbtnClavesPresupuesto", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Clientes.
         /// </summary>
-        public static string lrbttClientes {
+        public static string lrbtnClientes {
             get {
-                return ResourceManager.GetString("lrbttClientes", resourceCulture);
+                return ResourceManager.GetString("lrbtnClientes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cobros Individuales.
         /// </summary>
-        public static string lrbttCobrosIndividuales {
+        public static string lrbtnCobrosIndividuales {
             get {
-                return ResourceManager.GetString("lrbttCobrosIndividuales", resourceCulture);
+                return ResourceManager.GetString("lrbtnCobrosIndividuales", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Códigos Iniciales.
         /// </summary>
-        public static string lrbttCodigosIniciales {
+        public static string lrbtnCodigosIniciales {
             get {
-                return ResourceManager.GetString("lrbttCodigosIniciales", resourceCulture);
+                return ResourceManager.GetString("lrbtnCodigosIniciales", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Códigos Inmovilización.
         /// </summary>
-        public static string lrbttCodigosInmovilizacion {
+        public static string lrbtnCodigosInmovilizacion {
             get {
-                return ResourceManager.GetString("lrbttCodigosInmovilizacion", resourceCulture);
+                return ResourceManager.GetString("lrbtnCodigosInmovilizacion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Códigos Mantenimiento.
         /// </summary>
-        public static string lrbttCodigosMantenimiento {
+        public static string lrbtnCodigosMantenimiento {
             get {
-                return ResourceManager.GetString("lrbttCodigosMantenimiento", resourceCulture);
+                return ResourceManager.GetString("lrbtnCodigosMantenimiento", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Colores.
         /// </summary>
-        public static string lrbttColores {
+        public static string lrbtnColores {
             get {
-                return ResourceManager.GetString("lrbttColores", resourceCulture);
+                return ResourceManager.GetString("lrbtnColores", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Comisionistas.
         /// </summary>
-        public static string lrbttComisionistas {
+        public static string lrbtnComisionistas {
             get {
-                return ResourceManager.GetString("lrbttComisionistas", resourceCulture);
+                return ResourceManager.GetString("lrbtnComisionistas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Comunicación Policía.
         /// </summary>
-        public static string lrbttComunicacionPolicia {
+        public static string lrbtnComunicacionPolicia {
             get {
-                return ResourceManager.GetString("lrbttComunicacionPolicia", resourceCulture);
+                return ResourceManager.GetString("lrbtnComunicacionPolicia", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Conceptos Facturación.
         /// </summary>
-        public static string lrbttConceptosFacturacion {
+        public static string lrbtnConceptosFacturacion {
             get {
-                return ResourceManager.GetString("lrbttConceptosFacturacion", resourceCulture);
+                return ResourceManager.GetString("lrbtnConceptosFacturacion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Conceptos Salida Caja.
         /// </summary>
-        public static string lrbttConceptosSalidaCaja {
+        public static string lrbtnConceptosSalidaCaja {
             get {
-                return ResourceManager.GetString("lrbttConceptosSalidaCaja", resourceCulture);
+                return ResourceManager.GetString("lrbtnConceptosSalidaCaja", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Consultar Contrato.
         /// </summary>
-        public static string lrbttConcultarContrato {
+        public static string lrbtnConcultarContrato {
             get {
-                return ResourceManager.GetString("lrbttConcultarContrato", resourceCulture);
+                return ResourceManager.GetString("lrbtnConcultarContrato", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Consulta / Modificación.
         /// </summary>
-        public static string lrbttConsultaModificacion {
+        public static string lrbtnConsultaModificacion {
             get {
-                return ResourceManager.GetString("lrbttConsultaModificacion", resourceCulture);
+                return ResourceManager.GetString("lrbtnConsultaModificacion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Consulta SQL.
         /// </summary>
-        public static string lrbttConsultaSQL {
+        public static string lrbtnConsultaSQL {
             get {
-                return ResourceManager.GetString("lrbttConsultaSQL", resourceCulture);
+                return ResourceManager.GetString("lrbtnConsultaSQL", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Contraseñas Karve.
         /// </summary>
-        public static string lrbttContrasenyasKarve {
+        public static string lrbtnContrasenyasKarve {
             get {
-                return ResourceManager.GetString("lrbttContrasenyasKarve", resourceCulture);
+                return ResourceManager.GetString("lrbtnContrasenyasKarve", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Convertir Reserva a Contrato.
         /// </summary>
-        public static string lrbttConvertirReservaContrato {
+        public static string lrbtnConvertirReservaContrato {
             get {
-                return ResourceManager.GetString("lrbttConvertirReservaContrato", resourceCulture);
+                return ResourceManager.GetString("lrbtnConvertirReservaContrato", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cotización Comparada.
         /// </summary>
-        public static string lrbttCotizacionComparada {
+        public static string lrbtnCotizacionComparada {
             get {
-                return ResourceManager.GetString("lrbttCotizacionComparada", resourceCulture);
+                return ResourceManager.GetString("lrbtnCotizacionComparada", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Crear Tarifa a Partir Otra.
         /// </summary>
-        public static string lrbttCrearTarifaDesdeOtraTarifa {
+        public static string lrbtnCrearTarifaDesdeOtraTarifa {
             get {
-                return ResourceManager.GetString("lrbttCrearTarifaDesdeOtraTarifa", resourceCulture);
+                return ResourceManager.GetString("lrbtnCrearTarifaDesdeOtraTarifa", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Customer Service.
         /// </summary>
-        public static string lrbttCustomerService {
+        public static string lrbtnCustomerService {
             get {
-                return ResourceManager.GetString("lrbttCustomerService", resourceCulture);
+                return ResourceManager.GetString("lrbtnCustomerService", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Datos de Seguros.
         /// </summary>
-        public static string lrbttDatosSeguros {
+        public static string lrbtnDatosSeguros {
             get {
-                return ResourceManager.GetString("lrbttDatosSeguros", resourceCulture);
+                return ResourceManager.GetString("lrbtnDatosSeguros", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Desbloquear Contratos Facturando.
         /// </summary>
-        public static string lrbttDesbloquearContratosFacturando {
+        public static string lrbtnDesbloquearContratosFacturando {
             get {
-                return ResourceManager.GetString("lrbttDesbloquearContratosFacturando", resourceCulture);
+                return ResourceManager.GetString("lrbtnDesbloquearContratosFacturando", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Descargar Actualización.
         /// </summary>
-        public static string lrbttDescargarActualizacion {
+        public static string lrbtnDescargarActualizacion {
             get {
-                return ResourceManager.GetString("lrbttDescargarActualizacion", resourceCulture);
+                return ResourceManager.GetString("lrbtnDescargarActualizacion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Descargar Multas.
         /// </summary>
-        public static string lrbttDescargarMultas {
+        public static string lrbtnDescargarMultas {
             get {
-                return ResourceManager.GetString("lrbttDescargarMultas", resourceCulture);
+                return ResourceManager.GetString("lrbtnDescargarMultas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Desvincular Contratos de Reservas.
         /// </summary>
-        public static string lrbttDesvincularContratosReservas {
+        public static string lrbtnDesvincularContratosReservas {
             get {
-                return ResourceManager.GetString("lrbttDesvincularContratosReservas", resourceCulture);
+                return ResourceManager.GetString("lrbtnDesvincularContratosReservas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Detección de Huecos.
         /// </summary>
-        public static string lrbttDeteccionHuecos {
+        public static string lrbtnDeteccionHuecos {
             get {
-                return ResourceManager.GetString("lrbttDeteccionHuecos", resourceCulture);
+                return ResourceManager.GetString("lrbtnDeteccionHuecos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Detección de Inconsistencias.
         /// </summary>
-        public static string lrbttDeteccionInconsistencias {
+        public static string lrbtnDeteccionInconsistencias {
             get {
-                return ResourceManager.GetString("lrbttDeteccionInconsistencias", resourceCulture);
+                return ResourceManager.GetString("lrbtnDeteccionInconsistencias", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Divisas.
         /// </summary>
-        public static string lrbttDivisas {
+        public static string lrbtnDivisas {
             get {
-                return ResourceManager.GetString("lrbttDivisas", resourceCulture);
+                return ResourceManager.GetString("lrbtnDivisas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a e-Mailing Potenciales.
         /// </summary>
-        public static string lrbtteEMailingPotenciales {
+        public static string lrbtneEMailingPotenciales {
             get {
-                return ResourceManager.GetString("lrbtteEMailingPotenciales", resourceCulture);
+                return ResourceManager.GetString("lrbtneEMailingPotenciales", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Eliminar Reservas No Show.
         /// </summary>
-        public static string lrbttEliminarReservasNoShow {
+        public static string lrbtnEliminarReservasNoShow {
             get {
-                return ResourceManager.GetString("lrbttEliminarReservasNoShow", resourceCulture);
+                return ResourceManager.GetString("lrbtnEliminarReservasNoShow", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a e-Mailing Clientes.
         /// </summary>
-        public static string lrbttEMailingClientes {
+        public static string lrbtnEMailingClientes {
             get {
-                return ResourceManager.GetString("lrbttEMailingClientes", resourceCulture);
+                return ResourceManager.GetString("lrbtnEMailingClientes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Empleados de Agencia.
         /// </summary>
-        public static string lrbttEmpleadosAgencia {
+        public static string lrbtnEmpleadosAgencia {
             get {
-                return ResourceManager.GetString("lrbttEmpleadosAgencia", resourceCulture);
+                return ResourceManager.GetString("lrbtnEmpleadosAgencia", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Empresa.
         /// </summary>
-        public static string lrbttEmpresa {
+        public static string lrbtnEmpresa {
             get {
-                return ResourceManager.GetString("lrbttEmpresa", resourceCulture);
+                return ResourceManager.GetString("lrbtnEmpresa", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Empresas.
         /// </summary>
-        public static string lrbttEmpresas {
+        public static string lrbtnEmpresas {
             get {
-                return ResourceManager.GetString("lrbttEmpresas", resourceCulture);
+                return ResourceManager.GetString("lrbtnEmpresas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Enlace Contabilidad.
         /// </summary>
-        public static string lrbttEnlaceContabilidad {
+        public static string lrbtnEnlaceContabilidad {
             get {
-                return ResourceManager.GetString("lrbttEnlaceContabilidad", resourceCulture);
+                return ResourceManager.GetString("lrbtnEnlaceContabilidad", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Entrada Gastos por Vehículo.
         /// </summary>
-        public static string lrbttEntradaGastosVehiculo {
+        public static string lrbtnEntradaGastosVehiculo {
             get {
-                return ResourceManager.GetString("lrbttEntradaGastosVehiculo", resourceCulture);
+                return ResourceManager.GetString("lrbtnEntradaGastosVehiculo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Entrada Rápida.
         /// </summary>
-        public static string lrbttEntradaRapida {
+        public static string lrbtnEntradaRapida {
             get {
-                return ResourceManager.GetString("lrbttEntradaRapida", resourceCulture);
+                return ResourceManager.GetString("lrbtnEntradaRapida", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Entrega Bonos.
         /// </summary>
-        public static string lrbttEntregaBonos {
+        public static string lrbtnEntregaBonos {
             get {
-                return ResourceManager.GetString("lrbttEntregaBonos", resourceCulture);
+                return ResourceManager.GetString("lrbtnEntregaBonos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Equipo.
         /// </summary>
-        public static string lrbttEquipo {
+        public static string lrbtnEquipo {
             get {
-                return ResourceManager.GetString("lrbttEquipo", resourceCulture);
+                return ResourceManager.GetString("lrbtnEquipo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Analíticas.
         /// </summary>
-        public static string lrbttEstadisticasAnaliticas {
+        public static string lrbtnEstadisticasAnaliticas {
             get {
-                return ResourceManager.GetString("lrbttEstadisticasAnaliticas", resourceCulture);
+                return ResourceManager.GetString("lrbtnEstadisticasAnaliticas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Clientes.
         /// </summary>
-        public static string lrbttEstadisticasClientes {
+        public static string lrbtnEstadisticasClientes {
             get {
-                return ResourceManager.GetString("lrbttEstadisticasClientes", resourceCulture);
+                return ResourceManager.GetString("lrbtnEstadisticasClientes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Contratos.
         /// </summary>
-        public static string lrbttEstadisticasContratos {
+        public static string lrbtnEstadisticasContratos {
             get {
-                return ResourceManager.GetString("lrbttEstadisticasContratos", resourceCulture);
+                return ResourceManager.GetString("lrbtnEstadisticasContratos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Facturas.
         /// </summary>
-        public static string lrbttEstadisticasFacturas {
+        public static string lrbtnEstadisticasFacturas {
             get {
-                return ResourceManager.GetString("lrbttEstadisticasFacturas", resourceCulture);
+                return ResourceManager.GetString("lrbtnEstadisticasFacturas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Peticiones.
         /// </summary>
-        public static string lrbttEstadisticasPeticiones {
+        public static string lrbtnEstadisticasPeticiones {
             get {
-                return ResourceManager.GetString("lrbttEstadisticasPeticiones", resourceCulture);
+                return ResourceManager.GetString("lrbtnEstadisticasPeticiones", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Proveedores.
         /// </summary>
-        public static string lrbttEstadisticasProveedores {
+        public static string lrbtnEstadisticasProveedores {
             get {
-                return ResourceManager.GetString("lrbttEstadisticasProveedores", resourceCulture);
+                return ResourceManager.GetString("lrbtnEstadisticasProveedores", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Reservas.
         /// </summary>
-        public static string lrbttEstadisticasReservas {
+        public static string lrbtnEstadisticasReservas {
             get {
-                return ResourceManager.GetString("lrbttEstadisticasReservas", resourceCulture);
+                return ResourceManager.GetString("lrbtnEstadisticasReservas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Utilitarios.
         /// </summary>
-        public static string lrbttEstadisticasUtilitarios {
+        public static string lrbtnEstadisticasUtilitarios {
             get {
-                return ResourceManager.GetString("lrbttEstadisticasUtilitarios", resourceCulture);
+                return ResourceManager.GetString("lrbtnEstadisticasUtilitarios", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Vehículos.
         /// </summary>
-        public static string lrbttEstadisticasVehiculos {
+        public static string lrbtnEstadisticasVehiculos {
             get {
-                return ResourceManager.GetString("lrbttEstadisticasVehiculos", resourceCulture);
+                return ResourceManager.GetString("lrbtnEstadisticasVehiculos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Exportación Fichero 340.
         /// </summary>
-        public static string lrbttExportacionFichero340 {
+        public static string lrbtnExportacionFichero340 {
             get {
-                return ResourceManager.GetString("lrbttExportacionFichero340", resourceCulture);
+                return ResourceManager.GetString("lrbtnExportacionFichero340", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Exportación Fichero 347.
         /// </summary>
-        public static string lrbttExportacionFichero347 {
+        public static string lrbtnExportacionFichero347 {
             get {
-                return ResourceManager.GetString("lrbttExportacionFichero347", resourceCulture);
+                return ResourceManager.GetString("lrbtnExportacionFichero347", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Extras.
         /// </summary>
-        public static string lrbttExtras {
+        public static string lrbtnExtras {
             get {
-                return ResourceManager.GetString("lrbttExtras", resourceCulture);
+                return ResourceManager.GetString("lrbtnExtras", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Facturación.
         /// </summary>
-        public static string lrbttFacturacion {
+        public static string lrbtnFacturacion {
             get {
-                return ResourceManager.GetString("lrbttFacturacion", resourceCulture);
+                return ResourceManager.GetString("lrbtnFacturacion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Facturas Atípicas.
         /// </summary>
-        public static string lrbttFacturasAtipicas {
+        public static string lrbtnFacturasAtipicas {
             get {
-                return ResourceManager.GetString("lrbttFacturasAtipicas", resourceCulture);
+                return ResourceManager.GetString("lrbtnFacturasAtipicas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Flota Vto Recibos Seguros.
         /// </summary>
-        public static string lrbttFlotaVtoRecibosSeguros {
+        public static string lrbtnFlotaVtoRecibosSeguros {
             get {
-                return ResourceManager.GetString("lrbttFlotaVtoRecibosSeguros", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Formas de Cobro a Clientes.
-        /// </summary>
-        public static string lrbttFormasCobroClientes {
-            get {
-                return ResourceManager.GetString("lrbttFormasCobroClientes", resourceCulture);
+                return ResourceManager.GetString("lrbtnFlotaVtoRecibosSeguros", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Formas de Pago.
         /// </summary>
-        public static string lrbttFormasPagoProveedor {
+        public static string lrbtnFormaPagoProveedor {
             get {
-                return ResourceManager.GetString("lrbttFormasPagoProveedor", resourceCulture);
+                return ResourceManager.GetString("lrbtnFormaPagoProveedor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Formas de Cobro a Clientes.
+        /// </summary>
+        public static string lrbtnFormasCobroClientes {
+            get {
+                return ResourceManager.GetString("lrbtnFormasCobroClientes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Formas Traslado.
         /// </summary>
-        public static string lrbttFormasTraslado {
+        public static string lrbtnFormasTraslado {
             get {
-                return ResourceManager.GetString("lrbttFormasTraslado", resourceCulture);
+                return ResourceManager.GetString("lrbtnFormasTraslado", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Generador Estadísticas.
         /// </summary>
-        public static string lrbttGeneradorEstadisticasFacturas {
+        public static string lrbtnGeneradorEstadisticasFacturas {
             get {
-                return ResourceManager.GetString("lrbttGeneradorEstadisticasFacturas", resourceCulture);
+                return ResourceManager.GetString("lrbtnGeneradorEstadisticasFacturas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Generador Estadísticas.
         /// </summary>
-        public static string lrbttGeneradorEstadisticasInmovilizaciones {
+        public static string lrbtnGeneradorEstadisticasInmovilizaciones {
             get {
-                return ResourceManager.GetString("lrbttGeneradorEstadisticasInmovilizaciones", resourceCulture);
+                return ResourceManager.GetString("lrbtnGeneradorEstadisticasInmovilizaciones", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Gestión de Impagados.
         /// </summary>
-        public static string lrbttGestionImpagados {
+        public static string lrbtnGestionImpagados {
             get {
-                return ResourceManager.GetString("lrbttGestionImpagados", resourceCulture);
+                return ResourceManager.GetString("lrbtnGestionImpagados", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Grupos de Tarifas.
         /// </summary>
-        public static string lrbttGruposTarifa {
+        public static string lrbtnGruposTarifa {
             get {
-                return ResourceManager.GetString("lrbttGruposTarifa", resourceCulture);
+                return ResourceManager.GetString("lrbtnGruposTarifa", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Grupos Vehículos.
         /// </summary>
-        public static string lrbttGruposVehiculos {
+        public static string lrbtnGruposVehiculos {
             get {
-                return ResourceManager.GetString("lrbttGruposVehiculos", resourceCulture);
+                return ResourceManager.GetString("lrbtnGruposVehiculos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Aquí ponemos algún texto….
         /// </summary>
-        public static string lrbttHelpDescr {
+        public static string lrbtnHelpDescr {
             get {
-                return ResourceManager.GetString("lrbttHelpDescr", resourceCulture);
+                return ResourceManager.GetString("lrbtnHelpDescr", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Pulse F1 para más ayuda….
         /// </summary>
-        public static string lrbttHelpFooterDescr {
+        public static string lrbtnHelpFooterDescr {
             get {
-                return ResourceManager.GetString("lrbttHelpFooterDescr", resourceCulture);
+                return ResourceManager.GetString("lrbtnHelpFooterDescr", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Más información.
         /// </summary>
-        public static string lrbttHelpFooterTitle {
+        public static string lrbtnHelpFooterTitle {
             get {
-                return ResourceManager.GetString("lrbttHelpFooterTitle", resourceCulture);
+                return ResourceManager.GetString("lrbtnHelpFooterTitle", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Ayuda.
         /// </summary>
-        public static string lrbttHelpTitle {
+        public static string lrbtnHelpTitle {
             get {
-                return ResourceManager.GetString("lrbttHelpTitle", resourceCulture);
+                return ResourceManager.GetString("lrbtnHelpTitle", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Histórico Seguros.
         /// </summary>
-        public static string lrbttHistoricoSeguros {
+        public static string lrbtnHistoricoSeguros {
             get {
-                return ResourceManager.GetString("lrbttHistoricoSeguros", resourceCulture);
+                return ResourceManager.GetString("lrbtnHistoricoSeguros", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Catalán.
         /// </summary>
-        public static string lrbttIdiomaCAES {
+        public static string lrbtnIdiomaCAES {
             get {
-                return ResourceManager.GetString("lrbttIdiomaCAES", resourceCulture);
+                return ResourceManager.GetString("lrbtnIdiomaCAES", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Inglés.
         /// </summary>
-        public static string lrbttIdiomaENGB {
+        public static string lrbtnIdiomaENGB {
             get {
-                return ResourceManager.GetString("lrbttIdiomaENGB", resourceCulture);
+                return ResourceManager.GetString("lrbtnIdiomaENGB", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Español.
         /// </summary>
-        public static string lrbttIdiomaESES {
+        public static string lrbtnIdiomaESES {
             get {
-                return ResourceManager.GetString("lrbttIdiomaESES", resourceCulture);
+                return ResourceManager.GetString("lrbtnIdiomaESES", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Impresión en Bloque.
         /// </summary>
-        public static string lrbttImpresionBloque {
+        public static string lrbtnImpresionBloque {
             get {
-                return ResourceManager.GetString("lrbttImpresionBloque", resourceCulture);
+                return ResourceManager.GetString("lrbtnImpresionBloque", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Impresión en Bloque de Contratos.
         /// </summary>
-        public static string lrbttImpresionBloqueContratos {
+        public static string lrbtnImpresionBloqueContratos {
             get {
-                return ResourceManager.GetString("lrbttImpresionBloqueContratos", resourceCulture);
+                return ResourceManager.GetString("lrbtnImpresionBloqueContratos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Impresión en Bloque Facturas.
         /// </summary>
-        public static string lrbttImpresionBloqueFacturas {
+        public static string lrbtnImpresionBloqueFacturas {
             get {
-                return ResourceManager.GetString("lrbttImpresionBloqueFacturas", resourceCulture);
+                return ResourceManager.GetString("lrbtnImpresionBloqueFacturas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Impresión en Bloque Recibos.
         /// </summary>
-        public static string lrbttImpresionBloqueRecibos {
+        public static string lrbtnImpresionBloqueRecibos {
             get {
-                return ResourceManager.GetString("lrbttImpresionBloqueRecibos", resourceCulture);
+                return ResourceManager.GetString("lrbtnImpresionBloqueRecibos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Impresión de Llaveros.
         /// </summary>
-        public static string lrbttImpresionLlaveros {
+        public static string lrbtnImpresionLlaveros {
             get {
-                return ResourceManager.GetString("lrbttImpresionLlaveros", resourceCulture);
+                return ResourceManager.GetString("lrbtnImpresionLlaveros", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Clientes.
         /// </summary>
-        public static string lrbttIncidenciasClientes {
+        public static string lrbtnIncidenciasClientes {
             get {
-                return ResourceManager.GetString("lrbttIncidenciasClientes", resourceCulture);
+                return ResourceManager.GetString("lrbtnIncidenciasClientes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Contratos.
         /// </summary>
-        public static string lrbttIncidenciasContratos {
+        public static string lrbtnIncidenciasContratos {
             get {
-                return ResourceManager.GetString("lrbttIncidenciasContratos", resourceCulture);
+                return ResourceManager.GetString("lrbtnIncidenciasContratos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Proveedores.
         /// </summary>
-        public static string lrbttIncidenciasProveedores {
+        public static string lrbtnIncidenciasProveedores {
             get {
-                return ResourceManager.GetString("lrbttIncidenciasProveedores", resourceCulture);
+                return ResourceManager.GetString("lrbtnIncidenciasProveedores", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Reservas.
         /// </summary>
-        public static string lrbttIncidenciasReservas {
+        public static string lrbtnIncidenciasReservas {
             get {
-                return ResourceManager.GetString("lrbttIncidenciasReservas", resourceCulture);
+                return ResourceManager.GetString("lrbtnIncidenciasReservas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Vehículos.
         /// </summary>
-        public static string lrbttIncidenciasVehiculos {
+        public static string lrbtnIncidenciasVehiculos {
             get {
-                return ResourceManager.GetString("lrbttIncidenciasVehiculos", resourceCulture);
+                return ResourceManager.GetString("lrbtnIncidenciasVehiculos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Incremento Precios.
         /// </summary>
-        public static string lrbttIncrementoPrecios {
+        public static string lrbtnIncrementoPrecios {
             get {
-                return ResourceManager.GetString("lrbttIncrementoPrecios", resourceCulture);
+                return ResourceManager.GetString("lrbtnIncrementoPrecios", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Informes.
         /// </summary>
-        public static string lrbttInformes {
+        public static string lrbtnInformes {
             get {
-                return ResourceManager.GetString("lrbttInformes", resourceCulture);
+                return ResourceManager.GetString("lrbtnInformes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Inmovilizaciones.
         /// </summary>
-        public static string lrbttInmovilizaciones {
+        public static string lrbtnInmovilizaciones {
             get {
-                return ResourceManager.GetString("lrbttInmovilizaciones", resourceCulture);
+                return ResourceManager.GetString("lrbtnInmovilizaciones", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Karve.
         /// </summary>
-        public static string lrbttKarve {
+        public static string lrbtnKarve {
             get {
-                return ResourceManager.GetString("lrbttKarve", resourceCulture);
+                return ResourceManager.GetString("lrbtnKarve", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Limpiar Códigos Reserva.
         /// </summary>
-        public static string lrbttLimpiarCodigosReserva {
+        public static string lrbtnLimpiarCodigosReserva {
             get {
-                return ResourceManager.GetString("lrbttLimpiarCodigosReserva", resourceCulture);
+                return ResourceManager.GetString("lrbtnLimpiarCodigosReserva", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Limpiar Información Antigua.
         /// </summary>
-        public static string lrbttLimpiarInformacionAntigua {
+        public static string lrbtnLimpiarInformacionAntigua {
             get {
-                return ResourceManager.GetString("lrbttLimpiarInformacionAntigua", resourceCulture);
+                return ResourceManager.GetString("lrbtnLimpiarInformacionAntigua", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Clientes.
         /// </summary>
-        public static string lrbttListadosClientes {
+        public static string lrbtnListadosClientes {
             get {
-                return ResourceManager.GetString("lrbttListadosClientes", resourceCulture);
+                return ResourceManager.GetString("lrbtnListadosClientes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Comisionistas.
         /// </summary>
-        public static string lrbttListadosComisionistas {
+        public static string lrbtnListadosComisionistas {
             get {
-                return ResourceManager.GetString("lrbttListadosComisionistas", resourceCulture);
+                return ResourceManager.GetString("lrbtnListadosComisionistas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Contratos.
         /// </summary>
-        public static string lrbttListadosContratos {
+        public static string lrbtnListadosContratos {
             get {
-                return ResourceManager.GetString("lrbttListadosContratos", resourceCulture);
+                return ResourceManager.GetString("lrbtnListadosContratos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Facturas.
         /// </summary>
-        public static string lrbttListadosFacturas {
+        public static string lrbtnListadosFacturas {
             get {
-                return ResourceManager.GetString("lrbttListadosFacturas", resourceCulture);
+                return ResourceManager.GetString("lrbtnListadosFacturas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Ficheros Auxiliares.
         /// </summary>
-        public static string lrbttListadosFicherosAuxiliares {
+        public static string lrbtnListadosFicherosAuxiliares {
             get {
-                return ResourceManager.GetString("lrbttListadosFicherosAuxiliares", resourceCulture);
+                return ResourceManager.GetString("lrbtnListadosFicherosAuxiliares", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Peticiones.
         /// </summary>
-        public static string lrbttListadosPeticiones {
+        public static string lrbtnListadosPeticiones {
             get {
-                return ResourceManager.GetString("lrbttListadosPeticiones", resourceCulture);
+                return ResourceManager.GetString("lrbtnListadosPeticiones", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Potenciales.
         /// </summary>
-        public static string lrbttListadosPotenciales {
+        public static string lrbtnListadosPotenciales {
             get {
-                return ResourceManager.GetString("lrbttListadosPotenciales", resourceCulture);
+                return ResourceManager.GetString("lrbtnListadosPotenciales", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Proveedores.
         /// </summary>
-        public static string lrbttListadosProveedores {
+        public static string lrbtnListadosProveedores {
             get {
-                return ResourceManager.GetString("lrbttListadosProveedores", resourceCulture);
+                return ResourceManager.GetString("lrbtnListadosProveedores", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Reservas.
         /// </summary>
-        public static string lrbttListadosReservas {
+        public static string lrbtnListadosReservas {
             get {
-                return ResourceManager.GetString("lrbttListadosReservas", resourceCulture);
+                return ResourceManager.GetString("lrbtnListadosReservas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Vehículos.
         /// </summary>
-        public static string lrbttListadosVehiculos {
+        public static string lrbtnListadosVehiculos {
             get {
-                return ResourceManager.GetString("lrbttListadosVehiculos", resourceCulture);
+                return ResourceManager.GetString("lrbtnListadosVehiculos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Lugares de Entrega.
         /// </summary>
-        public static string lrbttLugaresEntrega {
+        public static string lrbtnLugaresEntrega {
             get {
-                return ResourceManager.GetString("lrbttLugaresEntrega", resourceCulture);
+                return ResourceManager.GetString("lrbtnLugaresEntrega", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Maestros.
         /// </summary>
-        public static string lrbttMaestros {
+        public static string lrbtnMaestros {
             get {
-                return ResourceManager.GetString("lrbttMaestros", resourceCulture);
+                return ResourceManager.GetString("lrbtnMaestros", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Mailing a Personal.
         /// </summary>
-        public static string lrbttMailingPersonal {
+        public static string lrbtnMailingPersonal {
             get {
-                return ResourceManager.GetString("lrbttMailingPersonal", resourceCulture);
+                return ResourceManager.GetString("lrbtnMailingPersonal", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Marcas.
         /// </summary>
-        public static string lrbttMarcas {
+        public static string lrbtnMarcas {
             get {
-                return ResourceManager.GetString("lrbttMarcas", resourceCulture);
+                return ResourceManager.GetString("lrbtnMarcas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Medios de Recepción.
         /// </summary>
-        public static string lrbttMediosRecepcion {
+        public static string lrbtnMediosRecepcion {
             get {
-                return ResourceManager.GetString("lrbttMediosRecepcion", resourceCulture);
+                return ResourceManager.GetString("lrbtnMediosRecepcion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Mensaje de Entrada.
         /// </summary>
-        public static string lrbttMensajeEntrada {
+        public static string lrbtnMensajeEntrada {
             get {
-                return ResourceManager.GetString("lrbttMensajeEntrada", resourceCulture);
+                return ResourceManager.GetString("lrbtnMensajeEntrada", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Mercados.
         /// </summary>
-        public static string lrbttMercados {
+        public static string lrbtnMercados {
             get {
-                return ResourceManager.GetString("lrbttMercados", resourceCulture);
+                return ResourceManager.GetString("lrbtnMercados", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Modelos.
         /// </summary>
-        public static string lrbttModelos {
+        public static string lrbtnModelos {
             get {
-                return ResourceManager.GetString("lrbttModelos", resourceCulture);
+                return ResourceManager.GetString("lrbtnModelos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Modificación Masiva.
         /// </summary>
-        public static string lrbttModificacionMasivaAux {
+        public static string lrbtnModificacionMasivaAux {
             get {
-                return ResourceManager.GetString("lrbttModificacionMasivaAux", resourceCulture);
+                return ResourceManager.GetString("lrbtnModificacionMasivaAux", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Modificación Masiva.
         /// </summary>
-        public static string lrbttModificacionMasivaFlota {
+        public static string lrbtnModificacionMasivaFlota {
             get {
-                return ResourceManager.GetString("lrbttModificacionMasivaFlota", resourceCulture);
+                return ResourceManager.GetString("lrbtnModificacionMasivaFlota", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Modificar Empresa / Oficina Factura.
         /// </summary>
-        public static string lrbttModificarEmpresaOficinaFactura {
+        public static string lrbtnModificarEmpresaOficinaFactura {
             get {
-                return ResourceManager.GetString("lrbttModificarEmpresaOficinaFactura", resourceCulture);
+                return ResourceManager.GetString("lrbtnModificarEmpresaOficinaFactura", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Modificar Factura en Contrato.
         /// </summary>
-        public static string lrbttModificarFacturaContrato {
+        public static string lrbtnModificarFacturaContrato {
             get {
-                return ResourceManager.GetString("lrbttModificarFacturaContrato", resourceCulture);
+                return ResourceManager.GetString("lrbtnModificarFacturaContrato", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Motivos Anulación.
         /// </summary>
-        public static string lrbttMotivosAnulacionContratos {
+        public static string lrbtnMotivosAnulacionContratos {
             get {
-                return ResourceManager.GetString("lrbttMotivosAnulacionContratos", resourceCulture);
+                return ResourceManager.GetString("lrbtnMotivosAnulacionContratos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Motivos de Anulación.
         /// </summary>
-        public static string lrbttMotivosAnulacionReservas {
+        public static string lrbtnMotivosAnulacionReservas {
             get {
-                return ResourceManager.GetString("lrbttMotivosAnulacionReservas", resourceCulture);
+                return ResourceManager.GetString("lrbtnMotivosAnulacionReservas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Motivos Cambio de Vehículo.
         /// </summary>
-        public static string lrbttMotivosCambioVehiculo {
+        public static string lrbtnMotivosCambioVehiculo {
             get {
-                return ResourceManager.GetString("lrbttMotivosCambioVehiculo", resourceCulture);
+                return ResourceManager.GetString("lrbtnMotivosCambioVehiculo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Motivos Cancelación.
         /// </summary>
-        public static string lrbttMotivosCancelacion {
+        public static string lrbtnMotivosCancelacion {
             get {
-                return ResourceManager.GetString("lrbttMotivosCancelacion", resourceCulture);
+                return ResourceManager.GetString("lrbtnMotivosCancelacion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Motivos Improductivo.
         /// </summary>
-        public static string lrbttMotivosImproductivo {
+        public static string lrbtnMotivosImproductivo {
             get {
-                return ResourceManager.GetString("lrbttMotivosImproductivo", resourceCulture);
+                return ResourceManager.GetString("lrbtnMotivosImproductivo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Motivos de No Servicio.
         /// </summary>
-        public static string lrbttMotivosNoServicio {
+        public static string lrbtnMotivosNoServicio {
             get {
-                return ResourceManager.GetString("lrbttMotivosNoServicio", resourceCulture);
+                return ResourceManager.GetString("lrbtnMotivosNoServicio", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Motivos Repostaje.
         /// </summary>
-        public static string lrbttMotivosRepostaje {
+        public static string lrbtnMotivosRepostaje {
             get {
-                return ResourceManager.GetString("lrbttMotivosRepostaje", resourceCulture);
+                return ResourceManager.GetString("lrbtnMotivosRepostaje", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Negocios.
         /// </summary>
-        public static string lrbttNegocios {
+        public static string lrbtnNegocios {
             get {
-                return ResourceManager.GetString("lrbttNegocios", resourceCulture);
+                return ResourceManager.GetString("lrbtnNegocios", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Novedades.
         /// </summary>
-        public static string lrbttNovedades {
+        public static string lrbtnNovedades {
             get {
-                return ResourceManager.GetString("lrbttNovedades", resourceCulture);
+                return ResourceManager.GetString("lrbtnNovedades", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Oficina.
         /// </summary>
-        public static string lrbttOficina {
+        public static string lrbtnOficina {
             get {
-                return ResourceManager.GetString("lrbttOficina", resourceCulture);
+                return ResourceManager.GetString("lrbtnOficina", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Oficinas.
         /// </summary>
-        public static string lrbttOficinas {
+        public static string lrbtnOficinas {
             get {
-                return ResourceManager.GetString("lrbttOficinas", resourceCulture);
+                return ResourceManager.GetString("lrbtnOficinas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Operaciones.
         /// </summary>
-        public static string lrbttOperaciones {
+        public static string lrbtnOperaciones {
             get {
-                return ResourceManager.GetString("lrbttOperaciones", resourceCulture);
+                return ResourceManager.GetString("lrbtnOperaciones", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Origen de Clientes.
         /// </summary>
-        public static string lrbttOrigenClientes {
+        public static string lrbtnOrigenClientes {
             get {
-                return ResourceManager.GetString("lrbttOrigenClientes", resourceCulture);
+                return ResourceManager.GetString("lrbtnOrigenClientes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Otros.
         /// </summary>
-        public static string lrbttOtros {
+        public static string lrbtnOtros {
             get {
-                return ResourceManager.GetString("lrbttOtros", resourceCulture);
+                return ResourceManager.GetString("lrbtnOtros", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Países.
         /// </summary>
-        public static string lrbttPaises {
+        public static string lrbtnPaises {
             get {
-                return ResourceManager.GetString("lrbttPaises", resourceCulture);
+                return ResourceManager.GetString("lrbtnPaises", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Pase de Cobros (Recibos).
         /// </summary>
-        public static string lrbttPaseCobrosRecibos {
+        public static string lrbtnPaseCobrosRecibos {
             get {
-                return ResourceManager.GetString("lrbttPaseCobrosRecibos", resourceCulture);
+                return ResourceManager.GetString("lrbtnPaseCobrosRecibos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Pase de Facturas.
         /// </summary>
-        public static string lrbttPaseFacturas {
+        public static string lrbtnPaseFacturas {
             get {
-                return ResourceManager.GetString("lrbttPaseFacturas", resourceCulture);
+                return ResourceManager.GetString("lrbtnPaseFacturas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Pase de Facturas Atípicas.
         /// </summary>
-        public static string lrbttPaseFacturasAtipicas {
+        public static string lrbtnPaseFacturasAtipicas {
             get {
-                return ResourceManager.GetString("lrbttPaseFacturasAtipicas", resourceCulture);
+                return ResourceManager.GetString("lrbtnPaseFacturasAtipicas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Pase a Soporte Magnético.
         /// </summary>
-        public static string lrbttPaseSoporteMagnetico {
+        public static string lrbtnPaseSoporteMagnetico {
             get {
-                return ResourceManager.GetString("lrbttPaseSoporteMagnetico", resourceCulture);
+                return ResourceManager.GetString("lrbtnPaseSoporteMagnetico", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Pase de Tesorería (Caja).
         /// </summary>
-        public static string lrbttPaseTesoreriaCaja {
+        public static string lrbtnPaseTesoreriaCaja {
             get {
-                return ResourceManager.GetString("lrbttPaseTesoreriaCaja", resourceCulture);
+                return ResourceManager.GetString("lrbtnPaseTesoreriaCaja", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Personal.
         /// </summary>
-        public static string lrbttPersonal {
+        public static string lrbtnPersonal {
             get {
-                return ResourceManager.GetString("lrbttPersonal", resourceCulture);
+                return ResourceManager.GetString("lrbtnPersonal", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Peticiones.
         /// </summary>
-        public static string lrbttPeticiones {
+        public static string lrbtnPeticiones {
             get {
-                return ResourceManager.GetString("lrbttPeticiones", resourceCulture);
+                return ResourceManager.GetString("lrbtnPeticiones", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Plantilla.
         /// </summary>
-        public static string lrbttPlantilla {
+        public static string lrbtnPlantilla {
             get {
-                return ResourceManager.GetString("lrbttPlantilla", resourceCulture);
+                return ResourceManager.GetString("lrbtnPlantilla", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Poblaciones.
         /// </summary>
-        public static string lrbttPoblaciones {
+        public static string lrbtnPoblaciones {
             get {
-                return ResourceManager.GetString("lrbttPoblaciones", resourceCulture);
+                return ResourceManager.GetString("lrbtnPoblaciones", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Potenciales.
         /// </summary>
-        public static string lrbttPotenciales {
+        public static string lrbtnPotenciales {
             get {
-                return ResourceManager.GetString("lrbttPotenciales", resourceCulture);
+                return ResourceManager.GetString("lrbtnPotenciales", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Precios Combustible.
         /// </summary>
-        public static string lrbttPreciosCombustible {
+        public static string lrbtnPreciosCombustible {
             get {
-                return ResourceManager.GetString("lrbttPreciosCombustible", resourceCulture);
+                return ResourceManager.GetString("lrbtnPreciosCombustible", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Previsión Entradas.
         /// </summary>
-        public static string lrbttPrevisionEntradas {
+        public static string lrbtnPrevisionEntradas {
             get {
-                return ResourceManager.GetString("lrbttPrevisionEntradas", resourceCulture);
+                return ResourceManager.GetString("lrbtnPrevisionEntradas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Proceso Cierre Contratos.
         /// </summary>
-        public static string lrbttProcesoCierreContratos {
+        public static string lrbtnProcesoCierreContratos {
             get {
-                return ResourceManager.GetString("lrbttProcesoCierreContratos", resourceCulture);
+                return ResourceManager.GetString("lrbtnProcesoCierreContratos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Proceso Facturación.
         /// </summary>
-        public static string lrbttProcesoFacturacion {
+        public static string lrbtnProcesoFacturacion {
             get {
-                return ResourceManager.GetString("lrbttProcesoFacturacion", resourceCulture);
+                return ResourceManager.GetString("lrbtnProcesoFacturacion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Programa.
         /// </summary>
-        public static string lrbttPrograma {
+        public static string lrbtnPrograma {
             get {
-                return ResourceManager.GetString("lrbttPrograma", resourceCulture);
+                return ResourceManager.GetString("lrbtnPrograma", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Prolongación Automática de Contratos.
         /// </summary>
-        public static string lrbttProlongacionAutomaticaContratos {
+        public static string lrbtnProlongacionAutomaticaContratos {
             get {
-                return ResourceManager.GetString("lrbttProlongacionAutomaticaContratos", resourceCulture);
+                return ResourceManager.GetString("lrbtnProlongacionAutomaticaContratos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Propietarios.
         /// </summary>
-        public static string lrbttPropietarios {
+        public static string lrbtnPropietarios {
             get {
-                return ResourceManager.GetString("lrbttPropietarios", resourceCulture);
+                return ResourceManager.GetString("lrbtnPropietarios", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Proveedores.
         /// </summary>
-        public static string lrbttProveedores {
+        public static string lrbtnProveedores {
             get {
-                return ResourceManager.GetString("lrbttProveedores", resourceCulture);
+                return ResourceManager.GetString("lrbtnProveedores", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Provincias.
         /// </summary>
-        public static string lrbttProvincias {
+        public static string lrbtnProvincias {
             get {
-                return ResourceManager.GetString("lrbttProvincias", resourceCulture);
+                return ResourceManager.GetString("lrbtnProvincias", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Reabrir Contrato.
         /// </summary>
-        public static string lrbttReAbrirContrato {
+        public static string lrbtnReAbrirContrato {
             get {
-                return ResourceManager.GetString("lrbttReAbrirContrato", resourceCulture);
+                return ResourceManager.GetString("lrbtnReAbrirContrato", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Recalcular Mantenimientos.
         /// </summary>
-        public static string lrbttRecalcularMantenimientos {
+        public static string lrbtnRecalcularMantenimientos {
             get {
-                return ResourceManager.GetString("lrbttRecalcularMantenimientos", resourceCulture);
+                return ResourceManager.GetString("lrbtnRecalcularMantenimientos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Recalcular Pendientes.
         /// </summary>
-        public static string lrbttRecalcularPendientes {
+        public static string lrbtnRecalcularPendientes {
             get {
-                return ResourceManager.GetString("lrbttRecalcularPendientes", resourceCulture);
+                return ResourceManager.GetString("lrbtnRecalcularPendientes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Recálculo Mantenimiento.
         /// </summary>
-        public static string lrbttRecalculoMantenimiento {
+        public static string lrbtnRecalculoMantenimiento {
             get {
-                return ResourceManager.GetString("lrbttRecalculoMantenimiento", resourceCulture);
+                return ResourceManager.GetString("lrbtnRecalculoMantenimiento", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Recálculo de Situación.
         /// </summary>
-        public static string lrbttRecalculoSituación {
+        public static string lrbtnRecalculoSituación {
             get {
-                return ResourceManager.GetString("lrbttRecalculoSituación", resourceCulture);
+                return ResourceManager.GetString("lrbtnRecalculoSituación", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Recibos.
         /// </summary>
-        public static string lrbttRecibos {
+        public static string lrbtnRecibos {
             get {
-                return ResourceManager.GetString("lrbttRecibos", resourceCulture);
+                return ResourceManager.GetString("lrbtnRecibos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Refundir Recibos No Cobrados.
         /// </summary>
-        public static string lrbttRefundirRecibosNoCobrados {
+        public static string lrbtnRefundirRecibosNoCobrados {
             get {
-                return ResourceManager.GetString("lrbttRefundirRecibosNoCobrados", resourceCulture);
+                return ResourceManager.GetString("lrbtnRefundirRecibosNoCobrados", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Rehacer Índices.
         /// </summary>
-        public static string lrbttRehacerÍndices {
+        public static string lrbtnRehacerÍndices {
             get {
-                return ResourceManager.GetString("lrbttRehacerÍndices", resourceCulture);
+                return ResourceManager.GetString("lrbtnRehacerÍndices", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Relojes Activos.
         /// </summary>
-        public static string lrbttRelojesActivos {
+        public static string lrbtnRelojesActivos {
             get {
-                return ResourceManager.GetString("lrbttRelojesActivos", resourceCulture);
+                return ResourceManager.GetString("lrbtnRelojesActivos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Remesas.
         /// </summary>
-        public static string lrbttRemesas {
+        public static string lrbtnRemesas {
             get {
-                return ResourceManager.GetString("lrbttRemesas", resourceCulture);
+                return ResourceManager.GetString("lrbtnRemesas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Repostaje.
         /// </summary>
-        public static string lrbttRepostaje {
+        public static string lrbtnRepostaje {
             get {
-                return ResourceManager.GetString("lrbttRepostaje", resourceCulture);
+                return ResourceManager.GetString("lrbtnRepostaje", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Reservas.
         /// </summary>
-        public static string lrbttReservas {
+        public static string lrbtnReservas {
             get {
-                return ResourceManager.GetString("lrbttReservas", resourceCulture);
+                return ResourceManager.GetString("lrbtnReservas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Reservas Web: 123.
         /// </summary>
-        public static string lrbttReservasWeb {
+        public static string lrbtnReservasWeb {
             get {
-                return ResourceManager.GetString("lrbttReservasWeb", resourceCulture);
+                return ResourceManager.GetString("lrbtnReservasWeb", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Salida Caja.
         /// </summary>
-        public static string lrbttSalidaCaja {
+        public static string lrbtnSalidaCaja {
             get {
-                return ResourceManager.GetString("lrbttSalidaCaja", resourceCulture);
+                return ResourceManager.GetString("lrbtnSalidaCaja", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Sectores de Actividad.
         /// </summary>
-        public static string lrbttSectoresActividad {
+        public static string lrbtnSectoresActividad {
             get {
-                return ResourceManager.GetString("lrbttSectoresActividad", resourceCulture);
+                return ResourceManager.GetString("lrbtnSectoresActividad", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Series de Atípicos.
         /// </summary>
-        public static string lrbttSeriesAtipicos {
+        public static string lrbtnSeriesAtipicos {
             get {
-                return ResourceManager.GetString("lrbttSeriesAtipicos", resourceCulture);
+                return ResourceManager.GetString("lrbtnSeriesAtipicos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Siniestros.
         /// </summary>
-        public static string lrbttSiniestros {
+        public static string lrbtnSiniestros {
             get {
-                return ResourceManager.GetString("lrbttSiniestros", resourceCulture);
+                return ResourceManager.GetString("lrbtnSiniestros", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tarifa por Cliente.
         /// </summary>
-        public static string lrbttTarifaCliente {
+        public static string lrbtnTarifaCliente {
             get {
-                return ResourceManager.GetString("lrbttTarifaCliente", resourceCulture);
+                return ResourceManager.GetString("lrbtnTarifaCliente", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tarifas.
         /// </summary>
-        public static string lrbttTarifas {
+        public static string lrbtnTarifas {
             get {
-                return ResourceManager.GetString("lrbttTarifas", resourceCulture);
+                return ResourceManager.GetString("lrbtnTarifas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tarifas por Comisionista.
         /// </summary>
-        public static string lrbttTarifasComisionista {
+        public static string lrbtnTarifasComisionista {
             get {
-                return ResourceManager.GetString("lrbttTarifasComisionista", resourceCulture);
+                return ResourceManager.GetString("lrbtnTarifasComisionista", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tarjetas de Crédito.
         /// </summary>
-        public static string lrbttTarjetasCredito {
+        public static string lrbtnTarjetasCredito {
             get {
-                return ResourceManager.GetString("lrbttTarjetasCredito", resourceCulture);
+                return ResourceManager.GetString("lrbtnTarjetasCredito", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tarjetas de Empresa.
         /// </summary>
-        public static string lrbttTarjetasEmpresa {
+        public static string lrbtnTarjetasEmpresa {
             get {
-                return ResourceManager.GetString("lrbttTarjetasEmpresa", resourceCulture);
+                return ResourceManager.GetString("lrbtnTarjetasEmpresa", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Textos Estandars.
         /// </summary>
-        public static string lrbttTextosEstandars {
+        public static string lrbtnTextosEstandars {
             get {
-                return ResourceManager.GetString("lrbttTextosEstandars", resourceCulture);
+                return ResourceManager.GetString("lrbtnTextosEstandars", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tipos Comisionista.
         /// </summary>
-        public static string lrbttTipoComisionista {
+        public static string lrbtnTipoComisionista {
             get {
-                return ResourceManager.GetString("lrbttTipoComisionista", resourceCulture);
+                return ResourceManager.GetString("lrbtnTipoComisionista", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tipo Impreso de Contrato.
         /// </summary>
-        public static string lrbttTipoImpresoContrato {
+        public static string lrbtnTipoImpresoContrato {
             get {
-                return ResourceManager.GetString("lrbttTipoImpresoContrato", resourceCulture);
+                return ResourceManager.GetString("lrbtnTipoImpresoContrato", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tipos Impreso Factura.
         /// </summary>
-        public static string lrbttTipoImpresoFactura {
+        public static string lrbtnTipoImpresoFactura {
             get {
-                return ResourceManager.GetString("lrbttTipoImpresoFactura", resourceCulture);
+                return ResourceManager.GetString("lrbtnTipoImpresoFactura", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tipos de Cliente.
         /// </summary>
-        public static string lrbttTiposCliente {
+        public static string lrbtnTiposCliente {
             get {
-                return ResourceManager.GetString("lrbttTiposCliente", resourceCulture);
+                return ResourceManager.GetString("lrbtnTiposCliente", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tipos de Contacto.
         /// </summary>
-        public static string lrbttTiposContacto {
+        public static string lrbtnTiposContacto {
             get {
-                return ResourceManager.GetString("lrbttTiposContacto", resourceCulture);
+                return ResourceManager.GetString("lrbtnTiposContacto", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tipos de Documentos.
         /// </summary>
-        public static string lrbttTiposDocumentos {
+        public static string lrbtnTiposDocumentos {
             get {
-                return ResourceManager.GetString("lrbttTiposDocumentos", resourceCulture);
+                return ResourceManager.GetString("lrbtnTiposDocumentos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Clientes.
         /// </summary>
-        public static string lrbttTiposIncidenciasClientes {
+        public static string lrbtnTiposIncidenciasClientes {
             get {
-                return ResourceManager.GetString("lrbttTiposIncidenciasClientes", resourceCulture);
+                return ResourceManager.GetString("lrbtnTiposIncidenciasClientes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Contratos.
         /// </summary>
-        public static string lrbttTiposIncidenciasContratos {
+        public static string lrbtnTiposIncidenciasContratos {
             get {
-                return ResourceManager.GetString("lrbttTiposIncidenciasContratos", resourceCulture);
+                return ResourceManager.GetString("lrbtnTiposIncidenciasContratos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Proveedores.
         /// </summary>
-        public static string lrbttTiposIncidenciasProveedores {
+        public static string lrbtnTiposIncidenciasProveedores {
             get {
-                return ResourceManager.GetString("lrbttTiposIncidenciasProveedores", resourceCulture);
+                return ResourceManager.GetString("lrbtnTiposIncidenciasProveedores", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Reservas.
         /// </summary>
-        public static string lrbttTiposIncidenciasReservas {
+        public static string lrbtnTiposIncidenciasReservas {
             get {
-                return ResourceManager.GetString("lrbttTiposIncidenciasReservas", resourceCulture);
+                return ResourceManager.GetString("lrbtnTiposIncidenciasReservas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tipos Proveedor.
         /// </summary>
-        public static string lrbttTiposProveedores {
+        public static string lrbtnTiposProveedores {
             get {
-                return ResourceManager.GetString("lrbttTiposProveedores", resourceCulture);
+                return ResourceManager.GetString("lrbtnTiposProveedores", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tipos de Vehículo.
         /// </summary>
-        public static string lrbttTiposVehiculos {
+        public static string lrbtnTiposVehiculos {
             get {
-                return ResourceManager.GetString("lrbttTiposVehiculos", resourceCulture);
+                return ResourceManager.GetString("lrbtnTiposVehiculos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tipos de Visita.
         /// </summary>
-        public static string lrbttTiposVisita {
+        public static string lrbtnTiposVisita {
             get {
-                return ResourceManager.GetString("lrbttTiposVisita", resourceCulture);
+                return ResourceManager.GetString("lrbtnTiposVisita", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Traslados.
         /// </summary>
-        public static string lrbttTraslados {
+        public static string lrbtnTraslados {
             get {
-                return ResourceManager.GetString("lrbttTraslados", resourceCulture);
+                return ResourceManager.GetString("lrbtnTraslados", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Uso Alquiler.
         /// </summary>
-        public static string lrbttUsoAlquiler {
+        public static string lrbtnUsoAlquiler {
             get {
-                return ResourceManager.GetString("lrbttUsoAlquiler", resourceCulture);
+                return ResourceManager.GetString("lrbtnUsoAlquiler", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Usuarios.
         /// </summary>
-        public static string lrbttUsuarios {
+        public static string lrbtnUsuarios {
             get {
-                return ResourceManager.GetString("lrbttUsuarios", resourceCulture);
+                return ResourceManager.GetString("lrbtnUsuarios", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Validar.
         /// </summary>
-        public static string lrbttValidar {
+        public static string lrbtnValidar {
             get {
-                return ResourceManager.GetString("lrbttValidar", resourceCulture);
+                return ResourceManager.GetString("lrbtnValidar", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Vehículos.
         /// </summary>
-        public static string lrbttVehiculos {
+        public static string lrbtnVehiculos {
             get {
-                return ResourceManager.GetString("lrbttVehiculos", resourceCulture);
+                return ResourceManager.GetString("lrbtnVehiculos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Vendedores.
         /// </summary>
-        public static string lrbttVendedores {
+        public static string lrbtnVendedores {
             get {
-                return ResourceManager.GetString("lrbttVendedores", resourceCulture);
+                return ResourceManager.GetString("lrbtnVendedores", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Ver Tarifa.
         /// </summary>
-        public static string lrbttVerTarifa {
+        public static string lrbtnVerTarifa {
             get {
-                return ResourceManager.GetString("lrbttVerTarifa", resourceCulture);
+                return ResourceManager.GetString("lrbtnVerTarifa", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Vincular Cliente a Tarifas.
         /// </summary>
-        public static string lrbttVincularClienteTarifa {
+        public static string lrbtnVincularClienteTarifa {
             get {
-                return ResourceManager.GetString("lrbttVincularClienteTarifa", resourceCulture);
+                return ResourceManager.GetString("lrbtnVincularClienteTarifa", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Vincular Contratos a Reservas.
         /// </summary>
-        public static string lrbttVincularContratosReservas {
+        public static string lrbtnVincularContratosReservas {
             get {
-                return ResourceManager.GetString("lrbttVincularContratosReservas", resourceCulture);
+                return ResourceManager.GetString("lrbtnVincularContratosReservas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Vincular Contratos a Reservas No Vinculadas.
         /// </summary>
-        public static string lrbttVincularContratosReservasNoVinculadas {
+        public static string lrbtnVincularContratosReservasNoVinculadas {
             get {
-                return ResourceManager.GetString("lrbttVincularContratosReservasNoVinculadas", resourceCulture);
+                return ResourceManager.GetString("lrbtnVincularContratosReservasNoVinculadas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Zonas.
         /// </summary>
-        public static string lrbttZonas {
+        public static string lrbtnZonas {
             get {
-                return ResourceManager.GetString("lrbttZonas", resourceCulture);
+                return ResourceManager.GetString("lrbtnZonas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Zonas Oficina.
         /// </summary>
-        public static string lrbttZonasOficina {
+        public static string lrbtnZonasOficina {
             get {
-                return ResourceManager.GetString("lrbttZonasOficina", resourceCulture);
+                return ResourceManager.GetString("lrbtnZonasOficina", resourceCulture);
             }
         }
         
@@ -2520,171 +2520,171 @@ namespace KRibbon.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Clientes.
         /// </summary>
-        public static string lrmnbttAuxiliaresClientes {
+        public static string lrmnbtnAuxiliaresClientes {
             get {
-                return ResourceManager.GetString("lrmnbttAuxiliaresClientes", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnAuxiliaresClientes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Comisionistas.
         /// </summary>
-        public static string lrmnbttAuxiliaresComisionistas {
+        public static string lrmnbtnAuxiliaresComisionistas {
             get {
-                return ResourceManager.GetString("lrmnbttAuxiliaresComisionistas", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnAuxiliaresComisionistas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Contratos.
         /// </summary>
-        public static string lrmnbttAuxiliaresContratos {
+        public static string lrmnbtnAuxiliaresContratos {
             get {
-                return ResourceManager.GetString("lrmnbttAuxiliaresContratos", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnAuxiliaresContratos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Incidencias.
         /// </summary>
-        public static string lrmnbttAuxiliaresIncidencias {
+        public static string lrmnbtnAuxiliaresIncidencias {
             get {
-                return ResourceManager.GetString("lrmnbttAuxiliaresIncidencias", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnAuxiliaresIncidencias", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Proveedores.
         /// </summary>
-        public static string lrmnbttAuxiliaresProveedores {
+        public static string lrmnbtnAuxiliaresProveedores {
             get {
-                return ResourceManager.GetString("lrmnbttAuxiliaresProveedores", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnAuxiliaresProveedores", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Reservas.
         /// </summary>
-        public static string lrmnbttAuxiliaresReservas {
+        public static string lrmnbtnAuxiliaresReservas {
             get {
-                return ResourceManager.GetString("lrmnbttAuxiliaresReservas", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnAuxiliaresReservas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tarifas.
         /// </summary>
-        public static string lrmnbttAuxiliaresTarifas {
+        public static string lrmnbtnAuxiliaresTarifas {
             get {
-                return ResourceManager.GetString("lrmnbttAuxiliaresTarifas", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnAuxiliaresTarifas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Varios.
         /// </summary>
-        public static string lrmnbttAuxiliaresVarios {
+        public static string lrmnbtnAuxiliaresVarios {
             get {
-                return ResourceManager.GetString("lrmnbttAuxiliaresVarios", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnAuxiliaresVarios", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Vehículos.
         /// </summary>
-        public static string lrmnbttAuxiliaresVehiculos {
+        public static string lrmnbtnAuxiliaresVehiculos {
             get {
-                return ResourceManager.GetString("lrmnbttAuxiliaresVehiculos", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnAuxiliaresVehiculos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Configuración.
         /// </summary>
-        public static string lrmnbttConfiguracion {
+        public static string lrmnbtnConfiguracion {
             get {
-                return ResourceManager.GetString("lrmnbttConfiguracion", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnConfiguracion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Enlaces Contables.
         /// </summary>
-        public static string lrmnbttEnlacesContables {
+        public static string lrmnbtnEnlacesContables {
             get {
-                return ResourceManager.GetString("lrmnbttEnlacesContables", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnEnlacesContables", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Idiomas.
         /// </summary>
-        public static string lrmnbttIdiomas {
+        public static string lrmnbtnIdiomas {
             get {
-                return ResourceManager.GetString("lrmnbttIdiomas", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnIdiomas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Karve.
         /// </summary>
-        public static string lrmnbttKarve {
+        public static string lrmnbtnKarve {
             get {
-                return ResourceManager.GetString("lrmnbttKarve", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnKarve", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Permisos.
         /// </summary>
-        public static string lrmnbttPermisos {
+        public static string lrmnbtnPermisos {
             get {
-                return ResourceManager.GetString("lrmnbttPermisos", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnPermisos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Recibos Cartera.
         /// </summary>
-        public static string lrmnbttRecibosCartera {
+        public static string lrmnbtnRecibosCartera {
             get {
-                return ResourceManager.GetString("lrmnbttRecibosCartera", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnRecibosCartera", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Remesas.
         /// </summary>
-        public static string lrmnbttRemesas {
+        public static string lrmnbtnRemesas {
             get {
-                return ResourceManager.GetString("lrmnbttRemesas", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnRemesas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Tarifas.
         /// </summary>
-        public static string lrmnbttTarifas {
+        public static string lrmnbtnTarifas {
             get {
-                return ResourceManager.GetString("lrmnbttTarifas", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnTarifas", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Utilitarios.
         /// </summary>
-        public static string lrmnbttUtilitarios {
+        public static string lrmnbtnUtilitarios {
             get {
-                return ResourceManager.GetString("lrmnbttUtilitarios", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnUtilitarios", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Vehículos.
         /// </summary>
-        public static string lrmnbttVehiculos {
+        public static string lrmnbtnVehiculos {
             get {
-                return ResourceManager.GetString("lrmnbttVehiculos", resourceCulture);
+                return ResourceManager.GetString("lrmnbtnVehiculos", resourceCulture);
             }
         }
         
@@ -2718,90 +2718,90 @@ namespace KRibbon.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Anterior.
         /// </summary>
-        public static string ltbbttAnterior {
+        public static string ltbbtnAnterior {
             get {
-                return ResourceManager.GetString("ltbbttAnterior", resourceCulture);
+                return ResourceManager.GetString("ltbbtnAnterior", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Buscar.
         /// </summary>
-        public static string ltbbttBuscar {
+        public static string ltbbtnBuscar {
             get {
-                return ResourceManager.GetString("ltbbttBuscar", resourceCulture);
+                return ResourceManager.GetString("ltbbtnBuscar", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Cancelar.
         /// </summary>
-        public static string ltbbttCancelar {
+        public static string ltbbtnCancelar {
             get {
-                return ResourceManager.GetString("ltbbttCancelar", resourceCulture);
+                return ResourceManager.GetString("ltbbtnCancelar", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Editar.
         /// </summary>
-        public static string ltbbttEditar {
+        public static string ltbbtnEditar {
             get {
-                return ResourceManager.GetString("ltbbttEditar", resourceCulture);
+                return ResourceManager.GetString("ltbbtnEditar", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Eliminar.
         /// </summary>
-        public static string ltbbttEliminar {
+        public static string ltbbtnEliminar {
             get {
-                return ResourceManager.GetString("ltbbttEliminar", resourceCulture);
+                return ResourceManager.GetString("ltbbtnEliminar", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Guardar.
         /// </summary>
-        public static string ltbbttGuardar {
+        public static string ltbbtnGuardar {
             get {
-                return ResourceManager.GetString("ltbbttGuardar", resourceCulture);
+                return ResourceManager.GetString("ltbbtnGuardar", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Imprimir.
         /// </summary>
-        public static string ltbbttImprimir {
+        public static string ltbbtnImprimir {
             get {
-                return ResourceManager.GetString("ltbbttImprimir", resourceCulture);
+                return ResourceManager.GetString("ltbbtnImprimir", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Nuevo.
         /// </summary>
-        public static string ltbbttNuevo {
+        public static string ltbbtnNuevo {
             get {
-                return ResourceManager.GetString("ltbbttNuevo", resourceCulture);
+                return ResourceManager.GetString("ltbbtnNuevo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Salir .
         /// </summary>
-        public static string ltbbttSalir {
+        public static string ltbbtnSalir {
             get {
-                return ResourceManager.GetString("ltbbttSalir", resourceCulture);
+                return ResourceManager.GetString("ltbbtnSalir", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Siguiente.
         /// </summary>
-        public static string ltbbttSiguiente {
+        public static string ltbbtnSiguiente {
             get {
-                return ResourceManager.GetString("ltbbttSiguiente", resourceCulture);
+                return ResourceManager.GetString("ltbbtnSiguiente", resourceCulture);
             }
         }
         
@@ -2952,18 +2952,18 @@ namespace KRibbon.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Pase Remesa a Contabilidad.
         /// </summary>
-        public static string rbttPaseRemesaContabilidad {
+        public static string rbtnPaseRemesaContabilidad {
             get {
-                return ResourceManager.GetString("rbttPaseRemesaContabilidad", resourceCulture);
+                return ResourceManager.GetString("rbtnPaseRemesaContabilidad", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Facturas.
         /// </summary>
-        public static string rmnbttFacturas {
+        public static string rmnbtnFacturas {
             get {
-                return ResourceManager.GetString("rmnbttFacturas", resourceCulture);
+                return ResourceManager.GetString("rmnbtnFacturas", resourceCulture);
             }
         }
     }

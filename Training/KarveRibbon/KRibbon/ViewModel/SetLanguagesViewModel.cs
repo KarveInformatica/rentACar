@@ -15,9 +15,9 @@ using KRibbon.Model;
 using KRibbon.Utility;
 using KRibbon.Properties;
 
-namespace KRibbon.ViewModel
+namespace KRibbon.Model.Generic
 {
-    public class SetLanguagesViewModel : ViewModelBase
+    public class SetLanguagesViewModel : PropertyChangedBase
     {
         private SetLanguagesCommand setlanguagescommand;
 

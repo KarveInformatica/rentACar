@@ -1,6 +1,7 @@
 ﻿using KRibbon;
 using KRibbon.Model;
 using KRibbon.Properties;
+using KRibbon.Model.Generic.ObservableCollection;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,28 +22,28 @@ namespace KRibbon.Utility
             //Banco,
             //BloqueFacturacion,
             //CanalCliente,
-                rbttBancosClientes,
-                rbttBloqueFacturacion,
-                rbttCanales,
-                rbttCargosPersonal,
+                rbtnBancosClientes,
+                rbtnBloqueFacturacion,
+                rbtnCanales,
+                rbtnCargosPersonal,
             #endregion
 
             #region Auxiliares Comisionistas
-                rbttTipoComisionista,
+                rbtnTipoComisionista,
             #endregion
 
             #region Auxiliares Contratos
             #endregion
 
             #region Auxiliares Proveedores
-                rbttFormasPagoProveedor,
+                rbtnFormaPagoProveedor,
             #endregion
 
             #region Auxiliares Reservas        
             #endregion
 
             #region Auxiliares Tarifas
-                rbttGruposTarifa 
+                rbtnGruposTarifa 
             #endregion
 
             #region Auxiliares Vehículos
@@ -52,34 +53,47 @@ namespace KRibbon.Utility
             #endregion
         }
 
-        public static Dictionary<ETipoAuxiliar, TabItem> tabitemdictionary = new Dictionary<ETipoAuxiliar, TabItem>();
+        public static Dictionary<ETipoAuxiliar, TabItemAuxiliares> tabitemlist = new Dictionary<ETipoAuxiliar,TabItemAuxiliares>();
         
-        ///          
         public static Dictionary<ETipoAuxiliar, TablaAuxiliares> tiposauxiliaresdictionary = new Dictionary<ETipoAuxiliar, TablaAuxiliares>()
         {
             #region Auxiliares Clientes
-            { ETipoAuxiliar.rbttBancosClientes,     new TablaAuxiliares { propertiesresources = Resources.lrbttBancosClientes,       nombretabladb = "BANCO" } },
-            { ETipoAuxiliar.rbttBloqueFacturacion,  new TablaAuxiliares { propertiesresources = Resources.lrbttBloqueFacturacion,    nombretabladb = "BLOQUEFAC" } },
-            { ETipoAuxiliar.rbttCanales,            new TablaAuxiliares { propertiesresources = Resources.lrbttCanales,              nombretabladb = "CANAL" } },
-            { ETipoAuxiliar.rbttCargosPersonal,     new TablaAuxiliares { propertiesresources = Resources.lrbttCargosPersonal,       nombretabladb = "CATEGOPER" } },
+            { ETipoAuxiliar.rbtnBancosClientes,     new TablaAuxiliares { propertiesresources = "lrbtnBancosClientes",
+                                                                          nombretabladb = "BANCO",
+                                                                          viewmodelbase = new BancoViewModel() } },
+            { ETipoAuxiliar.rbtnBloqueFacturacion,  new TablaAuxiliares { propertiesresources = "lrbtnBloqueFacturacion",
+                                                                          nombretabladb = "BLOQUEFAC",
+                                                                          viewmodelbase = new BloqueFacturacionViewModel() } },
+            { ETipoAuxiliar.rbtnCanales,            new TablaAuxiliares { propertiesresources = "lrbtnCanales",
+                                                                          nombretabladb = "CANAL",
+                                                                          viewmodelbase = new CanalClienteViewModel() } },
+            { ETipoAuxiliar.rbtnCargosPersonal,     new TablaAuxiliares { propertiesresources = "lrbtnCargosPersonal",
+                                                                          nombretabladb = "CATEGOPER",
+                                                                          viewmodelbase = new CargoPersonalViewModel() } },
             #endregion
 
             #region Auxiliares Comisionistas
-            { ETipoAuxiliar.rbttTipoComisionista,   new TablaAuxiliares { propertiesresources = Resources.lrbttTipoComisionista,     nombretabladb =  "TIPOCOMI" } },
+            { ETipoAuxiliar.rbtnTipoComisionista,   new TablaAuxiliares { propertiesresources = "lrbtnTipoComisionista",
+                                                                          nombretabladb =  "TIPOCOMI",
+                                                                          viewmodelbase = new TipoComisionistaViewModel() } },
             #endregion
 
             #region Auxiliares Contratos
             #endregion
 
             #region Auxiliares Proveedores
-            { ETipoAuxiliar.rbttFormasPagoProveedor, new TablaAuxiliares { propertiesresources = Resources.lrbttFormasPagoProveedor,  nombretabladb = "FORPRO" } },
+            { ETipoAuxiliar.rbtnFormaPagoProveedor, new TablaAuxiliares { propertiesresources = "lrbtnFormaPagoProveedor",
+                                                                          nombretabladb = "FORPRO",
+                                                                          viewmodelbase = new FormaPagoProveedorViewModel() } },
             #endregion
 
             #region Auxiliares Reservas
             #endregion
 
             #region Auxiliares Tarifas
-            { ETipoAuxiliar.rbttGruposTarifa,        new TablaAuxiliares { propertiesresources = Resources.lrbttGruposTarifa,         nombretabladb = "GRUPOS_TARI" } }
+            { ETipoAuxiliar.rbtnGruposTarifa,       new TablaAuxiliares { propertiesresources = "lrbtnGruposTarifa",
+                                                                          nombretabladb = "GRUPOS_TARI",
+                                                                          viewmodelbase = new GrupoTarifaViewModel() } },
             #endregion
 
             #region Auxiliares Vehículos
@@ -87,7 +101,7 @@ namespace KRibbon.Utility
             
             #region Auxiliares Varios
             #endregion
-        };        
+        };
 
         public static ObservableCollection<object> dgitemsobscollection;
 

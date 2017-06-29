@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:KRibbon"
              xmlns:lang="clr-namespace:KRibbon.Utility"
-             xmlns:vm="clr-namespace:KRibbon.ViewModel"             
+             xmlns:vm="clr-namespace:KRibbon.Model.Generic"             
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
         <ObjectDataProvider x:Key="ResourceLanguage" 

@@ -4,12 +4,12 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
-namespace KRibbon.ViewModel
+namespace KRibbon.Model.Generic
 {
     /// <summary>
     ///  Class abstracta para el View Model
     /// </summary>
-    public abstract class ViewModelBase : INotifyPropertyChanged
+    public abstract class PropertyChangedBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

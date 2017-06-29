@@ -19,9 +19,9 @@ namespace KRibbon.Utility
             //Se recorre el SADataReader para obtener sus valores según el tipo de objeto recibido por params
             while (dr.Read())
             {
-                //Instanciamos un nuevo objeto del tipo del objeto recibido por params, y recuperamos sus propiedades
-                object newobj  = CreateObject(obj);
+                //Recuperamos las propiedades e instanciamos un nuevo objeto del tipo del objeto recibido por params
                 var properties = GetProperties(obj);
+                object newobj  = CreateObject(obj);
 
                 //Recorremos la lista de propiedades del objeto recibido por params
                 foreach (var prop in properties)
@@ -79,14 +79,13 @@ namespace KRibbon.Utility
         /// <returns></returns>
         private static T CreateObject<T>(T objoriginal)
         {
-            T newobject = (T)Activator.CreateInstance(objoriginal.GetType());
+            //T newobject = (T)Activator.CreateInstance(objoriginal.GetType());
+            //foreach (var prop in objoriginal.GetType().GetProperties())
+            //{
+            //    prop.SetValue(newobject, prop.GetValue(objoriginal, null), null);
+            //}
 
-            foreach (var prop in objoriginal.GetType().GetProperties())
-            {
-                prop.SetValue(newobject, prop.GetValue(objoriginal, null), null);
-            }
-
-            return newobject;
+            return (T)Activator.CreateInstance(objoriginal.GetType()); //newobject;
         }
 
         /// <summary>

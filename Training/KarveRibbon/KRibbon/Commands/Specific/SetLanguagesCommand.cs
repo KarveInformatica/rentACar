@@ -1,5 +1,5 @@
 ﻿using KRibbon.Commands.Generic;
-using KRibbon.ViewModel;
+using KRibbon.Model.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,17 +30,6 @@ namespace KRibbon.Commands.Specific
         public void Execute(object parameter)
         {
             setlanguagesvm.SetLanguages(parameter);
-            ItemCollection collection = ((MainWindow)Application.Current.MainWindow).tbControl.Items;
-            foreach (var item in collection)
-            {
-                TabItem tab = (TabItem)item;
-                //string localizedMessage = (string)Application.Current.FindResource("ResourceLanguage");
-                //Binding bnd = new Binding("lrbttBancosClientes");
-                //bnd.Source = (ObjectDataProvider)App.Current.FindResource("ResourceLanguage");
-                //bnd.Source = new ResourceLanguage("");
-                //tab.SetBinding(TextBlock.TextProperty, bnd);
-                //tab.Header = ;
-            }
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows;
 using KRibbon.Model;
 using KRibbon.Utility;
 
-namespace KRibbon.ViewModel
+namespace KRibbon.Model.Generic
 {
-    public class MostrarAuxiliaresViewModel : ViewModelBase
+    public class MostrarAuxiliaresViewModel : PropertyChangedBase
     {
         private MostrarAuxiliaresCommand mostrarauxiliarescommand;
 

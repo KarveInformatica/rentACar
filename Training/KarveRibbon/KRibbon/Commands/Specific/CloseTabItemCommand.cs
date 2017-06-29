@@ -1,5 +1,5 @@
 ﻿using KRibbon.Commands.Generic;
-using KRibbon.ViewModel;
+using KRibbon.Model.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;

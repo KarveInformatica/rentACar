@@ -4,7 +4,8 @@ using KRibbon.Model.Generic;
 using KRibbon.Model.Sybase;
 using KRibbon.Utility;
 using static KRibbon.Utility.VariablesGlobales;
-using KRibbon.ViewModel;
+using KRibbon.Model.Generic;
+using KRibbon.Model.Generic.ObservableCollection;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -32,8 +33,21 @@ namespace KRibbon.Logic.Maestros
         /// <param name="tipoauxiliar"></param>
         public static void addTabItem(ETipoAuxiliar tipoauxiliar)
         {
-            //Se comprueba que la TabItem del tipo de auxiliar no esté ya mostrado
-            if (!tabitemdictionary.ContainsKey(tipoauxiliar))
+            //bool ifExistTabItem = false;
+            //if (tabitemlist.Count > 0)
+            //{
+            //    foreach (var item in tabitemlist)
+            //    {
+            //        if (item.TipoAuxiliar == tipoauxiliar)
+            //        {
+            //            ifExistTabItem = true;
+            //            break;
+            //        }
+            //    }
+            //}
+
+            if (tabitemlist.Where(p => p.Key == tipoauxiliar).Count() == 0)
+            //if(!ifExistTabItem)
             {
                 dgitemsobscollection = new ObservableCollection<object>();
                 string tablaauxiliares = tiposauxiliaresdictionary.Where(z => z.Key == tipoauxiliar).FirstOrDefault().Value.nombretabladb;
@@ -41,43 +55,57 @@ namespace KRibbon.Logic.Maestros
                 switch (tipoauxiliar)
                 {
                     #region case Auxiliares Clientes
-                    case ETipoAuxiliar.rbttBancosClientes:
+                    case ETipoAuxiliar.rbtnBancosClientes:
                         dgitemsobscollection = AuxiliaresModel.GetAuxiliares(tablaauxiliares, Banco.dbcriterioslist, new Banco());
-                        loadDataGrid(dgitemsobscollection, Banco.dbcriterioslist, tipoauxiliar);
+                        BancoViewModel bancoviewmodel = new BancoViewModel();
+                        bancoviewmodel.GetCollection(dgitemsobscollection);
+                        loadDataGrid(dgitemsobscollection, tipoauxiliar, new TabItemAuxiliares(dgitemsobscollection));
                         break;
-                    case ETipoAuxiliar.rbttBloqueFacturacion:
+                    case ETipoAuxiliar.rbtnBloqueFacturacion:
                         dgitemsobscollection = AuxiliaresModel.GetAuxiliares(tablaauxiliares, BloqueFacturacion.dbcriterioslist, new BloqueFacturacion());
-                        loadDataGrid(dgitemsobscollection, BloqueFacturacion.dbcriterioslist, tipoauxiliar);
+                        BloqueFacturacionViewModel bloquefacturacionviewmodel = new BloqueFacturacionViewModel();
+                        bloquefacturacionviewmodel.GetCollection(dgitemsobscollection);
+                        loadDataGrid(dgitemsobscollection, tipoauxiliar, new TabItemAuxiliares(dgitemsobscollection));
                         break;
-                    case ETipoAuxiliar.rbttCanales:
+                    case ETipoAuxiliar.rbtnCanales:
                         dgitemsobscollection = AuxiliaresModel.GetAuxiliares(tablaauxiliares, CanalCliente.dbcriterioslist, new CanalCliente());
-                        loadDataGrid(dgitemsobscollection, CanalCliente.dbcriterioslist, tipoauxiliar);
+                        CanalClienteViewModel canalclienteviewmodel = new CanalClienteViewModel();
+                        canalclienteviewmodel.GetCollection(dgitemsobscollection);
+                        loadDataGrid(dgitemsobscollection, tipoauxiliar, new TabItemAuxiliares(dgitemsobscollection));
                         break;
-                    case ETipoAuxiliar.rbttCargosPersonal:                        
+                    case ETipoAuxiliar.rbtnCargosPersonal:                        
                         dgitemsobscollection = AuxiliaresModel.GetAuxiliares(tablaauxiliares, CargoPersonal.dbcriterioslist, new CargoPersonal());
-                        loadDataGrid(dgitemsobscollection, CargoPersonal.dbcriterioslist, tipoauxiliar);
+                        CargoPersonalViewModel cargopersonalviewmodel = new CargoPersonalViewModel();
+                        cargopersonalviewmodel.GetCollection(dgitemsobscollection);
+                        loadDataGrid(dgitemsobscollection, tipoauxiliar, new TabItemAuxiliares(dgitemsobscollection));
                         break;
                     #endregion
                     #region case Auxiliares Comisionistas
-                    case ETipoAuxiliar.rbttTipoComisionista:
+                    case ETipoAuxiliar.rbtnTipoComisionista:
                         dgitemsobscollection = AuxiliaresModel.GetAuxiliares(tablaauxiliares, TipoComisionista.dbcriterioslist, new TipoComisionista());
-                        loadDataGrid(dgitemsobscollection, TipoComisionista.dbcriterioslist, tipoauxiliar);
+                        TipoComisionistaViewModel tipocomisionistaviewmodel = new TipoComisionistaViewModel();
+                        tipocomisionistaviewmodel.GetCollection(dgitemsobscollection);
+                        loadDataGrid(dgitemsobscollection, tipoauxiliar, new TabItemAuxiliares(dgitemsobscollection));
                         break;
                     #endregion
                     #region case Auxiliares Contratos
                     #endregion
                     #region case Auxiliares Proveedor
-                    case ETipoAuxiliar.rbttFormasPagoProveedor:                        
+                    case ETipoAuxiliar.rbtnFormaPagoProveedor:                        
                         dgitemsobscollection = AuxiliaresModel.GetAuxiliares(tablaauxiliares, FormaPagoProveedor.dbcriterioslist, new FormaPagoProveedor());
-                        loadDataGrid(dgitemsobscollection, FormaPagoProveedor.dbcriterioslist, tipoauxiliar);
+                        FormaPagoProveedorViewModel formapagoproveedorviewmodel = new FormaPagoProveedorViewModel();
+                        formapagoproveedorviewmodel.GetCollection(dgitemsobscollection);
+                        loadDataGrid(dgitemsobscollection, tipoauxiliar, new TabItemAuxiliares(dgitemsobscollection));
                         break;
                     #endregion
                     #region case Auxiliares Reservas
                     #endregion
                     #region case Auxiliares Tarifas
-                    case ETipoAuxiliar.rbttGruposTarifa:
+                    case ETipoAuxiliar.rbtnGruposTarifa:
                         dgitemsobscollection = AuxiliaresModel.GetAuxiliares(tablaauxiliares, GrupoTarifa.dbcriterioslist, new GrupoTarifa());
-                        loadDataGrid(dgitemsobscollection, GrupoTarifa.dbcriterioslist, tipoauxiliar);
+                        GrupoTarifaViewModel grupotarifaviewmodel = new GrupoTarifaViewModel();                        
+                        grupotarifaviewmodel.GetCollection(dgitemsobscollection);
+                        loadDataGrid(dgitemsobscollection, tipoauxiliar, new TabItemAuxiliares(dgitemsobscollection));
                         break;
                     #endregion
                     #region case Auxiliares Vehículos
@@ -91,22 +119,21 @@ namespace KRibbon.Logic.Maestros
             else
             {   //Si el TabItem del tipo de auxiliar ya está mostrado, no se carga
                 //de nuevo, simplemente se establece el foco en ese TabItem
-                TabItem tabitem = tabitemdictionary.Where(z => z.Key == tipoauxiliar).FirstOrDefault().Value;
-                tabitem.Focus();
+                tabitemlist.Where(z => z.Key == tipoauxiliar).FirstOrDefault().Value.TbItem.Focus();
             }
         }
 
         /// <summary>
-        /// Elimina el TabItem recibido por param del TabControl.
+        /// Elimina el TabItem según el ETipoAuxiliar recibido por param.
         /// </summary>
-        /// <param name="tbitem"></param>
-        public static void removeTabItem(TabItem tbitem)
+        /// <param name="tipoauxiliar"></param>
+        public static void removeTabItem(ETipoAuxiliar tipoauxiliar)
         {
-            if (tbitem != null)
+            if (tipoauxiliar != null)
             {   //Eliminamos el TabItem del TabControl
-                ((MainWindow)Application.Current.MainWindow).tbControl.Items.Remove(tbitem);
-                //Eliminamos el TabItem del Dictionary tabitemdictionary
-                tabitemdictionary.Remove(tiposauxiliaresdictionary.Where(z => z.Key.ToString() == tbitem.ToString()).FirstOrDefault().Key);
+                ((MainWindow)Application.Current.MainWindow).tbControl.Items.Remove(tabitemlist.Where(z => z.Key == tipoauxiliar).FirstOrDefault().Value.TbItem);
+                //Eliminamos el TabItem del Dictionary tabitemlist
+                tabitemlist.Remove(tabitemlist.Where(z => z.Key == tipoauxiliar).FirstOrDefault().Key);
             }
         }
 
@@ -125,21 +152,25 @@ namespace KRibbon.Logic.Maestros
 
         /// <summary>
         /// Devuelve un nuevo TabItem según el tipo de auxiliar que recibe por param. Se le añade el Header, Name, Focus. 
-        /// Se añade el nuevo TabItem al TabControl. Se añade el nuevo TabItem al Dictionary de TabItems (tabitemdictionary) 
+        /// Se añade el nuevo TabItem al TabControl. Se añade el nuevo TabItem al Dictionary de TabItems (tabitemlist) 
         /// que almacena los TabItems activos.
         /// </summary>
         /// <param name="tipoauxiliar"></param>
         /// <returns></returns>
-        private static TabItem createTabItem(ETipoAuxiliar tipoauxiliar)
+        private static TabItem createTabItem(ETipoAuxiliar tipoauxiliar, TabItemAuxiliares tabitemauxiliares)
         {
             TabItem tbitem = new TabItem();
 
-            tbitem.Header = tiposauxiliaresdictionary.Where(z => z.Key == tipoauxiliar).FirstOrDefault().Value.propertiesresources;
+            var binding = new Binding();
+            binding.Path = new PropertyPath(tiposauxiliaresdictionary.Where(z => z.Key == tipoauxiliar).FirstOrDefault().Value.propertiesresources);
+            binding.Source = (ObjectDataProvider)App.Current.FindResource("ResourceLanguage");
+            tbitem.SetBinding(TabItem.HeaderProperty, binding);
             tbitem.Name   = tipoauxiliar.ToString();
             tbitem.HeaderTemplate = ((MainWindow)Application.Current.MainWindow).tbControl.FindResource("TabHeader") as DataTemplate;
 
             //Añadimos el nuevo TabItem en la lista de items
-            tabitemdictionary.Add(tipoauxiliar, tbitem);            
+            tabitemauxiliares.TbItem = tbitem;
+            tabitemlist.Add(tipoauxiliar, tabitemauxiliares);
 
             //Añadimos el nuevo TabItem al TabControl, le ponemos el focus y devolvemos el nuevo TabItem
             ((MainWindow)Application.Current.MainWindow).tbControl.Items.Add(tbitem);
@@ -154,12 +185,12 @@ namespace KRibbon.Logic.Maestros
         /// <param name="tbitem"></param>
         /// <param name="datagriditemslist"></param>
         /// <param name="dbcriterioslist"></param>
-        private static void loadDataGrid(ObservableCollection<object> dgitemslist, List<DBCriterios> dbcriterioslist, ETipoAuxiliar tipoauxiliar)
+        private static void loadDataGrid(ObservableCollection<object> dgitemsobscollection, ETipoAuxiliar tipoauxiliar, TabItemAuxiliares tabitemauxiliares)
         {
-            if (dgitemslist.Count != 0)
-            {
+            if (dgitemsobscollection.Count != 0)
+            {                
                 //Se crea el Tabitem
-                TabItem tbitem = createTabItem(tipoauxiliar);
+                TabItem tbitem = createTabItem(tipoauxiliar, tabitemauxiliares);
                 //Creamos el DataGrid
                 DataGrid datagrid = new DataGrid();
                 datagrid.HorizontalAlignment = HorizontalAlignment.Left;
@@ -168,25 +199,25 @@ namespace KRibbon.Logic.Maestros
                 #region Se añade la ObservableCollection<object> directamente como el datagrid.ItemsSource, rellena las columnas según las propiedades que tenga el object, tenga o no tenga datos; el header será el nombre de cada propiedad del object
                 datagrid.CanUserAddRows = false;
                 datagrid.CanUserDeleteRows = true;
+                
 
                 //********************
                 // create the command action and bind the command to it
-                var invokeCommandAction = new InvokeCommandAction ();
-                var binding = new Binding { Path = new PropertyPath("CloseWindowCommand") };
-                BindingOperations.SetBinding(invokeCommandAction, InvokeCommandAction.CommandProperty, binding);
+                //var invokeCommandAction = new InvokeCommandAction ();
+                //var binding = new Binding { Path = new PropertyPath("CloseWindowCommand") };
+                //BindingOperations.SetBinding(invokeCommandAction, InvokeCommandAction.CommandProperty, binding);
 
-                // create the event trigger and add the command action to it
-                var eventTrigger = new System.Windows.Interactivity.EventTrigger { EventName = "SelectedCellsChanged" };
-                eventTrigger.Actions.Add(invokeCommandAction);
+                //// create the event trigger and add the command action to it
+                //var eventTrigger = new System.Windows.Interactivity.EventTrigger { EventName = "SelectedCellsChanged" };
+                //eventTrigger.Actions.Add(invokeCommandAction);
 
-                // attach the trigger to the control
-                var triggers = Interaction.GetTriggers(datagrid);
-                triggers.Add(eventTrigger);
+                //// attach the trigger to the control
+                //var triggers = Interaction.GetTriggers(datagrid);
+                //triggers.Add(eventTrigger);
                 //********************
 
 
-
-                datagrid.ItemsSource = dgitemslist;
+                datagrid.ItemsSource = dgitemsobscollection;
                 //datagrid.IsReadOnly = true;
                 #endregion
 

@@ -15,10 +15,11 @@ using KRibbon.Logic.Maestros;
 using static KRibbon.Utility.VariablesGlobales;
 using KRibbon.Logic.Generic;
 using System.Windows.Controls;
+using KRibbon.Commands.Generic;
 
-namespace KRibbon.ViewModel
+namespace KRibbon.Model.Generic
 {
-    public class CloseTabItemViewModel : ViewModelBase
+    public class CloseTabItemViewModel : PropertyChangedBase
     {
         private CloseTabItemCommand closetabitemcommand;
 
@@ -37,7 +38,9 @@ namespace KRibbon.ViewModel
 
         public void CloseTabItem(object parameter)
         {
-            LogicAuxiliares.removeTabItem((TabItem)parameter);
+            ETipoAuxiliar tipoaux = tiposauxiliaresdictionary.Where(z => z.Key.ToString() == parameter.ToString()).FirstOrDefault().Key;
+            LogicAuxiliares.removeTabItem(tipoaux);
+            //LogicAuxiliares.removeTabItem((TabItem)parameter);
         }
     }
 }

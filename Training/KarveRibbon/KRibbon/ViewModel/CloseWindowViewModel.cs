@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 
-namespace KRibbon.ViewModel
+namespace KRibbon.Model.Generic
 {
-    class CloseWindowViewModel : ViewModelBase
+    class CloseWindowViewModel : PropertyChangedBase
     {
         private CloseWindowCommand closewindowcommand;
 
