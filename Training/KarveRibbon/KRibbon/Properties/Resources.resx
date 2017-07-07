@@ -1154,6 +1154,10 @@
     <value>Configuración</value>
     <comment>Ribbon\Configuración\Configuración\Configuración</comment>
   </data>
+  <data name="lrbtnCinta" xml:space="preserve">
+    <value>Cinta Opciones</value>
+    <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
+  </data>
   <data name="lrbtnCodigosIniciales" xml:space="preserve">
     <value>Códigos Iniciales</value>
     <comment>Ribbon\Configuración\Configuración\Códigos Iniciales</comment>
@@ -1314,7 +1318,7 @@
     <value>Vincular Contratos a Reservas No Vinculadas</value>
     <comment>Ribbon\Configuración\Utilitarios\Vincular Contratos a Reservas No Vinculadas</comment>
   </data>
-  <data name="lrgrVariosconfiguracion" xml:space="preserve">
+  <data name="lrgrVariosConfiguracion" xml:space="preserve">
     <value>Varios</value>
     <comment>Ribbon\Configuración\Varios\Varios</comment>
   </data>
@@ -1330,7 +1334,7 @@
     <value>Usuarios</value>
     <comment>Ribbon\Configuración\Varios\Usuarios</comment>
   </data>
-  <data name="lrrgrKarve" xml:space="preserve">
+  <data name="lrgrKarve" xml:space="preserve">
     <value>Karve</value>
     <comment>Ribbon\Configuración\Karve\Karve</comment>
   </data>
@@ -1386,6 +1390,10 @@
     <value>¿Está seguro que desea salir de la aplicación?</value>
     <comment>msgSalir</comment>
   </data>
+  <data name="msgErrorTitulo" xml:space="preserve">
+    <value>Mensaje de Error</value>
+    <comment>Título Mensaje de Error</comment>
+  </data>
   <data name="msgError83" xml:space="preserve">
     <value>No se encuentra la Base de Datos</value>
     <comment>Specified DataBase not found</comment>
@@ -1405,5 +1413,33 @@
   <data name="msgError141" xml:space="preserve">
     <value>No se encuentra la Tabla</value>
     <comment>Table not found</comment>
+  </data>
+  <data name="lckbMarcarTodos" xml:space="preserve">
+    <value>Marcar Todos</value>
+    <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
+  </data>
+  <data name="lckbDesmarcarTodos" xml:space="preserve">
+    <value>Desmarcar Todos</value>
+    <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
+  </data>
+  <data name="lckbCintaOpcionesMarcarTodos" xml:space="preserve">
+    <value>Marcar Todos</value>
+    <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
+  </data>
+  <data name="lckbCintaOpcionesDesmarcarTodos" xml:space="preserve">
+    <value>Desmarcar Todos</value>
+    <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
+  </data>
+  <data name="lrdbCintaOpcionesMarcarTodos" xml:space="preserve">
+    <value>Marcar Todos</value>
+    <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
+  </data>
+  <data name="lrdbCintaOpcionesDesmarcarTodos" xml:space="preserve">
+    <value>Desmarcar Todos</value>
+    <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
+  </data>
+  <data name="msgSaveCintaOpcionesOK" xml:space="preserve">
+    <value>El orden de los grupos de las pestañas de la cinta seleccionadas, se han restaurado a su posición inicial.</value>
+    <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
   </data>
 </root>

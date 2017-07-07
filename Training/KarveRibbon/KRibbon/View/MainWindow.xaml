@@ -6,11 +6,11 @@
                 xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"                
                 xmlns:local="clr-namespace:KRibbon"
-                xmlns:uc="clr-namespace:KRibbon.View"
-                xmlns:vm="clr-namespace:KRibbon.Model.Generic"
+                xmlns:vm="clr-namespace:KRibbon.ViewModel.GenericViewModel"
                 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                xmlns:uc="clr-namespace:KRibbon.View"
                 mc:Ignorable="d"
-                Title="MainWindow" >
+                Title="MainWindow" x:Name="mainwindow" WindowState="Maximized">
     <r:RibbonWindow.DataContext>
         <vm:SetLanguagesViewModel/>
     </r:RibbonWindow.DataContext>
@@ -192,7 +192,7 @@
                          Header="{Binding ltbMaestros, Source={StaticResource ResourceLanguage}}"
                          KeyTip="M"
                          GroupSizeReductionOrder="rgrAuxiliares, rgrCentrosAlquiler, rgrClientes">
-                <r:RibbonGroup x:Name="rgrCentrosAlquiler" Header="{Binding lrrCentrosAlquiler, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png">
+                <r:RibbonGroup x:Name="rgrCentrosAlquiler" Header="{Binding lrrCentrosAlquiler, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" AutomationProperties.Name="{DynamicResource tbMaestros1}">
                     <r:RibbonButton x:Name="rbtnEmpresas" 
                                     Label="{Binding lrbtnEmpresas, Source={StaticResource ResourceLanguage}}"
                                     SmallImageSource="..\Images\new.png" 
@@ -1832,9 +1832,22 @@
                              GroupSizeReductionOrder="rgrConfiguracion, rgrPersonal, rgrVariosconfiguracion">
                 <r:RibbonGroup x:Name="rgrConfiguracion" Header="{Binding lrgrConfiguracion, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                     <r:RibbonMenuButton x:Name="rmnbtnConfiguracion" Label="{Binding lrmnbtnConfiguracion, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="C" >
+                        <r:RibbonButton x:Name="rbtnCinta" 
+                                        Label="{Binding lrbtnCinta, Source={StaticResource ResourceLanguage}}" 
+                                        SmallImageSource="..\Images\new.png"
+                                        DataContext="{StaticResource cintaOpciones}" >
+                            <r:RibbonButton.InputBindings>
+                                <KeyBinding Key="Return"                                                
+                                        Command="{Binding CintaOpcionesCommand}" 
+                                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
+                                <MouseBinding MouseAction="LeftClick"
+                                          Command="{Binding CintaOpcionesCommand}" 
+                                          CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
+                            </r:RibbonButton.InputBindings>
+                        </r:RibbonButton>
                         <r:RibbonButton x:Name="rbtnCodigosIniciales" 
                                         Label="{Binding lrbtnCodigosIniciales, Source={StaticResource ResourceLanguage}}" 
-                                        SmallImageSource="..\Images\new.png"/>
+                                        SmallImageSource="..\Images\new.png"/>                        
                         <r:RibbonButton x:Name="rbtnEmpresa" 
                                         Label="{Binding lrbtnEmpresa, Source={StaticResource ResourceLanguage}}" 
                                         SmallImageSource="..\Images\new.png"/>
@@ -1971,7 +1984,7 @@
                                         SmallImageSource="..\Images\new.png"/>
                     </r:RibbonMenuButton>
                 </r:RibbonGroup>
-                <r:RibbonGroup x:Name="rgrVariosconfiguracion" Header="{Binding lrgrVariosconfiguracion, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
+                <r:RibbonGroup x:Name="rgrVariosConfiguracion" Header="{Binding lrgrVariosConfiguracion, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                     <r:RibbonButton x:Name="rbtnCambiarContrasenyas" 
                                     Label="{Binding lrbtnCambiarContrasenyas, Source={StaticResource ResourceLanguage}}" 
                                     LargeImageSource="..\Images\new.png"
@@ -1985,7 +1998,7 @@
                                     LargeImageSource="..\Images\new.png"
                                     SmallImageSource="..\Images\new.png"/>
                 </r:RibbonGroup>
-                <r:RibbonGroup x:Name="rrgrKarve" Header="{Binding lrrgrKarve, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" >
+                <r:RibbonGroup x:Name="rgrKarve" Header="{Binding lrgrKarve, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" >
                     <r:RibbonMenuButton x:Name="rmnbtnKarve" Label="{Binding lrmnbtnKarve, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" KeyTip="K" >
                         <r:RibbonButton x:Name="rbtnAcercaDe" 
                                         Label="{Binding lrbtnAcercaDe, Source={StaticResource ResourceLanguage}}" 
@@ -2089,7 +2102,7 @@
                         <MouseBinding MouseAction="LeftClick"
                                       Command="{Binding NosequeCommand}" 
                                       CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type r:RibbonButton}}, Path=Name}" />
-                        
+
                     </Button.InputBindings>
                 </Button>
                 <Button x:Name="tbbtnEditar" 
@@ -2341,36 +2354,6 @@
         <Label Content="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=SelectedItem.Object.ToString()}"/>
         <Label Content="{Binding ElementName=tbControl, Path=SelectedItem.GivenName}"/>
         <Label Content="{Binding ElementName=tbControl, Path=SelectedItem.CanUserDeleteRows}"/>-->
-        <TabControl x:Name="tbControl" >
-            <TabControl.Resources>
-                <DataTemplate x:Key="TabHeader" DataType="TabItem">
-                    <DockPanel>
-                        <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=TabItem}, Path=Header}" />
-                        <TextBlock Text="  " />
-                        <Button DataContext="{StaticResource closeTabItem}"
-                                Command="{Binding CloseTabItemCommand}"                                
-                                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Name}" 
-                                Background="Transparent" BorderBrush="Transparent">
-                            <Image Source="..\Images\cancel.png" Height="11" Width="11"></Image>
-                        </Button>
-                    </DockPanel>
-                </DataTemplate>
-                <DataTemplate x:Key="TabSelectedItem" DataType="TabItem.SelectedItem">
-                    <DockPanel>
-                        <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=TabItem}, Path=Header}" />
-                        <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=TabItem}, Path=Index}" />
-                        <Button DataContext="{StaticResource closeTabItem}"
-                                Command="{Binding CloseTabItemCommand}"                                
-                                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Name}" 
-                                Background="Transparent" BorderBrush="Transparent">
-                            <Image Source="..\Images\cancel.png" Height="11" Width="11"></Image>
-                        </Button>
-                    </DockPanel>
-                </DataTemplate>
-            </TabControl.Resources>
-            <!--<TabItem Header="TabItem con UserControlWPF">
-                <uc:UserControlWPF/>
-            </TabItem>-->
-        </TabControl>
+        <TabControl x:Name="tbControl"/>
     </DockPanel>
 </r:RibbonWindow>

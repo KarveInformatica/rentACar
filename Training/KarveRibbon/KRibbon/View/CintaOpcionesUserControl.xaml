@@ -1,0 +1,40 @@
+﻿<UserControl x:Name="userControl" x:Class="KRibbon.View.CintaOpcionesUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KRibbon.View"
+             mc:Ignorable="d" 
+             Height="275" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,25,0,0">
+    <StackPanel>
+        <GroupBox x:Name="grbCintaOpciones" BorderBrush="Black" BorderThickness="1,1,1,1" Height="200">
+            <Grid x:Name="grdCintaOpciones">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="ckbCintaOpcionesMaestros"      Grid.Column="0" IsChecked="False" IsEnabled="True"  Content="{Binding ltbMaestros, Source={StaticResource ResourceLanguage}}"      Margin="25,25,0,0" />
+                <CheckBox x:Name="ckbCintaOpcionesContratos"     Grid.Column="0" IsChecked="False" IsEnabled="True"  Content="{Binding ltbContratos, Source={StaticResource ResourceLanguage}}"     Margin="25,50,0,0" />
+                <CheckBox x:Name="ckbCintaOpcionesReservas"      Grid.Column="0" IsChecked="False" IsEnabled="False" Content="{Binding ltbReservas, Source={StaticResource ResourceLanguage}}"      Margin="25,75,0,0" />
+                <CheckBox x:Name="ckbCintaOpcionesAtipicos"      Grid.Column="0" IsChecked="False" IsEnabled="False" Content="{Binding ltbAtipicos, Source={StaticResource ResourceLanguage}}"      Margin="25,100,0,0" />
+                <CheckBox x:Name="ckbCintaOpcionesComercial"     Grid.Column="0" IsChecked="False" IsEnabled="False" Content="{Binding ltbComercial, Source={StaticResource ResourceLanguage}}"     Margin="25,125,0,0" />
+                <CheckBox x:Name="ckbCintaOpcionesFacturacion"   Grid.Column="0" IsChecked="False" IsEnabled="True"  Content="{Binding ltbFacturacion, Source={StaticResource ResourceLanguage}}"   Margin="25,150,0,0" />
+                <CheckBox x:Name="ckbCintaOpcionesFlota"         Grid.Column="1" IsChecked="False" IsEnabled="True"  Content="{Binding ltbFlota, Source={StaticResource ResourceLanguage}}"         Margin="25,25,0,0" />
+                <CheckBox x:Name="ckbCintaOpcionesIncidencias"   Grid.Column="1" IsChecked="False" IsEnabled="False" Content="{Binding ltbIncidencias, Source={StaticResource ResourceLanguage}}"   Margin="25,50,0,0" />
+                <CheckBox x:Name="ckbCintaOpcionesEstadisticas"  Grid.Column="1" IsChecked="False" IsEnabled="False" Content="{Binding ltbEstadisticas, Source={StaticResource ResourceLanguage}}"  Margin="25,75,0,0" />
+                <CheckBox x:Name="ckbCintaOpcionesListados"      Grid.Column="1" IsChecked="False" IsEnabled="False" Content="{Binding ltbListados, Source={StaticResource ResourceLanguage}}"      Margin="25,100,0,0" />
+                <CheckBox x:Name="ckbCintaOpcionesConfiguracion" Grid.Column="1" IsChecked="False" IsEnabled="True"  Content="{Binding ltbConfiguracion, Source={StaticResource ResourceLanguage}}" Margin="25,125,0,0" />
+                <Button x:Name="btnCintaOpciones" Grid.Column="0" Grid.ColumnSpan="2" Content="Pendiente Asignar esta opción al button Guardar de Toolbar" DataContext="{StaticResource cintaOpciones}" Height="25" VerticalAlignment="Bottom" >
+                    <Button.InputBindings>
+                        <KeyBinding Key="Return"                                                
+                                            Command="{Binding SaveCintaOpcionesCommand}" 
+                                            CommandParameter="{Binding ElementName=userControl, Mode=OneWay}" />
+                        <MouseBinding MouseAction="LeftClick"
+                                              Command="{Binding SaveCintaOpcionesCommand}" 
+                                              CommandParameter="{Binding ElementName=userControl, Mode=OneWay}"  />
+                    </Button.InputBindings>
+                </Button>
+            </Grid>
+        </GroupBox>
+    </StackPanel>
+</UserControl>

@@ -23,13 +23,409 @@ namespace KRibbon.Properties {
             }
         }
         
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("en-GB")]
+        public string Language {
+            get {
+                return ((string)(this["Language"]));
+            }
+            set {
+                this["Language"] = value;
+            }
+        }
+        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Dsn=DBRENT_NET16;uid=cv;pwd=1929")]
-        public string ConnectionString {
+        public string CadenaConexion {
             get {
-                return ((string)(this["ConnectionString"]));
+                return ((string)(this["CadenaConexion"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrCentrosAlquiler")]
+        public string tbMaestros0 {
+            get {
+                return ((string)(this["tbMaestros0"]));
+            }
+            set {
+                this["tbMaestros0"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrClientes")]
+        public string tbMaestros1 {
+            get {
+                return ((string)(this["tbMaestros1"]));
+            }
+            set {
+                this["tbMaestros1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrComisionistas")]
+        public string tbMaestros2 {
+            get {
+                return ((string)(this["tbMaestros2"]));
+            }
+            set {
+                this["tbMaestros2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrProveedores")]
+        public string tbMaestros3 {
+            get {
+                return ((string)(this["tbMaestros3"]));
+            }
+            set {
+                this["tbMaestros3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrTarifas")]
+        public string tbMaestros4 {
+            get {
+                return ((string)(this["tbMaestros4"]));
+            }
+            set {
+                this["tbMaestros4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrVehiculos")]
+        public string tbMaestros5 {
+            get {
+                return ((string)(this["tbMaestros5"]));
+            }
+            set {
+                this["tbMaestros5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrAuxiliares")]
+        public string tbMaestros6 {
+            get {
+                return ((string)(this["tbMaestros6"]));
+            }
+            set {
+                this["tbMaestros6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrContratos")]
+        public string tbContratos0 {
+            get {
+                return ((string)(this["tbContratos0"]));
+            }
+            set {
+                this["tbContratos0"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrCambiosContratos")]
+        public string tbContratos1 {
+            get {
+                return ((string)(this["tbContratos1"]));
+            }
+            set {
+                this["tbContratos1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrVariosContratos")]
+        public string tbContratos2 {
+            get {
+                return ((string)(this["tbContratos2"]));
+            }
+            set {
+                this["tbContratos2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrReservas")]
+        public string tbReservas0 {
+            get {
+                return ((string)(this["tbReservas0"]));
+            }
+            set {
+                this["tbReservas0"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrAtipicos")]
+        public string tbAtipicos0 {
+            get {
+                return ((string)(this["tbAtipicos0"]));
+            }
+            set {
+                this["tbAtipicos0"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrComercial")]
+        public string tbComercial0 {
+            get {
+                return ((string)(this["tbComercial0"]));
+            }
+            set {
+                this["tbComercial0"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrFacturacion")]
+        public string tbFacturacion0 {
+            get {
+                return ((string)(this["tbFacturacion0"]));
+            }
+            set {
+                this["tbFacturacion0"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrRecibosCartera")]
+        public string tbFacturacion1 {
+            get {
+                return ((string)(this["tbFacturacion1"]));
+            }
+            set {
+                this["tbFacturacion1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrRemesas")]
+        public string tbFacturacion2 {
+            get {
+                return ((string)(this["tbFacturacion2"]));
+            }
+            set {
+                this["tbFacturacion2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrEnlacesContables")]
+        public string tbFacturacion3 {
+            get {
+                return ((string)(this["tbFacturacion3"]));
+            }
+            set {
+                this["tbFacturacion3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrExportacion")]
+        public string tbFacturacion4 {
+            get {
+                return ((string)(this["tbFacturacion4"]));
+            }
+            set {
+                this["tbFacturacion4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrImpresion")]
+        public string tbFacturacion5 {
+            get {
+                return ((string)(this["tbFacturacion5"]));
+            }
+            set {
+                this["tbFacturacion5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrEstadisticasFacturas")]
+        public string tbFacturacion6 {
+            get {
+                return ((string)(this["tbFacturacion6"]));
+            }
+            set {
+                this["tbFacturacion6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrInmovilizaciones")]
+        public string tbFlota0 {
+            get {
+                return ((string)(this["tbFlota0"]));
+            }
+            set {
+                this["tbFlota0"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrUtilidades")]
+        public string tbFlota1 {
+            get {
+                return ((string)(this["tbFlota1"]));
+            }
+            set {
+                this["tbFlota1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrVariosFlota")]
+        public string tbFlota2 {
+            get {
+                return ((string)(this["tbFlota2"]));
+            }
+            set {
+                this["tbFlota2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrIncidencias")]
+        public string tbIncidencias0 {
+            get {
+                return ((string)(this["tbIncidencias0"]));
+            }
+            set {
+                this["tbIncidencias0"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrEstadisticas")]
+        public string tbEstadisticas0 {
+            get {
+                return ((string)(this["tbEstadisticas0"]));
+            }
+            set {
+                this["tbEstadisticas0"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrListados")]
+        public string tbListados0 {
+            get {
+                return ((string)(this["tbListados0"]));
+            }
+            set {
+                this["tbListados0"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrConfiguracion")]
+        public string tbConfiguracion0 {
+            get {
+                return ((string)(this["tbConfiguracion0"]));
+            }
+            set {
+                this["tbConfiguracion0"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrIdiomas")]
+        public string tbConfiguracion1 {
+            get {
+                return ((string)(this["tbConfiguracion1"]));
+            }
+            set {
+                this["tbConfiguracion1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrPersonal")]
+        public string tbConfiguracion2 {
+            get {
+                return ((string)(this["tbConfiguracion2"]));
+            }
+            set {
+                this["tbConfiguracion2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrUtilitarios")]
+        public string tbConfiguracion3 {
+            get {
+                return ((string)(this["tbConfiguracion3"]));
+            }
+            set {
+                this["tbConfiguracion3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrVariosConfiguracion")]
+        public string tbConfiguracion4 {
+            get {
+                return ((string)(this["tbConfiguracion4"]));
+            }
+            set {
+                this["tbConfiguracion4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("rgrKarve")]
+        public string tbConfiguracion5 {
+            get {
+                return ((string)(this["tbConfiguracion5"]));
+            }
+            set {
+                this["tbConfiguracion5"] = value;
             }
         }
     }

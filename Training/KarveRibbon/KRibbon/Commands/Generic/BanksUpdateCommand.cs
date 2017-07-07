@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
-namespace KRibbon.Commands
+
+namespace KRibbon.Commands.Generic
 {
     class BanksUpdateCommand : ICommand
     {

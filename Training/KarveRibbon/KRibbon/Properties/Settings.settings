@@ -2,13 +2,111 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="KRibbon.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
+    <Setting Name="Language" Type="System.String" Scope="User">
+      <Value Profile="(Default)">en-GB</Value>
+    </Setting>
+    <Setting Name="CadenaConexion" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;ConnectionString&gt;Dsn=DBRENT_NET16;uid=cv;pwd=1929&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Dsn=DBRENT_NET16;uid=cv;pwd=1929</Value>
+    </Setting>
+    <Setting Name="tbMaestros0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrCentrosAlquiler</Value>
+    </Setting>
+    <Setting Name="tbMaestros1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrClientes</Value>
+    </Setting>
+    <Setting Name="tbMaestros2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrComisionistas</Value>
+    </Setting>
+    <Setting Name="tbMaestros3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrProveedores</Value>
+    </Setting>
+    <Setting Name="tbMaestros4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrTarifas</Value>
+    </Setting>
+    <Setting Name="tbMaestros5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrVehiculos</Value>
+    </Setting>
+    <Setting Name="tbMaestros6" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrAuxiliares</Value>
+    </Setting>
+    <Setting Name="tbContratos0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrContratos</Value>
+    </Setting>
+    <Setting Name="tbContratos1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrCambiosContratos</Value>
+    </Setting>
+    <Setting Name="tbContratos2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrVariosContratos</Value>
+    </Setting>
+    <Setting Name="tbReservas0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrReservas</Value>
+    </Setting>
+    <Setting Name="tbAtipicos0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrAtipicos</Value>
+    </Setting>
+    <Setting Name="tbComercial0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrComercial</Value>
+    </Setting>
+    <Setting Name="tbFacturacion0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrFacturacion</Value>
+    </Setting>
+    <Setting Name="tbFacturacion1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrRecibosCartera</Value>
+    </Setting>
+    <Setting Name="tbFacturacion2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrRemesas</Value>
+    </Setting>
+    <Setting Name="tbFacturacion3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrEnlacesContables</Value>
+    </Setting>
+    <Setting Name="tbFacturacion4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrExportacion</Value>
+    </Setting>
+    <Setting Name="tbFacturacion5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrImpresion</Value>
+    </Setting>
+    <Setting Name="tbFacturacion6" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrEstadisticasFacturas</Value>
+    </Setting>
+    <Setting Name="tbFlota0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrInmovilizaciones</Value>
+    </Setting>
+    <Setting Name="tbFlota1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrUtilidades</Value>
+    </Setting>
+    <Setting Name="tbFlota2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrVariosFlota</Value>
+    </Setting>
+    <Setting Name="tbIncidencias0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrIncidencias</Value>
+    </Setting>
+    <Setting Name="tbEstadisticas0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrEstadisticas</Value>
+    </Setting>
+    <Setting Name="tbListados0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrListados</Value>
+    </Setting>
+    <Setting Name="tbConfiguracion0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrConfiguracion</Value>
+    </Setting>
+    <Setting Name="tbConfiguracion1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrIdiomas</Value>
+    </Setting>
+    <Setting Name="tbConfiguracion2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrPersonal</Value>
+    </Setting>
+    <Setting Name="tbConfiguracion3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrUtilitarios</Value>
+    </Setting>
+    <Setting Name="tbConfiguracion4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrVariosConfiguracion</Value>
+    </Setting>
+    <Setting Name="tbConfiguracion5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rgrKarve</Value>
     </Setting>
   </Settings>
 </SettingsFile>

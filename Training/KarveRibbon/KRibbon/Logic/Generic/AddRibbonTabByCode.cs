@@ -102,7 +102,7 @@ namespace KRibbon.Utility
             //rbInicio.Items.Add(mytab);
         }
 
-        public static void addTabItem(ETipoAuxiliar tipoauxiliar)
+        public static void addTabItem(EOpcion tipoauxiliar)
         {
             ////Se comprueba que la tab ya no esté mostrada
             //if (tabitemlist.Where(p => p.TipoAuxiliar == tipoauxiliar).Count() == 0)
@@ -117,15 +117,15 @@ namespace KRibbon.Utility
 
             //    switch (tipoauxiliar)
             //    {
-            //        case ETipoAuxiliar.rbtnFormaPagoProveedor:
+            //        case EOpcion.rbtnFormaPagoProveedor:
             //            //FormaPagoProveedorCollection fpp = new FormaPagoProveedorCollection();
             //            //VariablesGlobales.dgitemsobscollection = fpp.GetFormaPagoProveedor();
             //            break;
-            //        case ETipoAuxiliar.rbtnGruposTarifa:
+            //        case EOpcion.rbtnGruposTarifa:
             //            //GrupoTarifaCollection gtr = new GrupoTarifaCollection();
             //            //VariablesGlobales.dgitemsobscollection = gtr.GetGruposTarifa();
             //            break;
-            //        case ETipoAuxiliar.rbtnTipoComisionista:
+            //        case EOpcion.rbtnTipoComisionista:
             //            //TipoComisionistaCollection tc = new TipoComisionistaCollection();
             //            //VariablesGlobales.dgitemsobscollection = tc.GetTiposComisionista();
             //            break;
@@ -149,7 +149,7 @@ namespace KRibbon.Utility
             //}
         }
         
-        private static void loadDataItem(TabItem tbitem, ObservableCollection<object> tabitemslist, ETipoAuxiliar aux)
+        private static void loadDataItem(TabItem tbitem, ObservableCollection<object> tabitemslist, EOpcion aux)
         {
             //DataGrid datagrid = new DataGrid();
             //datagrid.Width = 400;

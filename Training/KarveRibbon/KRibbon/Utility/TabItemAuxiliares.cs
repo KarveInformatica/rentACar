@@ -10,30 +10,17 @@ using System.Collections.ObjectModel;
 
 namespace KRibbon.Utility
 {
-    public class TabItemAuxiliares
+    public class DatosAyudaTabItem
     {
         #region Constructores
-        public TabItemAuxiliares() { }
+        public DatosAyudaTabItem() { }
 
-        //public TabItemAuxiliares(ETipoAuxiliar tipoauxiliar, ObservableCollection<object> obscollectionsource)
-        //{
-        //    this.tipoauxiliar = tipoauxiliar;
-        //    this.obscollectionsource = obscollectionsource;
-        //}
-
-        //public TabItemAuxiliares(ETipoAuxiliar tipoauxiliar, ObservableCollection<object> obscollectionsource, TabItem tbitem)
-        //{
-        //    this.tipoauxiliar = tipoauxiliar;
-        //    this.obscollectionsource = obscollectionsource;
-        //    this.tbitem = tbitem;
-        //}
-
-        public TabItemAuxiliares(ObservableCollection<object> obscollectionsource)
+        public DatosAyudaTabItem(ObservableCollection<object> obscollectionsource)
         {
             this.obscollectionsource = obscollectionsource;
         }
 
-        public TabItemAuxiliares(ObservableCollection<object> obscollectionsource, TabItem tbitem)
+        public DatosAyudaTabItem(ObservableCollection<object> obscollectionsource, TabItem tbitem)
         {
             this.obscollectionsource = obscollectionsource;
             this.tbitem = tbitem;

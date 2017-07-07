@@ -1,21 +1,24 @@
 ﻿using KRibbon.Commands.Generic;
 using KRibbon.Model.Generic;
+using KRibbon.ViewModel.GenericViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 
-namespace KRibbon.Commands.Specific
+namespace KRibbon.Commands.Generic
 {
-    public class MostrarAuxiliaresCommand : ICommand
+    public class SetLanguagesCommand : ICommand
     {
-        private MostrarAuxiliaresViewModel mostrarauxiliaresvm;
+        private SetLanguagesViewModel setlanguagesvm;
 
-        public MostrarAuxiliaresCommand(MostrarAuxiliaresViewModel vm)
+        public SetLanguagesCommand(SetLanguagesViewModel vm)
         {
-            this.mostrarauxiliaresvm = vm;
+            this.setlanguagesvm = vm;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -27,7 +30,7 @@ namespace KRibbon.Commands.Specific
 
         public void Execute(object parameter)
         {
-            mostrarauxiliaresvm.MostrarAuxiliares(parameter);        
+            setlanguagesvm.SetLanguages(parameter);
         }
     }
 }

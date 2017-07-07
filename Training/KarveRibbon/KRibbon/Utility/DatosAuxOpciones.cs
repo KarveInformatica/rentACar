@@ -7,7 +7,7 @@ using static KRibbon.Utility.VariablesGlobales;
 
 namespace KRibbon.Utility
 {
-    public class TablaAuxiliares
+    public class DatosAyudaOpciones
     {        
         public string propertiesresources { get; set; }
         public string nombretabladb { get; set; }

@@ -3,8 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:KRibbon"
              xmlns:lang="clr-namespace:KRibbon.Utility"
-             xmlns:vm="clr-namespace:KRibbon.Model.Generic"             
-             StartupUri="View/MainWindow.xaml">
+             xmlns:vm="clr-namespace:KRibbon.ViewModel.GenericViewModel"
+             xmlns:ms="clr-namespace:KRibbon.ViewModel.MaestrosViewModel"
+             xmlns:cfg="clr-namespace:KRibbon.ViewModel.ConfiguracionViewModel"
+             StartupUri="View/MainWindow.xaml" Startup="Application_Startup">
     <Application.Resources>
         <ObjectDataProvider x:Key="ResourceLanguage" 
                             ObjectType="{x:Type lang:ChangeLanguage}" 
@@ -12,7 +14,11 @@
         </ObjectDataProvider>
         <vm:CloseTabItemViewModel x:Key="closeTabItem"/>
         <vm:CloseWindowViewModel  x:Key="closeWindow"/>
-        <vm:MostrarAuxiliaresViewModel x:Key="mostrarAuxiliares"/>
         <vm:SetLanguagesViewModel x:Key="setLanguages"/>
+        
+        <ms:MostrarAuxiliaresViewModel x:Key="mostrarAuxiliares"/>
+
+        <cfg:CintaOpcionesViewModel x:Key="cintaOpciones"/>
+
     </Application.Resources>
 </Application>

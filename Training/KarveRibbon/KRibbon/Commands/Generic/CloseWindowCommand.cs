@@ -1,23 +1,23 @@
 ﻿using KRibbon.Commands.Generic;
 using KRibbon.Model.Generic;
+using KRibbon.ViewModel.GenericViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Input;
 
-namespace KRibbon.Commands.Specific
+namespace KRibbon.Commands.Generic
 {
-    public class SetLanguagesCommand : ICommand
+    class CloseWindowCommand : ICommand
     {
-        private SetLanguagesViewModel setlanguagesvm;
+        private CloseWindowViewModel closewindowvm;
 
-        public SetLanguagesCommand(SetLanguagesViewModel vm)
+        public CloseWindowCommand() {}
+        public CloseWindowCommand(CloseWindowViewModel vm)
         {
-            this.setlanguagesvm = vm;
+            this.closewindowvm = vm;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -29,7 +29,7 @@ namespace KRibbon.Commands.Specific
 
         public void Execute(object parameter)
         {
-            setlanguagesvm.SetLanguages(parameter);
+            closewindowvm.CloseWindow(parameter);         
         }
     }
 }

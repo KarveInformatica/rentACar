@@ -1,21 +1,23 @@
 ﻿using KRibbon.Commands.Generic;
 using KRibbon.Model.Generic;
+using KRibbon.ViewModel.GenericViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows;
 using System.Windows.Input;
 
-namespace KRibbon.Commands.Specific
+namespace KRibbon.Commands.Generic
 {
-    class CloseWindowCommand : ICommand
+    public class CloseTabItemCommand : ICommand
     {
-        private CloseWindowViewModel closewindowvm;
+        private CloseTabItemViewModel closetabitemvm;
 
-        public CloseWindowCommand() {}
-        public CloseWindowCommand(CloseWindowViewModel vm)
+        public CloseTabItemCommand() {}
+        public CloseTabItemCommand(CloseTabItemViewModel vm)
         {
-            this.closewindowvm = vm;
+            this.closetabitemvm = vm;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -27,7 +29,7 @@ namespace KRibbon.Commands.Specific
 
         public void Execute(object parameter)
         {
-            closewindowvm.CloseWindow(parameter);         
+            closetabitemvm.CloseTabItem(parameter);         
         }
     }
 }

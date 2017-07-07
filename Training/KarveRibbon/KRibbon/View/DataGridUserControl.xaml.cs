@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace KRibbon.View
 {
     /// <summary>
-    /// Lógica de interacción para UserControlWPF.xaml
+    /// Lógica de interacción para DataGridUserControl.xaml
     /// </summary>
-    public partial class UserControlWPF : UserControl
+    public partial class DataGridUserControl : DataGrid
     {
-        public UserControlWPF()
+        public DataGridUserControl()
         {
             InitializeComponent();
         }

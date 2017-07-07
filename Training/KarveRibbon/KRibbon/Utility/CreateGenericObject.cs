@@ -119,7 +119,7 @@ namespace KRibbon.Utility
             }
             catch (SAException e)
             {
-                DBErrors.MessageError(e);
+                ErrorsDB.MessageError(e);
                 //MessageBox.Show(e.Message.ToString());
             }
         }

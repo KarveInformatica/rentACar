@@ -10,7 +10,7 @@ namespace KRibbon.Utility
 {
     public class ChangeLanguage
     {
-        private static ObjectDataProvider odp;
+        private static ObjectDataProvider _objectdataprovider;
 
         public ChangeLanguage() { }
 
@@ -21,23 +21,23 @@ namespace KRibbon.Utility
         }
 
         //Esta propiedad devuelve el ObjectDataProvider en uso
-        public static ObjectDataProvider ResourceProvider
+        public static ObjectDataProvider objectdataprovider
         {
             get
             {
-                if (odp == null)
+                if (_objectdataprovider == null)
                 {
-                    odp = (ObjectDataProvider)App.Current.FindResource("ResourceLanguage");
+                    _objectdataprovider = (ObjectDataProvider)App.Current.FindResource("ResourceLanguage");
                 }
-                return odp;
+                return _objectdataprovider;
             }
         }
 
         //Este método cambia la cultura aplicada a los recursos y refresca la propiedad ResourceProvider
         public static void ChangeCulture(CultureInfo culture)
         {
-            Properties.Resources.Culture = culture;            
-            ResourceProvider.Refresh();
+            Properties.Resources.Culture = culture;
+            objectdataprovider.Refresh();
         }
     }
 }

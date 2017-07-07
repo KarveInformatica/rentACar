@@ -1,12 +1,13 @@
-﻿using KRibbon.Commands.Specific;
+﻿using KRibbon.Commands.Generic;
 using KRibbon.Logic.Generic;
+using KRibbon.Model.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
 
-namespace KRibbon.Model.Generic
+namespace KRibbon.ViewModel.GenericViewModel
 {
     class CloseWindowViewModel : PropertyChangedBase
     {

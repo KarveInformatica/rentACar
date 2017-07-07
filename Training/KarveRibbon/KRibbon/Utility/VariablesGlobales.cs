@@ -1,13 +1,9 @@
-﻿using KRibbon;
-using KRibbon.Model;
-using KRibbon.Properties;
-using KRibbon.Model.Generic.ObservableCollection;
-using System;
+﻿using KRibbon.Model.Generic.ObservableCollection;
+using KRibbon.ViewModel.ConfiguracionViewModel;
+using Microsoft.Windows.Controls.Ribbon;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Windows.Controls;
+using System.Windows;
 
 namespace KRibbon.Utility
 {
@@ -16,94 +12,223 @@ namespace KRibbon.Utility
         /// <summary>
         /// Enumeración de los tipos de auxiliares
         /// </summary>
-        public enum ETipoAuxiliar
+        public enum EOpcion
         {
-            #region Auxiliares Clientes
-            //Banco,
-            //BloqueFacturacion,
-            //CanalCliente,
+            #region Maestros
                 rbtnBancosClientes,
                 rbtnBloqueFacturacion,
                 rbtnCanales,
                 rbtnCargosPersonal,
-            #endregion
 
-            #region Auxiliares Comisionistas
                 rbtnTipoComisionista,
-            #endregion
 
-            #region Auxiliares Contratos
-            #endregion
-
-            #region Auxiliares Proveedores
                 rbtnFormaPagoProveedor,
+
+                rbtnGruposTarifa,
             #endregion
 
-            #region Auxiliares Reservas        
+            #region Contratos
             #endregion
 
-            #region Auxiliares Tarifas
-                rbtnGruposTarifa 
+            #region Reservas
             #endregion
 
-            #region Auxiliares Vehículos
+            #region Atipicos
             #endregion
 
-            #region Auxiliares Varios
+            #region Comercial
+            #endregion
+
+            #region Facturación
+            #endregion
+
+            #region Flota
+            #endregion
+
+            #region Incidencias
+            #endregion
+
+            #region Estadísticas
+            #endregion
+
+            #region Listados
+            #endregion
+
+            #region Configuración
+                rbtnCinta,
             #endregion
         }
 
-        public static Dictionary<ETipoAuxiliar, TabItemAuxiliares> tabitemlist = new Dictionary<ETipoAuxiliar,TabItemAuxiliares>();
+        public static Dictionary<EOpcion, DatosAyudaTabItem> tabitemlist = new Dictionary<EOpcion,DatosAyudaTabItem>();
         
-        public static Dictionary<ETipoAuxiliar, TablaAuxiliares> tiposauxiliaresdictionary = new Dictionary<ETipoAuxiliar, TablaAuxiliares>()
+        public static Dictionary<EOpcion, DatosAyudaOpciones> tiposauxiliaresdictionary = new Dictionary<EOpcion, DatosAyudaOpciones>()
         {
-            #region Auxiliares Clientes
-            { ETipoAuxiliar.rbtnBancosClientes,     new TablaAuxiliares { propertiesresources = "lrbtnBancosClientes",
-                                                                          nombretabladb = "BANCO",
-                                                                          viewmodelbase = new BancoViewModel() } },
-            { ETipoAuxiliar.rbtnBloqueFacturacion,  new TablaAuxiliares { propertiesresources = "lrbtnBloqueFacturacion",
-                                                                          nombretabladb = "BLOQUEFAC",
-                                                                          viewmodelbase = new BloqueFacturacionViewModel() } },
-            { ETipoAuxiliar.rbtnCanales,            new TablaAuxiliares { propertiesresources = "lrbtnCanales",
-                                                                          nombretabladb = "CANAL",
-                                                                          viewmodelbase = new CanalClienteViewModel() } },
-            { ETipoAuxiliar.rbtnCargosPersonal,     new TablaAuxiliares { propertiesresources = "lrbtnCargosPersonal",
-                                                                          nombretabladb = "CATEGOPER",
-                                                                          viewmodelbase = new CargoPersonalViewModel() } },
+            #region Maestros
+            { EOpcion.rbtnBancosClientes,     new DatosAyudaOpciones { propertiesresources = "lrbtnBancosClientes",
+                                                                       nombretabladb = "BANCO",
+                                                                       viewmodelbase = new BancoViewModel() } },
+            { EOpcion.rbtnBloqueFacturacion,  new DatosAyudaOpciones { propertiesresources = "lrbtnBloqueFacturacion",
+                                                                       nombretabladb = "BLOQUEFAC",
+                                                                       viewmodelbase = new BloqueFacturacionViewModel() } },
+            { EOpcion.rbtnCanales,            new DatosAyudaOpciones { propertiesresources = "lrbtnCanales",
+                                                                       nombretabladb = "CANAL",
+                                                                       viewmodelbase = new CanalClienteViewModel() } },
+            { EOpcion.rbtnCargosPersonal,     new DatosAyudaOpciones { propertiesresources = "lrbtnCargosPersonal",
+                                                                       nombretabladb = "CATEGOPER",
+                                                                       viewmodelbase = new CargoPersonalViewModel() } },
+
+            { EOpcion.rbtnTipoComisionista,   new DatosAyudaOpciones { propertiesresources = "lrbtnTipoComisionista",
+                                                                       nombretabladb =  "TIPOCOMI",
+                                                                       viewmodelbase = new TipoComisionistaViewModel() } },           
+
+            { EOpcion.rbtnFormaPagoProveedor, new DatosAyudaOpciones { propertiesresources = "lrbtnFormaPagoProveedor",
+                                                                       nombretabladb = "FORPRO",
+                                                                       viewmodelbase = new FormaPagoProveedorViewModel() } },
+
+            { EOpcion.rbtnGruposTarifa,       new DatosAyudaOpciones { propertiesresources = "lrbtnGruposTarifa",
+                                                                       nombretabladb = "GRUPOS_TARI",
+                                                                       viewmodelbase = new GrupoTarifaViewModel() } },
             #endregion
 
-            #region Auxiliares Comisionistas
-            { ETipoAuxiliar.rbtnTipoComisionista,   new TablaAuxiliares { propertiesresources = "lrbtnTipoComisionista",
-                                                                          nombretabladb =  "TIPOCOMI",
-                                                                          viewmodelbase = new TipoComisionistaViewModel() } },
+            #region Contratos
             #endregion
 
-            #region Auxiliares Contratos
+            #region Reservas
             #endregion
 
-            #region Auxiliares Proveedores
-            { ETipoAuxiliar.rbtnFormaPagoProveedor, new TablaAuxiliares { propertiesresources = "lrbtnFormaPagoProveedor",
-                                                                          nombretabladb = "FORPRO",
-                                                                          viewmodelbase = new FormaPagoProveedorViewModel() } },
+            #region Atipicos
             #endregion
 
-            #region Auxiliares Reservas
+            #region Comercial
             #endregion
 
-            #region Auxiliares Tarifas
-            { ETipoAuxiliar.rbtnGruposTarifa,       new TablaAuxiliares { propertiesresources = "lrbtnGruposTarifa",
-                                                                          nombretabladb = "GRUPOS_TARI",
-                                                                          viewmodelbase = new GrupoTarifaViewModel() } },
+            #region Facturación
             #endregion
 
-            #region Auxiliares Vehículos
+            #region Flota
             #endregion
-            
-            #region Auxiliares Varios
+
+            #region Incidencias
+            #endregion
+
+            #region Estadísticas
+            #endregion
+
+            #region Listados
+            #endregion
+
+            #region Configuración
+            { EOpcion.rbtnCinta,            new DatosAyudaOpciones { propertiesresources = "lrbtnCinta",
+                                                                     nombretabladb = string.Empty,
+                                                                     viewmodelbase = new CintaOpcionesViewModel() } },
             #endregion
         };
 
         public static ObservableCollection<object> dgitemsobscollection;
+
+        public static Dictionary<ERibbonTab, RibbonTabAndGroup> ribbontabdefaultdictionary = new Dictionary<ERibbonTab, RibbonTabAndGroup> ()
+        {
+            { ERibbonTab.tbMaestros,      new RibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).tbMaestros,
+                                                                  checkbox  = "ckbCintaOpcionesMaestros",
+                                                                  ribbongroup = new List<RibbonGroup>() {
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrCentrosAlquiler ,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrClientes,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrComisionistas,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrProveedores,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrTarifas,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrVehiculos,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrAuxiliares } }},
+
+            { ERibbonTab.tbContratos,     new RibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).tbContratos,
+                                                                  checkbox  = "ckbCintaOpcionesContratos",
+                                                                  ribbongroup = new List<RibbonGroup>() {
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrContratos,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrCambiosContratos,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrVariosContratos } } },
+
+            { ERibbonTab.tbReservas,      new RibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).tbReservas,
+                                                                  checkbox  = "ckbCintaOpcionesReservas",
+                                                                  ribbongroup = new List<RibbonGroup>() {
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrReservas } } },
+            { ERibbonTab.tbAtipicos,      new RibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).tbAtipicos,
+                                                                  checkbox  = "ckbCintaOpcionesAtipicos",
+                                                                  ribbongroup = new List<RibbonGroup>() {
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrAtipicos } } },
+            { ERibbonTab.tbComercial,     new RibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).tbComercial,
+                                                                  checkbox  = "ckbCintaOpcionesComercial",
+                                                                  ribbongroup = new List<RibbonGroup>() {
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrComercial } } },
+
+            { ERibbonTab.tbFacturacion,   new RibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).tbFacturacion,
+                                                                  checkbox  = "ckbCintaOpcionesFacturacion",
+                                                                  ribbongroup = new List<RibbonGroup>() {
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrFacturacion,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrRecibosCartera,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrRemesas,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrEnlacesContables,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrExportacion,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrImpresion,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrEstadisticasFacturas } } },        
+
+            { ERibbonTab.tbFlota,         new RibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).tbFlota,
+                                                                  checkbox  = "ckbCintaOpcionesFlota",
+                                                                  ribbongroup = new List<RibbonGroup>() {
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrInmovilizaciones,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrUtilidades,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrVariosFlota } } },
+
+            { ERibbonTab.tbIncidencias,   new RibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).tbIncidencias,
+                                                                  checkbox  = "ckbCintaOpcionesIncidencias",
+                                                                  ribbongroup = new List<RibbonGroup>() {
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrIncidencias } } },
+            { ERibbonTab.tbEstadisticas,  new RibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).tbEstadisticas,
+                                                                  checkbox  = "ckbCintaOpcionesEstadisticas",
+                                                                  ribbongroup = new List<RibbonGroup>() {
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrEstadisticas } } },
+            { ERibbonTab.tbListados,      new RibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).tbListados,
+                                                                  checkbox  = "ckbCintaOpcionesListados",
+                                                                  ribbongroup = new List<RibbonGroup>() {
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrListados } } },
+
+            { ERibbonTab.tbConfiguracion, new RibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).tbConfiguracion,
+                                                                  checkbox  = "ckbCintaOpcionesConfiguracion",
+                                                                  ribbongroup = new List<RibbonGroup>() {
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrConfiguracion,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrIdiomas,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrPersonal,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrUtilitarios,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrVariosConfiguracion,
+                                                                                    ((MainWindow)Application.Current.MainWindow).rgrKarve } } }
+        };
+
+        public static List<RibbonTab> ribbontablist = new List<RibbonTab>()
+        {
+            ((MainWindow)Application.Current.MainWindow).tbMaestros,
+            ((MainWindow)Application.Current.MainWindow).tbContratos,
+            ((MainWindow)Application.Current.MainWindow).tbReservas,
+            ((MainWindow)Application.Current.MainWindow).tbAtipicos,
+            ((MainWindow)Application.Current.MainWindow).tbComercial,
+            ((MainWindow)Application.Current.MainWindow).tbFacturacion,
+            ((MainWindow)Application.Current.MainWindow).tbFlota,
+            ((MainWindow)Application.Current.MainWindow).tbIncidencias,
+            ((MainWindow)Application.Current.MainWindow).tbListados,
+            ((MainWindow)Application.Current.MainWindow).tbConfiguracion
+        };
+
+        public enum ERibbonTab
+        {
+            tbMaestros,
+            tbContratos,
+            tbReservas,
+            tbAtipicos,
+            tbComercial,
+            tbFacturacion,
+            tbFlota,
+            tbIncidencias,
+            tbEstadisticas,
+            tbListados,
+            tbConfiguracion
+        }
 
         public enum ETiposDatoColumnaDB
         {

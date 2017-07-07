@@ -54,7 +54,7 @@ namespace KRibbon.Model.Sybase
             }
             catch (SAException e)
             {
-                DBErrors.MessageError(e);
+                ErrorsDB.MessageError(e);
                 //MessageBox.Show(e.ToString());
             }
             finally

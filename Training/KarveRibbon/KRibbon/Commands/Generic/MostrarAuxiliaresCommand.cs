@@ -1,5 +1,6 @@
 ﻿using KRibbon.Commands.Generic;
 using KRibbon.Model.Generic;
+using KRibbon.ViewModel.MaestrosViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,16 +8,15 @@ using System.Text;
 using System.Windows;
 using System.Windows.Input;
 
-namespace KRibbon.Commands.Specific
+namespace KRibbon.Commands.Generic
 {
-    public class CloseTabItemCommand : ICommand
+    public class MostrarAuxiliaresCommand : ICommand
     {
-        private CloseTabItemViewModel closetabitemvm;
+        private MostrarAuxiliaresViewModel mostrarauxiliaresvm;
 
-        public CloseTabItemCommand() {}
-        public CloseTabItemCommand(CloseTabItemViewModel vm)
+        public MostrarAuxiliaresCommand(MostrarAuxiliaresViewModel vm)
         {
-            this.closetabitemvm = vm;
+            this.mostrarauxiliaresvm = vm;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -28,7 +28,7 @@ namespace KRibbon.Commands.Specific
 
         public void Execute(object parameter)
         {
-            closetabitemvm.CloseTabItem(parameter);         
+            mostrarauxiliaresvm.MostrarAuxiliares(parameter);        
         }
     }
 }

@@ -97,6 +97,42 @@ namespace KRibbon.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Desmarcar Todos.
+        /// </summary>
+        public static string lckbCintaOpcionesDesmarcarTodos {
+            get {
+                return ResourceManager.GetString("lckbCintaOpcionesDesmarcarTodos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Marcar Todos.
+        /// </summary>
+        public static string lckbCintaOpcionesMarcarTodos {
+            get {
+                return ResourceManager.GetString("lckbCintaOpcionesMarcarTodos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Desmarcar Todos.
+        /// </summary>
+        public static string lckbDesmarcarTodos {
+            get {
+                return ResourceManager.GetString("lckbDesmarcarTodos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Marcar Todos.
+        /// </summary>
+        public static string lckbMarcarTodos {
+            get {
+                return ResourceManager.GetString("lckbMarcarTodos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Inicio.
         /// </summary>
         public static string lrapmnInicio {
@@ -534,6 +570,15 @@ namespace KRibbon.Properties {
         public static string lrbtnCerrarContrato {
             get {
                 return ResourceManager.GetString("lrbtnCerrarContrato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cinta Opciones.
+        /// </summary>
+        public static string lrbtnCinta {
+            get {
+                return ResourceManager.GetString("lrbtnCinta", resourceCulture);
             }
         }
         
@@ -2248,6 +2293,24 @@ namespace KRibbon.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Desmarcar Todos.
+        /// </summary>
+        public static string lrdbCintaOpcionesDesmarcarTodos {
+            get {
+                return ResourceManager.GetString("lrdbCintaOpcionesDesmarcarTodos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Marcar Todos.
+        /// </summary>
+        public static string lrdbCintaOpcionesMarcarTodos {
+            get {
+                return ResourceManager.GetString("lrdbCintaOpcionesMarcarTodos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Atípicos.
         /// </summary>
         public static string lrgrAtipicos {
@@ -2401,6 +2464,15 @@ namespace KRibbon.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Karve.
+        /// </summary>
+        public static string lrgrKarve {
+            get {
+                return ResourceManager.GetString("lrgrKarve", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Listados.
         /// </summary>
         public static string lrgrListados {
@@ -2484,9 +2556,9 @@ namespace KRibbon.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Varios.
         /// </summary>
-        public static string lrgrVariosconfiguracion {
+        public static string lrgrVariosConfiguracion {
             get {
-                return ResourceManager.GetString("lrgrVariosconfiguracion", resourceCulture);
+                return ResourceManager.GetString("lrgrVariosConfiguracion", resourceCulture);
             }
         }
         
@@ -2694,15 +2766,6 @@ namespace KRibbon.Properties {
         public static string lrrCentrosAlquiler {
             get {
                 return ResourceManager.GetString("lrrCentrosAlquiler", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Karve.
-        /// </summary>
-        public static string lrrgrKarve {
-            get {
-                return ResourceManager.GetString("lrrgrKarve", resourceCulture);
             }
         }
         
@@ -2941,11 +3004,29 @@ namespace KRibbon.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Mensaje de Error.
+        /// </summary>
+        public static string msgErrorTitulo {
+            get {
+                return ResourceManager.GetString("msgErrorTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ¿Está seguro que desea salir de la aplicación?.
         /// </summary>
         public static string msgSalir {
             get {
                 return ResourceManager.GetString("msgSalir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El orden de los grupos de las pestañas de la cinta seleccionadas, se han restaurado a su posición inicial..
+        /// </summary>
+        public static string msgSaveCintaOpcionesOK {
+            get {
+                return ResourceManager.GetString("msgSaveCintaOpcionesOK", resourceCulture);
             }
         }
         

@@ -1157,256 +1157,292 @@
     <value>Configuració</value>
     <comment>262</comment>
   </data>
+  <data name="lrbtnCinta" xml:space="preserve">
+    <value>Cinta d'Opcions</value>
+    <comment>263</comment>
+  </data>
   <data name="lrbtnCodigosIniciales" xml:space="preserve">
     <value>Codis Inicials</value>
-    <comment>263</comment>
+    <comment>264</comment>
   </data>
   <data name="lrbtnEmpresa" xml:space="preserve">
     <value>Empresa</value>
-    <comment>264</comment>
+    <comment>265</comment>
   </data>
   <data name="lrbtnEnlaceContabilidad" xml:space="preserve">
     <value>Enllaç Comptabilitat</value>
-    <comment>265</comment>
+    <comment>266</comment>
   </data>
   <data name="lrbtnEquipo" xml:space="preserve">
     <value>Equip</value>
-    <comment>266</comment>
+    <comment>267</comment>
   </data>
   <data name="lrbtnFacturacion" xml:space="preserve">
     <value>Facturació</value>
-    <comment>267</comment>
+    <comment>268</comment>
   </data>
   <data name="lrbtnbiImpresion" xml:space="preserve">
     <value>Impressió</value>
-    <comment>268</comment>
+    <comment>269</comment>
   </data>
   <data name="lrbtnKarve" xml:space="preserve">
     <value>Karve</value>
-    <comment>269</comment>
+    <comment>270</comment>
   </data>
   <data name="lrbtnMaestros" xml:space="preserve">
     <value>Mestres</value>
-    <comment>270</comment>
+    <comment>271</comment>
   </data>
   <data name="lrbtnOficina" xml:space="preserve">
     <value>Oficina</value>
-    <comment>271</comment>
+    <comment>272</comment>
   </data>
   <data name="lrbtnOperaciones" xml:space="preserve">
     <value>Operacions</value>
-    <comment>272</comment>
+    <comment>273</comment>
   </data>
   <data name="lrbtnOtros" xml:space="preserve">
     <value>Altres</value>
-    <comment>273</comment>
+    <comment>274</comment>
   </data>
   <data name="lrmnbtnPermisos" xml:space="preserve">
     <value>Permisos</value>
-    <comment>274</comment>
+    <comment>275</comment>
   </data>
   <data name="lrbtnInformes" xml:space="preserve">
     <value>Informes</value>
-    <comment>275</comment>
+    <comment>276</comment>
   </data>
   <data name="lrbtnPrograma" xml:space="preserve">
     <value>Programa</value>
-    <comment>276</comment>
+    <comment>277</comment>
   </data>
   <data name="lrgrIdiomas" xml:space="preserve">
     <value>Idiomes</value>
-    <comment>277</comment>
+    <comment>278</comment>
   </data>
   <data name="lrmnbtnIdiomas" xml:space="preserve">
     <value>Idiomes</value>
-    <comment>278</comment>
+    <comment>279</comment>
   </data>
   <data name="lrbtnIdiomaESES" xml:space="preserve">
     <value>Castellà</value>
-    <comment>279</comment>
+    <comment>280</comment>
   </data>
   <data name="lrbtnIdiomaCAES" xml:space="preserve">
     <value>Català</value>
-    <comment>280</comment>
+    <comment>281</comment>
   </data>
   <data name="lrbtnIdiomaENGB" xml:space="preserve">
     <value>Anglès</value>
-    <comment>281</comment>
+    <comment>282</comment>
   </data>
   <data name="lrgrPersonal" xml:space="preserve">
     <value>Personal</value>
-    <comment>282</comment>
+    <comment>283</comment>
   </data>
   <data name="lrbtnMailingPersonal" xml:space="preserve">
     <value>Mailing a Personal</value>
-    <comment>283</comment>
+    <comment>284</comment>
   </data>
   <data name="lrbtnPersonal" xml:space="preserve">
     <value>Personal</value>
-    <comment>284</comment>
+    <comment>285</comment>
   </data>
   <data name="lrgrUtilitarios" xml:space="preserve">
     <value>Utilitaris</value>
-    <comment>285</comment>
+    <comment>286</comment>
   </data>
   <data name="lrmnbtnUtilitarios" xml:space="preserve">
     <value>Utilitaris</value>
-    <comment>286</comment>
+    <comment>287</comment>
   </data>
   <data name="lrbtnBorrarFicherosEnvioEmail" xml:space="preserve">
     <value>Esborrar Fitxers Enviament Email</value>
-    <comment>287</comment>
+    <comment>288</comment>
   </data>
   <data name="lrbtnCambiarIVA" xml:space="preserve">
     <value>Canviar IVA</value>
-    <comment>288</comment>
+    <comment>289</comment>
   </data>
   <data name="lrbtnComunicacionPolicia" xml:space="preserve">
     <value>Comunicació Policia</value>
-    <comment>289</comment>
+    <comment>290</comment>
   </data>
   <data name="lrbtnConsultaSQL" xml:space="preserve">
     <value>Consulta SQL</value>
-    <comment>290</comment>
+    <comment>291</comment>
   </data>
   <data name="lrbtnDesbloquearContratosFacturando" xml:space="preserve">
     <value>Desbloquejar Contractes Facturant</value>
-    <comment>291</comment>
+    <comment>292</comment>
   </data>
   <data name="lrbtnDeteccionHuecos" xml:space="preserve">
     <value>Detecció de Buits</value>
-    <comment>292</comment>
+    <comment>293</comment>
   </data>
   <data name="lrbtnDeteccionInconsistencias" xml:space="preserve">
     <value>Detecció d'Inconsistències</value>
-    <comment>293</comment>
+    <comment>294</comment>
   </data>
   <data name="lrbtnDesvincularContratosReservas" xml:space="preserve">
     <value>Desvincular Contractes de Reserves</value>
-    <comment>294</comment>
+    <comment>295</comment>
   </data>
   <data name="lrbtnLimpiarInformacionAntigua" xml:space="preserve">
     <value>Netejar Informació Antiga</value>
-    <comment>295</comment>
+    <comment>296</comment>
   </data>
   <data name="lrbtnLimpiarCodigosReserva" xml:space="preserve">
     <value>Netejar Codis Reserva</value>
-    <comment>296</comment>
+    <comment>297</comment>
   </data>
   <data name="lrbtnRecalcularMantenimientos" xml:space="preserve">
     <value>Recalcular Manteniments</value>
-    <comment>297</comment>
+    <comment>298</comment>
   </data>
   <data name="lrbtnRecalcularPendientes" xml:space="preserve">
     <value>Recalcular Pendents</value>
-    <comment>298</comment>
+    <comment>299</comment>
   </data>
   <data name="lrbtnRehacerÍndices" xml:space="preserve">
     <value>Refer Índexs</value>
-    <comment>299</comment>
+    <comment>300</comment>
   </data>
   <data name="lrbtnRelojesActivos" xml:space="preserve">
     <value>Rellotges Actius</value>
-    <comment>300</comment>
+    <comment>301</comment>
   </data>
   <data name="lrbtnVincularContratosReservas" xml:space="preserve">
     <value>Vincular Contractes a Reserves</value>
-    <comment>301</comment>
+    <comment>302</comment>
   </data>
   <data name="lrbtnVincularContratosReservasNoVinculadas" xml:space="preserve">
     <value>Vincular Contractes a Reserves No Vinculades</value>
-    <comment>302</comment>
-  </data>
-  <data name="lrgrVariosconfiguracion" xml:space="preserve">
-    <value>Varis</value>
     <comment>303</comment>
+  </data>
+  <data name="lrgrVariosConfiguracion" xml:space="preserve">
+    <value>Varis</value>
+    <comment>304</comment>
   </data>
   <data name="lrbtnCambiarContrasenyas" xml:space="preserve">
     <value>Canviar Contrasenyes</value>
-    <comment>304</comment>
+    <comment>305</comment>
   </data>
   <data name="lrbtnPreciosCombustible" xml:space="preserve">
     <value>Preus Combustible</value>
-    <comment>305</comment>
+    <comment>306</comment>
   </data>
   <data name="lrbtnUsuarios" xml:space="preserve">
     <value>Usuaris</value>
-    <comment>306</comment>
-  </data>
-  <data name="lrrgrKarve" xml:space="preserve">
-    <value>Karve</value>
     <comment>307</comment>
   </data>
-  <data name="lrmnbtnKarve" xml:space="preserve">
+  <data name="lrgrKarve" xml:space="preserve">
     <value>Karve</value>
     <comment>308</comment>
   </data>
+  <data name="lrmnbtnKarve" xml:space="preserve">
+    <value>Karve</value>
+    <comment>309</comment>
+  </data>
   <data name="lrbtnAcercaDe" xml:space="preserve">
     <value>Sobre...</value>
-    <comment>309</comment>
+    <comment>310</comment>
   </data>
   <data name="lrbtnContrasenyasKarve" xml:space="preserve">
     <value>Contrasenyes Karve</value>
-    <comment>310</comment>
+    <comment>311</comment>
   </data>
   <data name="lrbtnDescargarActualizacion" xml:space="preserve">
     <value>Descarregar Actualització</value>
-    <comment>311</comment>
+    <comment>312</comment>
   </data>
   <data name="lrbtnMensajeEntrada" xml:space="preserve">
     <value>Missatge d'Entrada</value>
-    <comment>312</comment>
+    <comment>313</comment>
   </data>
   <data name="lrbtnNovedades" xml:space="preserve">
     <value>Novetats</value>
-    <comment>313</comment>
+    <comment>314</comment>
   </data>
   <data name="lrbtnReservasWeb" xml:space="preserve">
     <value>Reserves Web: 123</value>
-    <comment>314</comment>
+    <comment>315</comment>
   </data>
   <data name="lrbtnValidar" xml:space="preserve">
     <value>Validar</value>
-    <comment>315</comment>
+    <comment>316</comment>
   </data>
   <data name="dttcBicSwift" xml:space="preserve">
     <value>BIC/Swift</value>
-    <comment>316</comment>
+    <comment>317</comment>
   </data>
   <data name="dttcCodigo" xml:space="preserve">
     <value>Codi</value>
-    <comment>317</comment>
+    <comment>318</comment>
   </data>
   <data name="dttcDefinicion" xml:space="preserve">
     <value>Definició</value>
-    <comment>318</comment>
+    <comment>319</comment>
   </data>
   <data name="dttcUltModi" xml:space="preserve">
     <value>Data Última Modificació</value>
-    <comment>319</comment>
+    <comment>320</comment>
   </data>
   <data name="msgSalir" xml:space="preserve">
     <value>Està segur que desitja sortir de l'aplicació?</value>
-    <comment>320</comment>
+    <comment>322</comment>
+  </data>
+  <data name="msgErrorTitulo" xml:space="preserve">
+    <value>Missatge d'Error</value>
+    <comment>323</comment>
   </data>
   <data name="msgError83" xml:space="preserve">
     <value>No es troba la Base de Dades</value>
-    <comment>321</comment>
+    <comment>324</comment>
   </data>
   <data name="msgError100" xml:space="preserve">
     <value>No es troba el Servidor de la Base de Dades</value>
-    <comment>322</comment>
+    <comment>325</comment>
   </data>
   <data name="msgError103" xml:space="preserve">
     <value>Incorrecte Id d'usuari i/o contrasenya</value>
-    <comment>323</comment>
+    <comment>326</comment>
   </data>
   <data name="msgError131" xml:space="preserve">
     <value>Error de sintaxi en sentència SQL</value>
-    <comment>324</comment>
+    <comment>327</comment>
   </data>
   <data name="msgError141" xml:space="preserve">
     <value>No es troba la Taula</value>
-    <comment>325</comment>
+    <comment>328</comment>
+  </data>
+  <data name="lckbMarcarTodos" xml:space="preserve">
+    <value>Marcar tots</value>
+    <comment>328</comment>
+  </data>
+  <data name="lckbDesmarcarTodos" xml:space="preserve">
+    <value>Desmarcar tots</value>
+    <comment>329</comment>
+  </data>
+  <data name="lckbCintaOpcionesMarcarTodos" xml:space="preserve">
+    <value>Marcar tots</value>
+    <comment>328</comment>
+  </data>
+  <data name="lckbCintaOpcionesDesmarcarTodos" xml:space="preserve">
+    <value>Desmarcar tots</value>
+    <comment>329</comment>
+  </data>
+  <data name="lrdbCintaOpcionesMarcarTodos" xml:space="preserve">
+    <value>Marcar tots</value>
+    <comment>329</comment>
+  </data>
+  <data name="lrdbCintaOpcionesDesmarcarTodos" xml:space="preserve">
+    <value>Desmarcar tots</value>
+    <comment>330</comment>
+  </data>
+  <data name="msgSaveCintaOpcionesOK" xml:space="preserve">
+    <value>L'ordre dels grups de les pestanyes de la cinta seleccionades, s'han restaurat a la seva posició inicial.</value>
+    <comment>321</comment>
   </data>
 </root>

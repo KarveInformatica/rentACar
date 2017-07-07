@@ -9,7 +9,7 @@ using System.Text;
 
 namespace KRibbon.Model
 {
-    public class TipoComisionista : PropertyChangedBase//, IAuxiliares
+    public class TipoComisionista : PropertyChangedBase
     {
         #region List<DBCriterios>
         public static List<DBCriterios> dbcriterioslist = new List<DBCriterios>()

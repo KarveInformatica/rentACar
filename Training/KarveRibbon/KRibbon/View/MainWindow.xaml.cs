@@ -1,17 +1,9 @@
-﻿using Microsoft.Windows.Controls.Ribbon;
-using KRibbon.Properties;
-using KRibbon.Utility;
-using KRibbon.Logic.Generic;
+﻿using KRibbon.Utility;
 using System;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
-using System.Threading;
-using System.Globalization;
-using KRibbon.Model.Sybase;
-using System.Collections.Generic;
-using System.Windows.Controls;
-using KRibbon.View;
+using Microsoft.Windows.Controls.Ribbon;
 
 namespace KRibbon
 {
@@ -23,10 +15,7 @@ namespace KRibbon
         //public static RibbonWindow ribbonWindow = new RibbonWindow()
         public MainWindow()
         {
-            this.WindowState = WindowState.Maximized;
             InitializeComponent();
-            //AddTab.addRibbonTabAcciones(rbInicio);
-            //AddTab.addRibbonTabFavoritos(rbInicio, this);
 
             DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
@@ -34,8 +23,32 @@ namespace KRibbon
                 this.Title = "Aquí ponemos algún texto, p.e.: KarveWin[Versión: " 
                             + DateTime.Now.ToString("dd/MMMM/yyyy HH:mm:ss" + "]         C1[PRUEBA, S.A].USUARIO: JORDI");
             }, this.Dispatcher);
+
+            LoadCurrentUserRibbonTabConfig();
+            //LoadDefaultRibbonTabConfig();
         }
 
+        public void LoadCurrentUserRibbonTabConfig()
+        {
+            foreach (var item in VariablesGlobales.ribbontabdefaultdictionary)
+            {
+                if (item.Value.ribbontab != null)
+                {
+                    UserConfig.GetCurrentUserRibbonTabConfig(item.Value.ribbontab);
+                }
+            }
+        }
+
+        public void LoadDefaultRibbonTabConfig()
+        {
+            foreach (var item in VariablesGlobales.ribbontabdefaultdictionary)
+            {
+                if (item.Value.ribbontab != null)
+                {
+                    UserConfig.GetDefaultRibbonTabConfig(item.Value.ribbontab);
+                }
+            }
+        }
 
         public void btnHelp_Click(object sender, RoutedEventArgs e)
         {
@@ -57,27 +70,29 @@ namespace KRibbon
                     DragDrop.DoDragDrop(ribbongroup, ribbongroup, DragDropEffects.All);
                 }
             }
-            catch (Exception) { }            
+            catch (Exception) { }
         }
 
         private void RibbonGroup_Drop(object sender, DragEventArgs e)
         {
             try
             {
-                var ribbongrouptarget = e.Source as RibbonGroup;
-                var ribbongroupsource = e.Data.GetData(typeof(RibbonGroup)) as RibbonGroup;
+                var target = e.Source as RibbonGroup;
+                var origin = e.Data.GetData(typeof(RibbonGroup)) as RibbonGroup;
 
-                if (!ribbongrouptarget.Equals(ribbongroupsource))
+                if (!target.Equals(origin))
                 {
-                    var ribbontab = ribbongrouptarget.Parent as RibbonTab;
-                    int sourceIndex = ribbontab.Items.IndexOf(ribbongroupsource);
-                    int targetIndex = ribbontab.Items.IndexOf(ribbongrouptarget);
+                    var ribbontab = target.Parent as RibbonTab;
+                    int originIndex = ribbontab.Items.IndexOf(origin);
+                    int targetIndex = ribbontab.Items.IndexOf(target);
 
-                    ribbontab.Items.Remove(ribbongroupsource);
-                    ribbontab.Items.Insert(targetIndex, ribbongroupsource);
+                    ribbontab.Items.Remove(origin);
+                    ribbontab.Items.Insert(targetIndex, origin);
 
-                    ribbontab.Items.Remove(ribbongrouptarget);
-                    ribbontab.Items.Insert(sourceIndex, ribbongrouptarget);
+                    ribbontab.Items.Remove(target);
+                    ribbontab.Items.Insert(originIndex, target);
+
+                    UserConfig.SetCurrentUserRibbonTabConfig(ribbontab);
                 }
             }
             catch (Exception) { }

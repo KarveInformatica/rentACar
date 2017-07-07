@@ -1,15 +1,8 @@
-﻿using KRibbon.Properties;
-using KRibbon.Utility;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Globalization;
-using System.Linq;
-using System.Threading;
+﻿using KRibbon.Utility;
+using Microsoft.Windows.Controls.Ribbon;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
+using KRibbon;
+
 
 namespace KRibbon
 {
@@ -18,5 +11,10 @@ namespace KRibbon
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            UserConfig.LoadLanguage();
+            //UserConfig.LoadRibbonTabs(Current.MainWindow);
+        }
     }
 }

@@ -897,6 +897,9 @@
   <data name="lrmnbtnConfiguracion" xml:space="preserve">
     <value>Configuration</value>
   </data>
+  <data name="lrbtnCinta" xml:space="preserve">
+    <value>Ribbon</value>
+  </data>
   <data name="lrbtnCodigosIniciales" xml:space="preserve">
     <value>Initial Codes</value>
   </data>
@@ -1017,7 +1020,7 @@
   <data name="lrbtnVincularContratosReservasNoVinculadas" xml:space="preserve">
     <value>Linking Contracts to Unrelated Reserves</value>
   </data>
-  <data name="lrgrVariosconfiguracion" xml:space="preserve">
+  <data name="lrgrVariosConfiguracion" xml:space="preserve">
     <value>Others</value>
   </data>
   <data name="lrbtnCambiarContrasenyas" xml:space="preserve">
@@ -1029,7 +1032,7 @@
   <data name="lrbtnUsuarios" xml:space="preserve">
     <value>Users</value>
   </data>
-  <data name="lrrgrKarve" xml:space="preserve">
+  <data name="lrgrKarve" xml:space="preserve">
     <value>Karve</value>
   </data>
   <data name="lrmnbtnKarve" xml:space="preserve">
@@ -1071,6 +1074,9 @@
   <data name="msgSalir" xml:space="preserve">
     <value>Do you want to quit the application?</value>
   </data>
+  <data name="msgErrorTitulo" xml:space="preserve">
+    <value>Error Message</value>
+  </data>
   <data name="msgError83" xml:space="preserve">
     <value>Specified DataBase not found</value>
   </data>
@@ -1085,5 +1091,26 @@
   </data>
   <data name="msgError141" xml:space="preserve">
     <value>Table not found</value>
+  </data>
+  <data name="lckbMarcarTodos" xml:space="preserve">
+    <value>Mark All</value>
+  </data>
+  <data name="lckbDesmarcarTodos" xml:space="preserve">
+    <value>Unmark All</value>
+  </data>
+  <data name="lckbCintaOpcionesMarcarTodos" xml:space="preserve">
+    <value>Mark All</value>
+  </data>
+  <data name="lckbCintaOpcionesDesmarcarTodos" xml:space="preserve">
+    <value>Unmark All</value>
+  </data>
+  <data name="lrdbCintaOpcionesMarcarTodos" xml:space="preserve">
+    <value>Mark All</value>
+  </data>
+  <data name="lrdbCintaOpcionesDesmarcarTodos" xml:space="preserve">
+    <value>Unmark All</value>
+  </data>
+  <data name="msgSaveCintaOpcionesOK" xml:space="preserve">
+    <value>The order of the groups of selected ribbon tabs, have been restored to their initial position.</value>
   </data>
 </root>
