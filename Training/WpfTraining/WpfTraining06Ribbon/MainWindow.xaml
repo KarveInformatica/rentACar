@@ -27,29 +27,29 @@
                 </r:Ribbon.Resources>
                 <r:RibbonTab x:Name="tab0" Header="MyRibbonTab" >
                     <r:RibbonGroup Header="File">
-                        <r:RibbonButton x:Name="bttNewtab1" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttOpentab1" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                        <r:RibbonButton x:Name="bttSavetab1" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnNewtab1" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnOpentab1" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                        <r:RibbonButton x:Name="btnSavetab1" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="ReFile">
-                        <r:RibbonButton x:Name="bttNewtab12" Command="Redo" Label="New" SmallImageSource="..\Images/new.png" />
-                        <r:RibbonButton x:Name="bttOpentab12" Command="Undo" Label="Open" SmallImageSource="..\Images/open.png" />
-                        <r:RibbonButton x:Name="bttSavetab12" Command="Stop" Label="Save" SmallImageSource="..\Images/save.png" />
+                        <r:RibbonButton x:Name="btnNewtab12" Command="Redo" Label="New" SmallImageSource="..\Images/new.png" />
+                        <r:RibbonButton x:Name="btnOpentab12" Command="Undo" Label="Open" SmallImageSource="..\Images/open.png" />
+                        <r:RibbonButton x:Name="btnSavetab12" Command="Stop" Label="Save" SmallImageSource="..\Images/save.png" />
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="Delete">
-                        <r:RibbonButton x:Name="bttDeletetab1" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="..\Images/delete.png" />
+                        <r:RibbonButton x:Name="btnDeletetab1" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="..\Images/delete.png" />
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="Group Edit">
                         <r:RibbonMenuButton Label="Menu Edit" LargeImageSource="..\Images/copy.png" >
-                            <r:RibbonButton x:Name="bttCuttab1"  Command="Find"  Label="Save" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
-                            <r:RibbonButton x:Name="bttCopytab1"  Command="SaveAs " Label="SaveAs" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
-                            <r:RibbonButton x:Name="bttPastetab1" Command="Help" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
+                            <r:RibbonButton x:Name="btnCuttab1"  Command="Find"  Label="Save" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
+                            <r:RibbonButton x:Name="btnCopytab1"  Command="SaveAs " Label="SaveAs" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
+                            <r:RibbonButton x:Name="btnPastetab1" Command="Help" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
                         </r:RibbonMenuButton>
-                        <r:RibbonButton x:Name="bttCutOtherstab1" Command="Print" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
-                        <r:RibbonButton x:Name="bttCopyOtherstab1" Command="PrintPreview" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
-                        <r:RibbonButton x:Name="bttPasteOtherstab1" Command="Properties" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
+                        <r:RibbonButton x:Name="btnCutOtherstab1" Command="Print" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
+                        <r:RibbonButton x:Name="btnCopyOtherstab1" Command="PrintPreview" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
+                        <r:RibbonButton x:Name="btnPasteOtherstab1" Command="Properties" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
                         <r:RibbonMenuButton Label="Others" SmallImageSource="..\Images/delete.png" >
-                            <r:RibbonButton x:Name="bttDeleteOtherstab1" Command="Replace" Label="Delete" SmallImageSource="..\Images/delete.png"/>
+                            <r:RibbonButton x:Name="btnDeleteOtherstab1" Command="Replace" Label="Delete" SmallImageSource="..\Images/delete.png"/>
                         </r:RibbonMenuButton>
                     </r:RibbonGroup>
                 </r:RibbonTab>
@@ -76,48 +76,48 @@
                 </r:RibbonTab>
                 <r:RibbonTab x:Name="tab4" Header="MyRibbonTab" >
                     <r:RibbonGroup Header="File">
-                        <r:RibbonButton x:Name="bttNewtab01" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttOpentab01" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                        <r:RibbonButton x:Name="bttSavetab01" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnNewtab01" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnOpentab01" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                        <r:RibbonButton x:Name="btnSavetab01" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="Delete">
-                        <r:RibbonButton x:Name="bttDeletetab01" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="..\Images/delete.png" />
+                        <r:RibbonButton x:Name="btnDeletetab01" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="..\Images/delete.png" />
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="Group Edit">
                         <r:RibbonMenuButton Label="Menu Edit" LargeImageSource="..\Images/copy.png" >
-                            <r:RibbonButton x:Name="bttCuttab01"  Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
-                            <r:RibbonButton x:Name="bttCopytab01"  Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
-                            <r:RibbonButton x:Name="bttPastetab01" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
+                            <r:RibbonButton x:Name="btnCuttab01"  Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
+                            <r:RibbonButton x:Name="btnCopytab01"  Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
+                            <r:RibbonButton x:Name="btnPastetab01" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
                         </r:RibbonMenuButton>
-                        <r:RibbonButton x:Name="bttCutOtherstab01" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
-                        <r:RibbonButton x:Name="bttCopyOtherstab01" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
-                        <r:RibbonButton x:Name="bttPasteOtherstab01" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
+                        <r:RibbonButton x:Name="btnCutOtherstab01" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
+                        <r:RibbonButton x:Name="btnCopyOtherstab01" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
+                        <r:RibbonButton x:Name="btnPasteOtherstab01" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
                         <r:RibbonMenuButton Label="Others" SmallImageSource="..\Images/delete.png" >
-                            <r:RibbonButton x:Name="bttDeleteOtherstab01" Label="Delete" SmallImageSource="..\Images/delete.png"/>
+                            <r:RibbonButton x:Name="btnDeleteOtherstab01" Label="Delete" SmallImageSource="..\Images/delete.png"/>
                         </r:RibbonMenuButton>
                     </r:RibbonGroup>
                 </r:RibbonTab>
                 <r:RibbonTab x:Name="tab5" Header="MyRibbonTab" >
                     <r:RibbonGroup Header="Group Edit">
                         <r:RibbonMenuButton Label="Menu Edit" LargeImageSource="..\Images/copy.png" >
-                            <r:RibbonButton x:Name="bttCuttab001"  Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
-                            <r:RibbonButton x:Name="bttCopytab001"  Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
-                            <r:RibbonButton x:Name="bttPastetab001" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
+                            <r:RibbonButton x:Name="btnCuttab001"  Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
+                            <r:RibbonButton x:Name="btnCopytab001"  Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
+                            <r:RibbonButton x:Name="btnPastetab001" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
                         </r:RibbonMenuButton>
-                        <r:RibbonButton x:Name="bttCutOtherstab001" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
-                        <r:RibbonButton x:Name="bttCopyOtherstab001" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
-                        <r:RibbonButton x:Name="bttPasteOtherstab001" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
+                        <r:RibbonButton x:Name="btnCutOtherstab001" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
+                        <r:RibbonButton x:Name="btnCopyOtherstab001" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
+                        <r:RibbonButton x:Name="btnPasteOtherstab001" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
                         <r:RibbonMenuButton Label="Others" SmallImageSource="..\Images/delete.png" >
-                            <r:RibbonButton x:Name="bttDeleteOtherstab001" Label="Delete" SmallImageSource="..\Images/delete.png"/>
+                            <r:RibbonButton x:Name="btnDeleteOtherstab001" Label="Delete" SmallImageSource="..\Images/delete.png"/>
                         </r:RibbonMenuButton>
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="File">
-                        <r:RibbonButton x:Name="bttNewtab001" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttOpentab001" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                        <r:RibbonButton x:Name="bttSavetab001" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnNewtab001" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnOpentab001" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                        <r:RibbonButton x:Name="btnSavetab001" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="Delete">
-                        <r:RibbonButton x:Name="bttDeletetab001" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="..\Images/delete.png" />
+                        <r:RibbonButton x:Name="btnDeletetab001" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="..\Images/delete.png" />
                     </r:RibbonGroup>
                 </r:RibbonTab>
             -->
@@ -130,33 +130,33 @@
     <!--<r:Ribbon x:Name="rbRibbon" DockPanel.Dock="Top" IsMinimized="True">
             <r:Ribbon.ApplicationMenu>
                 <r:RibbonApplicationMenu SmallImageSource="..\Images\home.png" Label="Inicio" KeyTip="I">
-                    <r:RibbonApplicationMenuItem x:Name="bttAbrir"
+                    <r:RibbonApplicationMenuItem x:Name="btnAbrir"
                                                  Header="Abrir archivo" 
                                                  ImageSource="..\Images\open.png" 
                                                  Command="Open" />
-                    <r:RibbonApplicationMenuItem x:Name="bttGuardar" 
+                    <r:RibbonApplicationMenuItem x:Name="btnGuardar" 
                                                  Header="Guardar" 
                                                  ImageSource="..\Images\save.png" 
                                                  Command="Save" />
                     <r:RibbonSeparator />
-                    <r:RibbonApplicationMenuItem x:Name="bttRelogin" 
+                    <r:RibbonApplicationMenuItem x:Name="btnRelogin" 
                                                  Header="Relogin" 
                                                  ImageSource="..\Images\login.png" />
-                    <r:RibbonApplicationMenuItem x:Name="bttReconectar" 
+                    <r:RibbonApplicationMenuItem x:Name="btnReconectar" 
                                                  Header="Reconectar" 
                                                  ImageSource="..\Images\conect.png" />
                     <r:RibbonSeparator />
-                    <r:RibbonApplicationMenuItem x:Name="bttIrAlquiler" 
+                    <r:RibbonApplicationMenuItem x:Name="btnIrAlquiler" 
                                                  Header="Ir a Alquiler" 
                                                  ImageSource="..\Images\redirect.png" />
-                    <r:RibbonApplicationMenuItem x:Name="bttIrContabilidad" 
+                    <r:RibbonApplicationMenuItem x:Name="btnIrContabilidad" 
                                                  Header="Ir a Contabilidad" 
                                                  ImageSource="..\Images\redirect.png" />
-                    <r:RibbonApplicationMenuItem x:Name="bttIrTaller" 
+                    <r:RibbonApplicationMenuItem x:Name="btnIrTaller" 
                                                  Header="Ir a Taller" 
                                                  ImageSource="..\Images\redirect.png" />
                     <r:RibbonSeparator />
-                    <r:RibbonApplicationMenuItem x:Name="bttSalir"
+                    <r:RibbonApplicationMenuItem x:Name="btnSalir"
                                                  Header="Salir" 
                                                  ImageSource="..\Images\exit.png" />
                 </r:RibbonApplicationMenu>
@@ -164,90 +164,90 @@
     <!--
                 <r:RibbonTab x:Name="tab6" Header="MyRibbonTab" >
                 <r:RibbonGroup Header="File">
-                    <r:RibbonButton x:Name="bttNewtab0001" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
-                    <r:RibbonButton x:Name="bttOpentab0001" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                    <r:RibbonButton x:Name="bttSavetab0001" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                    <r:RibbonButton x:Name="btnNewtab0001" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
+                    <r:RibbonButton x:Name="btnOpentab0001" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                    <r:RibbonButton x:Name="btnSavetab0001" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
                 </r:RibbonGroup>
                 <r:RibbonGroup Header="Delete">
-                    <r:RibbonButton x:Name="bttDeletetab0001" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="..\Images/delete.png" />
+                    <r:RibbonButton x:Name="btnDeletetab0001" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="..\Images/delete.png" />
                 </r:RibbonGroup>
                 <r:RibbonGroup Header="Group Edit">
                     <r:RibbonMenuButton Label="Menu Edit" LargeImageSource="..\Images/copy.png" >
-                        <r:RibbonButton x:Name="bttCuttab0001"  Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
-                        <r:RibbonButton x:Name="bttCopytab0001"  Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
-                        <r:RibbonButton x:Name="bttPastetab0001" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
+                        <r:RibbonButton x:Name="btnCuttab0001"  Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
+                        <r:RibbonButton x:Name="btnCopytab0001"  Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
+                        <r:RibbonButton x:Name="btnPastetab0001" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
                     </r:RibbonMenuButton>
-                    <r:RibbonButton x:Name="bttCutOtherstab0001" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
-                    <r:RibbonButton x:Name="bttCopyOtherstab0001" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
-                    <r:RibbonButton x:Name="bttPasteOtherstab0001" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
+                    <r:RibbonButton x:Name="btnCutOtherstab0001" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
+                    <r:RibbonButton x:Name="btnCopyOtherstab0001" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
+                    <r:RibbonButton x:Name="btnPasteOtherstab0001" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
                     <r:RibbonMenuButton Label="Others" SmallImageSource="..\Images/delete.png" >
-                        <r:RibbonButton x:Name="bttDeleteOtherstab0001" Label="Delete" SmallImageSource="..\Images/delete.png"/>
+                        <r:RibbonButton x:Name="btnDeleteOtherstab0001" Label="Delete" SmallImageSource="..\Images/delete.png"/>
                     </r:RibbonMenuButton>
                 </r:RibbonGroup>
             </r:RibbonTab>
                 <r:RibbonTab x:Name="tab7" Header="MyRibbonTab" AllowDrop="True">
                     <r:RibbonGroup Header="Group Edit">
                         <r:RibbonMenuButton Label="Menu Edit" LargeImageSource="..\Images/copy.png" >
-                            <r:RibbonButton x:Name="bttCuttab2" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
-                            <r:RibbonButton x:Name="bttCopytab2" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
-                            <r:RibbonButton x:Name="bttPastetab2" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
+                            <r:RibbonButton x:Name="btnCuttab2" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
+                            <r:RibbonButton x:Name="btnCopytab2" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
+                            <r:RibbonButton x:Name="btnPastetab2" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
                         </r:RibbonMenuButton>
-                        <r:RibbonButton x:Name="bttCutOtherstab2" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
-                        <r:RibbonButton x:Name="bttCopyOtherstab2" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
-                        <r:RibbonButton x:Name="bttPasteOtherstab2" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
+                        <r:RibbonButton x:Name="btnCutOtherstab2" Command="Cut" Label="Cut" ToolTip="Cut selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/cut.png" />
+                        <r:RibbonButton x:Name="btnCopyOtherstab2" Command="Copy" Label="Copy" ToolTip="Copy selection to Windows Clipboard." ToolBar.OverflowMode="Never" SmallImageSource="..\Images/copy.png" />
+                        <r:RibbonButton x:Name="btnPasteOtherstab2" Command="Paste" Label="Paste" ToolTip="Paste from Windows Clipboard." ToolBar.OverflowMode="AsNeeded" SmallImageSource="..\Images/paste.png" />
                         <r:RibbonMenuButton Label="Others" SmallImageSource="..\Images/delete.png" >
-                            <r:RibbonButton x:Name="bttDeleteOtherstab2" Label="Delete" SmallImageSource="..\Images/delete.png"/>
+                            <r:RibbonButton x:Name="btnDeleteOtherstab2" Label="Delete" SmallImageSource="..\Images/delete.png"/>
                         </r:RibbonMenuButton>
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="File">
-                        <r:RibbonButton x:Name="bttNewtab2" Command="New" Label="New" LargeImageSource="..\Images/copy.png" />
-                        <r:RibbonButton x:Name="bttOpentab2" Command="Open" Label="Open" LargeImageSource="..\Images/copy.png" />
-                        <r:RibbonButton x:Name="bttSavetab2" Command="Save" Label="Save" LargeImageSource="..\Images/copy.png" />
+                        <r:RibbonButton x:Name="btnNewtab2" Command="New" Label="New" LargeImageSource="..\Images/copy.png" />
+                        <r:RibbonButton x:Name="btnOpentab2" Command="Open" Label="Open" LargeImageSource="..\Images/copy.png" />
+                        <r:RibbonButton x:Name="btnSavetab2" Command="Save" Label="Save" LargeImageSource="..\Images/copy.png" />
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="Delete">
-                        <r:RibbonButton x:Name="bttDeletetab2" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="..\Images/delete.png" />
+                        <r:RibbonButton x:Name="btnDeletetab2" Command="Delete" Label="Delete" ToolTip="Delete selection." ToolBar.OverflowMode="Always" LargeImageSource="..\Images/delete.png" />
                     </r:RibbonGroup>
                 </r:RibbonTab>
                 <r:RibbonTab Header="Home" GroupSizeReductionOrder="Clipboard, Font, Insert, Paragraph, Editing, Fontt">
                     <r:RibbonGroup Header="Clipboard" Name="Clipboard" SmallImageSource="..\Images/new.png" >
-                        <r:RibbonButton x:Name="bttNewtab10" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/new.png"/>
-                        <r:RibbonButton x:Name="bttOpentab10" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                        <r:RibbonButton x:Name="bttSavetab10" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttNewtab20" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/new.png"/>
-                        <r:RibbonButton x:Name="bttOpentab20" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                        <r:RibbonButton x:Name="bttSavetab20" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnNewtab10" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/new.png"/>
+                        <r:RibbonButton x:Name="btnOpentab10" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                        <r:RibbonButton x:Name="btnSavetab10" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnNewtab20" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/new.png"/>
+                        <r:RibbonButton x:Name="btnOpentab20" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                        <r:RibbonButton x:Name="btnSavetab20" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="Font" Name="Font" SmallImageSource="..\Images\new.png" >
-                            <r:RibbonButton x:Name="bttNewtab11" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/new.png"/>
-                            <r:RibbonButton x:Name="bttOpentab11" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                            <r:RibbonButton x:Name="bttSavetab11" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
-                            <r:RibbonButton x:Name="bttNewtab22" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/new.png"/>
-                            <r:RibbonButton x:Name="bttOpentab22" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                            <r:RibbonButton x:Name="bttSavetab22" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                            <r:RibbonButton x:Name="btnNewtab11" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/new.png"/>
+                            <r:RibbonButton x:Name="btnOpentab11" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                            <r:RibbonButton x:Name="btnSavetab11" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                            <r:RibbonButton x:Name="btnNewtab22" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/new.png"/>
+                            <r:RibbonButton x:Name="btnOpentab22" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                            <r:RibbonButton x:Name="btnSavetab22" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
                         </r:RibbonGroup>
                     <r:RibbonGroup Header="Paragraph" Name="Paragraph" SmallImageSource="..\Images/new.png" >
-                        <r:RibbonButton x:Name="bttNewtab111" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttOpentab111" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                        <r:RibbonButton x:Name="bttSavetab111" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttNewtab222" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttOpentab222" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                        <r:RibbonButton x:Name="bttSavetab222" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnNewtab111" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnOpentab111" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                        <r:RibbonButton x:Name="btnSavetab111" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnNewtab222" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnOpentab222" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                        <r:RibbonButton x:Name="btnSavetab222" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="Insert" Name="Insert" SmallImageSource="..\Images/new.png" >
-                        <r:RibbonButton x:Name="bttNewtab1111" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttOpentab1111" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                        <r:RibbonButton x:Name="bttSavetab1111" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttNewtab2222" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttOpentab2222" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                        <r:RibbonButton x:Name="bttSavetab2222" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnNewtab1111" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnOpentab1111" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                        <r:RibbonButton x:Name="btnSavetab1111" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnNewtab2222" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnOpentab2222" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                        <r:RibbonButton x:Name="btnSavetab2222" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="Editing" Name="Editing" SmallImageSource="..\Images/new.png" >
-                        <r:RibbonButton x:Name="bttNewtab11111" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttOpentab11111" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                        <r:RibbonButton x:Name="bttSavetab11111" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttNewtab22222" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttOpentab22222" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                        <r:RibbonButton x:Name="bttSavetab22222" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnNewtab11111" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnOpentab11111" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                        <r:RibbonButton x:Name="btnSavetab11111" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnNewtab22222" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnOpentab22222" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                        <r:RibbonButton x:Name="btnSavetab22222" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
                     </r:RibbonGroup>
                     <r:RibbonGroup Header="Fontt" Name="Fontt" SmallImageSource="..\Images\new.png" >
                         <r:RibbonGroup.ItemsPanel>
@@ -255,12 +255,12 @@
                                 <WrapPanel Orientation="Horizontal" MaxWidth="300" />
                             </ItemsPanelTemplate>
                         </r:RibbonGroup.ItemsPanel>
-                        <r:RibbonButton x:Name="bttNewtab111111" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttOpentab111111" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                        <r:RibbonButton x:Name="bttSavetab111111" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttNewtab222222" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
-                        <r:RibbonButton x:Name="bttOpentab222222" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
-                        <r:RibbonButton x:Name="bttSavetab222222" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnNewtab111111" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnOpentab111111" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                        <r:RibbonButton x:Name="btnSavetab111111" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnNewtab222222" Command="New" Label="New" LargeImageSource="..\Images/new.png" SmallImageSource="..\Images/save.png"/>
+                        <r:RibbonButton x:Name="btnOpentab222222" Command="Open" Label="Open" LargeImageSource="..\Images/open.png" SmallImageSource="..\Images/open.png"/>
+                        <r:RibbonButton x:Name="btnSavetab222222" Command="Save" Label="Save" LargeImageSource="..\Images/save.png" SmallImageSource="..\Images/save.png"/>
                     </r:RibbonGroup>
                 </r:RibbonTab>
             </r:Ribbon>
@@ -409,6 +409,7 @@
         <TabControl>
             <!--<Label Content="My label"></Label>-->
             <TabItem Header="TabItem1">
+                
             </TabItem>
             <TabItem Header="TabItem2">
             </TabItem>

@@ -21,8 +21,6 @@ namespace WpfTraining06Ribbon
         {
             this.WindowState = WindowState.Maximized;
             InitializeComponent();
-
-
         }      
 
         #region ToggleButton collapse/Expand

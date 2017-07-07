@@ -138,7 +138,7 @@
             </StackPanel>
         </StackPanel>
     </StackPanel>-->
-    <!--<StackPanel Margin="10">
+    <StackPanel Margin="10">
         <StackPanel Margin="10">
             <Label FontWeight="Bold">Are you ready?</Label>
             <RadioButton>Yes</RadioButton>
@@ -177,7 +177,7 @@
                 </WrapPanel>
             </RadioButton>
         </StackPanel>
-    </StackPanel>-->
+    </StackPanel>
     <!--<StackPanel Margin="10">
         <Label>Text:</Label>
         <TextBox />
@@ -217,7 +217,7 @@
             Editor area...
         </TextBox>
     </DockPanel>-->
-    <StackPanel Margin="10" TextOptions.TextFormattingMode="Display">
+    <!--<StackPanel Margin="10" TextOptions.TextFormattingMode="Display">
         <Label TextOptions.TextFormattingMode="Ideal" FontSize="9">TextFormattingMode.Ideal, small text</Label>
         <Label TextOptions.TextFormattingMode="Display" FontSize="9">TextFormattingMode.Display, small text</Label>
         <Label TextOptions.TextFormattingMode="Ideal" FontSize="20">TextFormattingMode.Ideal, large text</Label>
@@ -230,5 +230,5 @@
         <Label TextOptions.TextRenderingMode="Aliased" FontSize="18">TextRenderingMode.Aliased, large text</Label>
         <Label TextOptions.TextRenderingMode="ClearType" FontSize="18">TextRenderingMode.ClearType, large text</Label>
         <Label TextOptions.TextRenderingMode="Grayscale" FontSize="18">TextRenderingMode.Grayscale, large text</Label>
-    </StackPanel>
+    </StackPanel>-->
 </Window>
