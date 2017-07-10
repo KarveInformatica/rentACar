@@ -1,12 +1,6 @@
-﻿using KRibbon.Model;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 
-namespace KRibbon.Model.Generic.ObservableCollection
+namespace KRibbon.ViewModel.Generic.ObservableCollection
 {
     public class BancoViewModel : PropertyChangedBase
     {

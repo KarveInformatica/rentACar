@@ -1,12 +1,9 @@
 ﻿using iAnywhere.Data.SQLAnywhere;
 using KRibbon.Properties;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 
-namespace KRibbon.Model.Sybase
+namespace KRibbon.ViewModel.Sybase
 {
     public class ErrorsMessage
     {
@@ -19,9 +16,9 @@ namespace KRibbon.Model.Sybase
         {
             string nativeerror = msgError.Equals("default") ? e.NativeError.ToString() : msgError;
             MessageBox.Show(("(" + e.NativeError.ToString() + ") " + nativeerror + "\n\n" + e.StackTrace.ToString()), 
-                            Resources.msgErrorTitulo, 
-                            MessageBoxButton.OK, 
-                            MessageBoxImage.Error);
+                                Resources.msgErrorTitulo, 
+                                MessageBoxButton.OK, 
+                                MessageBoxImage.Error);
         }
 
         /// <summary>
@@ -33,9 +30,9 @@ namespace KRibbon.Model.Sybase
         {
             string nativeerror = msgError.Equals("default") ? e.Message.ToString() : msgError;
             MessageBox.Show(("(" + e.Message.ToString() + ") " + nativeerror + "\n\n" + e.StackTrace.ToString()) + "\n\n" + e.TargetSite, 
-                            Resources.msgErrorTitulo, 
-                            MessageBoxButton.OK, 
-                            MessageBoxImage.Error);
+                                Resources.msgErrorTitulo, 
+                                MessageBoxButton.OK, 
+                                MessageBoxImage.Error);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 using Microsoft.Windows.Controls.Ribbon;
-using KRibbon.Model.Sybase;
+using KRibbon.ViewModel.Sybase;
 
 namespace KRibbon
 {
@@ -12,8 +12,7 @@ namespace KRibbon
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
     public partial class MainWindow : RibbonWindow
-    {
-        //public static RibbonWindow ribbonWindow = new RibbonWindow()
+    {        
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +26,7 @@ namespace KRibbon
 
             //Carga la configuración personalizada del usuario (idioma y RibbonTabs/RibbonGroups). En caso que no exista configuración personalizada,
             //se cargará la configuración por defecto según app.exe.config y VariablesGlobales.ribbontabdefaultdictionary
-            UserConfig.LoadCurrentUserRibbonTabConfig();
+            UserAndDefaultConfig.LoadCurrentUserRibbonTabConfig();
         }
 
         public void btnHelp_Click(object sender, RoutedEventArgs e)

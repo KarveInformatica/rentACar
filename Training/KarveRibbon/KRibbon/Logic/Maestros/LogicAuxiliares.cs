@@ -1,8 +1,8 @@
-﻿using KRibbon.Model;
-using KRibbon.Model.Generic.ObservableCollection;
-using KRibbon.Model.Sybase;
-using KRibbon.Utility;
+﻿using KRibbon.Utility;
 using KRibbon.View;
+using KRibbon.ViewModel;
+using KRibbon.ViewModel.Generic.ObservableCollection;
+using KRibbon.ViewModel.Sybase;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
@@ -11,8 +11,6 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Interactivity;
 using static KRibbon.Utility.VariablesGlobalesCollections;
-using System;
-using KRibbon.ViewModel.ConfiguracionViewModel;
 using static KRibbon.Utility.VariablesGlobalesEnumerations;
 
 namespace KRibbon.Logic.Maestros
@@ -20,18 +18,20 @@ namespace KRibbon.Logic.Maestros
     public class LogicAuxiliares
     {
         /// <summary>
-        /// Proceso de añadir un TabItem al TabControl según el tipo de auxiliar que recibe por param. Si el TabItem ya está mostrado, 
+        /// Proceso de añadir un TabItem al TabControl según la EOpcion que recibe por param. Si el TabItem ya está mostrado, 
         /// no se carga de nuevo, simplemente se establece el foco en ese TabItem.
         /// </summary>
         /// <param name="opcion"></param>
         public static void prepareTabItemDataGrid(EOpcion opcion)
         {
             if (tabitemdictionary.Where(p => p.Key == opcion).Count() == 0)
-            //if(!ifExistTabItem)
-            {
+            {   //Se crea un nuevo ObservableCollection<object> donde guardaremos los datos recibidos de la BBDD
                 dgitemsobscollection = new ObservableCollection<object>();
+                //Se recupera el nombre de la tabla de la BBDD
                 string tablaauxiliares = tiposauxiliaresdictionary.Where(z => z.Key == opcion).FirstOrDefault().Value.nombretabladb;
-
+                //Según la opcion recibida por params, se recuperan los datos de su correspondiente tabla de la BBDD, se crea un 
+                //ObservableCollectionViewModel del tipo que corresponde y se le cargan los datos recuperados desde la BBDD, se carga una nueva
+                //DataGrid dentro de un nuevo TabItem con los datos del ObservableCollectionViewModel según el tipo de dato que corresponda
                 switch (opcion)
                 {
                     #region case Auxiliares Clientes
@@ -97,22 +97,9 @@ namespace KRibbon.Logic.Maestros
                 }
             }
             else
-            {   //Si el TabItem del tipo de auxiliar ya está mostrado, no se carga
-                //de nuevo, simplemente se establece el foco en ese TabItem
+            {   //Si el TabItem ya está mostrado, no se carga de nuevo, simplemente se establece el foco en ese TabItem
                 tabitemdictionary.Where(z => z.Key == opcion).FirstOrDefault().Value.TbItem.Focus();
             }
-        }
-
-        public static void prepareTabItemUserControl(EOpcion opcion)
-        {
-            dgitemsobscollection = new ObservableCollection<object>();
-            DatosAyudaTabItem tabitemauxiliares = new DatosAyudaTabItem(dgitemsobscollection);
-
-            //Se crea el Tabitem
-            TabItem tbitem = Generic.ManageTabItem.createTabItemDataGrid(opcion, tabitemauxiliares);
-            //Creamos el DataGrid
-
-            tbitem.Content = new CintaOpcionesUserControl();            
         }
 
         /// <summary>
@@ -161,7 +148,6 @@ namespace KRibbon.Logic.Maestros
                 tbitem.Content = datagrid;
             }
         }
-
 
         public static void SetTrigger(DataGrid contentControl)
         {

@@ -1,8 +1,8 @@
 ﻿using KRibbon.Commands.ConfiguracionCommand;
-using KRibbon.Logic.Maestros;
-using KRibbon.Model.Generic;
+using KRibbon.Logic.Configuracion;
 using KRibbon.Utility;
 using KRibbon.View;
+using KRibbon.ViewModel.Generic;
 using System.Linq;
 using System.Windows.Input;
 using static KRibbon.Utility.VariablesGlobalesCollections;
@@ -49,7 +49,7 @@ namespace KRibbon.ViewModel.ConfiguracionViewModel
             //la Tab correspondiente al primer valor de la Enum EOpcion
             if (opcion.ToString() == parameter.ToString())
             {
-                LogicAuxiliares.prepareTabItemUserControl(opcion);
+                LogicCintaOpciones.prepareTabItemUserControl(opcion);
             }
         }
 
@@ -60,7 +60,7 @@ namespace KRibbon.ViewModel.ConfiguracionViewModel
         public void SaveCintaOpciones(object parameter)
         {
             CintaOpcionesUserControl cintaopcionesusercontrol = parameter as CintaOpcionesUserControl;
-            UserConfig.SetDefaultRibbonTabConfig(cintaopcionesusercontrol);
+            UserAndDefaultConfig.SetDefaultRibbonTabConfig(cintaopcionesusercontrol);
         }
     }
 }

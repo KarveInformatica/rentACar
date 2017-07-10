@@ -1,18 +1,12 @@
 ﻿using iAnywhere.Data.SQLAnywhere;
 using KRibbon.Properties;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
 
-namespace KRibbon.Model.Sybase
+namespace KRibbon.ViewModel.Sybase
 {
     public class ErrorsDB
     {
         /// <summary>
-        /// Comprueba el SAException e.NativeError, para poder mostrar el 
-        /// mensaje de error correspondiente según el idioma seleccionado
+        /// Comprueba el SAException e.NativeError, para poder mostrar el mensaje de error correspondiente según el idioma seleccionado
         /// </summary>
         /// <param name="e"></param>
         static public void MessageError(SAException e)
@@ -20,7 +14,7 @@ namespace KRibbon.Model.Sybase
             switch (e.NativeError)
             {
                 case -83: //Specified DataBase not found
-                          //omprobrar que el DataBaseName en la connectionstring sean correctos en AuxiliaresModel.GetAuxiliares
+                    //Comprobrar que el DataBaseName en la connectionstring sean correctos en AuxiliaresModel.GetAuxiliares
                     ErrorsMessage.ShowMessage(e, Resources.msgError83);
                     break;
                 case -100: //DataBase Server not found
@@ -36,8 +30,8 @@ namespace KRibbon.Model.Sybase
                     ErrorsMessage.ShowMessage(e, Resources.msgError131);
                     break;
                 case -141: //Table not found
-                    //Comprobar que coindida el nombre de la tabla de la BBDD con el 
-                    //especificado en VariablesGlobales.Dictionary<EOpcion, DatosAyudaOpciones>
+                    //Comprobar que coindida el nombre de la tabla de la BBDD con el especificado en 
+                    //VariablesGlobales.Dictionary<EOpcion, DatosAyudaOpciones>
                     ErrorsMessage.ShowMessage(e, Resources.msgError141);
                     break;
                 default:

@@ -1,18 +1,6 @@
-﻿using KRibbon;
-using KRibbon.Model;
-using KRibbon.Model.Sybase;
-using KRibbon.Utility;
-using static KRibbon.Utility.VariablesGlobalesCollections;
-using Microsoft.Windows.Controls.Ribbon;
-using System;
-using System.Collections.Generic;
+﻿using Microsoft.Windows.Controls.Ribbon;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using static KRibbon.Utility.VariablesGlobalesEnumerations;
 
 namespace KRibbon.Utility

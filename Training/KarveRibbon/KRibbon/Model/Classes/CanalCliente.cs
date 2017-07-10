@@ -1,11 +1,11 @@
 ﻿using KRibbon.Properties;
-using KRibbon.Model.Generic;
+using KRibbon.ViewModel.Generic;
 using System.Collections.Generic;
 using static KRibbon.Utility.VariablesGlobalesEnumerations;
 
-namespace KRibbon.Model
+namespace KRibbon.ViewModel
 {
-    public class CanalCliente : PropertyChangedBase//, IAuxiliares
+    public class CanalCliente : PropertyChangedBase
     {
         #region List<DBCriterios>
         public static List<DBCriterios> dbcriterioslist = new List<DBCriterios>()

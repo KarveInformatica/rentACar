@@ -1,11 +1,4 @@
-﻿using KRibbon.Model.Generic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Controls;
-using static KRibbon.Utility.VariablesGlobalesCollections;
-using KRibbon.Model.Generic.ObservableCollection;
+﻿using System.Windows.Controls;
 using System.Collections.ObjectModel;
 
 namespace KRibbon.Utility

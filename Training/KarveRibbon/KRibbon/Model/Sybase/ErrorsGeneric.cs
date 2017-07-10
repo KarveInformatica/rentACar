@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace KRibbon.Model.Sybase
+namespace KRibbon.ViewModel.Sybase
 {
     class ErrorsGeneric
     {
         /// <summary>
-        /// Comprueba el Exception e.Message, para poder mostrar el 
-        /// mensaje de error correspondiente según el idioma seleccionado
+        /// Comprueba el Exception e.Message, para poder mostrar el mensaje de error correspondiente según el idioma seleccionado
         /// </summary>
         /// <param name="e"></param>
         static public void MessageError(Exception e)

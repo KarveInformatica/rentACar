@@ -1,4 +1,4 @@
-﻿using KRibbon.Model.Sybase;
+﻿using KRibbon.ViewModel.Sybase;
 using KRibbon.Properties;
 using KRibbon.View;
 using KRibbon.ViewModel.GenericViewModel;
@@ -12,7 +12,7 @@ using System.Windows.Controls;
 
 namespace KRibbon.Utility
 {
-    public class UserConfig
+    public class UserAndDefaultConfig
     {
         /// <summary>
         /// Devuelve el Value de la Key recibida por params desde el archivo app.exe.config

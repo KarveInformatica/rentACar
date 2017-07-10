@@ -1,7 +1,7 @@
 ﻿using iAnywhere.Data.SQLAnywhere;
-using KRibbon.Model.SQL;
+using KRibbon.ViewModel.SQL;
 using KRibbon.Utility;
-using KRibbon.Model.Generic;
+using KRibbon.ViewModel.Generic;
 using static KRibbon.Utility.VariablesGlobalesCollections;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using System.Windows;
 using System.Reflection;
 using System.Data;
 
-namespace KRibbon.Model.Sybase
+namespace KRibbon.ViewModel.Sybase
 {
     public class AuxiliaresModel
     {
@@ -55,7 +55,6 @@ namespace KRibbon.Model.Sybase
             catch (SAException e)
             {
                 ErrorsDB.MessageError(e);
-                //MessageBox.Show(e.ToString());
             }
             finally
             {

@@ -1,5 +1,5 @@
 ﻿using KRibbon.Commands.Generic;
-using KRibbon.Model.Generic;
+using KRibbon.ViewModel.Generic;
 using System.Windows.Input;
 
 namespace KRibbon.ViewModel.GenericViewModel

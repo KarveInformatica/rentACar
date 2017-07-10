@@ -1,6 +1,6 @@
 ﻿using static KRibbon.Utility.VariablesGlobalesEnumerations;
 
-namespace KRibbon.Model.Generic
+namespace KRibbon.ViewModel.Generic
 {
     /// <summary>
     /// Criterios para los campos de la datagrid, y de su correspondiente campo en la DB:<para/>

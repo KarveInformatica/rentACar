@@ -1,6 +1,6 @@
 ﻿using KRibbon.Commands.Generic;
 using KRibbon.Logic.Maestros;
-using KRibbon.Model.Generic;
+using KRibbon.ViewModel.Generic;
 using System.Linq;
 using System.Windows.Input;
 using static KRibbon.Utility.VariablesGlobalesCollections;

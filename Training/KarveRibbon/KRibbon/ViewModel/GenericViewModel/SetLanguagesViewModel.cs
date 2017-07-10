@@ -1,5 +1,5 @@
 ﻿using KRibbon.Commands.Generic;
-using KRibbon.Model.Generic;
+using KRibbon.ViewModel.Generic;
 using KRibbon.Utility;
 using System.Globalization;
 using System.Threading;
@@ -35,7 +35,7 @@ namespace KRibbon.ViewModel.GenericViewModel
             ChangeLanguage.ChangeCulture(Thread.CurrentThread.CurrentUICulture);
 
             // Se guarda el idioma según el param recibido del xaml en app.config
-            UserConfig.SetCurrentUserLanguage("Language", parameter.ToString());
+            UserAndDefaultConfig.SetCurrentUserLanguage("Language", parameter.ToString());
         }
     }
 }

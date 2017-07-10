@@ -1,9 +1,6 @@
-﻿using KRibbon.Model.Sybase;
+﻿using KRibbon.ViewModel.Sybase;
 using Microsoft.Windows.Controls.Ribbon;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Input;
 
@@ -11,6 +8,11 @@ namespace KRibbon.Utility
 {
     public class RibbonGroupDragDrop
     {
+        /// <summary>
+        /// Intercambia las posiciones de los RibbonGroup de un RibbonTab
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public static void RibbonGroup_PreviewMouseMove(object sender, MouseEventArgs e)
         {
             try
@@ -27,10 +29,15 @@ namespace KRibbon.Utility
             }
             catch (Exception ex)
             {
-                ErrorsGeneric.MessageError(ex);
+                //ErrorsGeneric.MessageError(ex);
             }
         }
 
+        /// <summary>
+        /// Intercambia las posiciones de los RibbonGroup de un RibbonTab
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public static void RibbonGroup_Drop(object sender, DragEventArgs e)
         {
             try
@@ -39,7 +46,7 @@ namespace KRibbon.Utility
                 var origin = e.Data.GetData(typeof(RibbonGroup)) as RibbonGroup;
 
                 if (!target.Equals(origin))
-                {
+                {   //Se intercambian las posiciones de los RibbonGroup de un RibbonTab
                     var ribbontab = target.Parent as RibbonTab;
                     int originIndex = ribbontab.Items.IndexOf(origin);
                     int targetIndex = ribbontab.Items.IndexOf(target);
@@ -50,12 +57,13 @@ namespace KRibbon.Utility
                     ribbontab.Items.Remove(target);
                     ribbontab.Items.Insert(originIndex, target);
 
-                    UserConfig.SetCurrentUserRibbonTabConfig(ribbontab);
+                    //Se guarda la nueva configuración en app.exe.config
+                    UserAndDefaultConfig.SetCurrentUserRibbonTabConfig(ribbontab);
                 }
             }
             catch (Exception ex)
             {
-                ErrorsGeneric.MessageError(ex);
+                //ErrorsGeneric.MessageError(ex);
             }
         }
     }

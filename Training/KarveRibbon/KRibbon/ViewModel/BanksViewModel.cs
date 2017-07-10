@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
-using KRibbon.Model;
-namespace KRibbon.Model.Generic
+using KRibbon.ViewModel;
+namespace KRibbon.ViewModel.Generic
 {
 
     class BanksViewModel: PropertyChangedBase

@@ -1,9 +1,9 @@
-﻿using KRibbon.Model.Generic;
+﻿using KRibbon.ViewModel.Generic;
 using KRibbon.Properties;
 using System.Collections.Generic;
 using static KRibbon.Utility.VariablesGlobalesEnumerations;
 
-namespace KRibbon.Model
+namespace KRibbon.ViewModel
 {
     public class TipoComisionista : PropertyChangedBase
     {

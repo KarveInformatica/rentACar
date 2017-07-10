@@ -1,6 +1,6 @@
 ﻿using iAnywhere.Data.SQLAnywhere;
-using KRibbon.Model.Generic;
-using KRibbon.Model.Sybase;
+using KRibbon.ViewModel.Generic;
+using KRibbon.ViewModel.Sybase;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -97,7 +97,8 @@ namespace KRibbon.Utility
         }
 
         /// <summary>
-        /// Añadir un valor(value) recuperado de la DB mediante el SADataReader, a la propiedad(nombrepropiedadobj) pasada por params del objeto(obj) pasado también por params
+        /// Añadir un valor(value) recuperado de la DB mediante el SADataReader, a la propiedad(nombrepropiedadobj) pasada por params del 
+        /// objeto(obj) pasado también por params
         /// </summary>
         /// <param name="obj">El objeto al cual añadimos el valor recuperado desde el SADataReader</param>
         /// <param name="nombrepropiedad">Nombre de la propiedad del objeto a la cual le añadiremos el valor recuperado desde el SADataReader</param>
@@ -118,7 +119,6 @@ namespace KRibbon.Utility
             catch (SAException e)
             {
                 ErrorsDB.MessageError(e);
-                //MessageBox.Show(e.Message.ToString());
             }
         }
     }

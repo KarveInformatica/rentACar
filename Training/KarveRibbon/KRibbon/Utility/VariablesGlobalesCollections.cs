@@ -1,4 +1,4 @@
-﻿using KRibbon.Model.Generic.ObservableCollection;
+﻿using KRibbon.ViewModel.Generic.ObservableCollection;
 using KRibbon.ViewModel.ConfiguracionViewModel;
 using Microsoft.Windows.Controls.Ribbon;
 using System.Collections.Generic;
