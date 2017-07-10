@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using static KRibbon.Utility.VariablesGlobales;
+using static KRibbon.Utility.VariablesGlobalesCollections;
 
 namespace KRibbon.Utility
 {

@@ -4,63 +4,21 @@ using Microsoft.Windows.Controls.Ribbon;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
+using static KRibbon.Utility.VariablesGlobalesEnumerations;
 
 namespace KRibbon.Utility
 {
-    public class VariablesGlobales
+    public class VariablesGlobalesCollections
     {
         /// <summary>
-        /// Enumeración de los tipos de auxiliares
+        /// Dictionary donde se guardan los TabItem activos. Key=EOpcion, Value=DatosAyudaTabItem(ObservableCollection<object>, TabItem)
         /// </summary>
-        public enum EOpcion
-        {
-            #region Maestros
-                rbtnBancosClientes,
-                rbtnBloqueFacturacion,
-                rbtnCanales,
-                rbtnCargosPersonal,
+        public static Dictionary<EOpcion, DatosAyudaTabItem> tabitemdictionary = new Dictionary<EOpcion,DatosAyudaTabItem>();
 
-                rbtnTipoComisionista,
-
-                rbtnFormaPagoProveedor,
-
-                rbtnGruposTarifa,
-            #endregion
-
-            #region Contratos
-            #endregion
-
-            #region Reservas
-            #endregion
-
-            #region Atipicos
-            #endregion
-
-            #region Comercial
-            #endregion
-
-            #region Facturación
-            #endregion
-
-            #region Flota
-            #endregion
-
-            #region Incidencias
-            #endregion
-
-            #region Estadísticas
-            #endregion
-
-            #region Listados
-            #endregion
-
-            #region Configuración
-                rbtnCinta,
-            #endregion
-        }
-
-        public static Dictionary<EOpcion, DatosAyudaTabItem> tabitemlist = new Dictionary<EOpcion,DatosAyudaTabItem>();
-        
+        /// <summary>
+        /// Dictionary que recopila la información de los RibbonButtons (la referencia en Resources, el nombre de la tabla de la BBDD, el ViewModel)
+        /// Key=EOpcion, Value=DatosAyudaOpciones(string propertiesresources, string nombretabladb, PropertyChangedBase viewmodelbase)
+        /// </summary>
         public static Dictionary<EOpcion, DatosAyudaOpciones> tiposauxiliaresdictionary = new Dictionary<EOpcion, DatosAyudaOpciones>()
         {
             #region Maestros
@@ -126,6 +84,10 @@ namespace KRibbon.Utility
 
         public static ObservableCollection<object> dgitemsobscollection;
 
+        /// <summary>
+        /// Dictionary que recopila la información de los RibbonTab (el RibbonTab, sus correspondientes RibbonGroups, el CheckBox de la opción CintaOpciones)
+        /// Key=ERibbonTab, Value=RibbonTabAndGroup(RibbonTab ribbontab, string checkbox, List<RibbonGroup> ribbongroup)
+        /// </summary>
         public static Dictionary<ERibbonTab, RibbonTabAndGroup> ribbontabdefaultdictionary = new Dictionary<ERibbonTab, RibbonTabAndGroup> ()
         {
             { ERibbonTab.tbMaestros,      new RibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).tbMaestros,
@@ -201,6 +163,10 @@ namespace KRibbon.Utility
                                                                                     ((MainWindow)Application.Current.MainWindow).rgrKarve } } }
         };
 
+
+        /// <summary>
+        /// List que recopila los RibbonTab
+        /// </summary>
         public static List<RibbonTab> ribbontablist = new List<RibbonTab>()
         {
             ((MainWindow)Application.Current.MainWindow).tbMaestros,
@@ -214,36 +180,5 @@ namespace KRibbon.Utility
             ((MainWindow)Application.Current.MainWindow).tbListados,
             ((MainWindow)Application.Current.MainWindow).tbConfiguracion
         };
-
-        public enum ERibbonTab
-        {
-            tbMaestros,
-            tbContratos,
-            tbReservas,
-            tbAtipicos,
-            tbComercial,
-            tbFacturacion,
-            tbFlota,
-            tbIncidencias,
-            tbEstadisticas,
-            tbListados,
-            tbConfiguracion
-        }
-
-        public enum ETiposDatoColumnaDB
-        {
-            DBstring,
-            DBbool,
-            DBbyte, //byte en C# = tinyint en la DB
-            DBsmallint,
-            DBint,
-            DBlong,
-            DBdecimal,
-            DBdouble,
-            DBdate,
-            DBdatetime,
-            DBsmalldatetime,
-            DBtime
-        }
     }
 }

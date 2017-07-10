@@ -11,10 +11,5 @@ namespace KRibbon
     /// </summary>
     public partial class App : Application
     {
-        private void Application_Startup(object sender, StartupEventArgs e)
-        {
-            UserConfig.LoadLanguage();
-            //UserConfig.LoadRibbonTabs(Current.MainWindow);
-        }
     }
 }

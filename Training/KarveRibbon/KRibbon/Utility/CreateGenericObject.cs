@@ -1,13 +1,11 @@
 ﻿using iAnywhere.Data.SQLAnywhere;
+using KRibbon.Model.Generic;
 using KRibbon.Model.Sybase;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using KRibbon.Model.Generic;
 using System.Collections.ObjectModel;
-using static KRibbon.Utility.VariablesGlobales;
+using System.Reflection;
+using static KRibbon.Utility.VariablesGlobalesEnumerations;
 
 namespace KRibbon.Utility
 {

@@ -2,7 +2,7 @@
 using KRibbon.Model.SQL;
 using KRibbon.Utility;
 using KRibbon.Model.Generic;
-using static KRibbon.Utility.VariablesGlobales;
+using static KRibbon.Utility.VariablesGlobalesCollections;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

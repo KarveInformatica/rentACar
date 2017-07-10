@@ -2,7 +2,7 @@
 using KRibbon.Model;
 using KRibbon.Model.Sybase;
 using KRibbon.Utility;
-using static KRibbon.Utility.VariablesGlobales;
+using static KRibbon.Utility.VariablesGlobalesCollections;
 using Microsoft.Windows.Controls.Ribbon;
 using System;
 using System.Collections.Generic;
@@ -13,6 +13,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using static KRibbon.Utility.VariablesGlobalesEnumerations;
 
 namespace KRibbon.Utility
 {
@@ -105,11 +106,11 @@ namespace KRibbon.Utility
         public static void addTabItem(EOpcion tipoauxiliar)
         {
             ////Se comprueba que la tab ya no esté mostrada
-            //if (tabitemlist.Where(p => p.TipoAuxiliar == tipoauxiliar).Count() == 0)
+            //if (tabitemdictionary.Where(p => p.TipoAuxiliar == tipoauxiliar).Count() == 0)
             //{
             //    TabItem tbitem = new TabItem();
             //    tbitem.Header = tiposauxiliaresdictionary.Where(z => z.Key == tipoauxiliar).FirstOrDefault().Value.propertiesresources;
-            //    //tabitemlist.Add(tipoauxiliar, tbitem);
+            //    //tabitemdictionary.Add(tipoauxiliar, tbitem);
             //    ((MainWindow)Application.Current.MainWindow).tbControl.Items.Add(tbitem);
             //    tbitem.Focus();
 
@@ -137,11 +138,11 @@ namespace KRibbon.Utility
             //else
             //{   //Si el TabItem del tipo de auxiliar ya se está mostrado, no se carga
             //    //de nuevo, simplemente se establece el foco en ese TabItem
-            //    foreach (var item in tabitemlist)
+            //    foreach (var item in tabitemdictionary)
             //    {
             //        if (item.TipoAuxiliar.Equals(tipoauxiliar))
             //        {
-            //            //TabItem tabitem = tabitemlist[item.TbItem];
+            //            //TabItem tabitem = tabitemdictionary[item.TbItem];
             //            //tabitem.Focus();
             //            item.TbItem.Focus();
             //        }

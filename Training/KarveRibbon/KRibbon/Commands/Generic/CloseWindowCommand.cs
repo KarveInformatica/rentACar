@@ -1,11 +1,5 @@
-﻿using KRibbon.Commands.Generic;
-using KRibbon.Model.Generic;
-using KRibbon.ViewModel.GenericViewModel;
+﻿using KRibbon.ViewModel.GenericViewModel;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
 using System.Windows.Input;
 
 namespace KRibbon.Commands.Generic
@@ -15,6 +9,7 @@ namespace KRibbon.Commands.Generic
         private CloseWindowViewModel closewindowvm;
 
         public CloseWindowCommand() {}
+
         public CloseWindowCommand(CloseWindowViewModel vm)
         {
             this.closewindowvm = vm;

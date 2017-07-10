@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Language" Type="System.String" Scope="User">
-      <Value Profile="(Default)">en-GB</Value>
+      <Value Profile="(Default)">es-ES</Value>
     </Setting>
     <Setting Name="CadenaConexion" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;

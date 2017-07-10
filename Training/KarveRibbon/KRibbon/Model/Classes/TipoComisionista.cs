@@ -1,11 +1,7 @@
-﻿using KRibbon.Properties;
-using KRibbon.Model.Generic;
-using static KRibbon.Utility.VariablesGlobales;
-using System;
+﻿using KRibbon.Model.Generic;
+using KRibbon.Properties;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
+using static KRibbon.Utility.VariablesGlobalesEnumerations;
 
 namespace KRibbon.Model
 {

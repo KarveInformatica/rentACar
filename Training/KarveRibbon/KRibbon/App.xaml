@@ -6,7 +6,7 @@
              xmlns:vm="clr-namespace:KRibbon.ViewModel.GenericViewModel"
              xmlns:ms="clr-namespace:KRibbon.ViewModel.MaestrosViewModel"
              xmlns:cfg="clr-namespace:KRibbon.ViewModel.ConfiguracionViewModel"
-             StartupUri="View/MainWindow.xaml" Startup="Application_Startup">
+             StartupUri="View/MainWindow.xaml">
     <Application.Resources>
         <ObjectDataProvider x:Key="ResourceLanguage" 
                             ObjectType="{x:Type lang:ChangeLanguage}" 

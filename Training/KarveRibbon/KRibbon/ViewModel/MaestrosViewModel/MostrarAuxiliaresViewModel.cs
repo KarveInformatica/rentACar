@@ -1,15 +1,10 @@
 ﻿using KRibbon.Commands.Generic;
 using KRibbon.Logic.Maestros;
-using static KRibbon.Utility.VariablesGlobales;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Input;
-using System.Windows;
-using KRibbon.Model;
-using KRibbon.Utility;
 using KRibbon.Model.Generic;
+using System.Linq;
+using System.Windows.Input;
+using static KRibbon.Utility.VariablesGlobalesCollections;
+using static KRibbon.Utility.VariablesGlobalesEnumerations;
 
 namespace KRibbon.ViewModel.MaestrosViewModel
 {

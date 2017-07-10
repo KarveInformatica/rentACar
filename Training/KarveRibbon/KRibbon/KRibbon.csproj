@@ -135,12 +135,14 @@
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Utility\CreateGenericObject.cs" />
+    <Compile Include="Utility\RibbonGroupDragDrop.cs" />
     <Compile Include="Utility\RibbonTabAndGroup.cs" />
     <Compile Include="Utility\TabItemAuxiliares.cs" />
     <Compile Include="Utility\DatosAuxOpciones.cs" />
     <Compile Include="Utility\UserConfig.cs" />
     <Compile Include="Utility\ValidateData.cs" />
-    <Compile Include="Utility\VariablesGlobales.cs" />
+    <Compile Include="Utility\VariablesGlobalesCollections.cs" />
+    <Compile Include="Utility\VariablesGlobalesEnumerations.cs" />
     <Compile Include="ViewModel\BanksViewModel.cs" />
     <Compile Include="ViewModel\ConfiguracionViewModel\CintaOpcionesViewModel.cs" />
     <Compile Include="ViewModel\GenericViewModel\CloseTabItemViewModel.cs" />

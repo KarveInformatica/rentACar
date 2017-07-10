@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:KRibbon.View"
              mc:Ignorable="d" 
              Height="275" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,25,0,0">
-    <StackPanel>
-        <GroupBox x:Name="grbCintaOpciones" BorderBrush="Black" BorderThickness="1,1,1,1" Height="200">
+    <StackPanel x:Name="stckpCintaOpciones">
+        <Border BorderBrush="Black" BorderThickness="1,1,1,1" Height="200" CornerRadius="4" >
             <Grid x:Name="grdCintaOpciones">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -27,14 +27,14 @@
                 <Button x:Name="btnCintaOpciones" Grid.Column="0" Grid.ColumnSpan="2" Content="Pendiente Asignar esta opción al button Guardar de Toolbar" DataContext="{StaticResource cintaOpciones}" Height="25" VerticalAlignment="Bottom" >
                     <Button.InputBindings>
                         <KeyBinding Key="Return"                                                
-                                            Command="{Binding SaveCintaOpcionesCommand}" 
-                                            CommandParameter="{Binding ElementName=userControl, Mode=OneWay}" />
+                                    Command="{Binding SaveCintaOpcionesCommand}" 
+                                    CommandParameter="{Binding ElementName=userControl, Mode=OneWay}" />
                         <MouseBinding MouseAction="LeftClick"
-                                              Command="{Binding SaveCintaOpcionesCommand}" 
-                                              CommandParameter="{Binding ElementName=userControl, Mode=OneWay}"  />
+                                      Command="{Binding SaveCintaOpcionesCommand}" 
+                                      CommandParameter="{Binding ElementName=userControl, Mode=OneWay}"  />
                     </Button.InputBindings>
                 </Button>
             </Grid>
-        </GroupBox>
+        </Border>
     </StackPanel>
 </UserControl>

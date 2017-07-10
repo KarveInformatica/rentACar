@@ -1,10 +1,5 @@
 ﻿using KRibbon.Commands.Generic;
-using KRibbon.Logic.Generic;
 using KRibbon.Model.Generic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Input;
 
 namespace KRibbon.ViewModel.GenericViewModel
@@ -26,6 +21,10 @@ namespace KRibbon.ViewModel.GenericViewModel
             }
         }
 
+        /// <summary>
+        /// Cierra la aplicación
+        /// </summary>
+        /// <param name="parameter"></param>
         public void CloseWindow(object parameter)
         {
             Logic.Generic.CloseWindow.closeWindow();

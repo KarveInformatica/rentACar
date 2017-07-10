@@ -10,9 +10,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Interactivity;
-using static KRibbon.Utility.VariablesGlobales;
+using static KRibbon.Utility.VariablesGlobalesCollections;
 using System;
 using KRibbon.ViewModel.ConfiguracionViewModel;
+using static KRibbon.Utility.VariablesGlobalesEnumerations;
 
 namespace KRibbon.Logic.Maestros
 {
@@ -25,7 +26,7 @@ namespace KRibbon.Logic.Maestros
         /// <param name="opcion"></param>
         public static void prepareTabItemDataGrid(EOpcion opcion)
         {
-            if (tabitemlist.Where(p => p.Key == opcion).Count() == 0)
+            if (tabitemdictionary.Where(p => p.Key == opcion).Count() == 0)
             //if(!ifExistTabItem)
             {
                 dgitemsobscollection = new ObservableCollection<object>();
@@ -98,7 +99,7 @@ namespace KRibbon.Logic.Maestros
             else
             {   //Si el TabItem del tipo de auxiliar ya está mostrado, no se carga
                 //de nuevo, simplemente se establece el foco en ese TabItem
-                tabitemlist.Where(z => z.Key == opcion).FirstOrDefault().Value.TbItem.Focus();
+                tabitemdictionary.Where(z => z.Key == opcion).FirstOrDefault().Value.TbItem.Focus();
             }
         }
 

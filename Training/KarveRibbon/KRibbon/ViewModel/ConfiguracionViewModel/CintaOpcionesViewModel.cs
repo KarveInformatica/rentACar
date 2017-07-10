@@ -4,9 +4,9 @@ using KRibbon.Model.Generic;
 using KRibbon.Utility;
 using KRibbon.View;
 using System.Linq;
-using System.Windows;
 using System.Windows.Input;
-using static KRibbon.Utility.VariablesGlobales;
+using static KRibbon.Utility.VariablesGlobalesCollections;
+using static KRibbon.Utility.VariablesGlobalesEnumerations;
 
 namespace KRibbon.ViewModel.ConfiguracionViewModel
 {

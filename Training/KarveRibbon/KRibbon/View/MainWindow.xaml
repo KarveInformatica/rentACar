@@ -10,7 +10,7 @@
                 xmlns:sys="clr-namespace:System;assembly=mscorlib"
                 xmlns:uc="clr-namespace:KRibbon.View"
                 mc:Ignorable="d"
-                Title="MainWindow" x:Name="mainwindow" WindowState="Maximized">
+                Title="MainWindow" x:Name="mainwindow" WindowState="Maximized" Closing="mainwindow_Closing">
     <r:RibbonWindow.DataContext>
         <vm:SetLanguagesViewModel/>
     </r:RibbonWindow.DataContext>
@@ -192,7 +192,7 @@
                          Header="{Binding ltbMaestros, Source={StaticResource ResourceLanguage}}"
                          KeyTip="M"
                          GroupSizeReductionOrder="rgrAuxiliares, rgrCentrosAlquiler, rgrClientes">
-                <r:RibbonGroup x:Name="rgrCentrosAlquiler" Header="{Binding lrrCentrosAlquiler, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" AutomationProperties.Name="{DynamicResource tbMaestros1}">
+                <r:RibbonGroup x:Name="rgrCentrosAlquiler" Header="{Binding lrrCentrosAlquiler, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" >
                     <r:RibbonButton x:Name="rbtnEmpresas" 
                                     Label="{Binding lrbtnEmpresas, Source={StaticResource ResourceLanguage}}"
                                     SmallImageSource="..\Images\new.png" 
