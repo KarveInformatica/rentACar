@@ -1,26 +1,27 @@
 ﻿using KRibbon.Commands.ConfiguracionCommand;
 using KRibbon.Logic.Configuracion;
-using KRibbon.Utility;
-using KRibbon.View;
-using KRibbon.ViewModel.Generic;
+using KRibbon.Model.Generic;
 using System.Linq;
 using System.Windows.Input;
-using static KRibbon.Utility.VariablesGlobalesCollections;
-using static KRibbon.Utility.VariablesGlobalesEnumerations;
+using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesCollections;
+using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
 
 namespace KRibbon.ViewModel.ConfiguracionViewModel
 {
     public class CintaOpcionesViewModel : PropertyChangedBase
     {
+        #region Variables
         private CintaOpcionesCommand cintaopcionescommand;
-        private SaveCintaOpcionesCommand savecintaopcionescommand;
+        #endregion
 
+        #region Constructor
         public CintaOpcionesViewModel()
         {
             this.cintaopcionescommand = new CintaOpcionesCommand(this);
-            this.savecintaopcionescommand = new SaveCintaOpcionesCommand(this);
         }
+        #endregion
 
+        #region Commands
         public ICommand CintaOpcionesCommand
         {
             get
@@ -28,15 +29,9 @@ namespace KRibbon.ViewModel.ConfiguracionViewModel
                 return cintaopcionescommand;
             }
         }
+        #endregion
 
-        public ICommand SaveCintaOpcionesCommand
-        {
-            get
-            {
-                return savecintaopcionescommand;
-            }
-        }
-
+        #region Métodos
         /// <summary>
         /// Muestra los RibbonTab de los cuales se deseen guardar la configuración por defecto de los RibbonGroups 
         /// </summary>
@@ -49,18 +44,9 @@ namespace KRibbon.ViewModel.ConfiguracionViewModel
             //la Tab correspondiente al primer valor de la Enum EOpcion
             if (opcion.ToString() == parameter.ToString())
             {
-                LogicCintaOpciones.prepareTabItemUserControl(opcion);
+                CintaOpcionesLogic.PrepareTabItemUserControl(opcion);
             }
         }
-
-        /// <summary>
-        /// Guarda la configuración por defecto de los RibbonGroups de los RibbonTab seleccionados
-        /// </summary>
-        /// <param name="parameter"></param>
-        public void SaveCintaOpciones(object parameter)
-        {
-            CintaOpcionesUserControl cintaopcionesusercontrol = parameter as CintaOpcionesUserControl;
-            UserAndDefaultConfig.SetDefaultRibbonTabConfig(cintaopcionesusercontrol);
-        }
+        #endregion
     }
 }

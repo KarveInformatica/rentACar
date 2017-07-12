@@ -1,10 +1,10 @@
 ﻿using KRibbon.Commands.Generic;
 using KRibbon.Logic.Generic;
-using KRibbon.ViewModel.Generic;
+using KRibbon.Model.Generic;
 using System.Linq;
 using System.Windows.Input;
-using static KRibbon.Utility.VariablesGlobalesCollections;
-using static KRibbon.Utility.VariablesGlobalesEnumerations;
+using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesCollections;
+using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
 
 namespace KRibbon.ViewModel.GenericViewModel
 {
@@ -32,7 +32,7 @@ namespace KRibbon.ViewModel.GenericViewModel
         public void CloseTabItem(object parameter)
         {
             EOpcion tipoaux = tiposauxiliaresdictionary.Where(z => z.Key.ToString() == parameter.ToString()).FirstOrDefault().Key;
-            ManageTabItem.removeTabItem(tipoaux);
+            ManageTabItem.RemoveTabItem(tipoaux);
         }
     }
 }

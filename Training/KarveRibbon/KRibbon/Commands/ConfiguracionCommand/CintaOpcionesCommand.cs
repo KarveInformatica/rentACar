@@ -8,6 +8,7 @@ namespace KRibbon.Commands.ConfiguracionCommand
     {
         private CintaOpcionesViewModel cintaopcionesvm;
 
+        public CintaOpcionesCommand() { }
         public CintaOpcionesCommand(CintaOpcionesViewModel vm)
         {
             this.cintaopcionesvm = vm;

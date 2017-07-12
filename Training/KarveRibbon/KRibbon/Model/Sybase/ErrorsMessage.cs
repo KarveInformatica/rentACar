@@ -3,7 +3,7 @@ using KRibbon.Properties;
 using System;
 using System.Windows;
 
-namespace KRibbon.ViewModel.Sybase
+namespace KRibbon.Model.Sybase
 {
     public class ErrorsMessage
     {

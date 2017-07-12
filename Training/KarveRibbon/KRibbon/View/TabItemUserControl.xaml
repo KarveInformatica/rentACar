@@ -11,7 +11,7 @@
             <DockPanel>
                 <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=TabItem}, Path=Header}" />
                 <TextBlock Text="  " />
-                <Button DataContext="{StaticResource closeTabItem}"
+                <Button DataContext="{StaticResource closeTabItemViewModel}"
                         Command="{Binding CloseTabItemCommand}"
                         CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem}}, Path=Name}"
                         Background="Transparent" BorderBrush="Transparent">

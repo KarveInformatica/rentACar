@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace KRibbon.Utility
+namespace KRibbon.Logic.Generic
 {
     public class ChangeLanguage
     {
@@ -14,7 +14,7 @@ namespace KRibbon.Utility
         /// Devuelve una instancia nueva de nuestros recursos
         /// </summary>
         /// <returns></returns>
-        public Resources GetResource()
+        public Resources GetResourceLanguage()
         {
             return new Resources();
         }

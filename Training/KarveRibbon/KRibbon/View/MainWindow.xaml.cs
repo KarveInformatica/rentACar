@@ -1,12 +1,13 @@
-﻿using KRibbon.Utility;
+﻿using KRibbon.Logic.Generic.Metodos;
+using KRibbon.Logic.ToolBar;
+using Microsoft.Windows.Controls.Ribbon;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
-using Microsoft.Windows.Controls.Ribbon;
-using KRibbon.ViewModel.Sybase;
 
-namespace KRibbon
+namespace KRibbon.View
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
@@ -49,8 +50,13 @@ namespace KRibbon
         #region Cierre de la Applicación
         private void mainwindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Logic.Generic.CloseWindow.closeWindow(sender, e);
+            Logic.Generic.CloseWindow.CloseWindowFromWindow(sender, e);
         }
         #endregion
+
+        private void tbControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ToolBarLogic.EnabledDisabledToolBarButtonsByEOpcion();
+        }
     }
 }

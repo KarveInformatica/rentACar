@@ -1,6 +1,6 @@
-﻿using KRibbon.ViewModel.Generic;
+﻿using KRibbon.Model.Generic;
 
-namespace KRibbon.Utility
+namespace KRibbon.Logic.Generic.Propiedades
 {
     public class DatosAyudaOpciones
     {        

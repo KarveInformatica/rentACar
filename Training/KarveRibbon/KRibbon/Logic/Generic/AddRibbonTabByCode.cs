@@ -1,13 +1,14 @@
-﻿using Microsoft.Windows.Controls.Ribbon;
+﻿using KRibbon.View;
+using Microsoft.Windows.Controls.Ribbon;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
-using static KRibbon.Utility.VariablesGlobalesEnumerations;
+using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
 
-namespace KRibbon.Utility
+namespace KRibbon.Logic.Generic
 {
     public partial class AddTab : MainWindow
     {
-        public static void addRibbonTabAcciones(Ribbon rbInicio)
+        public static void AddRibbonTabAcciones(Ribbon rbInicio)
         {
             //var list = new ObservableCollection<MyRibbonButton>();
             //list.Add(new MyRibbonButton { Label = "Nuevo",      KeyTip = "N", Img = "new",      Name = "btntbitNuevo" });
@@ -45,7 +46,7 @@ namespace KRibbon.Utility
             //rbInicio.Items.Insert(0, tbAcciones); //añade la Tab en la posición que deseemos
         }
 
-        public static void addRibbonTabFavoritos(Ribbon rbInicio)
+        public static void AddRibbonTabFavoritos(Ribbon rbInicio)
         {
             //Random rd = new Random();
             //RibbonTab mytab = new RibbonTab();
@@ -91,7 +92,7 @@ namespace KRibbon.Utility
             //rbInicio.Items.Add(mytab);
         }
 
-        public static void addTabItem(EOpcion tipoauxiliar)
+        public static void AddTabItem(EOpcion tipoauxiliar)
         {
             ////Se comprueba que la tab ya no esté mostrada
             //if (tabitemdictionary.Where(p => p.TipoAuxiliar == tipoauxiliar).Count() == 0)
@@ -121,7 +122,7 @@ namespace KRibbon.Utility
             //        default:
             //            break;
             //    }
-            //    loadDataItem(tbitem, dgitemsobscollection, tipoauxiliar);
+            //    LoadDataItem(tbitem, dgitemsobscollection, tipoauxiliar);
             //}
             //else
             //{   //Si el TabItem del tipo de auxiliar ya se está mostrado, no se carga
@@ -138,7 +139,7 @@ namespace KRibbon.Utility
             //}
         }
         
-        private static void loadDataItem(TabItem tbitem, ObservableCollection<object> tabitemslist, EOpcion aux)
+        private static void LoadDataItem(TabItem tbitem, ObservableCollection<object> tabitemslist, EOpcion aux)
         {
             //DataGrid datagrid = new DataGrid();
             //datagrid.Width = 400;

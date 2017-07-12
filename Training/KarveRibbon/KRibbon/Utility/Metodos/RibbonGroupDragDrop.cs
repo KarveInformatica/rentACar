@@ -1,10 +1,10 @@
-﻿using KRibbon.ViewModel.Sybase;
+﻿using KRibbon.Model.Sybase;
 using Microsoft.Windows.Controls.Ribbon;
 using System;
 using System.Windows;
 using System.Windows.Input;
 
-namespace KRibbon.Utility
+namespace KRibbon.Logic.Generic.Metodos
 {
     public class RibbonGroupDragDrop
     {

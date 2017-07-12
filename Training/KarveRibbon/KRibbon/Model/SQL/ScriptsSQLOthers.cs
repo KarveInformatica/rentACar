@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace KRibbon.ViewModel.SQL
+namespace KRibbon.Model.Classes.SQL
 {
     public partial class ScriptsSQL
     {

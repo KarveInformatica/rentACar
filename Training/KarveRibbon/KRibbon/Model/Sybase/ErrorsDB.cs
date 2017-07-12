@@ -1,7 +1,7 @@
 ﻿using iAnywhere.Data.SQLAnywhere;
 using KRibbon.Properties;
 
-namespace KRibbon.ViewModel.Sybase
+namespace KRibbon.Model.Sybase
 {
     public class ErrorsDB
     {

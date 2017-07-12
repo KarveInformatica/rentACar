@@ -1302,7 +1302,7 @@
     <value>Recalcular Pendientes</value>
     <comment>Ribbon\Configuración\Utilitarios\Recalcular Pendientes</comment>
   </data>
-  <data name="lrbtnRehacerÍndices" xml:space="preserve">
+  <data name="lrbtnRehacerIndices" xml:space="preserve">
     <value>Rehacer Índices</value>
     <comment>Ribbon\Configuración\Utilitarios\Rehacer Índices</comment>
   </data>

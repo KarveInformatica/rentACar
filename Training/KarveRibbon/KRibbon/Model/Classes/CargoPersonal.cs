@@ -1,9 +1,9 @@
-﻿using KRibbon.Properties;
-using KRibbon.ViewModel.Generic;
+﻿using KRibbon.Model.Generic;
+using KRibbon.Properties;
 using System.Collections.Generic;
-using static KRibbon.Utility.VariablesGlobalesEnumerations;
+using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
 
-namespace KRibbon.ViewModel
+namespace KRibbon.Model.Classes
 {
     public class CargoPersonal : PropertyChangedBase
     {

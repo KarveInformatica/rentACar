@@ -18,25 +18,11 @@
           CanUserReorderColumns="True" 
           CanUserResizeColumns="True" 
           CanUserResizeRows="True" 
-          CanUserSortColumns="True"
-          SelectedItem="{Binding SelectedIndex}">
-
-    <!--<Label Content="{Binding ElementName=tbControl, Path=SelectedItem.Header}"/>
-    <Label Content="{Binding ElementName=tbControl, Path=SelectedItem.Name}"/>
-    <Label Content="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Path=SelectedItem.Object.ToString()}"/>
-    <Label Content="{Binding ElementName=tbControl, Path=SelectedItem.GivenName}"/>
-    <Label Content="{Binding ElementName=tbControl, Path=SelectedItem.CanUserDeleteRows}"/>
-    <TabControl x:Name="tbControl">-->
-        
-        
-        <!--<i:Interaction.Triggers>
-        <i:EventTrigger EventName="CellEditEnding">
-            <i:InvokeCommandAction Command="{Binding CloseWindowCommand}" 
-                                   CommandParameter="Window" />
-                --><!--Path=SelectedItem, 
-                                                              RelativeSource={RelativeSource Mode=FindAncestor, 
-                                                                                             AncestorType=DataGridRow}}" />--><!--
-        </i:EventTrigger>
-    </i:Interaction.Triggers>-->
-
+          CanUserSortColumns="False"
+          FrozenColumnCount="1"
+          
+          SelectedItem="{Binding SelectedIndex}" 
+          PreviewKeyDown="DataGrid_PreviewKeyDown" 
+          CellEditEnding="DataGrid_CellEditEnding">
+    
 </DataGrid>

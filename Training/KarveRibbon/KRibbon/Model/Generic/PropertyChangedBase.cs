@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
+﻿using System.ComponentModel;
 
-namespace KRibbon.ViewModel.Generic
+namespace KRibbon.Model.Generic
 {
     /// <summary>
-    ///  Class abstracta para el View ViewModel
+    ///  Abstract Class para el View Model.Classes
     /// </summary>
     public abstract class PropertyChangedBase : INotifyPropertyChanged
     {

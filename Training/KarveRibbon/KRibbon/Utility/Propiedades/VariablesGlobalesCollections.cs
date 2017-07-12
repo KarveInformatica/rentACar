@@ -1,22 +1,23 @@
-﻿using KRibbon.ViewModel.Generic.ObservableCollection;
+﻿using KRibbon.View;
 using KRibbon.ViewModel.ConfiguracionViewModel;
+using KRibbon.ViewModel.ObservableCollection;
 using Microsoft.Windows.Controls.Ribbon;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
-using static KRibbon.Utility.VariablesGlobalesEnumerations;
+using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
 
-namespace KRibbon.Utility
+namespace KRibbon.Logic.Generic.Propiedades
 {
     public class VariablesGlobalesCollections
     {
         /// <summary>
-        /// Dictionary donde se guardan los TabItem activos. Key=EOpcion, Value=DatosAyudaTabItem(ObservableCollection<object>, TabItem)
+        /// Dictionary que recopila los TabItem activos. Key=EOpcion, Value=DatosAyudaTabItem(ObservableCollection<object>, TabItem)
         /// </summary>
-        public static Dictionary<EOpcion, DatosAyudaTabItem> tabitemdictionary = new Dictionary<EOpcion,DatosAyudaTabItem>();
+        public static Dictionary<EOpcion, DatosAyudaTabItem> tabitemdictionary = new Dictionary<EOpcion, DatosAyudaTabItem>();
 
         /// <summary>
-        /// Dictionary que recopila la información de los RibbonButtons (la referencia en Resources, el nombre de la tabla de la BBDD, el ViewModel)
+        /// Dictionary que recopila la información de los RibbonButtons (la referencia en Resources, el nombre de la tabla de la BBDD, el Model.Classes)
         /// Key=EOpcion, Value=DatosAyudaOpciones(string propertiesresources, string nombretabladb, PropertyChangedBase viewmodelbase)
         /// </summary>
         public static Dictionary<EOpcion, DatosAyudaOpciones> tiposauxiliaresdictionary = new Dictionary<EOpcion, DatosAyudaOpciones>()

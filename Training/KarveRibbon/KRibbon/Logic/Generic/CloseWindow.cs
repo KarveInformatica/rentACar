@@ -1,8 +1,9 @@
-﻿using KRibbon.ViewModel.Sybase;
+﻿using KRibbon.Model.Sybase;
 using KRibbon.Properties;
+using KRibbon.View;
 using System;
-using System.Windows;
 using System.ComponentModel;
+using System.Windows;
 
 namespace KRibbon.Logic.Generic
 {
@@ -11,7 +12,7 @@ namespace KRibbon.Logic.Generic
         /// <summary>
         /// Cierra la aplicación. Llamada desde (Ribbon.ApplicationMenu)Inicio/Salir
         /// </summary>
-        public static void closeWindow()
+        public static void CloseWindowFromCommand()
         {
             try
             {
@@ -31,7 +32,7 @@ namespace KRibbon.Logic.Generic
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public static void closeWindow(object sender, CancelEventArgs e)
+        public static void CloseWindowFromWindow(object sender, CancelEventArgs e)
         {
             try
             {

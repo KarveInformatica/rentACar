@@ -1,4 +1,4 @@
-﻿using KRibbon.Utility;
+﻿using KRibbon.Logic.Generic;
 using Microsoft.Windows.Controls.Ribbon;
 using System.Windows;
 using KRibbon;

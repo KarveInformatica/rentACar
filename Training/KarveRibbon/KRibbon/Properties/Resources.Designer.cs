@@ -1926,9 +1926,9 @@ namespace KRibbon.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Rehacer Índices.
         /// </summary>
-        public static string lrbtnRehacerÍndices {
+        public static string lrbtnRehacerIndices {
             get {
-                return ResourceManager.GetString("lrbtnRehacerÍndices", resourceCulture);
+                return ResourceManager.GetString("lrbtnRehacerIndices", resourceCulture);
             }
         }
         

@@ -1,10 +1,10 @@
 ﻿using KRibbon.Commands.Generic;
 using KRibbon.Logic.Maestros;
-using KRibbon.ViewModel.Generic;
+using KRibbon.Model.Generic;
 using System.Linq;
 using System.Windows.Input;
-using static KRibbon.Utility.VariablesGlobalesCollections;
-using static KRibbon.Utility.VariablesGlobalesEnumerations;
+using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesCollections;
+using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
 
 namespace KRibbon.ViewModel.MaestrosViewModel
 {
@@ -37,7 +37,7 @@ namespace KRibbon.ViewModel.MaestrosViewModel
             //la Tab correspondiente al primer valor de la Enum EOpcion
             if (opcion.ToString() == parameter.ToString())
             {
-                LogicAuxiliares.prepareTabItemDataGrid(opcion);
+                AuxiliaresLogic.PrepareTabItemDataGrid(opcion);
             }           
         }
     }

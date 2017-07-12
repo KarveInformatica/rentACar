@@ -1,7 +1,7 @@
 ﻿using Microsoft.Windows.Controls.Ribbon;
 using System.Collections.Generic;
 
-namespace KRibbon.Utility
+namespace KRibbon.Logic.Generic.Propiedades
 {
     public class RibbonTabAndGroup
     {

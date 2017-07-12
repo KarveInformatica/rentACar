@@ -1,18 +1,11 @@
 ﻿using iAnywhere.Data.SQLAnywhere;
-using KRibbon.ViewModel.SQL;
-using KRibbon.Utility;
-using KRibbon.ViewModel.Generic;
-using static KRibbon.Utility.VariablesGlobalesCollections;
-using System;
+using KRibbon.Logic.Generic.Metodos;
+using KRibbon.Model.Classes.SQL;
+using KRibbon.Model.Generic;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Reflection;
-using System.Data;
 
-namespace KRibbon.ViewModel.Sybase
+namespace KRibbon.Model.Sybase
 {
     public class AuxiliaresModel
     {

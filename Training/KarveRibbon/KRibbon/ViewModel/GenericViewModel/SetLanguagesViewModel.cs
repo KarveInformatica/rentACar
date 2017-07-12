@@ -1,6 +1,7 @@
 ﻿using KRibbon.Commands.Generic;
-using KRibbon.ViewModel.Generic;
-using KRibbon.Utility;
+using KRibbon.Logic.Generic;
+using KRibbon.Logic.Generic.Metodos;
+using KRibbon.Model.Generic;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Input;

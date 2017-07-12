@@ -1,13 +1,13 @@
 ﻿using iAnywhere.Data.SQLAnywhere;
-using KRibbon.ViewModel.Generic;
-using KRibbon.ViewModel.Sybase;
+using KRibbon.Model.Generic;
+using KRibbon.Model.Sybase;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reflection;
-using static KRibbon.Utility.VariablesGlobalesEnumerations;
+using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
 
-namespace KRibbon.Utility
+namespace KRibbon.Logic.Generic.Metodos
 {
     public class CreateGenericObject
     {

@@ -1,7 +1,7 @@
 ﻿using System.Windows.Controls;
 using System.Collections.ObjectModel;
 
-namespace KRibbon.Utility
+namespace KRibbon.Logic.Generic.Propiedades
 {
     public class DatosAyudaTabItem
     {
@@ -57,19 +57,6 @@ namespace KRibbon.Utility
             set
             {
                 tbitem = value;
-            }
-        }
-
-        private DataGrid datagrid;
-        public DataGrid DataGrid
-        {
-            get
-            {
-                return datagrid;
-            }
-            set
-            {
-                datagrid = value;
             }
         }
         #endregion

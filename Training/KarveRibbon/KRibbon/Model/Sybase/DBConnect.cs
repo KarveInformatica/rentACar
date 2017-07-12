@@ -1,11 +1,7 @@
 ﻿using iAnywhere.Data.SQLAnywhere;
-using KRibbon.ViewModel.SQL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using KRibbon.Model.Classes.SQL;
 
-namespace KRibbon.ViewModel.Sybase
+namespace KRibbon.Model.Sybase
 {
     public class DBConnect
     {

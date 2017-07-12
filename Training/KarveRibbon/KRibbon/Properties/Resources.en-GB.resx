@@ -1008,7 +1008,7 @@
   <data name="lrbtnRecalcularPendientes" xml:space="preserve">
     <value>Recalculate Pendings</value>
   </data>
-  <data name="lrbtnRehacerÍndices" xml:space="preserve">
+  <data name="lrbtnRehacerIndices" xml:space="preserve">
     <value>Redo Indexes</value>
   </data>
   <data name="lrbtnRelojesActivos" xml:space="preserve">

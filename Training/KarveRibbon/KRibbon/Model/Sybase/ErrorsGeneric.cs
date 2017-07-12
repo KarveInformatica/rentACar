@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KRibbon.ViewModel.Sybase
+namespace KRibbon.Model.Sybase
 {
     class ErrorsGeneric
     {

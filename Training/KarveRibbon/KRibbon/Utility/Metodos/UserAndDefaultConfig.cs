@@ -1,4 +1,4 @@
-﻿using KRibbon.ViewModel.Sybase;
+﻿using KRibbon.Model.Sybase;
 using KRibbon.Properties;
 using KRibbon.View;
 using KRibbon.ViewModel.GenericViewModel;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace KRibbon.Utility
+namespace KRibbon.Logic.Generic.Metodos
 {
     public class UserAndDefaultConfig
     {
@@ -82,7 +82,7 @@ namespace KRibbon.Utility
                     ribbontab.Items.Clear();
 
                     //Se recuperan los RibbonGroups del Ribbontab pasado por params
-                    List<RibbonGroup> ribbontabdic = VariablesGlobalesCollections.ribbontabdefaultdictionary.Where(r => r.Key.ToString() == ribbontab.Name.ToString()).FirstOrDefault().Value.ribbongroup;
+                    List<RibbonGroup> ribbontabdic = Propiedades.VariablesGlobalesCollections.ribbontabdefaultdictionary.Where(r => r.Key.ToString() == ribbontab.Name.ToString()).FirstOrDefault().Value.ribbongroup;
 
                     //Se recorren los RibbonGroups del Ribbontab pasado por params. Al Name del RibbonTab se le añade el índex ya que
                     //la es como se guardan las Key en app.exe.config. Se recupera el Name del RibbonGroup. Se guarda en el archivo 
@@ -125,8 +125,8 @@ namespace KRibbon.Utility
                         CheckBox checkbox = control as CheckBox;
                         if (checkbox.IsChecked == true)
                         {
-                            string ribbontabname = VariablesGlobalesCollections.ribbontabdefaultdictionary.Where(r => r.Value.checkbox.Equals(checkbox.Name.ToString())).FirstOrDefault().Key.ToString();
-                            RibbonTab ribbontab = VariablesGlobalesCollections.ribbontabdefaultdictionary.Where(r => r.Key.ToString().Equals(ribbontabname)).FirstOrDefault().Value.ribbontab;
+                            string ribbontabname = Propiedades.VariablesGlobalesCollections.ribbontabdefaultdictionary.Where(r => r.Value.checkbox.Equals(checkbox.Name.ToString())).FirstOrDefault().Key.ToString();
+                            RibbonTab ribbontab = Propiedades.VariablesGlobalesCollections.ribbontabdefaultdictionary.Where(r => r.Key.ToString().Equals(ribbontabname)).FirstOrDefault().Value.ribbontab;
                             if (GetDefaultRibbonTabConfig(ribbontab))
                             {
                                 result = true;
@@ -168,7 +168,7 @@ namespace KRibbon.Utility
                         string ribbontabname = string.Format("{0}{1}", ribbontab.Name.ToString(), i);
                         string ribbongroupname = GetSetting(ribbontabname);
 
-                        List<RibbonGroup> ribbontablist = VariablesGlobalesCollections.ribbontabdefaultdictionary.Where(r => r.Key.ToString() == ribbontab.Name.ToString()).FirstOrDefault().Value.ribbongroup;
+                        List<RibbonGroup> ribbontablist = Propiedades.VariablesGlobalesCollections.ribbontabdefaultdictionary.Where(r => r.Key.ToString() == ribbontab.Name.ToString()).FirstOrDefault().Value.ribbongroup;
                         RibbonGroup ribbongroup = ribbontablist.Where(r => r.Name.ToString() == ribbongroupname).FirstOrDefault();
 
                         ribbontab.Items.Insert(i, ribbongroup);
@@ -258,7 +258,7 @@ namespace KRibbon.Utility
                 //Carga el idioma de la app según esté guardado en app.exe.config 
                 GetLanguage();
                 //Recorre los diferentes RibbonTab guardados en VariablesGlobales.ribbontabdefaultdictionary
-                foreach (var item in VariablesGlobalesCollections.ribbontabdefaultdictionary)
+                foreach (var item in Propiedades.VariablesGlobalesCollections.ribbontabdefaultdictionary)
                 {
                     if (item.Value.ribbontab != null)
                     {   //Para cada RibbonTab, se devuelve una List con los RibbonGroups que contiene. En caso que la List se reciba vacía, se cargarán
@@ -288,7 +288,7 @@ namespace KRibbon.Utility
                 //Carga el idioma de la app según esté guardado en app.exe.config 
                 GetLanguage();
                 //Recorre los diferentes RibbonTab guardados en VariablesGlobales.ribbontabdefaultdictionary
-                foreach (var item in VariablesGlobalesCollections.ribbontabdefaultdictionary)
+                foreach (var item in Propiedades.VariablesGlobalesCollections.ribbontabdefaultdictionary)
                 {   //Para cada RibbonTab, se cargan los RibbonGroups de la configuración por defecto según VariablesGlobales.ribbontabdefaultdictionary
                     if (item.Value.ribbontab != null)
                     {

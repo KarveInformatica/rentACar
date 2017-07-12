@@ -1,6 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using KRibbon.Model.Classes;
+using KRibbon.Model.Generic;
+using System.Collections.ObjectModel;
 
-namespace KRibbon.ViewModel.Generic.ObservableCollection
+namespace KRibbon.ViewModel.ObservableCollection
 {
     public class GrupoTarifaViewModel : PropertyChangedBase
     {
