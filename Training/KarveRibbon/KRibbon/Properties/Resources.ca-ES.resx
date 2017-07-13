@@ -209,7 +209,7 @@
     <value>Cercar</value>
     <comment>24</comment>
   </data>
-  <data name="ltbMaestros" xml:space="preserve">
+  <data name="lrbtbMaestros" xml:space="preserve">
     <value>Dades Mestres</value>
     <comment>25</comment>
   </data>
@@ -613,7 +613,7 @@
     <value>Tipus Imprès Factura</value>
     <comment>125</comment>
   </data>
-  <data name="ltbContratos" xml:space="preserve">
+  <data name="lrbtbContratos" xml:space="preserve">
     <value>Contractes</value>
     <comment>126</comment>
   </data>
@@ -681,7 +681,7 @@
     <value>Prolongació Automàtica de Contractes</value>
     <comment>143</comment>
   </data>
-  <data name="ltbReservas" xml:space="preserve">
+  <data name="lrbtbReservas" xml:space="preserve">
     <value>Reserves</value>
     <comment>144</comment>
   </data>
@@ -713,7 +713,7 @@
     <value>Peticions</value>
     <comment>151</comment>
   </data>
-  <data name="ltbAtipicos" xml:space="preserve">
+  <data name="lrbtbAtipicos" xml:space="preserve">
     <value>Atípics</value>
     <comment>152</comment>
   </data>
@@ -741,7 +741,7 @@
     <value>Sèries d'Atípics</value>
     <comment>158</comment>
   </data>
-  <data name="ltbComercial" xml:space="preserve">
+  <data name="lrbtbComercial" xml:space="preserve">
     <value>Comercial</value>
     <comment>159</comment>
   </data>
@@ -769,7 +769,7 @@
     <value>Potencials</value>
     <comment>165</comment>
   </data>
-  <data name="ltbFacturacion" xml:space="preserve">
+  <data name="lrbtbFacturacion" xml:space="preserve">
     <value>Facturació</value>
     <comment>166</comment>
   </data>
@@ -929,7 +929,7 @@
     <value>Generador Estadístiques</value>
     <comment>205</comment>
   </data>
-  <data name="ltbFlota" xml:space="preserve">
+  <data name="lrbtbFlota" xml:space="preserve">
     <value>Flota</value>
     <comment>206</comment>
   </data>
@@ -1025,7 +1025,7 @@
     <value>Sinistres</value>
     <comment>229</comment>
   </data>
-  <data name="ltbIncidencias" xml:space="preserve">
+  <data name="lrbtbIncidencias" xml:space="preserve">
     <value>Incidències</value>
     <comment>230</comment>
   </data>
@@ -1053,7 +1053,7 @@
     <value>Vehicles</value>
     <comment>236</comment>
   </data>
-  <data name="ltbEstadisticas" xml:space="preserve">
+  <data name="lrbtbEstadisticas" xml:space="preserve">
     <value>Estadístiques</value>
     <comment>237</comment>
   </data>
@@ -1097,7 +1097,7 @@
     <value>Vehicles</value>
     <comment>247</comment>
   </data>
-  <data name="ltbListados" xml:space="preserve">
+  <data name="lrbtbListados" xml:space="preserve">
     <value>Llistats</value>
     <comment>248</comment>
   </data>
@@ -1145,7 +1145,7 @@
     <value>Vehicles</value>
     <comment>259</comment>
   </data>
-  <data name="ltbConfiguracion" xml:space="preserve">
+  <data name="lrbtbConfiguracion" xml:space="preserve">
     <value>Configuració</value>
     <comment>260</comment>
   </data>
@@ -1389,6 +1389,10 @@
     <value>Data Última Modificació</value>
     <comment>320</comment>
   </data>
+  <data name="msgSaveCintaOpcionesOK" xml:space="preserve">
+    <value>L'ordre dels grups de les pestanyes de la cinta seleccionades, s'han restaurat a la seva posició inicial.</value>
+    <comment>321</comment>
+  </data>
   <data name="msgSalir" xml:space="preserve">
     <value>Està segur que desitja sortir de l'aplicació?</value>
     <comment>322</comment>
@@ -1417,22 +1421,6 @@
     <value>No es troba la Taula</value>
     <comment>328</comment>
   </data>
-  <data name="lckbMarcarTodos" xml:space="preserve">
-    <value>Marcar tots</value>
-    <comment>328</comment>
-  </data>
-  <data name="lckbDesmarcarTodos" xml:space="preserve">
-    <value>Desmarcar tots</value>
-    <comment>329</comment>
-  </data>
-  <data name="lckbCintaOpcionesMarcarTodos" xml:space="preserve">
-    <value>Marcar tots</value>
-    <comment>328</comment>
-  </data>
-  <data name="lckbCintaOpcionesDesmarcarTodos" xml:space="preserve">
-    <value>Desmarcar tots</value>
-    <comment>329</comment>
-  </data>
   <data name="lrdbCintaOpcionesMarcarTodos" xml:space="preserve">
     <value>Marcar tots</value>
     <comment>329</comment>
@@ -1440,9 +1428,5 @@
   <data name="lrdbCintaOpcionesDesmarcarTodos" xml:space="preserve">
     <value>Desmarcar tots</value>
     <comment>330</comment>
-  </data>
-  <data name="msgSaveCintaOpcionesOK" xml:space="preserve">
-    <value>L'ordre dels grups de les pestanyes de la cinta seleccionades, s'han restaurat a la seva posició inicial.</value>
-    <comment>321</comment>
   </data>
 </root>

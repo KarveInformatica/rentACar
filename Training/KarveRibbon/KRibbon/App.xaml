@@ -9,7 +9,7 @@
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
         <ObjectDataProvider x:Key="ResourceLanguage" 
-                            ObjectType="{x:Type lang:ChangeLanguage}" 
+                            ObjectType="{x:Type lang:ChangeLanguageLogic}" 
                             MethodName="GetResourceLanguage">
         </ObjectDataProvider>
 

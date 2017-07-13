@@ -4,11 +4,11 @@ using System.Windows.Data;
 
 namespace KRibbon.Logic.Generic
 {
-    public class ChangeLanguage
+    public class ChangeLanguageLogic
     {
         private static ObjectDataProvider _objectdataprovider;
 
-        public ChangeLanguage() { }
+        public ChangeLanguageLogic() { }
 
         /// <summary>
         /// Devuelve una instancia nueva de nuestros recursos

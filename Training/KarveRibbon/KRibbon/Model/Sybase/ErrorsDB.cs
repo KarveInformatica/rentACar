@@ -14,15 +14,15 @@ namespace KRibbon.Model.Sybase
             switch (e.NativeError)
             {
                 case -83: //Specified DataBase not found
-                    //Comprobrar que el DataBaseName en la connectionstring sean correctos en AuxiliaresModel.GetAuxiliares
+                    //Comprobrar que el DataBaseName en la connectionstring sean correctos en AuxiliaresModel.GetMaestrosAuxiliares
                     ErrorsMessage.ShowMessage(e, Resources.msgError83);
                     break;
                 case -100: //DataBase Server not found
-                    //Comprobar que EngineName o Host en la connectionstring sean correctos en AuxiliaresModel.GetAuxiliares
+                    //Comprobar que EngineName o Host en la connectionstring sean correctos en AuxiliaresModel.GetMaestrosAuxiliares
                     ErrorsMessage.ShowMessage(e, Resources.msgError100);
                     break;
                 case -103: //Invalid User Id or Password
-                    //Comprobar que el user/pass en la connectionstring sean correctos en AuxiliaresModel.GetAuxiliares
+                    //Comprobar que el user/pass en la connectionstring sean correctos en AuxiliaresModel.GetMaestrosAuxiliares
                     ErrorsMessage.ShowMessage(e, Resources.msgError103);
                     break;
                 case -131: //Syntax Error in SQL sentence
@@ -31,7 +31,7 @@ namespace KRibbon.Model.Sybase
                     break;
                 case -141: //Table not found
                     //Comprobar que coindida el nombre de la tabla de la BBDD con el especificado en 
-                    //VariablesGlobales.Dictionary<EOpcion, DatosAyudaOpciones>
+                    //VariablesGlobales.Dictionary<EOpcion, DatosInfoRibbonButton>
                     ErrorsMessage.ShowMessage(e, Resources.msgError141);
                     break;
                 default:

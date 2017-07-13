@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace KRibbon.ViewModel.GenericViewModel
 {
-    class CloseWindowViewModel : PropertyChangedBase
+    class CloseWindowViewModel : GenericPropertyChanged
     {
         private CloseWindowCommand closewindowcommand;
 
@@ -27,7 +27,7 @@ namespace KRibbon.ViewModel.GenericViewModel
         /// <param name="parameter"></param>
         public void CloseWindow(object parameter)
         {
-            Logic.Generic.CloseWindow.CloseWindowFromCommand();
+            Logic.Generic.CloseWindowLogic.CloseWindowFromCommand();
         }
     }
 }

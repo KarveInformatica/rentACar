@@ -1,37 +1,36 @@
-﻿using KRibbon.Model.Classes;
-using KRibbon.ViewModel.ObservableCollection;
+﻿using KRibbon.Logic.Generic;
+using KRibbon.Logic.ToolBar;
+using KRibbon.Model.Classes;
+using KRibbon.Model.Generic;
 using KRibbon.Model.Sybase;
-using KRibbon.Logic.Generic.Propiedades;
 using KRibbon.View;
-using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Interactivity;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesCollections;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
+using static KRibbon.Model.Generic.RecopilatorioCollections;
+using static KRibbon.Model.Generic.RecopilatorioEnumerations;
 
 namespace KRibbon.Logic.Maestros
 {
-    public class AuxiliaresLogic
+    public class MaestrosAuxiliaresLogic
     {
         /// <summary>
-        /// Proceso de añadir un TabItem al TabControl según la EOpcion que recibe por param. Si el TabItem ya está mostrado, 
+        /// Añade un nuevo TabItem al TabControl según la EOpcion que recibe por param. Si el TabItem ya está mostrado, 
         /// no se carga de nuevo, simplemente se establece el foco en ese TabItem.
         /// </summary>
         /// <param name="opcion"></param>
         public static void PrepareTabItemDataGrid(EOpcion opcion)
         {
             if (tabitemdictionary.Where(p => p.Key == opcion).Count() == 0)
-            {   //Se crea un nuevo ObservableCollection<object> donde guardaremos los datos recibidos de la BBDD
-                dgitemsobscollection = new ObservableCollection<object>();
+            {   //Se crea un nuevo GenericObservableCollection donde guardaremos los datos recibidos de la BBDD
+                GenericObservableCollection genericobscollection = new GenericObservableCollection();
                 //Se recupera el nombre de la tabla de la BBDD
-                string tablaauxiliares = tiposauxiliaresdictionary.Where(z => z.Key == opcion).FirstOrDefault().Value.nombretabladb;
-                //Según la opcion recibida por params, se recuperan los datos de su correspondiente tabla de la BBDD, se crea un 
-                //ObservableCollectionViewModel del tipo que corresponde y se le cargan los datos recuperados desde la BBDD, se carga una nueva
-                //DataGrid dentro de un nuevo TabItem con los datos del ObservableCollectionViewModel según el tipo de dato que corresponda
+                string nombretabladb = ribbonbuttondictionary.Where(z => z.Key == opcion).FirstOrDefault().Value.nombretabladb;
+                //Según la opcion recibida por params, se recuperan los datos de su correspondiente tabla de la BBDD, teniendo en cuenta su tipo de dato.
+                //Se crea un nuevo DataGrid dentro de un nuevo TabItem con los datos del GenericObservableCollection.
                 switch (opcion)
                 {
                     #region Centros de Alquiler
@@ -94,28 +93,20 @@ namespace KRibbon.Logic.Maestros
 
                     #region Auxiliares Clientes
                     case EOpcion.rbtnBancosClientes:
-                        dgitemsobscollection = AuxiliaresModel.GetAuxiliares(tablaauxiliares, Banco.dbcriterioslist, new Banco());
-                        BancoViewModel bancoviewmodel = new BancoViewModel();
-                        bancoviewmodel.GetCollection(dgitemsobscollection);
-                        LoadTabItemDataGrid(dgitemsobscollection, opcion, new DatosAyudaTabItem(dgitemsobscollection));
+                        genericobscollection = MaestrosAuxiliaresModel.GetMaestrosAuxiliares(nombretabladb, Banco.templateinfodb, new Banco());
+                        CreateTabItemDataGrid(opcion, genericobscollection);
                         break;
                     case EOpcion.rbtnBloqueFacturacion:
-                        dgitemsobscollection = AuxiliaresModel.GetAuxiliares(tablaauxiliares, BloqueFacturacion.dbcriterioslist, new BloqueFacturacion());
-                        BloqueFacturacionViewModel bloquefacturacionviewmodel = new BloqueFacturacionViewModel();
-                        bloquefacturacionviewmodel.GetCollection(dgitemsobscollection);
-                        LoadTabItemDataGrid(dgitemsobscollection, opcion, new DatosAyudaTabItem(dgitemsobscollection));
+                        genericobscollection = MaestrosAuxiliaresModel.GetMaestrosAuxiliares(nombretabladb, BloqueFacturacion.templateinfodb, new BloqueFacturacion());
+                        CreateTabItemDataGrid(opcion, genericobscollection);
                         break;
                     case EOpcion.rbtnCanales:
-                        dgitemsobscollection = AuxiliaresModel.GetAuxiliares(tablaauxiliares, CanalCliente.dbcriterioslist, new CanalCliente());
-                        CanalClienteViewModel canalclienteviewmodel = new CanalClienteViewModel();
-                        canalclienteviewmodel.GetCollection(dgitemsobscollection);
-                        LoadTabItemDataGrid(dgitemsobscollection, opcion, new DatosAyudaTabItem(dgitemsobscollection));
+                        genericobscollection = MaestrosAuxiliaresModel.GetMaestrosAuxiliares(nombretabladb, CanalCliente.templateinfodb, new CanalCliente());
+                        CreateTabItemDataGrid(opcion, genericobscollection);
                         break;
                     case EOpcion.rbtnCargosPersonal:                        
-                        dgitemsobscollection = AuxiliaresModel.GetAuxiliares(tablaauxiliares, CargoPersonal.dbcriterioslist, new CargoPersonal());
-                        CargoPersonalViewModel cargopersonalviewmodel = new CargoPersonalViewModel();
-                        cargopersonalviewmodel.GetCollection(dgitemsobscollection);
-                        LoadTabItemDataGrid(dgitemsobscollection, opcion, new DatosAyudaTabItem(dgitemsobscollection));
+                        genericobscollection = MaestrosAuxiliaresModel.GetMaestrosAuxiliares(nombretabladb, CargoPersonal.templateinfodb, new CargoPersonal());
+                        CreateTabItemDataGrid(opcion, genericobscollection);
                         break;
                     case EOpcion.rbtnClavesPresupuesto:
                         break;
@@ -157,10 +148,8 @@ namespace KRibbon.Logic.Maestros
                     case EOpcion.rbtnEmpleadosAgencia:
                         break;
                     case EOpcion.rbtnTipoComisionista:
-                        dgitemsobscollection = AuxiliaresModel.GetAuxiliares(tablaauxiliares, TipoComisionista.dbcriterioslist, new TipoComisionista());
-                        TipoComisionistaViewModel tipocomisionistaviewmodel = new TipoComisionistaViewModel();
-                        tipocomisionistaviewmodel.GetCollection(dgitemsobscollection);
-                        LoadTabItemDataGrid(dgitemsobscollection, opcion, new DatosAyudaTabItem(dgitemsobscollection));
+                        genericobscollection = MaestrosAuxiliaresModel.GetMaestrosAuxiliares(nombretabladb, TipoComisionista.templateinfodb, new TipoComisionista());
+                        CreateTabItemDataGrid(opcion, genericobscollection);
                         break;
                     #endregion
 
@@ -196,10 +185,8 @@ namespace KRibbon.Logic.Maestros
                     case EOpcion.rbtnDivisas:
                         break;
                     case EOpcion.rbtnFormaPagoProveedor:                        
-                        dgitemsobscollection = AuxiliaresModel.GetAuxiliares(tablaauxiliares, FormaPagoProveedor.dbcriterioslist, new FormaPagoProveedor());
-                        FormaPagoProveedorViewModel formapagoproveedorviewmodel = new FormaPagoProveedorViewModel();
-                        formapagoproveedorviewmodel.GetCollection(dgitemsobscollection);
-                        LoadTabItemDataGrid(dgitemsobscollection, opcion, new DatosAyudaTabItem(dgitemsobscollection));
+                        genericobscollection = MaestrosAuxiliaresModel.GetMaestrosAuxiliares(nombretabladb, FormaPagoProveedor.templateinfodb, new FormaPagoProveedor());
+                        CreateTabItemDataGrid(opcion, genericobscollection);
                         break;
                     case EOpcion.rbtnTiposProveedores:
                         break;
@@ -220,10 +207,8 @@ namespace KRibbon.Logic.Maestros
                     case EOpcion.rbtnConceptosFacturacion:
                         break;
                     case EOpcion.rbtnGruposTarifa:
-                        dgitemsobscollection = AuxiliaresModel.GetAuxiliares(tablaauxiliares, GrupoTarifa.dbcriterioslist, new GrupoTarifa());
-                        GrupoTarifaViewModel grupotarifaviewmodel = new GrupoTarifaViewModel();                        
-                        grupotarifaviewmodel.GetCollection(dgitemsobscollection);
-                        LoadTabItemDataGrid(dgitemsobscollection, opcion, new DatosAyudaTabItem(dgitemsobscollection));
+                        genericobscollection = MaestrosAuxiliaresModel.GetMaestrosAuxiliares(nombretabladb, GrupoTarifa.templateinfodb, new GrupoTarifa());
+                        CreateTabItemDataGrid(opcion, genericobscollection);
                         break;
                     #endregion
 
@@ -276,21 +261,22 @@ namespace KRibbon.Logic.Maestros
             }
             else
             {   //Si el TabItem ya está mostrado, no se carga de nuevo, simplemente se establece el foco en ese TabItem
-                tabitemdictionary.Where(z => z.Key == opcion).FirstOrDefault().Value.TbItem.Focus();
+                tabitemdictionary.Where(z => z.Key == opcion).FirstOrDefault().Value.TabItem.Focus();
             }
         }
 
         /// <summary>
-        /// Añade a un nuevo DataGridUserControl los datos del ObservableCollection (dgitemsobscollection) recibida por params. 
-        /// El nombre de las propiedades del object del ObservableCollection (dgitemsobscollection) corresponderán con los 
-        /// respectivos Headers. Se añade el DataGridUserControl en un nuevo TabItem (tbitem). 
+        /// Añade a un nuevo DataGridUserControl los datos del GenericObservableCollection (genericobscollection) recibido por params. 
+        /// El nombre de las propiedades del object del GenericObservableCollection (genericobscollection) corresponderán con los 
+        /// respectivos Headers. Se añade el DataGridUserControl en un nuevo TabItem (tbitem).
+        /// Se añade el EOpcion, el GenericObservableCollection recibido por params (como origin y copy) y el nuevo TabItem,  
+        /// al Dictionary de TabItems(tabitemdictionary) que almacena los TabItems activos
         /// </summary>
-        /// <param name="tbitem"></param>
-        /// <param name="datagriditemslist"></param>
-        /// <param name="dbcriterioslist"></param>
-        private static void LoadTabItemDataGrid(ObservableCollection<object> dgitemsobscollection, EOpcion opcion, DatosAyudaTabItem tabitemauxiliares)
+        /// <param name="opcion"></param>
+        /// <param name="genericobscollection"></param>
+        private static void CreateTabItemDataGrid(EOpcion opcion, GenericObservableCollection genericobscollection)
         {
-            if (dgitemsobscollection.Count != 0)
+            if (genericobscollection.GenericObsCollection.Count != 0)
             {                
                 //Creamos el DataGrid
                 DataGridUserControl datagrid = new DataGridUserControl();
@@ -304,7 +290,7 @@ namespace KRibbon.Logic.Maestros
                 ////Creamos los DataGridTextColumn
                 //DataGridTextColumn col;
 
-                //foreach (var item in dbcriterioslist)
+                //foreach (var item in templateinfodb)
                 //{
                 //    col = new DataGridTextColumn();
                 //    col.Header = item.datagridheader; // new KarveDataGridTextColum(item.datagridheader);
@@ -319,19 +305,26 @@ namespace KRibbon.Logic.Maestros
                 //}
                 #endregion
 
-                //datagrid.SetBinding(ItemsControl.ItemsSourceProperty, new Binding("SelectedItem") { Source = dgitemsobscollection });
-                //Se añade al DataGridUserControl el ObservableCollection<object> recibido por params como ItemsSource
-                datagrid.ItemsSource = dgitemsobscollection;
+                //datagrid.SetBinding(ItemsControl.ItemsSourceProperty, new Binding("SelectedItem") { Source = genericobscollection });
+                //Se añade al DataGridUserControl el GenericObservableCollection recibido por params como ItemsSource
+                datagrid.ItemsSource = genericobscollection.GenericObsCollection;
 
                 //Se crea el Tabitem
-                TabItem tbitem = Generic.ManageTabItem.CreateTabItemDataGrid(opcion, tabitemauxiliares);
+                TabItem tabitem = TabItemLogic.CreateTabItemDataGrid(opcion);
+
+                //Se añade el EOpcion, el GenericObservableCollection recibido por params (como origin y copy) y el nuevo TabItem,  
+                //al Dictionary de TabItems(tabitemdictionary) que almacena los TabItems activos
+                tabitemdictionary.Add(opcion, new TemplateInfoTabItem(genericobscollection, genericobscollection, tabitem));
 
                 //Se añade el DataGridUserControl al TabItem
-                tbitem.Content = datagrid;
+                tabitem.Content = datagrid;
+
+                //Se habilitan/deshabilitan los Buttons del ToolBar según corresponda
+                ToolBarLogic.EnabledDisabledToolBarButtonsByEOpcion(opcion);
             }
         }
 
-        public static void SetTrigger(DataGrid contentControl)
+        public static void SetTrigger(DataGrid contentControl) //Posiblemente se pueda eliminar este método
         {
             // create the command action and bind the command to it
             var invokeCommandAction = new InvokeCommandAction { CommandParameter = "datagridcommandtest" };

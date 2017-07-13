@@ -3,12 +3,12 @@ using KRibbon.Logic.Maestros;
 using KRibbon.Model.Generic;
 using System.Linq;
 using System.Windows.Input;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesCollections;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
+using static KRibbon.Model.Generic.RecopilatorioCollections;
+using static KRibbon.Model.Generic.RecopilatorioEnumerations;
 
 namespace KRibbon.ViewModel.MaestrosViewModel
 {
-    public class MostrarAuxiliaresViewModel : PropertyChangedBase
+    public class MostrarAuxiliaresViewModel : GenericPropertyChanged
     {
         private MostrarAuxiliaresCommand mostrarauxiliarescommand;
 
@@ -31,13 +31,13 @@ namespace KRibbon.ViewModel.MaestrosViewModel
         /// <param name="parameter"></param>
         public void MostrarAuxiliares(object parameter)
         {
-            EOpcion opcion = tiposauxiliaresdictionary.Where(z => z.Key.ToString() == parameter.ToString()).FirstOrDefault().Key;
+            EOpcion opcion = ribbonbuttondictionary.Where(z => z.Key.ToString() == parameter.ToString()).FirstOrDefault().Key;
 
             //Si el param no se encuentra en la Enum EOpcion, no hace nada, sino mostraría 
             //la Tab correspondiente al primer valor de la Enum EOpcion
             if (opcion.ToString() == parameter.ToString())
             {
-                AuxiliaresLogic.PrepareTabItemDataGrid(opcion);
+                MaestrosAuxiliaresLogic.PrepareTabItemDataGrid(opcion);
             }           
         }
     }

@@ -1,5 +1,6 @@
-﻿using KRibbon.Logic.Generic.Metodos;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
+﻿using KRibbon.Logic.Configuracion;
+using KRibbon.Utility;
+using static KRibbon.Model.Generic.RecopilatorioEnumerations;
 
 namespace KRibbon.Logic.ToolBar
 {
@@ -435,7 +436,7 @@ namespace KRibbon.Logic.ToolBar
 
                 #region Configuracion
                 case EOpcion.rbtnCinta:
-                    Configuracion.CintaOpcionesLogic.CancelarCintaOpciones(opcion);
+                    CintaOpcionesLogic.CancelarCintaOpciones(opcion);
                     break;
                 case EOpcion.rbtnCodigosIniciales:
                     break;

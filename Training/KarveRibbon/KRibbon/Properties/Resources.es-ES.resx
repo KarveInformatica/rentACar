@@ -186,7 +186,7 @@
   <data name="ltbbtnBuscar" xml:space="preserve">
     <value>Buscar</value>
   </data>
-  <data name="ltbMaestros" xml:space="preserve">
+  <data name="lrbtbMaestros" xml:space="preserve">
     <value>Maestros</value>
   </data>
   <data name="lrrCentrosAlquiler" xml:space="preserve">
@@ -489,7 +489,7 @@
   <data name="lrbtnTipoImpresoFactura" xml:space="preserve">
     <value>Tipos Impreso Factura</value>
   </data>
-  <data name="ltbContratos" xml:space="preserve">
+  <data name="lrbtbContratos" xml:space="preserve">
     <value>Contratos</value>
   </data>
   <data name="lrgrContratos" xml:space="preserve">
@@ -540,7 +540,7 @@
   <data name="lrbtnProlongacionAutomaticaContratos" xml:space="preserve">
     <value>Prolongación Automática de Contratos</value>
   </data>
-  <data name="ltbReservas" xml:space="preserve">
+  <data name="lrbtbReservas" xml:space="preserve">
     <value>Reservas</value>
   </data>
   <data name="lrgrReservas" xml:space="preserve">
@@ -564,7 +564,7 @@
   <data name="lrbtnPeticiones" xml:space="preserve">
     <value>Peticiones</value>
   </data>
-  <data name="ltbAtipicos" xml:space="preserve">
+  <data name="lrbtbAtipicos" xml:space="preserve">
     <value>Atípicos</value>
   </data>
   <data name="lrgrAtipicos" xml:space="preserve">
@@ -585,7 +585,7 @@
   <data name="lrbtnSeriesAtipicos" xml:space="preserve">
     <value>Series de Atípicos</value>
   </data>
-  <data name="ltbComercial" xml:space="preserve">
+  <data name="lrbtbComercial" xml:space="preserve">
     <value>Comercial</value>
   </data>
   <data name="lrgrComercial" xml:space="preserve">
@@ -606,7 +606,7 @@
   <data name="lrbtnPotenciales" xml:space="preserve">
     <value>Potenciales</value>
   </data>
-  <data name="ltbFacturacion" xml:space="preserve">
+  <data name="lrbtbFacturacion" xml:space="preserve">
     <value>Facturación</value>
   </data>
   <data name="lrgrFacturacion" xml:space="preserve">
@@ -726,7 +726,7 @@
   <data name="lrbtnGeneradorEstadisticasFacturas" xml:space="preserve">
     <value>Generador Estadísticas</value>
   </data>
-  <data name="ltbFlota" xml:space="preserve">
+  <data name="lrbtbFlota" xml:space="preserve">
     <value>Flota</value>
   </data>
   <data name="lrgrInmovilizaciones" xml:space="preserve">
@@ -798,7 +798,7 @@
   <data name="lrbtnSiniestros" xml:space="preserve">
     <value>Siniestros</value>
   </data>
-  <data name="ltbIncidencias" xml:space="preserve">
+  <data name="lrbtbIncidencias" xml:space="preserve">
     <value>Incidencias</value>
   </data>
   <data name="lrgrIncidencias" xml:space="preserve">
@@ -819,7 +819,7 @@
   <data name="lrbtnIncidenciasVehiculos" xml:space="preserve">
     <value>Vehículos</value>
   </data>
-  <data name="ltbEstadisticas" xml:space="preserve">
+  <data name="lrbtbEstadisticas" xml:space="preserve">
     <value>Estadísticas</value>
   </data>
   <data name="lrgrEstadisticas" xml:space="preserve">
@@ -852,7 +852,7 @@
   <data name="lrbtnEstadisticasVehiculos" xml:space="preserve">
     <value>Vehículos</value>
   </data>
-  <data name="ltbListados" xml:space="preserve">
+  <data name="lrbtbListados" xml:space="preserve">
     <value>Listados</value>
   </data>
   <data name="lrgrListados" xml:space="preserve">
@@ -888,7 +888,7 @@
   <data name="lrbtnListadosVehiculos" xml:space="preserve">
     <value>Vehículos</value>
   </data>
-  <data name="ltbConfiguracion" xml:space="preserve">
+  <data name="lrbtbConfiguracion" xml:space="preserve">
     <value>Configuración</value>
   </data>
   <data name="lrgrConfiguracion" xml:space="preserve">
@@ -1071,6 +1071,9 @@
   <data name="dttcUltModi" xml:space="preserve">
     <value>Fecha Última Modificación</value>
   </data>
+  <data name="msgSaveCintaOpcionesOK" xml:space="preserve">
+    <value>El orden de los grupos de las pestañas de la cinta seleccionadas, se han restaurado a su posición inicial.</value>
+  </data>
   <data name="msgSalir" xml:space="preserve">
     <value>¿Está seguro que desea salir de la aplicación?</value>
   </data>
@@ -1092,25 +1095,10 @@
   <data name="msgError141" xml:space="preserve">
     <value>No se encuentra la Tabla</value>
   </data>
-  <data name="lckbMarcarTodos" xml:space="preserve">
-    <value>Marcar Todos</value>
-  </data>
-  <data name="lckbDesmarcarTodos" xml:space="preserve">
-    <value>Desmarcar Todos</value>
-  </data>
-  <data name="lckbCintaOpcionesMarcarTodos" xml:space="preserve">
-    <value>Marcar Todos</value>
-  </data>
-  <data name="lckbCintaOpcionesDesmarcarTodos" xml:space="preserve">
-    <value>Desmarcar Todos</value>
-  </data>
   <data name="lrdbCintaOpcionesMarcarTodos" xml:space="preserve">
     <value>Marcar Todos</value>
   </data>
   <data name="lrdbCintaOpcionesDesmarcarTodos" xml:space="preserve">
     <value>Desmarcar Todos</value>
-  </data>
-  <data name="msgSaveCintaOpcionesOK" xml:space="preserve">
-    <value>El orden de los grupos de las pestañas de la cinta seleccionadas, se han restaurado a su posición inicial.</value>
   </data>
 </root>

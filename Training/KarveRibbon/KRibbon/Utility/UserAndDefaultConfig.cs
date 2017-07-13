@@ -9,8 +9,9 @@ using System.Configuration;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using static KRibbon.Model.Generic.RecopilatorioCollections;
 
-namespace KRibbon.Logic.Generic.Metodos
+namespace KRibbon.Utility
 {
     public class UserAndDefaultConfig
     {
@@ -67,7 +68,7 @@ namespace KRibbon.Logic.Generic.Metodos
         }
 
         /// <summary>
-        /// Devuelve un Boolean si se carga correctamente la configuración por defecto desde Variablesglobales.ribbontabdefaultdictionary,
+        /// Devuelve un Boolean si se carga correctamente la configuración por defecto desde Variablesglobales.ribbontabdictionary,
         /// del RibbonTab recibido por params
         /// </summary>
         /// <param name="ribbontab"></param>
@@ -82,7 +83,7 @@ namespace KRibbon.Logic.Generic.Metodos
                     ribbontab.Items.Clear();
 
                     //Se recuperan los RibbonGroups del Ribbontab pasado por params
-                    List<RibbonGroup> ribbontabdic = Propiedades.VariablesGlobalesCollections.ribbontabdefaultdictionary.Where(r => r.Key.ToString() == ribbontab.Name.ToString()).FirstOrDefault().Value.ribbongroup;
+                    List<RibbonGroup> ribbontabdic = ribbontabdictionary.Where(r => r.Key.ToString() == ribbontab.Name.ToString()).FirstOrDefault().Value.ribbongroup;
 
                     //Se recorren los RibbonGroups del Ribbontab pasado por params. Al Name del RibbonTab se le añade el índex ya que
                     //la es como se guardan las Key en app.exe.config. Se recupera el Name del RibbonGroup. Se guarda en el archivo 
@@ -107,7 +108,7 @@ namespace KRibbon.Logic.Generic.Metodos
         }
 
         /// <summary>
-        /// Guarda la configuración por defecto (Variablesglobales.Dictionary<ERibbonTab, RibbonTabAndGroup> ribbontabdefaultdictionary )
+        /// Guarda la configuración por defecto (Variablesglobales.Dictionary<ERibbonTab, RibbonTabAndGroup> ribbontabdictionary )
         /// de los RibbonGroups de los RibbonTab seleccionados
         /// </summary>
         /// <param name="cintaopcionesusercontrol"></param>
@@ -117,7 +118,7 @@ namespace KRibbon.Logic.Generic.Metodos
             {   //Boolean = true, Indica que se ha marcado algún Checkbox, y mostrará un mensaje de información para el usuario
                 bool result = false;
                 //Recorre los controles de la Grid que contiene los Checkbox. Si el Control es un CheckBox comprobará si está marcado, y en ese caso,
-                //se reordenará a la configuración por defecto el RibbonTab según establecido en VariablesGlobales.ribbontabdefaultdictionary  
+                //se reordenará a la configuración por defecto el RibbonTab según establecido en VariablesGlobales.ribbontabdictionary  
                 foreach (Control control in cintaopcionesusercontrol.grdCintaOpciones.Children)
                 {
                     if (control is CheckBox)
@@ -125,8 +126,8 @@ namespace KRibbon.Logic.Generic.Metodos
                         CheckBox checkbox = control as CheckBox;
                         if (checkbox.IsChecked == true)
                         {
-                            string ribbontabname = Propiedades.VariablesGlobalesCollections.ribbontabdefaultdictionary.Where(r => r.Value.checkbox.Equals(checkbox.Name.ToString())).FirstOrDefault().Key.ToString();
-                            RibbonTab ribbontab = Propiedades.VariablesGlobalesCollections.ribbontabdefaultdictionary.Where(r => r.Key.ToString().Equals(ribbontabname)).FirstOrDefault().Value.ribbontab;
+                            string ribbontabname = ribbontabdictionary.Where(r => r.Value.checkbox.Equals(checkbox.Name.ToString())).FirstOrDefault().Key.ToString();
+                            RibbonTab ribbontab = ribbontabdictionary.Where(r => r.Key.ToString().Equals(ribbontabname)).FirstOrDefault().Value.ribbontab;
                             if (GetDefaultRibbonTabConfig(ribbontab))
                             {
                                 result = true;
@@ -168,7 +169,7 @@ namespace KRibbon.Logic.Generic.Metodos
                         string ribbontabname = string.Format("{0}{1}", ribbontab.Name.ToString(), i);
                         string ribbongroupname = GetSetting(ribbontabname);
 
-                        List<RibbonGroup> ribbontablist = Propiedades.VariablesGlobalesCollections.ribbontabdefaultdictionary.Where(r => r.Key.ToString() == ribbontab.Name.ToString()).FirstOrDefault().Value.ribbongroup;
+                        List<RibbonGroup> ribbontablist = ribbontabdictionary.Where(r => r.Key.ToString() == ribbontab.Name.ToString()).FirstOrDefault().Value.ribbongroup;
                         RibbonGroup ribbongroup = ribbontablist.Where(r => r.Name.ToString() == ribbongroupname).FirstOrDefault();
 
                         ribbontab.Items.Insert(i, ribbongroup);
@@ -248,27 +249,20 @@ namespace KRibbon.Logic.Generic.Metodos
         }
 
         /// <summary>
-        /// Carga la configuración personalizada del usuario de los RibbonTab. En caso de que no haya configuración personalizada del usuario, 
-        /// se carga la configuración por defecto según VariablesGlobales.ribbontabdefaultdictionary
+        /// Carga la configuración por defecto de los RibbonTab
         /// </summary>
-        public static void LoadCurrentUserRibbonTabConfig()
+        public static void LoadDefaultRibbonTabConfig()
         {
             try
             {
                 //Carga el idioma de la app según esté guardado en app.exe.config 
                 GetLanguage();
-                //Recorre los diferentes RibbonTab guardados en VariablesGlobales.ribbontabdefaultdictionary
-                foreach (var item in Propiedades.VariablesGlobalesCollections.ribbontabdefaultdictionary)
-                {
+                //Recorre los diferentes RibbonTab guardados en VariablesGlobales.ribbontabdictionary
+                foreach (var item in ribbontabdictionary)
+                {   //Para cada RibbonTab, se cargan los RibbonGroups de la configuración por defecto según VariablesGlobales.ribbontabdictionary
                     if (item.Value.ribbontab != null)
-                    {   //Para cada RibbonTab, se devuelve una List con los RibbonGroups que contiene. En caso que la List se reciba vacía, se cargarán
-                        //los RibbonGroups de la configuración por defecto, en caso contrario, se habrán cargado los RibbonGroups personalizados del usuario
-                        List<RibbonGroup> rbgroup = GetCurrentUserRibbonTabConfig(item.Value.ribbontab);
-
-                        if (rbgroup == null || rbgroup.Count == 0)
-                        {
-                            GetDefaultRibbonTabConfig(item.Value.ribbontab);
-                        }
+                    {
+                        GetDefaultRibbonTabConfig(item.Value.ribbontab);
                     }
                 }
             }
@@ -279,20 +273,27 @@ namespace KRibbon.Logic.Generic.Metodos
         }
 
         /// <summary>
-        /// Carga la configuración por defecto de los RibbonTab
+        /// Carga la configuración personalizada del usuario de los RibbonTab. En caso de que no haya configuración personalizada del usuario, 
+        /// se carga la configuración por defecto según VariablesGlobales.ribbontabdictionary
         /// </summary>
-        public static void LoadDefaultRibbonTabConfig()
+        public static void LoadCurrentUserRibbonTabConfig()
         {
             try
             {
                 //Carga el idioma de la app según esté guardado en app.exe.config 
                 GetLanguage();
-                //Recorre los diferentes RibbonTab guardados en VariablesGlobales.ribbontabdefaultdictionary
-                foreach (var item in Propiedades.VariablesGlobalesCollections.ribbontabdefaultdictionary)
-                {   //Para cada RibbonTab, se cargan los RibbonGroups de la configuración por defecto según VariablesGlobales.ribbontabdefaultdictionary
+                //Recorre los diferentes RibbonTab guardados en VariablesGlobales.ribbontabdictionary
+                foreach (var item in ribbontabdictionary)
+                {
                     if (item.Value.ribbontab != null)
-                    {
-                        GetDefaultRibbonTabConfig(item.Value.ribbontab);
+                    {   //Para cada RibbonTab, se devuelve una List con los RibbonGroups que contiene. En caso que la List se reciba vacía, se cargarán
+                        //los RibbonGroups de la configuración por defecto, en caso contrario, se habrán cargado los RibbonGroups personalizados del usuario
+                        List<RibbonGroup> rbgroup = GetCurrentUserRibbonTabConfig(item.Value.ribbontab);
+
+                        if (rbgroup == null || rbgroup.Count == 0)
+                        {
+                            GetDefaultRibbonTabConfig(item.Value.ribbontab);
+                        }
                     }
                 }
             }

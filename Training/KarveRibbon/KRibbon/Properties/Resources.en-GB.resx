@@ -186,7 +186,7 @@
   <data name="ltbbtnBuscar" xml:space="preserve">
     <value>Search</value>
   </data>
-  <data name="ltbMaestros" xml:space="preserve">
+  <data name="lrbtbMaestros" xml:space="preserve">
     <value>Master Data</value>
   </data>
   <data name="lrrCentrosAlquiler" xml:space="preserve">
@@ -489,7 +489,7 @@
   <data name="lrbtnTipoImpresoFactura" xml:space="preserve">
     <value>Form Invoice Types</value>
   </data>
-  <data name="ltbContratos" xml:space="preserve">
+  <data name="lrbtbContratos" xml:space="preserve">
     <value>Contracts</value>
   </data>
   <data name="lrgrContratos" xml:space="preserve">
@@ -540,7 +540,7 @@
   <data name="lrbtnProlongacionAutomaticaContratos" xml:space="preserve">
     <value>Automatic Contract Prolonging</value>
   </data>
-  <data name="ltbReservas" xml:space="preserve">
+  <data name="lrbtbReservas" xml:space="preserve">
     <value>Bookings</value>
   </data>
   <data name="lrgrReservas" xml:space="preserve">
@@ -564,7 +564,7 @@
   <data name="lrbtnPeticiones" xml:space="preserve">
     <value>Requests</value>
   </data>
-  <data name="ltbAtipicos" xml:space="preserve">
+  <data name="lrbtbAtipicos" xml:space="preserve">
     <value>Atypical</value>
   </data>
   <data name="lrgrAtipicos" xml:space="preserve">
@@ -585,7 +585,7 @@
   <data name="lrbtnSeriesAtipicos" xml:space="preserve">
     <value>Atypical Series</value>
   </data>
-  <data name="ltbComercial" xml:space="preserve">
+  <data name="lrbtbComercial" xml:space="preserve">
     <value>Commercial</value>
   </data>
   <data name="lrgrComercial" xml:space="preserve">
@@ -606,7 +606,7 @@
   <data name="lrbtnPotenciales" xml:space="preserve">
     <value>Potentials</value>
   </data>
-  <data name="ltbFacturacion" xml:space="preserve">
+  <data name="lrbtbFacturacion" xml:space="preserve">
     <value>Billing</value>
   </data>
   <data name="lrgrFacturacion" xml:space="preserve">
@@ -726,7 +726,7 @@
   <data name="lrbtnGeneradorEstadisticasFacturas" xml:space="preserve">
     <value>Statistics Generator</value>
   </data>
-  <data name="ltbFlota" xml:space="preserve">
+  <data name="lrbtbFlota" xml:space="preserve">
     <value>Fleet</value>
   </data>
   <data name="lrgrInmovilizaciones" xml:space="preserve">
@@ -798,7 +798,7 @@
   <data name="lrbtnSiniestros" xml:space="preserve">
     <value>Accidents</value>
   </data>
-  <data name="ltbIncidencias" xml:space="preserve">
+  <data name="lrbtbIncidencias" xml:space="preserve">
     <value>Incidents</value>
   </data>
   <data name="lrgrIncidencias" xml:space="preserve">
@@ -819,7 +819,7 @@
   <data name="lrbtnIncidenciasVehiculos" xml:space="preserve">
     <value>Vehicles</value>
   </data>
-  <data name="ltbEstadisticas" xml:space="preserve">
+  <data name="lrbtbEstadisticas" xml:space="preserve">
     <value>Statistics</value>
   </data>
   <data name="lrgrEstadisticas" xml:space="preserve">
@@ -852,7 +852,7 @@
   <data name="lrbtnEstadisticasVehiculos" xml:space="preserve">
     <value>Vehicles</value>
   </data>
-  <data name="ltbListados" xml:space="preserve">
+  <data name="lrbtbListados" xml:space="preserve">
     <value>Listings</value>
   </data>
   <data name="lrgrListados" xml:space="preserve">
@@ -888,7 +888,7 @@
   <data name="lrbtnListadosVehiculos" xml:space="preserve">
     <value>Vehicles</value>
   </data>
-  <data name="ltbConfiguracion" xml:space="preserve">
+  <data name="lrbtbConfiguracion" xml:space="preserve">
     <value>Configuration</value>
   </data>
   <data name="lrgrConfiguracion" xml:space="preserve">
@@ -1071,6 +1071,9 @@
   <data name="dttcUltModi" xml:space="preserve">
     <value>Last Modification Date</value>
   </data>
+  <data name="msgSaveCintaOpcionesOK" xml:space="preserve">
+    <value>The order of the groups of selected ribbon tabs, have been restored to their initial position.</value>
+  </data>
   <data name="msgSalir" xml:space="preserve">
     <value>Do you want to quit the application?</value>
   </data>
@@ -1092,25 +1095,10 @@
   <data name="msgError141" xml:space="preserve">
     <value>Table not found</value>
   </data>
-  <data name="lckbMarcarTodos" xml:space="preserve">
-    <value>Mark All</value>
-  </data>
-  <data name="lckbDesmarcarTodos" xml:space="preserve">
-    <value>Unmark All</value>
-  </data>
-  <data name="lckbCintaOpcionesMarcarTodos" xml:space="preserve">
-    <value>Mark All</value>
-  </data>
-  <data name="lckbCintaOpcionesDesmarcarTodos" xml:space="preserve">
-    <value>Unmark All</value>
-  </data>
   <data name="lrdbCintaOpcionesMarcarTodos" xml:space="preserve">
     <value>Mark All</value>
   </data>
   <data name="lrdbCintaOpcionesDesmarcarTodos" xml:space="preserve">
     <value>Unmark All</value>
-  </data>
-  <data name="msgSaveCintaOpcionesOK" xml:space="preserve">
-    <value>The order of the groups of selected ribbon tabs, have been restored to their initial position.</value>
   </data>
 </root>

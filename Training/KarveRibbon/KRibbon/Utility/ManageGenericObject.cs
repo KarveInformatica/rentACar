@@ -3,29 +3,36 @@ using KRibbon.Model.Generic;
 using KRibbon.Model.Sybase;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Reflection;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
+using static KRibbon.Model.Generic.RecopilatorioEnumerations;
 
-namespace KRibbon.Logic.Generic.Metodos
+namespace KRibbon.Utility
 {
-    public class CreateGenericObject
+    public class ManageGenericObject
     {
-        public static ObservableCollection<object> GetObservableCollectionFromSADataReader(SADataReader dr, List<DBCriterios> dbcriterioslist, object obj)
-        {
-            ObservableCollection<object> auxlist = new ObservableCollection<object>();
+        /// <summary>
+        /// Devuelve una GenericObservableCollection con la info recibida de la BBDD (SADataReader dr), teniendo en cuenta la 
+        /// info (List<TemplateInfoDB> templateinfodb) del tipo de dato (object obj) recibidos por params.
+        /// También valida el tipo de dato 
+        /// </summary>
+        /// <param name="dr"></param>
+        /// <param name="templateinfodb"></param>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static GenericObservableCollection GetObservableCollectionFromSADataReader(SADataReader dr, List<TemplateInfoDB> templateinfodb, object obj)
+        {   //Se crea el GenericObservableCollection auxiliar que se devolverá, donde se irá añadiendo la info recuperada de la BBDD (SADataReader dr)
+            GenericObservableCollection auxobscollection = new GenericObservableCollection();
             //Se recorre el SADataReader para obtener sus valores según el tipo de objeto recibido por params
             while (dr.Read())
-            {
-                //Recuperamos las propiedades e instanciamos un nuevo objeto del tipo del objeto recibido por params
+            {   //Se recuperan las propiedades e instanciamos un nuevo objeto del tipo del objeto recibido por params
                 var properties = GetProperties(obj);
                 object newobj  = CreateObject(obj);
 
-                //Recorremos la lista de propiedades del objeto recibido por params
+                //Se recorre la lista de propiedades del objeto recibido por params
                 foreach (var prop in properties)
-                {   //De cada propiedad del objeto recibido por params, recorremos su colección de criterios
-                    foreach (var item in dbcriterioslist)
-                    {   //Se comprueba el tipo de la propiedad del objeto recibido por params
+                {   //De cada propiedad del objeto recibido por params, se recorre su List<TemplateInfoDB> templateinfodb
+                    foreach (var item in templateinfodb)
+                    {   //Se comprueba que el tipo de la propiedad del objeto recibido por params esté incluida en el List<TemplateInfoDB> templateinfodb
                         if (item.nombrepropiedadobj == prop.Name)
                         {   //Se añade el dato recuperado de la DB mediante el SADataReader a la propiedad(item.nombrepropiedadobj) 
                             //del nuevo objeto(newobj), validando el dato según su tipo(ValidateData.***)
@@ -64,9 +71,9 @@ namespace KRibbon.Logic.Generic.Metodos
                         }
                     }
                 }
-                auxlist.Add(newobj); //Se añade el nuevo objeto del tipo recibido por params, a la ObservableCollection
+                auxobscollection.GenericObsCollection.Add(newobj); //Se añade el nuevo objeto del tipo recibido por params, a la ObservableCollection
             }
-            return auxlist;
+            return auxobscollection;
         }
 
         /// <summary>
@@ -97,8 +104,8 @@ namespace KRibbon.Logic.Generic.Metodos
         }
 
         /// <summary>
-        /// Añadir un valor(value) recuperado de la DB mediante el SADataReader, a la propiedad(nombrepropiedadobj) pasada por params del 
-        /// objeto(obj) pasado también por params
+        /// Añade un valor(value) recuperado de la DB mediante el SADataReader, a la propiedad(nombrepropiedadobj) 
+        /// pasada por params del objeto(obj) pasado también por params
         /// </summary>
         /// <param name="obj">El objeto al cual añadimos el valor recuperado desde el SADataReader</param>
         /// <param name="nombrepropiedad">Nombre de la propiedad del objeto a la cual le añadiremos el valor recuperado desde el SADataReader</param>

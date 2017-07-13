@@ -1,21 +1,27 @@
-﻿using KRibbon.Logic.Generic.Metodos;
+﻿using KRibbon.Utility;
 using KRibbon.View;
 using System.Windows;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
+using static KRibbon.Model.Generic.RecopilatorioEnumerations;
 
 namespace KRibbon.Logic.ToolBar
 {
     public class ToolBarLogic
     {
         /// <summary>
-        /// Recupera el EOpcion del TabItem seleccionado del Tabcontrol para poder habilitar/deshabilitar los Buttons y el TextBox de búsqueda 
-        /// del ToolBar según corresponda
+        /// Recupera el EOpcion del TabItem seleccionado del Tabcontrol para poder habilitar/deshabilitar 
+        /// los Buttons y el TextBox de búsqueda del ToolBar según corresponda
         /// </summary>
-        /// <param name="opcion"></param>
         public static void EnabledDisabledToolBarButtonsByEOpcion()
         {
-            EOpcion opcion = TabControlAndTabItemUtil.TabControlSelectedItemEOpcion();
+            EnabledDisabledToolBarButtonsByEOpcion(TabControlAndTabItemUtil.TabControlSelectedItemEOpcion());
+        }
 
+        /// <summary>
+        /// Habilita/deshabilita los Buttons y el TextBox de búsqueda del ToolBar según el EOpcion recibido por params
+        /// </summary>
+        /// <param name="opcion"></param>
+        public static void EnabledDisabledToolBarButtonsByEOpcion(EOpcion opcion)
+        {
             switch (opcion)
             {
                 #region Maestros
@@ -66,16 +72,16 @@ namespace KRibbon.Logic.ToolBar
                     break;
 
                 case EOpcion.rbtnBancosClientes:
-                    ToolBarButtonsByEOpcion(true, true, true, true, true, true, false, false, false, true);
+                    ToolBarButtonsByEOpcion(false, false, false, true, true, true, false, false, false, true);
                     break;
                 case EOpcion.rbtnBloqueFacturacion:
-                    ToolBarButtonsByEOpcion(true, true, true, true, true, true, false, false, false, true);
+                    ToolBarButtonsByEOpcion(false, false, false, true, true, true, false, false, false, true);
                     break;
                 case EOpcion.rbtnCanales:
-                    ToolBarButtonsByEOpcion(true, true, true, true, true, true, false, false, false, true);
+                    ToolBarButtonsByEOpcion(false, false, false, true, true, true, false, false, false, true);
                     break;
                 case EOpcion.rbtnCargosPersonal:
-                    ToolBarButtonsByEOpcion(true, true, true, true, true, true, false, false, false, true);
+                    ToolBarButtonsByEOpcion(false, false, false, true, true, true, false, false, false, true);
                     break;
                 case EOpcion.rbtnClavesPresupuesto:
                     break;
@@ -115,7 +121,7 @@ namespace KRibbon.Logic.ToolBar
                 case EOpcion.rbtnEmpleadosAgencia:
                     break;
                 case EOpcion.rbtnTipoComisionista:
-                    ToolBarButtonsByEOpcion(true, true, true, true, true, true, false, false, false, true);
+                    ToolBarButtonsByEOpcion(false, false, false, true, true, true, false, false, false, true);
                     break;
 
                 case EOpcion.rbtnAccesorios:
@@ -145,7 +151,7 @@ namespace KRibbon.Logic.ToolBar
                 case EOpcion.rbtnDivisas:
                     break;
                 case EOpcion.rbtnFormaPagoProveedor:
-                    ToolBarButtonsByEOpcion(true, true, true, true, true, true, false, false, false, true);
+                    ToolBarButtonsByEOpcion(false, false, false, true, true, true, false, false, false, true);
                     break;
                 case EOpcion.rbtnTiposProveedores:
                     break;
@@ -162,7 +168,7 @@ namespace KRibbon.Logic.ToolBar
                 case EOpcion.rbtnConceptosFacturacion:
                     break;
                 case EOpcion.rbtnGruposTarifa:
-                    ToolBarButtonsByEOpcion(true, true, true, true, true, true, false, false, false, true);
+                    ToolBarButtonsByEOpcion(false, false, false, true, true, true, false, false, false, true);
                     break;
 
                 case EOpcion.rbtnAccesoriosVehiculos:

@@ -3,12 +3,12 @@ using KRibbon.Logic.Configuracion;
 using KRibbon.Model.Generic;
 using System.Linq;
 using System.Windows.Input;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesCollections;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
+using static KRibbon.Model.Generic.RecopilatorioCollections;
+using static KRibbon.Model.Generic.RecopilatorioEnumerations;
 
 namespace KRibbon.ViewModel.ConfiguracionViewModel
 {
-    public class CintaOpcionesViewModel : PropertyChangedBase
+    public class CintaOpcionesViewModel : GenericPropertyChanged
     {
         #region Variables
         private CintaOpcionesCommand cintaopcionescommand;
@@ -38,7 +38,7 @@ namespace KRibbon.ViewModel.ConfiguracionViewModel
         /// <param name="parameter"></param>
         public void CintaOpciones(object parameter)
         {
-            EOpcion opcion = tiposauxiliaresdictionary.Where(z => z.Key.ToString() == parameter.ToString()).FirstOrDefault().Key;          
+            EOpcion opcion = ribbonbuttondictionary.Where(z => z.Key.ToString() == parameter.ToString()).FirstOrDefault().Key;          
 
             //Si el param no se encuentra en la Enum EOpcion, no hace nada, sino mostraría 
             //la Tab correspondiente al primer valor de la Enum EOpcion

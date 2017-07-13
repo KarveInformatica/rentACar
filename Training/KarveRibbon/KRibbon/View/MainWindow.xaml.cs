@@ -1,5 +1,5 @@
-﻿using KRibbon.Logic.Generic.Metodos;
-using KRibbon.Logic.ToolBar;
+﻿using KRibbon.Logic.ToolBar;
+using KRibbon.Utility;
 using Microsoft.Windows.Controls.Ribbon;
 using System;
 using System.Windows;
@@ -26,7 +26,7 @@ namespace KRibbon.View
             }, this.Dispatcher);
 
             //Carga la configuración personalizada del usuario (idioma y RibbonTabs/RibbonGroups). En caso que no exista configuración personalizada,
-            //se cargará la configuración por defecto según app.exe.config y VariablesGlobales.ribbontabdefaultdictionary
+            //se cargará la configuración por defecto según app.exe.config y VariablesGlobales.ribbontabdictionary
             UserAndDefaultConfig.LoadCurrentUserRibbonTabConfig();
         }
 
@@ -50,7 +50,7 @@ namespace KRibbon.View
         #region Cierre de la Applicación
         private void mainwindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Logic.Generic.CloseWindow.CloseWindowFromWindow(sender, e);
+            Logic.Generic.CloseWindowLogic.CloseWindowFromWindow(sender, e);
         }
         #endregion
 

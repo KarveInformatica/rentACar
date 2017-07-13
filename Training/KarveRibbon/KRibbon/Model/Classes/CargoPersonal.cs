@@ -1,23 +1,23 @@
 ﻿using KRibbon.Model.Generic;
 using KRibbon.Properties;
 using System.Collections.Generic;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
+using static KRibbon.Model.Generic.RecopilatorioEnumerations;
 
 namespace KRibbon.Model.Classes
 {
-    public class CargoPersonal : PropertyChangedBase
+    public class CargoPersonal : GenericPropertyChanged
     {
         #region List<DBCriterios>
-        public static List<DBCriterios> dbcriterioslist = new List<DBCriterios>()
+        public static List<TemplateInfoDB> templateinfodb = new List<TemplateInfoDB>()
         {
-            new DBCriterios(){ nombrepropiedadobj = "Codigo",
-                               nombrecolumnadb    = "COD_CAT",
-                               tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
-                               datagridheader     = Resources.dttcCodigo },
-            new DBCriterios(){ nombrepropiedadobj = "Nombre",
-                               nombrecolumnadb    = "NOM_CAT",
-                               tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
-                               datagridheader     = Resources.dttcDefinicion }
+            new TemplateInfoDB(){ nombrepropiedadobj = "Codigo",
+                                  nombrecolumnadb    = "COD_CAT",
+                                  tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                  datagridheader     = Resources.dttcCodigo },
+            new TemplateInfoDB(){ nombrepropiedadobj = "Nombre",
+                                  nombrecolumnadb    = "NOM_CAT",
+                                  tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                  datagridheader     = Resources.dttcDefinicion }
         };
         #endregion
 

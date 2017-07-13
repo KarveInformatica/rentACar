@@ -1,7 +1,4 @@
-﻿using KRibbon.Logic.Generic;
-using Microsoft.Windows.Controls.Ribbon;
-using System.Windows;
-using KRibbon;
+﻿using System.Windows;
 
 
 namespace KRibbon

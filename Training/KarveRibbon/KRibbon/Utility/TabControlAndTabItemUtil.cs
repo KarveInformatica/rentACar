@@ -3,10 +3,10 @@ using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesCollections;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
+using static KRibbon.Model.Generic.RecopilatorioCollections;
+using static KRibbon.Model.Generic.RecopilatorioEnumerations;
 
-namespace KRibbon.Logic.Generic.Metodos
+namespace KRibbon.Utility
 {
     public class TabControlAndTabItemUtil
     {
@@ -20,7 +20,6 @@ namespace KRibbon.Logic.Generic.Metodos
             try
             {
                 TabItem tabitem = ((MainWindow)Application.Current.MainWindow).tbControl.SelectedItem as TabItem;
-                TabItem tabitemfocus = tabitemdictionary.Where(t => t.Key.ToString() == tabitem.Name.ToString()).FirstOrDefault().Value.TbItem;
                 opcion = tabitemdictionary.Where(t => t.Key.ToString() == tabitem.Name.ToString()).FirstOrDefault().Key;
                 return opcion;
             }

@@ -1,22 +1,24 @@
-﻿using KRibbon.Model.Sybase;
-using KRibbon.Logic.Generic.Metodos;
-using KRibbon.Logic.Generic.Propiedades;
+﻿using KRibbon.Logic.Generic;
+using KRibbon.Logic.ToolBar;
+using KRibbon.Model.Generic;
+using KRibbon.Model.Sybase;
+using KRibbon.Utility;
 using KRibbon.View;
 using System;
-using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Windows.Controls;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesCollections;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
+using static KRibbon.Model.Generic.RecopilatorioCollections;
+using static KRibbon.Model.Generic.RecopilatorioEnumerations;
 
 namespace KRibbon.Logic.Configuracion
 {
     public class CintaOpcionesLogic
     {
         /// <summary>
-        /// Proceso de añadir un UserControl al TabControl según la EOpcion que recibe por param. Si el TabItem ya está mostrado, 
+        /// Añade un UserControl al TabControl según la EOpcion que recibe por param. Si el TabItem ya está mostrado, 
         /// no se carga de nuevo, simplemente se establece el foco en ese TabItem.
+        /// Se añade el EOpcion y el nuevo TabItem al Dictionary de TabItems(tabitemdictionary) que almacena los TabItems activos.
         /// </summary>
         /// <param name="opcion"></param>
         public static void PrepareTabItemUserControl(EOpcion opcion)
@@ -25,19 +27,22 @@ namespace KRibbon.Logic.Configuracion
             {
                 if (tabitemdictionary.Where(p => p.Key == opcion).Count() == 0)
                 {
-                    dgitemsobscollection = new ObservableCollection<object>();
-                    DatosAyudaTabItem tabitemusercontrol = new DatosAyudaTabItem(dgitemsobscollection);
-
                     CintaOpcionesUserControl cintaopcionesusercontrol = new CintaOpcionesUserControl();
-
                     //Se crea el Tabitem
-                    TabItem tbitem = Generic.ManageTabItem.CreateTabItemDataGrid(opcion, tabitemusercontrol);
+                    TabItem tabitem = TabItemLogic.CreateTabItemDataGrid(opcion);
+
                     //Se añade un nuevo object CintaOpcionesUserControl al TabItem
-                    tbitem.Content = cintaopcionesusercontrol;
+                    tabitem.Content = cintaopcionesusercontrol;
+
+                    //Se añade el EOpcion y el nuevo TabItem al Dictionary de TabItems(tabitemdictionary) que almacena los TabItems activos
+                    tabitemdictionary.Add(opcion, new TemplateInfoTabItem(tabitem));
+
+                    //Se habilitan/deshabilitan los Buttons del ToolBar según corresponda
+                    ToolBarLogic.EnabledDisabledToolBarButtonsByEOpcion(opcion);
                 }
                 else
                 {   //Si el TabItem ya está mostrado, no se carga de nuevo, simplemente se establece el foco en ese TabItem
-                    tabitemdictionary.Where(z => z.Key == opcion).FirstOrDefault().Value.TbItem.Focus();
+                    tabitemdictionary.Where(z => z.Key == opcion).FirstOrDefault().Value.TabItem.Focus();
                 }
             }
             catch (Exception ex)
@@ -47,7 +52,7 @@ namespace KRibbon.Logic.Configuracion
         }
 
         /// <summary>
-        /// Guarda la configuración por defecto (Variablesglobales.Dictionary<ERibbonTab, RibbonTabAndGroup> ribbontabdefaultdictionary )
+        /// Guarda la configuración por defecto (Variablesglobales.Dictionary<ERibbonTab, RibbonTabAndGroup> ribbontabdictionary )
         /// de los RibbonGroups de los RibbonTab seleccionados
         /// </summary>
         /// <param name="opcion"></param>
@@ -55,7 +60,7 @@ namespace KRibbon.Logic.Configuracion
         {
             try
             {
-                TabItem tabitem = tabitemdictionary.Where(c => c.Key == opcion).FirstOrDefault().Value.TbItem;
+                TabItem tabitem = tabitemdictionary.Where(c => c.Key == opcion).FirstOrDefault().Value.TabItem;
                 CintaOpcionesUserControl cintaopcionesusercontrol = tabitem.Content as CintaOpcionesUserControl;
 
                 UserAndDefaultConfig.SetDefaultRibbonTabConfig(cintaopcionesusercontrol);
@@ -74,7 +79,7 @@ namespace KRibbon.Logic.Configuracion
         {
             try
             {
-                TabItem tabitem = tabitemdictionary.Where(c => c.Key == opcion).FirstOrDefault().Value.TbItem;
+                TabItem tabitem = tabitemdictionary.Where(c => c.Key == opcion).FirstOrDefault().Value.TabItem;
                 CintaOpcionesUserControl cintaopcionesusercontrol = tabitem.Content as CintaOpcionesUserControl;
 
                 foreach (Control control in cintaopcionesusercontrol.grdCintaOpciones.Children)

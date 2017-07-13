@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace KRibbon.Logic.Generic
 {
-    public class CloseWindow
+    public class CloseWindowLogic
     {
         /// <summary>
         /// Cierra la aplicación. Llamada desde (Ribbon.ApplicationMenu)Inicio/Salir

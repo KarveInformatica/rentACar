@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace KRibbon.Logic.Generic.Metodos
+namespace KRibbon.Utility
 {
     public class ValidateData
     {

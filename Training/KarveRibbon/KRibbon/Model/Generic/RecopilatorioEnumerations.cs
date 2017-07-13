@@ -1,6 +1,6 @@
-﻿namespace KRibbon.Logic.Generic.Propiedades
+﻿namespace KRibbon.Model.Generic
 {
-    public class VariablesGlobalesEnumerations
+    public class RecopilatorioEnumerations
     {
         /// <summary>
         /// Enumeración de los tipos de datos maestros
@@ -306,17 +306,17 @@
         /// </summary>
         public enum ERibbonTab
         {
-            tbMaestros,
-            tbContratos,
-            tbReservas,
-            tbAtipicos,
-            tbComercial,
-            tbFacturacion,
-            tbFlota,
-            tbIncidencias,
-            tbEstadisticas,
-            tbListados,
-            tbConfiguracion
+            rbtbMaestros,
+            rbtbContratos,
+            rbtbReservas,
+            rbtbAtipicos,
+            rbtbComercial,
+            rbtbFacturacion,
+            rbtbFlota,
+            rbtbIncidencias,
+            rbtbEstadisticas,
+            rbtbListados,
+            rbtbConfiguracion
         }
 
         /// <summary>

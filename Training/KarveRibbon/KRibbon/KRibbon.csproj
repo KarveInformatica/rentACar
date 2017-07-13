@@ -97,9 +97,10 @@
     <Compile Include="Commands\ToolBarCommand\SalirToolBarCommand.cs" />
     <Compile Include="Commands\ToolBarCommand\SiguienteToolBarCommand.cs" />
     <Compile Include="Logic\Configuracion\CintaOpcionesLogic.cs" />
-    <Compile Include="Logic\Generic\CloseWindow.cs" />
-    <Compile Include="Logic\Generic\ManageTabItem.cs" />
-    <Compile Include="Logic\Maestros\AuxiliaresLogic.cs" />
+    <Compile Include="Logic\Generic\CloseWindowLogic.cs" />
+    <Compile Include="Logic\Maestros\DataGridMaestrosAuxiliaresLogic.cs" />
+    <Compile Include="Logic\Generic\TabItemLogic.cs" />
+    <Compile Include="Logic\Maestros\MaestrosAuxiliaresLogic.cs" />
     <Compile Include="Logic\ToolBar\AnteriorToolBarLogic.cs" />
     <Compile Include="Logic\ToolBar\BuscarToolBarLogic.cs" />
     <Compile Include="Logic\ToolBar\CancelarToolBarLogic.cs" />
@@ -118,7 +119,7 @@
     <Compile Include="Model\Classes\FormaPagoProveedor.cs" />
     <Compile Include="Model\Classes\TipoComisionista.cs" />
     <Compile Include="Model\Classes\GrupoTarifa.cs" />
-    <Compile Include="Model\Generic\DBCriterios.cs" />
+    <Compile Include="Model\Generic\TemplateInfoDB.cs" />
     <Compile Include="Model\SQL\ScriptsSQLViews.cs" />
     <Compile Include="Model\SQL\ScriptsSQLUpdate.cs" />
     <Compile Include="Model\SQL\ScriptsSQLProcedures.cs" />
@@ -127,7 +128,7 @@
     <Compile Include="Model\SQL\ScriptsSQLOthers.cs" />
     <Compile Include="Model\SQL\ScriptsSQLDelete.cs" />
     <Compile Include="Model\SQL\ScriptsSQLSelect.cs" />
-    <Compile Include="Model\Sybase\AuxiliaresModel.cs" />
+    <Compile Include="Model\Sybase\MaestrosAuxiliaresModel.cs" />
     <Compile Include="Model\Sybase\DBConnect.cs" />
     <Compile Include="Model\Sybase\ErrorsDB.cs" />
     <Compile Include="Model\Sybase\ErrorsGeneric.cs" />
@@ -148,37 +149,31 @@
       <DependentUpon>Resources.es-ES.resx</DependentUpon>
     </Compile>
     <Compile Include="Logic\Generic\AddRibbonTabByCode.cs" />
-    <Compile Include="Logic\Generic\ChangeLanguage.cs" />
+    <Compile Include="Logic\Generic\ChangeLanguageLogic.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="Utility\Metodos\CreateGenericObject.cs" />
-    <Compile Include="Utility\Metodos\RibbonGroupDragDrop.cs" />
-    <Compile Include="Utility\Metodos\TabControlAndTabItemUtil.cs" />
-    <Compile Include="Utility\Propiedades\RibbonTabAndGroup.cs" />
-    <Compile Include="Utility\Propiedades\TabItemAuxiliares.cs" />
-    <Compile Include="Utility\Propiedades\DatosAuxOpciones.cs" />
-    <Compile Include="Utility\Metodos\UserAndDefaultConfig.cs" />
-    <Compile Include="Utility\Metodos\ValidateData.cs" />
-    <Compile Include="Utility\Propiedades\VariablesGlobalesCollections.cs" />
-    <Compile Include="Utility\Propiedades\VariablesGlobalesEnumerations.cs" />
+    <Compile Include="Utility\ManageGenericObject.cs" />
+    <Compile Include="Utility\RibbonGroupDragDrop.cs" />
+    <Compile Include="Utility\TabControlAndTabItemUtil.cs" />
+    <Compile Include="Model\Generic\GenericObservableCollection.cs" />
+    <Compile Include="Model\Generic\TemplateInfoRibbonTabAndGroup.cs" />
+    <Compile Include="Model\Generic\TemplateInfoTabItem.cs" />
+    <Compile Include="Model\Generic\TemplateInfoRibbonButton.cs" />
+    <Compile Include="Utility\UserAndDefaultConfig.cs" />
+    <Compile Include="Utility\ValidateData.cs" />
+    <Compile Include="Model\Generic\RecopilatorioCollections.cs" />
+    <Compile Include="Model\Generic\RecopilatorioEnumerations.cs" />
     <Compile Include="ViewModel\ConfiguracionViewModel\CintaOpcionesViewModel.cs" />
     <Compile Include="ViewModel\GenericViewModel\CloseTabItemViewModel.cs" />
     <Compile Include="ViewModel\GenericViewModel\CloseWindowViewModel.cs" />
     <Compile Include="ViewModel\GenericViewModel\ToolBarViewModel.cs" />
-    <Compile Include="ViewModel\ObservableCollection\BancoViewModel.cs" />
-    <Compile Include="ViewModel\ObservableCollection\CargoPersonalViewModel.cs" />
-    <Compile Include="ViewModel\ObservableCollection\GrupoTarifaViewModel.cs" />
-    <Compile Include="ViewModel\ObservableCollection\TipoComisionistaViewModel.cs" />
-    <Compile Include="ViewModel\ObservableCollection\FormaPagoProveedorViewModel.cs" />
-    <Compile Include="ViewModel\ObservableCollection\CanalClienteViewModel.cs" />
-    <Compile Include="ViewModel\ObservableCollection\BloqueFacturacionViewModel.cs" />
     <Compile Include="ViewModel\GenericViewModel\SetLanguagesViewModel.cs" />
     <Compile Include="ViewModel\MaestrosViewModel\MostrarAuxiliaresViewModel.cs" />
-    <Compile Include="Model\Generic\PropertyChangedBase.cs" />
+    <Compile Include="Model\Generic\GenericPropertyChanged.cs" />
     <Compile Include="View\CintaOpcionesUserControl.xaml.cs">
       <DependentUpon>CintaOpcionesUserControl.xaml</DependentUpon>
     </Compile>

@@ -2,7 +2,7 @@
 using Microsoft.Windows.Controls.Ribbon;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
+using static KRibbon.Model.Generic.RecopilatorioEnumerations;
 
 namespace KRibbon.Logic.Generic
 {
@@ -98,31 +98,31 @@ namespace KRibbon.Logic.Generic
             //if (tabitemdictionary.Where(p => p.TipoAuxiliar == tipoauxiliar).Count() == 0)
             //{
             //    TabItem tbitem = new TabItem();
-            //    tbitem.Header = tiposauxiliaresdictionary.Where(z => z.Key == tipoauxiliar).FirstOrDefault().Value.propertiesresources;
+            //    tbitem.Header = ribbonbuttondictionary.Where(z => z.Key == tipoauxiliar).FirstOrDefault().Value.propertiesresources;
             //    //tabitemdictionary.Add(tipoauxiliar, tbitem);
             //    ((MainWindow)Application.Current.MainWindow).tbControl.Items.Add(tbitem);
             //    tbitem.Focus();
 
-            //    dgitemsobscollection = new ObservableCollection<object>();
+            //    genericobscollection = new ObservableCollection<object>();
 
             //    switch (tipoauxiliar)
             //    {
             //        case EOpcion.rbtnFormaPagoProveedor:
             //            //FormaPagoProveedorCollection fpp = new FormaPagoProveedorCollection();
-            //            //VariablesGlobales.dgitemsobscollection = fpp.GetFormaPagoProveedor();
+            //            //VariablesGlobales.genericobscollection = fpp.GetFormaPagoProveedor();
             //            break;
             //        case EOpcion.rbtnGruposTarifa:
             //            //GrupoTarifaCollection gtr = new GrupoTarifaCollection();
-            //            //VariablesGlobales.dgitemsobscollection = gtr.GetGruposTarifa();
+            //            //VariablesGlobales.genericobscollection = gtr.GetGruposTarifa();
             //            break;
             //        case EOpcion.rbtnTipoComisionista:
             //            //TipoComisionistaCollection tc = new TipoComisionistaCollection();
-            //            //VariablesGlobales.dgitemsobscollection = tc.GetTiposComisionista();
+            //            //VariablesGlobales.genericobscollection = tc.GetTiposComisionista();
             //            break;
             //        default:
             //            break;
             //    }
-            //    LoadDataItem(tbitem, dgitemsobscollection, tipoauxiliar);
+            //    LoadDataItem(tbitem, genericobscollection, tipoauxiliar);
             //}
             //else
             //{   //Si el TabItem del tipo de auxiliar ya se está mostrado, no se carga

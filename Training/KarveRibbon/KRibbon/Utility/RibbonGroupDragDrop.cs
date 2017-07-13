@@ -1,10 +1,9 @@
-﻿using KRibbon.Model.Sybase;
-using Microsoft.Windows.Controls.Ribbon;
+﻿using Microsoft.Windows.Controls.Ribbon;
 using System;
 using System.Windows;
 using System.Windows.Input;
 
-namespace KRibbon.Logic.Generic.Metodos
+namespace KRibbon.Utility
 {
     public class RibbonGroupDragDrop
     {
@@ -27,7 +26,7 @@ namespace KRibbon.Logic.Generic.Metodos
                     DragDrop.DoDragDrop(ribbongroup, ribbongroup, DragDropEffects.All);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //ErrorsGeneric.MessageError(ex);
             }
@@ -41,7 +40,7 @@ namespace KRibbon.Logic.Generic.Metodos
         public static void RibbonGroup_Drop(object sender, DragEventArgs e)
         {
             try
-            {                
+            {
                 var target = e.Source as RibbonGroup;
                 var origin = e.Data.GetData(typeof(RibbonGroup)) as RibbonGroup;
 
@@ -61,10 +60,7 @@ namespace KRibbon.Logic.Generic.Metodos
                     UserAndDefaultConfig.SetCurrentUserRibbonTabConfig(ribbontab);
                 }
             }
-            catch (Exception ex)
-            {
-                //ErrorsGeneric.MessageError(ex);
-            }
+            catch (Exception) { }
         }
     }
 }

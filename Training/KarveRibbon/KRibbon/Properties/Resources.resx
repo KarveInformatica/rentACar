@@ -206,7 +206,7 @@
     <value>Buscar</value>
     <comment>ToolBar\Acciones\Buscar</comment>
   </data>
-  <data name="ltbMaestros" xml:space="preserve">
+  <data name="lrbtbMaestros" xml:space="preserve">
     <value>Maestros</value>
     <comment>Ribbon\Maestros\Centros de Alquiler\Maestros</comment>
   </data>
@@ -610,7 +610,7 @@
     <value>Tipos Impreso Factura</value>
     <comment>Ribbon\Maestros\Auxiliares\Varios\Tipos Impreso Factura</comment>
   </data>
-  <data name="ltbContratos" xml:space="preserve">
+  <data name="lrbtbContratos" xml:space="preserve">
     <value>Contratos</value>
     <comment>Ribbon\Contratos\Contratos\Contratos</comment>
   </data>
@@ -678,7 +678,7 @@
     <value>Prolongación Automática de Contratos</value>
     <comment>Ribbon\Contratos\Varios\Prolongación Automática de Contratos</comment>
   </data>
-  <data name="ltbReservas" xml:space="preserve">
+  <data name="lrbtbReservas" xml:space="preserve">
     <value>Reservas</value>
     <comment>Ribbon\Reservas\Reservas</comment>
   </data>
@@ -710,7 +710,7 @@
     <value>Peticiones</value>
     <comment>Ribbon\Reservas\Peticiones</comment>
   </data>
-  <data name="ltbAtipicos" xml:space="preserve">
+  <data name="lrbtbAtipicos" xml:space="preserve">
     <value>Atípicos</value>
     <comment>Ribbon\Atípicos\Atípicos</comment>
   </data>
@@ -738,7 +738,7 @@
     <value>Series de Atípicos</value>
     <comment>Ribbon\Atípicos\Series de Atípicos</comment>
   </data>
-  <data name="ltbComercial" xml:space="preserve">
+  <data name="lrbtbComercial" xml:space="preserve">
     <value>Comercial</value>
     <comment>Ribbon\Comercial\Comercial</comment>
   </data>
@@ -766,7 +766,7 @@
     <value>Potenciales</value>
     <comment>Ribbon\Comercial\Potenciales</comment>
   </data>
-  <data name="ltbFacturacion" xml:space="preserve">
+  <data name="lrbtbFacturacion" xml:space="preserve">
     <value>Facturación</value>
     <comment>Ribbon\Facturación\Facturación\Facturación</comment>
   </data>
@@ -926,7 +926,7 @@
     <value>Generador Estadísticas</value>
     <comment>Ribbon\Facturación\Estadísticas\Generador Estadísticas</comment>
   </data>
-  <data name="ltbFlota" xml:space="preserve">
+  <data name="lrbtbFlota" xml:space="preserve">
     <value>Flota</value>
     <comment>Ribbon\Flota\Flota</comment>
   </data>
@@ -1022,7 +1022,7 @@
     <value>Siniestros</value>
     <comment>Ribbon\Flota\Varios\Siniestros</comment>
   </data>
-  <data name="ltbIncidencias" xml:space="preserve">
+  <data name="lrbtbIncidencias" xml:space="preserve">
     <value>Incidencias</value>
     <comment>Ribbon\Incidencias\Incidencias</comment>
   </data>
@@ -1050,7 +1050,7 @@
     <value>Vehículos</value>
     <comment>Ribbon\Incidencias\Vehículos</comment>
   </data>
-  <data name="ltbEstadisticas" xml:space="preserve">
+  <data name="lrbtbEstadisticas" xml:space="preserve">
     <value>Estadísticas</value>
     <comment>Ribbon\Estadísticas\Estadísticas</comment>
   </data>
@@ -1094,7 +1094,7 @@
     <value>Vehículos</value>
     <comment>Ribbon\Estadísticas\Vehículos</comment>
   </data>
-  <data name="ltbListados" xml:space="preserve">
+  <data name="lrbtbListados" xml:space="preserve">
     <value>Listados</value>
     <comment>Ribbon\Listados\Listados</comment>
   </data>
@@ -1142,7 +1142,7 @@
     <value>Vehículos</value>
     <comment>Ribbon\Listados\Vehículos</comment>
   </data>
-  <data name="ltbConfiguracion" xml:space="preserve">
+  <data name="lrbtbConfiguracion" xml:space="preserve">
     <value>Configuración</value>
     <comment>Ribbon\Configuración\Configuración</comment>
   </data>
@@ -1386,6 +1386,10 @@
     <value>Fecha Última Modificación</value>
     <comment>dttcUltModi</comment>
   </data>
+  <data name="msgSaveCintaOpcionesOK" xml:space="preserve">
+    <value>El orden de los grupos de las pestañas de la cinta seleccionadas, se han restaurado a su posición inicial.</value>
+    <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
+  </data>
   <data name="msgSalir" xml:space="preserve">
     <value>¿Está seguro que desea salir de la aplicación?</value>
     <comment>msgSalir</comment>
@@ -1414,32 +1418,12 @@
     <value>No se encuentra la Tabla</value>
     <comment>Table not found</comment>
   </data>
-  <data name="lckbMarcarTodos" xml:space="preserve">
-    <value>Marcar Todos</value>
-    <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
-  </data>
-  <data name="lckbDesmarcarTodos" xml:space="preserve">
-    <value>Desmarcar Todos</value>
-    <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
-  </data>
-  <data name="lckbCintaOpcionesMarcarTodos" xml:space="preserve">
-    <value>Marcar Todos</value>
-    <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
-  </data>
-  <data name="lckbCintaOpcionesDesmarcarTodos" xml:space="preserve">
-    <value>Desmarcar Todos</value>
-    <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
-  </data>
   <data name="lrdbCintaOpcionesMarcarTodos" xml:space="preserve">
     <value>Marcar Todos</value>
     <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
   </data>
   <data name="lrdbCintaOpcionesDesmarcarTodos" xml:space="preserve">
     <value>Desmarcar Todos</value>
-    <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
-  </data>
-  <data name="msgSaveCintaOpcionesOK" xml:space="preserve">
-    <value>El orden de los grupos de las pestañas de la cinta seleccionadas, se han restaurado a su posición inicial.</value>
     <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
   </data>
 </root>

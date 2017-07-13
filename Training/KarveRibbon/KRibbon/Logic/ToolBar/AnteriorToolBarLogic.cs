@@ -1,5 +1,5 @@
-﻿using KRibbon.Logic.Generic.Metodos;
-using static KRibbon.Logic.Generic.Propiedades.VariablesGlobalesEnumerations;
+﻿using KRibbon.Utility;
+using static KRibbon.Model.Generic.RecopilatorioEnumerations;
 
 namespace KRibbon.Logic.ToolBar
 {

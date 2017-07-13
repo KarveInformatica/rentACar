@@ -3,9 +3,9 @@
 namespace KRibbon.Model.Generic
 {
     /// <summary>
-    ///  Abstract Class para el View Model.Classes
+    ///  Abstract Class que implementa INotifyPropertyChanged
     /// </summary>
-    public abstract class PropertyChangedBase : INotifyPropertyChanged
+    public abstract class GenericPropertyChanged : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

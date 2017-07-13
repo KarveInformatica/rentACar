@@ -188,8 +188,8 @@
             </r:Ribbon.HelpPaneContent>
 
             <!--Tab Maestros-->
-            <r:RibbonTab x:Name="tbMaestros"
-                         Header="{Binding ltbMaestros, Source={StaticResource ResourceLanguage}}"
+            <r:RibbonTab x:Name="rbtbMaestros"
+                         Header="{Binding lrbtbMaestros, Source={StaticResource ResourceLanguage}}"
                          KeyTip="M"
                          GroupSizeReductionOrder="rgrAuxiliares, rgrCentrosAlquiler, rgrClientes">
                 <r:RibbonGroup x:Name="rgrCentrosAlquiler" Header="{Binding lrrCentrosAlquiler, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" >
@@ -671,8 +671,8 @@
             </r:RibbonTab>
 
             <!--Tab Contratos-->
-            <r:RibbonTab x:Name="tbContratos" 
-                         Header="{Binding ltbContratos, Source={StaticResource ResourceLanguage}}" 
+            <r:RibbonTab x:Name="rbtbContratos" 
+                         Header="{Binding lrbtbContratos, Source={StaticResource ResourceLanguage}}" 
                          KeyTip="C" 
                          GroupSizeReductionOrder="rgrContratos, rgrCambiosContratos, rgrVariosContratos" >
                 <r:RibbonGroup x:Name="rgrContratos" Header="{Binding lrgrContratos, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
@@ -735,8 +735,8 @@
             </r:RibbonTab>
 
             <!--Tab Reservas-->
-            <r:RibbonTab x:Name="tbReservas" 
-                         Header="{Binding ltbReservas, Source={StaticResource ResourceLanguage}}" 
+            <r:RibbonTab x:Name="rbtbReservas" 
+                         Header="{Binding lrbtbReservas, Source={StaticResource ResourceLanguage}}" 
                          KeyTip="R">
                 <r:RibbonGroup x:Name="rgrReservas" Header="{Binding lrgrReservas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                     <r:RibbonButton x:Name="rbtnReservas" 
@@ -767,8 +767,8 @@
             </r:RibbonTab>
 
             <!--Tab Atípicos-->
-            <r:RibbonTab x:Name="tbAtipicos" 
-                         Header="{Binding ltbAtipicos, Source={StaticResource ResourceLanguage}}" 
+            <r:RibbonTab x:Name="rbtbAtipicos" 
+                         Header="{Binding lrbtbAtipicos, Source={StaticResource ResourceLanguage}}" 
                          KeyTip="A" >
                 <r:RibbonGroup x:Name="rgrAtipicos" Header="{Binding lrgrAtipicos, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                     <r:RibbonButton x:Name="rbtnAlquilerBicicletas" 
@@ -795,8 +795,8 @@
             </r:RibbonTab>
 
             <!--Tab Comercial-->
-            <r:RibbonTab x:Name="tbComercial" 
-                         Header="{Binding ltbComercial, Source={StaticResource ResourceLanguage}}" 
+            <r:RibbonTab x:Name="rbtbComercial" 
+                         Header="{Binding lrbtbComercial, Source={StaticResource ResourceLanguage}}" 
                          KeyTip="O" >
                 <r:RibbonGroup x:Name="rgrComercial" Header="{Binding lrgrComercial, Source={StaticResource ResourceLanguage}}" KeyTip="P" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                     <r:RibbonButton x:Name="rbtnCustomerService" 
@@ -823,7 +823,7 @@
             </r:RibbonTab>
 
             <!--Tab Compras-->
-            <!--<r:RibbonTab x:Name="tbCompras" 
+            <!--<r:RibbonTab x:Name="rbtbCompras" 
                              Header="Compras" 
                              KeyTip="P" >
                     <r:RibbonGroup x:Name="rgrCompras" Header="Compras" >
@@ -831,8 +831,8 @@
                 </r:RibbonTab>-->
 
             <!--Tab Facturación-->
-            <r:RibbonTab x:Name="tbFacturacion" 
-                         Header="{Binding ltbFacturacion, Source={StaticResource ResourceLanguage}}" 
+            <r:RibbonTab x:Name="rbtbFacturacion" 
+                         Header="{Binding lrbtbFacturacion, Source={StaticResource ResourceLanguage}}" 
                          KeyTip="F" 
                          GroupSizeReductionOrder="rgrExportacion, rgrImpresion" >
                 <r:RibbonGroup x:Name="rgrFacturacion" Header="{Binding lrgrFacturacion, Source={StaticResource ResourceLanguage}}" >
@@ -959,8 +959,8 @@
             </r:RibbonTab>
 
             <!--Tab Flota-->
-            <r:RibbonTab x:Name="tbFlota" 
-                         Header="{Binding ltbFlota, Source={StaticResource ResourceLanguage}}" 
+            <r:RibbonTab x:Name="rbtbFlota" 
+                         Header="{Binding lrbtbFlota, Source={StaticResource ResourceLanguage}}" 
                          KeyTip="T" 
                          GroupSizeReductionOrder="rgrInmovilizaciones, rgrUtilidades, rgrVarios">
                 <r:RibbonGroup x:Name="rgrInmovilizaciones" Header="{Binding lrgrInmovilizaciones, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutSmall}">
@@ -1040,8 +1040,8 @@
                 </r:RibbonTab>-->
 
             <!--Tab Incidencias-->
-            <r:RibbonTab x:Name="tbIncidencias" 
-                         Header="{Binding ltbIncidencias, Source={StaticResource ResourceLanguage}}" 
+            <r:RibbonTab x:Name="rbtbIncidencias" 
+                         Header="{Binding lrbtbIncidencias, Source={StaticResource ResourceLanguage}}" 
                          KeyTip="I"
                          GroupSizeReductionOrder="rgrIncidencias, rgrtiposIncidencias">
                 <r:RibbonGroup x:Name="rgrIncidencias" Header="{Binding lrgrIncidencias, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
@@ -1069,8 +1069,8 @@
             </r:RibbonTab>
 
             <!--Tab Estadísticas-->
-            <r:RibbonTab x:Name="tbEstadisticas" 
-                         Header="{Binding ltbEstadisticas, Source={StaticResource ResourceLanguage}}" 
+            <r:RibbonTab x:Name="rbtbEstadisticas" 
+                         Header="{Binding lrbtbEstadisticas, Source={StaticResource ResourceLanguage}}" 
                          KeyTip="E">
                 <r:RibbonGroup x:Name="rgrEstadisticas" Header="{Binding lrgrEstadisticas, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                     <r:RibbonButton x:Name="rbtnEstadisticasAnaliticas" 
@@ -1113,8 +1113,8 @@
             </r:RibbonTab>
 
             <!--Tab Listados-->
-            <r:RibbonTab x:Name="tbListados" 
-                         Header="{Binding ltbListados, Source={StaticResource ResourceLanguage}}" 
+            <r:RibbonTab x:Name="rbtbListados" 
+                         Header="{Binding lrbtbListados, Source={StaticResource ResourceLanguage}}" 
                          KeyTip="L">
                 <r:RibbonGroup x:Name="rgrListados" Header="{Binding lrgrListados, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
                     <r:RibbonButton x:Name="rbtnListadosClientes" 
@@ -1161,8 +1161,8 @@
             </r:RibbonTab>
 
             <!--Tab Configuración-->
-            <r:RibbonTab x:Name="tbConfiguracion"
-                             Header="{Binding ltbConfiguracion, Source={StaticResource ResourceLanguage}}" 
+            <r:RibbonTab x:Name="rbtbConfiguracion"
+                             Header="{Binding lrbtbConfiguracion, Source={StaticResource ResourceLanguage}}" 
                              KeyTip="G" 
                              GroupSizeReductionOrder="rgrConfiguracion, rgrPersonal, rgrVariosconfiguracion">
                 <r:RibbonGroup x:Name="rgrConfiguracion" Header="{Binding lrgrConfiguracion, Source={StaticResource ResourceLanguage}}" LargeImageSource="..\Images\open.png" GroupSizeDefinitions="{StaticResource RibbonGroupLayoutLarge}">
