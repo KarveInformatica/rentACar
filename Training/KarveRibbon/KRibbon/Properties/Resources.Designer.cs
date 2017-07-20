@@ -97,6 +97,15 @@ namespace KRibbon.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        public static string giorgio {
+            get {
+                return ResourceManager.GetString("giorgio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Inicio.
         /// </summary>
         public static string lrapmnInicio {

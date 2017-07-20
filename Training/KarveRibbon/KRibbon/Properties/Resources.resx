@@ -1426,4 +1426,7 @@
     <value>Desmarcar Todos</value>
     <comment>Ribbon\Configuración\Configuración\Cinta Opciones</comment>
   </data>
+  <data name="giorgio" xml:space="preserve">
+    <value></value>
+  </data>
 </root>

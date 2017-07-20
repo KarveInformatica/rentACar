@@ -4,12 +4,15 @@ using KRibbon.Model.Classes;
 using KRibbon.Model.Generic;
 using KRibbon.Model.Sybase;
 using KRibbon.View;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Interactivity;
+using System.Windows.Media;
 using static KRibbon.Model.Generic.RecopilatorioCollections;
 using static KRibbon.Model.Generic.RecopilatorioEnumerations;
 
@@ -94,21 +97,23 @@ namespace KRibbon.Logic.Maestros
                     #region Auxiliares Clientes
                     case EOpcion.rbtnBancosClientes:
                         genericobscollection = MaestrosAuxiliaresModel.GetMaestrosAuxiliares(nombretabladb, Banco.templateinfodb, new Banco());
-                        CreateTabItemDataGrid(opcion, genericobscollection);
+                        CreateTabItemDataGrid(opcion, genericobscollection, new Banco());
                         break;
                     case EOpcion.rbtnBloqueFacturacion:
                         genericobscollection = MaestrosAuxiliaresModel.GetMaestrosAuxiliares(nombretabladb, BloqueFacturacion.templateinfodb, new BloqueFacturacion());
-                        CreateTabItemDataGrid(opcion, genericobscollection);
+                        CreateTabItemDataGrid(opcion, genericobscollection, new BloqueFacturacion());
                         break;
                     case EOpcion.rbtnCanales:
                         genericobscollection = MaestrosAuxiliaresModel.GetMaestrosAuxiliares(nombretabladb, CanalCliente.templateinfodb, new CanalCliente());
-                        CreateTabItemDataGrid(opcion, genericobscollection);
+                        CreateTabItemDataGrid(opcion, genericobscollection, new CanalCliente());
                         break;
                     case EOpcion.rbtnCargosPersonal:                        
                         genericobscollection = MaestrosAuxiliaresModel.GetMaestrosAuxiliares(nombretabladb, CargoPersonal.templateinfodb, new CargoPersonal());
-                        CreateTabItemDataGrid(opcion, genericobscollection);
+                        CreateTabItemDataGrid(opcion, genericobscollection, new CargoPersonal());
                         break;
                     case EOpcion.rbtnClavesPresupuesto:
+                        genericobscollection = MaestrosAuxiliaresModel.GetMaestrosAuxiliares(nombretabladb, CargoPersonal.templateinfodb, new CargoPersonal());
+                        CreateTabItemDataGrid(opcion, genericobscollection, new CargoPersonal());
                         break;
                     case EOpcion.rbtnFormasCobroClientes:
                         break;
@@ -149,7 +154,7 @@ namespace KRibbon.Logic.Maestros
                         break;
                     case EOpcion.rbtnTipoComisionista:
                         genericobscollection = MaestrosAuxiliaresModel.GetMaestrosAuxiliares(nombretabladb, TipoComisionista.templateinfodb, new TipoComisionista());
-                        CreateTabItemDataGrid(opcion, genericobscollection);
+                        CreateTabItemDataGrid(opcion, genericobscollection, new TipoComisionista());
                         break;
                     #endregion
 
@@ -186,7 +191,7 @@ namespace KRibbon.Logic.Maestros
                         break;
                     case EOpcion.rbtnFormaPagoProveedor:                        
                         genericobscollection = MaestrosAuxiliaresModel.GetMaestrosAuxiliares(nombretabladb, FormaPagoProveedor.templateinfodb, new FormaPagoProveedor());
-                        CreateTabItemDataGrid(opcion, genericobscollection);
+                        CreateTabItemDataGrid(opcion, genericobscollection, new FormaPagoProveedor());
                         break;
                     case EOpcion.rbtnTiposProveedores:
                         break;
@@ -208,7 +213,7 @@ namespace KRibbon.Logic.Maestros
                         break;
                     case EOpcion.rbtnGruposTarifa:
                         genericobscollection = MaestrosAuxiliaresModel.GetMaestrosAuxiliares(nombretabladb, GrupoTarifa.templateinfodb, new GrupoTarifa());
-                        CreateTabItemDataGrid(opcion, genericobscollection);
+                        CreateTabItemDataGrid(opcion, genericobscollection, new GrupoTarifa());
                         break;
                     #endregion
 
@@ -274,12 +279,26 @@ namespace KRibbon.Logic.Maestros
         /// </summary>
         /// <param name="opcion"></param>
         /// <param name="genericobscollection"></param>
-        private static void CreateTabItemDataGrid(EOpcion opcion, GenericObservableCollection genericobscollection)
+        private static void CreateTabItemDataGrid(EOpcion opcion, GenericObservableCollection genericobscollection, object obj)
         {
             if (genericobscollection.GenericObsCollection.Count != 0)
             {                
                 //Creamos el DataGrid
                 DataGridUserControl datagrid = new DataGridUserControl();
+
+                //datagrid.HorizontalAlignment = HorizontalAlignment.Left;
+                //datagrid.AlternatingRowBackground = Brushes.WhiteSmoke;
+                //datagrid.AutoGenerateColumns = true;
+                //datagrid.CanUserAddRows = true;
+                //datagrid.CanUserDeleteRows = true;
+                //datagrid.IsReadOnly = false;
+                //datagrid.SelectionMode = DataGridSelectionMode.Extended;
+                //datagrid.SelectionUnit = DataGridSelectionUnit.FullRow;
+                //datagrid.CanUserReorderColumns = true;
+                //datagrid.CanUserResizeColumns = true;
+                //datagrid.CanUserResizeRows = true;
+                //datagrid.CanUserSortColumns = true;
+                //datagrid.FrozenColumnCount = 1;
 
                 #region Se añade la ObservableCollection<object> directamente como el datagrid.ItemsSource, rellena las columnas según las propiedades que tenga el object, tenga o no tenga datos; el header será el nombre de cada propiedad del object
 
@@ -288,18 +307,21 @@ namespace KRibbon.Logic.Maestros
 
                 #region Se crean los DataGridTextColumn dinámicamente, dándole el nombre al header, y binding cada columna según establecido en la List<DBCriterios> del object; se añade cada columna individualmente al DataGrid
                 ////Creamos los DataGridTextColumn
-                //DataGridTextColumn col;
-
+                //DataGridTextColumn column;
                 //foreach (var item in templateinfodb)
                 //{
-                //    col = new DataGridTextColumn();
-                //    col.Header = item.datagridheader; // new KarveDataGridTextColum(item.datagridheader);
-                //    col.Binding = new Binding(item.nombrepropiedadobj);
-                //    datagrid.Columns.Add(col);
+                //    //var binding = new Binding();
+                //    //binding.Path = new PropertyPath(item.datagridheader);
+                //    //binding.Source = (ObjectDataProvider)App.Current.FindResource("ResourceLanguage");
+
+                //    column = new DataGridTextColumn();
+                //    column.Header = item.datagridheader; //binding.Path;
+                //    column.Binding = new Binding(item.nombrepropiedadobj);
+                //    datagrid.Columns.Add(column);
                 //}
 
                 ////Añadimos los valores al Datagrid
-                //foreach (var item in dgitemslist)
+                //foreach (var item in genericobscollection.GenericObsCollection)
                 //{
                 //    datagrid.Items.Add(item);
                 //}
@@ -314,7 +336,7 @@ namespace KRibbon.Logic.Maestros
 
                 //Se añade el EOpcion, el GenericObservableCollection recibido por params (como origin y copy) y el nuevo TabItem,  
                 //al Dictionary de TabItems(tabitemdictionary) que almacena los TabItems activos
-                tabitemdictionary.Add(opcion, new TemplateInfoTabItem(genericobscollection, genericobscollection, tabitem));
+                tabitemdictionary.Add(opcion, new TemplateInfoTabItem(genericobscollection, tabitem, obj));
 
                 //Se añade el DataGridUserControl al TabItem
                 tabitem.Content = datagrid;
@@ -324,7 +346,7 @@ namespace KRibbon.Logic.Maestros
             }
         }
 
-        public static void SetTrigger(DataGrid contentControl) //Posiblemente se pueda eliminar este método
+        public static void SetTrigger(DataGrid contentControl) //***Posiblemente se pueda eliminar este método
         {
             // create the command action and bind the command to it
             var invokeCommandAction = new InvokeCommandAction { CommandParameter = "datagridcommandtest" };

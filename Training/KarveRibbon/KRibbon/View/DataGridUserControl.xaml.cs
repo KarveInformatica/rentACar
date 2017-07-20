@@ -19,7 +19,7 @@ namespace KRibbon.View
             DataGridMaestrosAuxiliaresLogic.DataGridDelete(sender, e);           
         }
 
-        private void DataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        private void DataGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
         {
             DataGridMaestrosAuxiliaresLogic.DataGridInsertEdit(sender, e);
         }

@@ -11,7 +11,7 @@ namespace KRibbon.Model.Generic
         /// <summary>
         /// Dictionary que recopila los TabItem activos. 
         /// Key=EOpcion, 
-        /// Value=DatosInfoTabItem(GenericObservableCollection obscollectionorigin, GenericObservableCollection obscollectioncopy, TabItem)
+        /// Value=TemplateInfoTabItem(GenericObservableCollection genericobscollection, GenericObservableCollection obscollectioncopy, TabItem, Object)
         /// </summary>
         public static Dictionary<EOpcion, TemplateInfoTabItem> tabitemdictionary = new Dictionary<EOpcion, TemplateInfoTabItem>();
 
@@ -81,8 +81,8 @@ namespace KRibbon.Model.Generic
         public static Dictionary<ERibbonTab, TemplateInfoRibbonTabAndGroup> ribbontabdictionary = new Dictionary<ERibbonTab, TemplateInfoRibbonTabAndGroup> ()
         {
             { ERibbonTab.rbtbMaestros,      new TemplateInfoRibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).rbtbMaestros,
-                                                                              checkbox  = "ckbCintaOpcionesMaestros",
-                                                                              ribbongroup = new List<RibbonGroup>() {
+                                                                                checkbox  = "ckbCintaOpcionesMaestros",
+                                                                                ribbongroup = new List<RibbonGroup>() {
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrCentrosAlquiler ,
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrClientes,
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrComisionistas,
@@ -92,28 +92,28 @@ namespace KRibbon.Model.Generic
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrAuxiliares } }},
 
             { ERibbonTab.rbtbContratos,     new TemplateInfoRibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).rbtbContratos,
-                                                                              checkbox  = "ckbCintaOpcionesContratos",
-                                                                              ribbongroup = new List<RibbonGroup>() {
+                                                                                checkbox  = "ckbCintaOpcionesContratos",
+                                                                                ribbongroup = new List<RibbonGroup>() {
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrContratos,
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrCambiosContratos,
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrVariosContratos } } },
 
             { ERibbonTab.rbtbReservas,      new TemplateInfoRibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).rbtbReservas,
-                                                                              checkbox  = "ckbCintaOpcionesReservas",
-                                                                              ribbongroup = new List<RibbonGroup>() {
+                                                                                checkbox  = "ckbCintaOpcionesReservas",
+                                                                                ribbongroup = new List<RibbonGroup>() {
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrReservas } } },
             { ERibbonTab.rbtbAtipicos,      new TemplateInfoRibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).rbtbAtipicos,
-                                                                              checkbox  = "ckbCintaOpcionesAtipicos",
-                                                                              ribbongroup = new List<RibbonGroup>() {
+                                                                                checkbox  = "ckbCintaOpcionesAtipicos",
+                                                                                ribbongroup = new List<RibbonGroup>() {
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrAtipicos } } },
             { ERibbonTab.rbtbComercial,     new TemplateInfoRibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).rbtbComercial,
-                                                                              checkbox  = "ckbCintaOpcionesComercial",
-                                                                              ribbongroup = new List<RibbonGroup>() {
+                                                                                checkbox  = "ckbCintaOpcionesComercial",
+                                                                                ribbongroup = new List<RibbonGroup>() {
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrComercial } } },
 
             { ERibbonTab.rbtbFacturacion,   new TemplateInfoRibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).rbtbFacturacion,
-                                                                              checkbox  = "ckbCintaOpcionesFacturacion",
-                                                                              ribbongroup = new List<RibbonGroup>() {
+                                                                                checkbox  = "ckbCintaOpcionesFacturacion",
+                                                                                ribbongroup = new List<RibbonGroup>() {
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrFacturacion,
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrRecibosCartera,
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrRemesas,
@@ -123,28 +123,28 @@ namespace KRibbon.Model.Generic
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrEstadisticasFacturas } } },        
 
             { ERibbonTab.rbtbFlota,         new TemplateInfoRibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).rbtbFlota,
-                                                                              checkbox  = "ckbCintaOpcionesFlota",
-                                                                              ribbongroup = new List<RibbonGroup>() {
+                                                                                checkbox  = "ckbCintaOpcionesFlota",
+                                                                                ribbongroup = new List<RibbonGroup>() {
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrInmovilizaciones,
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrUtilidades,
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrVariosFlota } } },
 
             { ERibbonTab.rbtbIncidencias,   new TemplateInfoRibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).rbtbIncidencias,
-                                                                              checkbox  = "ckbCintaOpcionesIncidencias",
-                                                                              ribbongroup = new List<RibbonGroup>() {
+                                                                                checkbox  = "ckbCintaOpcionesIncidencias",
+                                                                                ribbongroup = new List<RibbonGroup>() {
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrIncidencias } } },
             { ERibbonTab.rbtbEstadisticas,  new TemplateInfoRibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).rbtbEstadisticas,
-                                                                              checkbox  = "ckbCintaOpcionesEstadisticas",
-                                                                              ribbongroup = new List<RibbonGroup>() {
-                                                                                         ((MainWindow)Application.Current.MainWindow).rgrEstadisticas } } },
+                                                                                checkbox  = "ckbCintaOpcionesEstadisticas",
+                                                                                ribbongroup = new List<RibbonGroup>() {
+                                                                                            ((MainWindow)Application.Current.MainWindow).rgrEstadisticas } } },
             { ERibbonTab.rbtbListados,      new TemplateInfoRibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).rbtbListados,
-                                                                              checkbox  = "ckbCintaOpcionesListados",
-                                                                              ribbongroup = new List<RibbonGroup>() {
-                                                                                          ((MainWindow)Application.Current.MainWindow).rgrListados } } },
+                                                                                checkbox  = "ckbCintaOpcionesListados",
+                                                                                ribbongroup = new List<RibbonGroup>() {
+                                                                                            ((MainWindow)Application.Current.MainWindow).rgrListados } } },
 
             { ERibbonTab.rbtbConfiguracion, new TemplateInfoRibbonTabAndGroup { ribbontab = ((MainWindow)Application.Current.MainWindow).rbtbConfiguracion,
-                                                                              checkbox  = "ckbCintaOpcionesConfiguracion",
-                                                                              ribbongroup = new List<RibbonGroup>() {
+                                                                                checkbox  = "ckbCintaOpcionesConfiguracion",
+                                                                                ribbongroup = new List<RibbonGroup>() {
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrConfiguracion,
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrIdiomas,
                                                                                             ((MainWindow)Application.Current.MainWindow).rgrPersonal,

@@ -5,7 +5,7 @@ using static KRibbon.Model.Generic.RecopilatorioEnumerations;
 
 namespace KRibbon.Model.Classes
 {
-    public class CanalCliente : GenericPropertyChanged
+    public class CanalCliente : GenericPropertyChanged, lControlCambioDataGrid
     {
         #region List<DBCriterios>
         public static List<TemplateInfoDB> templateinfodb = new List<TemplateInfoDB>()
@@ -22,7 +22,7 @@ namespace KRibbon.Model.Classes
         #endregion
 
         #region Constructores
-        public CanalCliente() { }
+        public CanalCliente() { this.ControlCambioDataGrid = EControlCambioDataGrid.Null; }
         public CanalCliente(string codigo, string nombre)
         {
             this.codigo = codigo;
@@ -51,6 +51,17 @@ namespace KRibbon.Model.Classes
             {
                 nombre = value;
                 OnPropertyChanged("Nombre");
+            }
+        }
+
+        private EControlCambioDataGrid controlcambiodatagrid;
+        public EControlCambioDataGrid ControlCambioDataGrid
+        {
+            get { return controlcambiodatagrid; }
+            set
+            {
+                controlcambiodatagrid = value;
+                OnPropertyChanged("ControlCambioDataGrid");
             }
         }
         #endregion

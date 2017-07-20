@@ -5,7 +5,7 @@ using static KRibbon.Model.Generic.RecopilatorioEnumerations;
 
 namespace KRibbon.Model.Classes
 {
-    public class GrupoTarifa : GenericPropertyChanged
+    public class GrupoTarifa : GenericPropertyChanged, lControlCambioDataGrid
     {       
         #region List<DBCriterios>
         public static List<TemplateInfoDB> templateinfodb = new List<TemplateInfoDB>()
@@ -26,7 +26,7 @@ namespace KRibbon.Model.Classes
         #endregion
 
         #region Constructores
-        public GrupoTarifa() { }
+        public GrupoTarifa() { this.ControlCambioDataGrid = EControlCambioDataGrid.Null; }
         public GrupoTarifa(string codigoAux, string nombre, string ultmodi)
         {
             this.codigo = codigoAux;
@@ -66,6 +66,17 @@ namespace KRibbon.Model.Classes
             {
                 ultmodi = value;
                 OnPropertyChanged("UltModi");
+            }
+        }
+
+        private EControlCambioDataGrid controlcambiodatagrid;
+        public EControlCambioDataGrid ControlCambioDataGrid
+        {
+            get { return controlcambiodatagrid; }
+            set
+            {
+                controlcambiodatagrid = value;
+                OnPropertyChanged("ControlCambioDataGrid");
             }
         }
         #endregion

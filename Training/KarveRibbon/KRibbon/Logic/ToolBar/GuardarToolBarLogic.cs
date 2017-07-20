@@ -60,6 +60,7 @@ namespace KRibbon.Logic.ToolBar
                     break;
 
                 case EOpcion.rbtnBancosClientes:
+
                     break;
                 case EOpcion.rbtnBloqueFacturacion:
                     break;

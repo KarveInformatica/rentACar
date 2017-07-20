@@ -53,57 +53,51 @@ namespace KRibbon.ViewModel.GenericViewModel
         #region Métodos
         public void AnteriorToolBar(object parameter)
         {
-            //MessageBox.Show("public void AnteriorToolBar(object parameter) -> " + parameter.ToString());
             AnteriorToolBarLogic.AnteriorToolBar();
         }
 
         public void BuscarToolBar(object parameter)
         {
-            //MessageBox.Show("public void BuscarToolBar(object parameter) -> " + parameter.ToString());
             BuscarToolBarLogic.BuscarToolBar();
         }
 
         public void CancelarToolBar(object parameter)
         {
-            //MessageBox.Show("public void CancelarToolBar(object parameter) -> " + parameter.ToString());
             CancelarToolBarLogic.CancelarToolBar();
         }
 
         public void EditarToolBar(object parameter)
         {
-            //MessageBox.Show("public void EditarToolBar(object parameter) -> " + parameter.ToString());
             EditarToolBarLogic.EditarToolBar();
         }
 
         public void EliminarToolBar(object parameter)
         {
-            //MessageBox.Show("public void EliminarToolBar(object parameter) -> " + parameter.ToString());
             EliminarToolBarLogic.EliminarToolBar();
         }
 
         public void GuardarToolBar(object parameter)
         {
-            //MessageBox.Show("public void GuardarToolBar(object parameter) -> " + parameter.ToString());
             GuardarToolBarLogic.GuardarToolBar();
         }
+
         public void ImprimirToolBar(object parameter)
         {
-            //MessageBox.Show("public void ImprimirToolBar(object parameter) -> " + parameter.ToString());
             ImprimirToolBarLogic.ImprimirToolBar();
         }
+
         public void NuevoToolBar(object parameter)
         {
-            //MessageBox.Show("public void NuevoToolBar(object parameter) -> " + parameter.ToString());
             NuevoToolBarLogic.NuevoToolBar();
         }
+
         public void SalirToolBar(object parameter)
         {
-            //MessageBox.Show("public void SalirToolBar(object parameter) -> " + parameter.ToString());
             SalirToolBarLogic.SalirToolBar();
         }
+
         public void SiguienteToolBar(object parameter)
         {
-            //MessageBox.Show("public void SiguienteToolBar(object parameter) -> " + parameter.ToString());
             SiguienteToolBarLogic.SiguienteToolBar();
         }
         #endregion
