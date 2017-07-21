@@ -1,4 +1,6 @@
-﻿using KRibbon.View;
+﻿using KRibbon.Model.Classes;
+using KRibbon.Properties;
+using KRibbon.View;
 using Microsoft.Windows.Controls.Ribbon;
 using System.Collections.Generic;
 using System.Windows;
@@ -17,28 +19,106 @@ namespace KRibbon.Model.Generic
 
         /// <summary>
         /// Dictionary que recopila la información de los RibbonButtons (la referencia en Resources, el nombre de la tabla de la BBDD)
-        /// Key=EOpcion, Value=DatosInfoRibbonButton(string propertiesresources, string nombretabladb)
+        /// Key=EOpcion, Value=DatosInfoRibbonButton(string propertiesresources, string nombretabladb, List<TemplateInfoDB> templateinfodb)
         /// </summary>
         public static Dictionary<EOpcion, TemplateInfoRibbonButton> ribbonbuttondictionary = new Dictionary<EOpcion, TemplateInfoRibbonButton>()
         {
             #region Maestros
             { EOpcion.rbtnBancosClientes,     new TemplateInfoRibbonButton { propertiesresources = "lrbtnBancosClientes",
-                                                                             nombretabladb = "BANCO" } },
+                                                                             nombretabladb = "BANCO",
+                                                                             obj = new Banco(),
+                                                                             templateinfodb = new List<TemplateInfoDB>() {
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "Codigo",
+                                                                                                                    nombrecolumnadb    = "CODBAN",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                                                                                                    datagridheader     = Resources.dttcCodigo },
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "Nombre",
+                                                                                                                    nombrecolumnadb    = "NOMBRE",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                                                                                                    datagridheader     = Resources.dttcDefinicion },
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "Swift",
+                                                                                                                    nombrecolumnadb    = "SWIFT",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                                                                                                    datagridheader     = Resources.dttcBicSwift } } } },
             { EOpcion.rbtnBloqueFacturacion,  new TemplateInfoRibbonButton { propertiesresources = "lrbtnBloqueFacturacion",
-                                                                             nombretabladb = "BLOQUEFAC" } },
+                                                                             nombretabladb = "BLOQUEFAC",
+                                                                             obj = new BloqueFacturacion(),
+                                                                             templateinfodb = new List<TemplateInfoDB>() {
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "Codigo",
+                                                                                                                    nombrecolumnadb    = "CODIGO",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                                                                                                    datagridheader     = Resources.dttcCodigo },
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "Nombre",
+                                                                                                                    nombrecolumnadb    = "NOMBRE",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                                                                                                    datagridheader     = Resources.dttcDefinicion } } } },
             { EOpcion.rbtnCanales,            new TemplateInfoRibbonButton { propertiesresources = "lrbtnCanales",
-                                                                             nombretabladb = "CANAL" } },
+                                                                             nombretabladb = "CANAL",
+                                                                             obj = new CanalCliente(),
+                                                                             templateinfodb = new List<TemplateInfoDB>() {
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "Codigo",
+                                                                                                                    nombrecolumnadb    = "CODIGO",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                                                                                                    datagridheader     = Resources.dttcCodigo },
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "Nombre",
+                                                                                                                    nombrecolumnadb    = "NOMBRE",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                                                                                                    datagridheader     = Resources.dttcDefinicion } } } },
             { EOpcion.rbtnCargosPersonal,     new TemplateInfoRibbonButton { propertiesresources = "lrbtnCargosPersonal",
-                                                                             nombretabladb = "CATEGOPER" } },
+                                                                             nombretabladb = "CATEGOPER",
+                                                                             obj = new CargoPersonal(),
+                                                                             templateinfodb = new List<TemplateInfoDB>() {
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "Codigo",
+                                                                                                                    nombrecolumnadb    = "COD_CAT",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                                                                                                    datagridheader     = Resources.dttcCodigo },
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "Nombre",
+                                                                                                                    nombrecolumnadb    = "NOM_CAT",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                                                                                                    datagridheader     = Resources.dttcDefinicion } } } },
 
             { EOpcion.rbtnTipoComisionista,   new TemplateInfoRibbonButton { propertiesresources = "lrbtnTipoComisionista",
-                                                                             nombretabladb =  "TIPOCOMI" } },
+                                                                             nombretabladb =  "TIPOCOMI",
+                                                                             obj = new TipoComisionista(),
+                                                                             templateinfodb = new List<TemplateInfoDB>() {
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "Codigo",
+                                                                                                                    nombrecolumnadb    = "NUM_TICOMI",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                                                                                                    datagridheader     = Resources.dttcCodigo },
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "Nombre",
+                                                                                                                    nombrecolumnadb    = "NOMBRE",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                                                                                                    datagridheader     = Resources.dttcDefinicion } } } },
 
             { EOpcion.rbtnFormaPagoProveedor, new TemplateInfoRibbonButton { propertiesresources = "lrbtnFormaPagoProveedor",
-                                                                             nombretabladb = "FORPRO" } },
+                                                                             nombretabladb = "FORPRO",
+                                                                             obj = new FormaPagoProveedor(),
+                                                                             templateinfodb = new List<TemplateInfoDB>() {
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "Codigo",
+                                                                                                                    nombrecolumnadb    = "CODIGO",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBbyte,
+                                                                                                                    datagridheader     = Resources.dttcCodigo },
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "Nombre",
+                                                                                                                    nombrecolumnadb    = "NOMBRE",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                                                                                                    datagridheader     = Resources.dttcDefinicion } } } },
 
             { EOpcion.rbtnGruposTarifa,       new TemplateInfoRibbonButton { propertiesresources = "lrbtnGruposTarifa",
-                                                                             nombretabladb = "GRUPOS_TARI" } },
+                                                                             nombretabladb = "GRUPOS_TARI",
+                                                                             obj = new GrupoTarifa(),
+                                                                             templateinfodb = new List<TemplateInfoDB>() {
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "Codigo",
+                                                                                                                    nombrecolumnadb    = "COD_GT",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                                                                                                    datagridheader     = Resources.dttcCodigo },
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "Nombre",
+                                                                                                                    nombrecolumnadb    = "NOMBRE",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                                                                                                    datagridheader     = Resources.dttcDefinicion },
+                                                                                              new TemplateInfoDB(){ nombrepropiedadobj = "UltModi",
+                                                                                                                    nombrecolumnadb    = "ULTMODI",
+                                                                                                                    tipodatocolumnadb  = ETiposDatoColumnaDB.DBstring,
+                                                                                                                    datagridheader     = Resources.dttcUltModi } } } },
             #endregion
 
             #region Contratos

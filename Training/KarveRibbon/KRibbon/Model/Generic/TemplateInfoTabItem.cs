@@ -6,7 +6,6 @@ namespace KRibbon.Model.Generic
     /// Plantilla con la info de los TabItem:<para/>
     /// genericobscollection -> GenericObservableCollection con la información original recogida de la BBDD<para/>
     /// tabitem              -> TabItem que contendrá el usercontrol que corresponda<para/>
-    /// obj                  -> object del tipo de dato que corresponda<para/>
     /// </summary>
     public class TemplateInfoTabItem : GenericPropertyChanged
     {
@@ -18,16 +17,10 @@ namespace KRibbon.Model.Generic
             this.tabitem = tabitem;
         }
 
-        public TemplateInfoTabItem(object obj)
-        {
-            this.obj = obj;
-        }
-
-        public TemplateInfoTabItem(GenericObservableCollection genericobscollection, TabItem tabitem, object obj)
+        public TemplateInfoTabItem(GenericObservableCollection genericobscollection, TabItem tabitem)
         {
             this.genericobscollection = genericobscollection;
             this.tabitem = tabitem;
-            this.obj = obj;
         }
         #endregion
 
@@ -46,8 +39,6 @@ namespace KRibbon.Model.Generic
             }
         }
 
-
-
         private TabItem tabitem;        
         public TabItem TabItem
         {
@@ -59,20 +50,6 @@ namespace KRibbon.Model.Generic
             {
                 tabitem = value;
                 OnPropertyChanged("TabItem");
-            }
-        }
-
-        private object obj;
-        public object Obj
-        {
-            get
-            {
-                return obj;
-            }
-            set
-            {
-                obj = value;
-                OnPropertyChanged("Obj");
             }
         }
         #endregion
